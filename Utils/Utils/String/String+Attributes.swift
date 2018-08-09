@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Attributes for string.
 public enum StringAttribute {

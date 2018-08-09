@@ -73,7 +73,7 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4F3ED9F9211C27DA0030DD45 /* Foundation */,
+				4F3ED9FA211C27E80030DD45 /* String */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
 				4F3ED9E3211C27CF0030DD45 /* Info.plist */,
 			);
@@ -87,14 +87,6 @@
 				4F3ED9EF211C27CF0030DD45 /* Info.plist */,
 			);
 			path = UtilsTests;
-			sourceTree = "<group>";
-		};
-		4F3ED9F9211C27DA0030DD45 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				4F3ED9FA211C27E80030DD45 /* String */,
-			);
-			path = Foundation;
 			sourceTree = "<group>";
 		};
 		4F3ED9FA211C27E80030DD45 /* String */ = {
