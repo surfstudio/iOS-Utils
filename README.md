@@ -7,7 +7,9 @@
 
 Для установки любой из утилит необходимо добавить следующий код в ваш `Podfile`
 
-`pod 'Surf-Utils/$UTIL_NAME$' :git => "https://github.com/surfstudio/iOS-Utils.git"`
+```Ruby
+pod 'Surf-Utils/$UTIL_NAME$' :git => "https://github.com/surfstudio/iOS-Utils.git"
+```
 
 ## Список утилит
 
