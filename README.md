@@ -19,6 +19,7 @@
 ### StringAttributes
 
 Утилита для упрощения работы с `NSAttributedString`
+
 Пример:
 ```Swift
 let attrString = "Awesome attributed srting".with(attributes: [.kern(9), lineHeight(20)])
