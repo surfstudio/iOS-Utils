@@ -1,3 +1,5 @@
+[![codebeat badge](https://codebeat.co/badges/c2deb19a-3be3-4dd8-aa3d-886e0f361bea)](https://codebeat.co/projects/github-com-surfstudio-ios-utils-master)
+[![Build Status](https://travis-ci.org/surfstudio/iOS-Utils.svg?branch=master)](https://travis-ci.org/surfstudio/iOS-Utils)
 # iOS-Utils
 
 Этот репоиторий содержит коллекцию утилит, каждая из которых находится в отдельной `pod subspec`. 
