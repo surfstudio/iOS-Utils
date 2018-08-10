@@ -1,6 +1,6 @@
 language: Swift
 osx_image: xcode9.3
-xcode_project: Utils.xcodeproj
+xcode_project: Utils/Utils.xcodeproj
 xcode_scheme: Utils
 before_install:
   - pod install --repo-update
