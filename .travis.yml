@@ -3,7 +3,6 @@ osx_image: xcode9.3
 xcode_project: Utils/Utils.xcodeproj
 xcode_scheme: Utils
 before_install:
-  - pod install --repo-update
   - gem install xcpretty -N
   - brew update
   - brew install swiftlint || true
