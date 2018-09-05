@@ -16,6 +16,7 @@ pod 'Surf-Utils/$UTIL_NAME$' :git => "https://github.com/surfstudio/iOS-Utils.gi
 ## Список утилит
 
 - [StringAttributes](#stringattributes) - упрощение работы с `NSAttributedString`
+- [JailbreakDetect](#jailbreakdetect) - позволяет определить наличие root на девайсе.
 
 
 ## Утилиты
@@ -28,6 +29,20 @@ pod 'Surf-Utils/$UTIL_NAME$' :git => "https://github.com/surfstudio/iOS-Utils.gi
 ```Swift
 let attrString = "Awesome attributed srting".with(attributes: [.kern(9), lineHeight(20)])
 ```
+
+### JailbreakDetect
+
+Утилита позволяет определить наличие root на устройстве. 
+
+Пример:
+```Swift
+if JailbreakDetect.isJailBroken() {
+    print("На девайсе установлен jailbreak")
+} else {
+    print("Девайс чист")
+}
+```
+
 ## Версионирование
 
 В качестве принципа версионирования используется [Семантическое версионирования (Semantic Versioning)](https://semver.org/).
