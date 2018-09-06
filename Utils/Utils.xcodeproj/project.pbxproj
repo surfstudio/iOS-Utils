@@ -11,6 +11,7 @@
 		4F3ED9EE211C27CF0030DD45 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9ED211C27CF0030DD45 /* UtilsTests.swift */; };
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */; };
+		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		4F3ED9ED211C27CF0030DD45 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		4F3ED9EF211C27CF0030DD45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
+		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				80437D24214045B30095A8D0 /* JailbreakDetect */,
 				4F3ED9FA211C27E80030DD45 /* String */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
 				4F3ED9E3211C27CF0030DD45 /* Info.plist */,
@@ -95,6 +98,14 @@
 				4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */,
 			);
 			path = String;
+			sourceTree = "<group>";
+		};
+		80437D24214045B30095A8D0 /* JailbreakDetect */ = {
+			isa = PBXGroup;
+			children = (
+				80437D25214045EF0095A8D0 /* JailbreakDetect.swift */,
+			);
+			path = JailbreakDetect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */,
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
