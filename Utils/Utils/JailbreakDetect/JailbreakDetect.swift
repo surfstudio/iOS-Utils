@@ -8,12 +8,12 @@
 
 import Foundation
 
-final class JailbreakDetect {
+final public class JailbreakDetect {
 
     // MARK: - Internal static methods
 
     /// Method return true, if we can detect some common for jailbroken deivce files or can write to device
-    static func isJailBroken() -> Bool {
+    public static func isJailBroken() -> Bool {
         // Check 1 : existence of files that are common for jailbroken devices
         if isJailbreakDirectoriesExist() || canOpenCydia() {
             return true
