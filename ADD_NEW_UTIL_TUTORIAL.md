@@ -16,12 +16,13 @@
 4. Далее, внутри папки String создадим файл `String+NeedsOverrideFailureStringFormater.swift` с нашим кодом:
 ```Swift
 extension String {
-    var fuilureFormat( _ function: String = #function): String {
+    public var fuilureFormat( _ function: String = #function): String {
         return "\(self).\(function) should be overrided in child"
     }
 }
 ```
-5. Делаем build (cmd + b) и убеждаемся, что проект собирается. 
+5. Делаем build (cmd + b) и убеждаемся, что проект собирается.
+**Все классы и методы, которые должны быть доступны пользователю должны быть помечены модификатором доступа public либо open**
 6. Теперь необходимо добавить нашу утилиту в Podspec'у, для того, чтобы другие проекты могли ее использовать через Cocoapods. Сначала нужно немножко почитать про то, [как устроен .podspec и что это вообще такое](https://guides.cocoapods.org/syntax/podspec.html). В папке iOS Utils находим файл `Surf-Utils.podspec` и открываем его. Нам необходимо добавить [подспеку](https://guides.cocoapods.org/syntax/podspec.html#subspec), для того, чтобы в студийных проектах можно было 'затянуть' эту утилиту вот такой строкой `pod Surf-Utils/NeedsOverrideFailureStringFormater`. 
 7. И так, открыли `Surf-Utils.podspec` и добавляем нашу `subspec` в самый конец:
    
