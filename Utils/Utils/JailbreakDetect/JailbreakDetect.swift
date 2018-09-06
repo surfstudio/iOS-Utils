@@ -8,7 +8,7 @@
 
 import Foundation
 
-final public class JailbreakDetect {
+public final class JailbreakDetect {
 
     // MARK: - Internal static methods
 
