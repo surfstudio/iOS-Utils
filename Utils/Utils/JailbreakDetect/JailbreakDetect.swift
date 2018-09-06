@@ -10,16 +10,12 @@ import Foundation
 
 final class JailbreakDetect {
 
+    // MARK: - Internal static methods
+
     /// Method return true, if we can detect some common for jailbroken deivce files or can write to device
     static func isJailBroken() -> Bool {
         // Check 1 : existence of files that are common for jailbroken devices
-        if FileManager.default.fileExists(atPath: "/Applications/Cydia.app")
-            || FileManager.default.fileExists(atPath: "/Library/MobileSubstrate/MobileSubstrate.dylib")
-            || FileManager.default.fileExists(atPath: "/bin/bash")
-            || FileManager.default.fileExists(atPath: "/usr/sbin/sshd")
-            || FileManager.default.fileExists(atPath: "/etc/apt")
-            || FileManager.default.fileExists(atPath: "/private/var/lib/apt/")
-            || canOpenCydia() {
+        if isJailbreakDirectoriesExist() || canOpenCydia() {
             return true
         }
 
@@ -32,6 +28,14 @@ final class JailbreakDetect {
         } catch {
             return false
         }
+    }
+
+    // MARK: - Private help methods
+
+    /// Method will return true, if any of the files typical for the jailbreak exists
+    private static func isJailbreakDirectoriesExist() -> Bool {
+        let jailbreakDirectories = ["/Applications/Cydia.app", "/Library/MobileSubstrate/MobileSubstrate.dylib", "/bin/bash", "/usr/sbin/sshd", "/etc/apt", "/private/var/lib/apt/"]
+        return jailbreakDirectories.map { FileManager.default.fileExists(atPath: $0) }.reduce(true, { $0 || $1 })
     }
 
     /// Method will return true if we can open cydia package
