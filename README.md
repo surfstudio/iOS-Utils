@@ -17,7 +17,7 @@ pod 'Surf-Utils/$UTIL_NAME$' :git => "https://github.com/surfstudio/iOS-Utils.gi
 
 - [StringAttributes](#stringattributes) - упрощение работы с `NSAttributedString`
 - [JailbreakDetect](#jailbreakdetect) - позволяет определить наличие root на девайсе.
-- [JailbreakDetect](#vibrationfeedbackmanager) - позволяет воспроизвести вибрацию на устройстве.
+- [VibrationFeedbackManager](#vibrationfeedbackmanager) - позволяет воспроизвести вибрацию на устройстве.
 
 
 ## Утилиты
