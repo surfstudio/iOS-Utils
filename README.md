@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/surfstudio/iOS-Utils.svg?branch=master)](https://travis-ci.org/surfstudio/iOS-Utils)
 # iOS-Utils
 
-Этот репозиторий содержит коллекцию утилит, каждая из которых находится в отдельной `pod subspec`. 
+Этот репозиторий содержит коллекцию утилит, каждая из которых находится в отдельной `pod subspec`.
 Обновление версии любой утилиты означает обновление версии всего репозитория.
 
 ## Как установить
@@ -17,6 +17,7 @@ pod 'Surf-Utils/$UTIL_NAME$' :git => "https://github.com/surfstudio/iOS-Utils.gi
 
 - [StringAttributes](#stringattributes) - упрощение работы с `NSAttributedString`
 - [JailbreakDetect](#jailbreakdetect) - позволяет определить наличие root на девайсе.
+- [JailbreakDetect](#vibrationfeedbackmanager) - позволяет воспроизвести вибрацию на устройстве.
 
 
 ## Утилиты
@@ -32,7 +33,7 @@ let attrString = "Awesome attributed srting".with(attributes: [.kern(9), lineHei
 
 ### JailbreakDetect
 
-Утилита позволяет определить наличие root на устройстве. 
+Утилита позволяет определить наличие root на устройстве.
 
 Пример:
 ```Swift
@@ -42,6 +43,17 @@ if JailbreakDetect.isJailBroken() {
     print("Девайс чист")
 }
 ```
+
+### VibrationFeedbackManager
+
+Утилита для воспроизведения вибраций с поддержкой taptic engine (1.0/2.0). Автоматически определяет тип девайса и вызывает корректный тип вибрации.
+
+Пример:
+```Swift
+/// воспроизвести вибрацию по событию error
+VibrationFeedbackManager.playVibrationFeedbackBy(event: .error)
+```
+
 
 ## Версионирование
 

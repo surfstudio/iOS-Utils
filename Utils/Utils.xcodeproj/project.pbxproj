@@ -12,6 +12,9 @@
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */; };
 		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
+		E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */; };
+		E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */; };
+		E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,9 @@
 		4F3ED9EF211C27CF0030DD45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
+		E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationFeedbackManager.swift; sourceTree = "<group>"; };
+		E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasTapticEngine.swift"; sourceTree = "<group>"; };
+		E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasHapticFeedback.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
 				80437D24214045B30095A8D0 /* JailbreakDetect */,
 				4F3ED9FA211C27E80030DD45 /* String */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
@@ -106,6 +113,16 @@
 				80437D25214045EF0095A8D0 /* JailbreakDetect.swift */,
 			);
 			path = JailbreakDetect;
+			sourceTree = "<group>";
+		};
+		E9B06306214691F30080C391 /* VibrationFeedbackManager */ = {
+			isa = PBXGroup;
+			children = (
+				E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */,
+				E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */,
+				E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */,
+			);
+			path = VibrationFeedbackManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,7 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
+				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
 				80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */,
+				E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */,
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
