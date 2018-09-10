@@ -17,11 +17,21 @@ import AudioToolbox
  *
  * By default apple mobile devices has a few different vibration feedback systems.
  * - Default vibrations available for all apple devices.
- * - Taptic Engine 1.0 available for iPhone 6/6s and above.
- * - Haptic Feedback (or taptic engine 2.0) available for iPhone 7/7s and above.
+ * - Taptic Engine 1.0 available for iPhone 6s and above.
+ * - Haptic Feedback (or taptic engine 2.0) available for iPhone 7 and above.
  *
  */
 public final class VibrationFeedbackManager {
+
+    // MARK: - Constants
+
+    private struct SoundID {
+      static let peek = 1519
+      static let pop = 1520
+      static let cancelled = 1521
+      static let tryagain = 1102
+      static let failed = 1107
+    }
 
     // MARK: - Enums
 
@@ -105,19 +115,19 @@ private extension VibrationFeedbackManager {
     static func playTapticFeedbackBy(type: TapticEngineVibrationType) {
         switch type {
         case .peek:
-            let peek = SystemSoundID(1519)
+            let peek = SystemSoundID(SoundID.peek)
             AudioServicesPlaySystemSound(peek)
         case .pop:
-            let pop = SystemSoundID(1520)
+            let pop = SystemSoundID(SoundID.pop)
             AudioServicesPlaySystemSound(pop)
         case .cancelled:
-            let cancelled = SystemSoundID(1521)
+            let cancelled = SystemSoundID(SoundID.cancelled)
             AudioServicesPlaySystemSound(cancelled)
         case .tryagain:
-            let tryagain = SystemSoundID(1102)
+            let tryagain = SystemSoundID(SoundID.tryagain)
             AudioServicesPlaySystemSound(tryagain)
         case .failed:
-            let failed = SystemSoundID(1107)
+            let failed = SystemSoundID(SoundID.failed)
             AudioServicesPlaySystemSound(failed)
         }
     }

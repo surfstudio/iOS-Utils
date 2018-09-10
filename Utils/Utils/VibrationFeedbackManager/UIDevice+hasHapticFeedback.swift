@@ -2,13 +2,13 @@
 //  UIDevice+hasHapticFeedback.swift
 //  Utils
 //
-//  Created by Павел Маринченко on 9/10/18.
+//  Created by Pavel Marinchenko on 9/10/18.
 //  Copyright © 2018 Surf. All rights reserved.
 //
 
 import Device_swift
 
-public extension UIDevice {
+extension UIDevice {
     // haptic feedback support guarantees that device supports taptic engine too.
     var hasHapticFeedback: Bool {
         let device = UIDevice.current.deviceType
