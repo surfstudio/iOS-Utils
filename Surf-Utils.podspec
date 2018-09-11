@@ -28,7 +28,6 @@ Pod::Spec.new do |s|
   s.subspec 'VibrationFeedbackManager' do |sp|
     sp.source_files = 'Utils/Utils/VibrationFeedbackManager/*.swift'
     sp.framework = 'AudioToolbox'
-    sp.dependency 'Device.swift'
   end
 
 end

@@ -6,8 +6,6 @@
 //  Copyright © 2018 Surf. All rights reserved.
 //
 
-import Device_swift
-
 extension UIDevice {
     // haptic feedback support guarantees that device supports taptic engine too.
     var hasHapticFeedback: Bool {

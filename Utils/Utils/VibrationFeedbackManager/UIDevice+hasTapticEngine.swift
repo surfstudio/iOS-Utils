@@ -6,8 +6,6 @@
 //  Copyright © 2018 Surf. All rights reserved.
 //
 
-import Device_swift
-
 extension UIDevice {
     var hasTapticEngine: Bool {
         return feedbackType == .taptic || hasHapticFeedback

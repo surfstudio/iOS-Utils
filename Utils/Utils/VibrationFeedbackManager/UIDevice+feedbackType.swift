@@ -14,8 +14,8 @@ extension UIDevice {
     }
 
     var feedbackType: FeedbackType {
-        if let fsl = UIDevice.current.value(forKey: "_feedbackSupportLevel") as? Int, let feedbackSupportLevel = Int(fsl) {
-            return FeedbackType(rawValue: feedbackSupportLevel) ?? .base
+        if let fsl = UIDevice.current.value(forKey: "_feedbackSupportLevel") as? Int, let feedbackSupportLevel = FeedbackType(rawValue: Int(fsl)) {
+            return feedbackSupportLevel
         }
         return .base
     }
