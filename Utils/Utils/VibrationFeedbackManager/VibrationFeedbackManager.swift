@@ -18,7 +18,7 @@ import AudioToolbox
  * By default apple mobile devices has a few different vibration feedback systems.
  * - Default vibrations available for all apple devices.
  * - Taptic Engine 1.0 available for iPhone 6s and above.
- * - Haptic Feedback (or taptic engine 2.0) available for iPhone 7 and above.
+ * - Haptic Feedback (taptic engine 2.0) available for iPhone 7 and above.
  *
  */
 public final class VibrationFeedbackManager {
@@ -26,38 +26,60 @@ public final class VibrationFeedbackManager {
     // MARK: - Constants
 
     private struct SoundID {
-      static let peek = 1519
-      static let pop = 1520
-      static let cancelled = 1521
-      static let tryagain = 1102
-      static let failed = 1107
+        static let peek = 1519
+        static let pop = 1520
+        static let cancelled = 1521
+        static let tryagain = 1102
+        static let failed = 1107
+
+        static let standard = kSystemSoundID_Vibrate
+        static let alert = 1011
     }
 
     // MARK: - Enums
 
-    public enum VibrationFeedbackEventType {
+    public enum Event {
         case tap
         case error
         case cancelled
     }
 
     /// supports by anything devices
-    fileprivate enum DefaultVibrationType {
+    private enum DefaultVibrationType {
         case standard
         case alert
+
+        /// returns relevant instance of sound id
+        var systemSound: SystemSoundID {
+            switch self {
+            case .standard: return SystemSoundID(SoundID.standard)
+            case .alert: return SystemSoundID(SoundID.alert)
+            }
+        }
     }
 
     /// supports by iphone 6s and above (taptic engine)
-    fileprivate enum TapticEngineVibrationType {
+    private enum TapticEngineVibrationType {
         case peek
         case pop
         case cancelled
         case tryagain
         case failed
+
+        /// returns relevant instance of sound id
+        var systemSound: SystemSoundID {
+            switch self {
+            case .peek: return SystemSoundID(SoundID.peek)
+            case .pop: return SystemSoundID(SoundID.pop)
+            case .cancelled: return SystemSoundID(SoundID.cancelled)
+            case .tryagain: return SystemSoundID(SoundID.tryagain)
+            case .failed: return SystemSoundID(SoundID.failed)
+            }
+        }
     }
 
     /// supports by iphone 7/7s and above (haptic feedback)
-    fileprivate enum HapticFeedbackVibrationType {
+    private enum HapticFeedbackVibrationType {
         case success
         case warning
         case error
@@ -71,7 +93,7 @@ public final class VibrationFeedbackManager {
 
     // MARK: - Internal Methods
 
-    public static func playVibrationFeedbackBy(event: VibrationFeedbackEventType) {
+    public static func playVibrationFeedbackBy(event: Event) {
         switch event {
         case .tap:
             if UIDevice.current.hasHapticFeedback {
@@ -101,38 +123,15 @@ public final class VibrationFeedbackManager {
 // MARK: - Private methods
 
 private extension VibrationFeedbackManager {
-    static func playDefaultFeedbackBy(type: DefaultVibrationType) {
-        switch type {
-        case .standard:
-            let standard = SystemSoundID(kSystemSoundID_Vibrate)
-            AudioServicesPlaySystemSound(standard)
-        case .alert:
-            let alert = SystemSoundID(1011)
-            AudioServicesPlaySystemSound(alert)
-        }
+    private static func playDefaultFeedbackBy(type: DefaultVibrationType) {
+        AudioServicesPlaySystemSound(type.systemSound)
     }
 
-    static func playTapticFeedbackBy(type: TapticEngineVibrationType) {
-        switch type {
-        case .peek:
-            let peek = SystemSoundID(SoundID.peek)
-            AudioServicesPlaySystemSound(peek)
-        case .pop:
-            let pop = SystemSoundID(SoundID.pop)
-            AudioServicesPlaySystemSound(pop)
-        case .cancelled:
-            let cancelled = SystemSoundID(SoundID.cancelled)
-            AudioServicesPlaySystemSound(cancelled)
-        case .tryagain:
-            let tryagain = SystemSoundID(SoundID.tryagain)
-            AudioServicesPlaySystemSound(tryagain)
-        case .failed:
-            let failed = SystemSoundID(SoundID.failed)
-            AudioServicesPlaySystemSound(failed)
-        }
+    private static func playTapticFeedbackBy(type: TapticEngineVibrationType) {
+        AudioServicesPlaySystemSound(type.systemSound)
     }
 
-    static func playHapticFeedbackBy(type: HapticFeedbackVibrationType) {
+    private static func playHapticFeedbackBy(type: HapticFeedbackVibrationType) {
         switch type {
         case .success:
             let hapticNotification = UINotificationFeedbackGenerator()

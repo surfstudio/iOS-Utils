@@ -11,7 +11,6 @@ import Device_swift
 extension UIDevice {
     // haptic feedback support guarantees that device supports taptic engine too.
     var hasHapticFeedback: Bool {
-        let device = UIDevice.current.deviceType
-        return device == .iPhone7 || device == .iPhone7Plus || device == .iPhone8 || device == .iPhone8Plus || device == .iPhoneX
+        return feedbackType == .haptic
     }
 }

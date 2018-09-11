@@ -15,6 +15,7 @@
 		E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */; };
 		E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */; };
 		E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */; };
+		E9B063102147AECC0080C391 /* UIDevice+feedbackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630F2147AECC0080C391 /* UIDevice+feedbackType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationFeedbackManager.swift; sourceTree = "<group>"; };
 		E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasTapticEngine.swift"; sourceTree = "<group>"; };
 		E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasHapticFeedback.swift"; sourceTree = "<group>"; };
+		E9B0630F2147AECC0080C391 /* UIDevice+feedbackType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+feedbackType.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */,
 				E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */,
 				E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */,
+				E9B0630F2147AECC0080C391 /* UIDevice+feedbackType.swift */,
 			);
 			path = VibrationFeedbackManager;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9B063102147AECC0080C391 /* UIDevice+feedbackType.swift in Sources */,
 				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
 				80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */,

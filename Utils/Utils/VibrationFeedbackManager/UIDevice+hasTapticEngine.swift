@@ -10,7 +10,6 @@ import Device_swift
 
 extension UIDevice {
     var hasTapticEngine: Bool {
-        let device = UIDevice.current.deviceType
-        return device == .iPhone6S || device == .iPhone6SPlus || hasHapticFeedback
+        return feedbackType == .taptic || hasHapticFeedback
     }
 }
