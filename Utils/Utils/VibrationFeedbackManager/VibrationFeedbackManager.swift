@@ -25,6 +25,7 @@ public final class VibrationFeedbackManager {
 
     // MARK: - Constants
 
+    // ids -> http://iphonedevwiki.net/index.php/AudioServices
     private struct SoundID {
         static let peek = 1519
         static let pop = 1520
