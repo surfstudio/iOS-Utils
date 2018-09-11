@@ -35,7 +35,7 @@ public final class JailbreakDetect {
     /// Method will return true, if any of the files typical for the jailbreak exists
     private static func isJailbreakDirectoriesExist() -> Bool {
         let jailbreakDirectories = ["/Applications/Cydia.app", "/Library/MobileSubstrate/MobileSubstrate.dylib", "/bin/bash", "/usr/sbin/sshd", "/etc/apt", "/private/var/lib/apt/"]
-        return jailbreakDirectories.map { FileManager.default.fileExists(atPath: $0) }.reduce(true, { $0 || $1 })
+        return jailbreakDirectories.map { FileManager.default.fileExists(atPath: $0) }.reduce(false, { $0 || $1 })
     }
 
     /// Method will return true if we can open cydia package
