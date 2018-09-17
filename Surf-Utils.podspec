@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "Surf-Utils"
-  s.version = "1.0.4"
+  s.version = "2.0.4"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -23,6 +23,11 @@ Pod::Spec.new do |s|
   s.subspec 'JailbreakDetect' do |sp|
     sp.source_files = 'Utils/Utils/JailbreakDetect/JailbreakDetect.swift'
     sp.framework = 'Foundation'
+  end
+
+  s.subspec 'VibrationFeedbackManager' do |sp|
+    sp.source_files = 'Utils/Utils/VibrationFeedbackManager/*.swift'
+    sp.framework = 'AudioToolbox'
   end
 
 end
