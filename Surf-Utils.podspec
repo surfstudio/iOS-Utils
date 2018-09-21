@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
-  s.name = "Surf-Utils"
-  s.version = "2.0.4"
+  s.name = "SurfUtils"
+  s.version = "2.0.5"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
