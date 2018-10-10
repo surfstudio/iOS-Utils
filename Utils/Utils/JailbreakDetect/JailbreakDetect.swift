@@ -14,6 +14,10 @@ public final class JailbreakDetect {
 
     /// Method return true, if we can detect some common for jailbroken deivce files or can write to device
     public static func isJailBroken() -> Bool {
+        if isSimulator() {
+            return false
+        }
+
         // Check 1 : existence of files that are common for jailbroken devices
         if isJailbreakDirectoriesExist() || canOpenCydia() {
             return true
@@ -44,6 +48,11 @@ public final class JailbreakDetect {
             return false
         }
         return UIApplication.shared.canOpenURL(cydiaURL)
+    }
+
+    /// Method will return true if current device is simulator
+    private static func isSimulator() -> Bool {
+        return ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil
     }
 
 }
