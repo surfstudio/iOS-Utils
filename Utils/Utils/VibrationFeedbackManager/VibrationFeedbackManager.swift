@@ -46,7 +46,7 @@ public final class VibrationFeedbackManager {
     }
 
     /// supports by anything devices
-    private enum DefaultVibrationType {
+    public enum DefaultVibrationType {
         case standard
         case alert
 
@@ -60,7 +60,7 @@ public final class VibrationFeedbackManager {
     }
 
     /// supports by iphone 6s and above (taptic engine)
-    private enum TapticEngineVibrationType {
+    public enum TapticEngineVibrationType {
         case peek
         case pop
         case cancelled
@@ -80,7 +80,7 @@ public final class VibrationFeedbackManager {
     }
 
     /// supports by iphone 7/7s and above (haptic feedback)
-    private enum HapticFeedbackVibrationType {
+    public enum HapticFeedbackVibrationType {
         case success
         case warning
         case error
@@ -119,11 +119,24 @@ public final class VibrationFeedbackManager {
         }
     }
 
+    public static func playVibrationFeedback(default: DefaultVibrationType,
+                                             taptic: TapticEngineVibrationType,
+                                             haptic: HapticFeedbackVibrationType) {
+        if UIDevice.current.hasHapticFeedback {
+            playHapticFeedbackBy(type: haptic)
+        } else if UIDevice.current.hasTapticEngine {
+            playTapticFeedbackBy(type: taptic)
+        } else {
+            playDefaultFeedbackBy(type: `default`)
+        }
+    }
+
 }
 
 // MARK: - Private methods
 
 private extension VibrationFeedbackManager {
+
     private static func playDefaultFeedbackBy(type: DefaultVibrationType) {
         AudioServicesPlaySystemSound(type.systemSound)
     }
@@ -166,4 +179,5 @@ private extension VibrationFeedbackManager {
             selectionFeedback.selectionChanged()
         }
     }
+
 }
