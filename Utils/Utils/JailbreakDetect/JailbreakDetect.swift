@@ -14,12 +14,17 @@ public final class JailbreakDetect {
 
     /// Method return true, if we can detect some common for jailbroken deivce files or can write to device
     public static func isJailBroken() -> Bool {
-        // Check 1 : existence of files that are common for jailbroken devices
+        // Check 1 : check if current device is simulator
+        if isSimulator() {
+            return false
+        }
+
+        // Check 2 : existence of files that are common for jailbroken devices
         if isJailbreakDirectoriesExist() || canOpenCydia() {
             return true
         }
 
-        // Check 2 : Reading and writing in system directories (sandbox violation)
+        // Check 3 : Reading and writing in system directories (sandbox violation)
         let stringToWrite = "Jailbreak Test"
         do {
             try stringToWrite.write(toFile: "/private/JailbreakTest.txt", atomically: true, encoding: String.Encoding.utf8)
@@ -30,7 +35,11 @@ public final class JailbreakDetect {
         }
     }
 
-    // MARK: - Private help methods
+}
+
+// MARK: - Private help methods
+
+private extension JailbreakDetect {
 
     /// Method will return true, if any of the files typical for the jailbreak exists
     private static func isJailbreakDirectoriesExist() -> Bool {
@@ -46,4 +55,10 @@ public final class JailbreakDetect {
         return UIApplication.shared.canOpenURL(cydiaURL)
     }
 
+    /// Method will return true if current device is simulator
+    private static func isSimulator() -> Bool {
+        return ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil
+    }
+
 }
+
