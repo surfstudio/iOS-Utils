@@ -26,7 +26,7 @@ public enum StringAttribute {
     /// This case provide possibility to set both `font` and `lineSpacing`
     /// First parameter is Font and second parameter is lineHeight property from Figma
     /// For more details see [#14](https://github.com/surfstudio/iOS-Utils/issues/14)
-    case lineHeight(CGFloat, UIFont)
+    case lineHeight(CGFloat, font: UIFont)
 
     var attributeKey: NSAttributedStringKey {
         switch self {
