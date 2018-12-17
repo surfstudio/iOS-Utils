@@ -1,11 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "2.0.7"
+  s.version = "3.0.0"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
     - Extension for easy use NSAttributedString
+    - Method for detection JailBreak
+    - Manager for easily use vibration features
                    DESC
 
   s.homepage  = "https://github.com/surfstudio/ios-utils"
