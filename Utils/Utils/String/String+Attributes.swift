@@ -26,7 +26,7 @@ public enum StringAttribute {
     /// This case provide possibility to set both `font` and `lineSpacing`
     /// First parameter is Font and second parameter is lineHeight property from Figma
     /// For more details see [#14](https://github.com/surfstudio/iOS-Utils/issues/14)
-    case lineHeight(UIFont, CGFloat)
+    case lineHeight(CGFloat, UIFont)
 
     var attributeKey: NSAttributedStringKey {
         switch self {
@@ -53,7 +53,7 @@ public enum StringAttribute {
             return value
         case .aligment(let value):
             return value
-        case .lineHeight(let font, let lineHeight):
+        case .lineHeight(let lineHeight, let font):
             return lineHeight - font.lineHeight
         }
     }
@@ -67,8 +67,8 @@ public extension String {
         let paragraph = NSMutableParagraphStyle()
         for attribute in attributes.normalizedAttributes() {
             switch attribute {
-            case .lineHeight(let font, let height):
-                paragraph.lineSpacing = height - font.lineHeight
+            case .lineHeight(let lineHeight, let font):
+                paragraph.lineSpacing = lineHeight - font.lineHeight
                 resultAttributes[attribute.attributeKey] = paragraph
             case .lineSpacing(let value):
                 paragraph.lineSpacing = value
@@ -90,7 +90,7 @@ private extension Array where Element == StringAttribute {
 
         self.forEach { item in
             switch item {
-            case .lineHeight(let font, _):
+            case .lineHeight(_, let font):
                 result.append(.font(font))
             default: break
             }
