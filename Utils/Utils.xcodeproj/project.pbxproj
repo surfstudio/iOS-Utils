@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */; };
 		4F3ED9E9211C27CF0030DD45 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3ED9DF211C27CF0030DD45 /* Utils.framework */; };
 		4F3ED9EE211C27CF0030DD45 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9ED211C27CF0030DD45 /* UtilsTests.swift */; };
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+QueryStringBuilder.swift"; sourceTree = "<group>"; };
 		4F3ED9DF211C27CF0030DD45 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3ED9E2211C27CF0030DD45 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		4F3ED9E3211C27CF0030DD45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18F2361221D214CC00169AC9 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
 		4F3ED9D5211C27CF0030DD45 = {
 			isa = PBXGroup;
 			children = (
@@ -83,9 +93,10 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
+				18F2361221D214CC00169AC9 /* Dictionary */,
 				80437D24214045B30095A8D0 /* JailbreakDetect */,
 				4F3ED9FA211C27E80030DD45 /* String */,
+				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
 				4F3ED9E3211C27CF0030DD45 /* Info.plist */,
 			);
@@ -237,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */,
 				E9B063102147AECC0080C391 /* UIDevice+feedbackType.swift in Sources */,
 				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
