@@ -18,6 +18,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [StringAttributes](#stringattributes) - упрощение работы с `NSAttributedString`
 - [JailbreakDetect](#jailbreakdetect) - позволяет определить наличие root на девайсе.
 - [VibrationFeedbackManager](#vibrationfeedbackmanager) - позволяет воспроизвести вибрацию на устройстве.
+- [QueryStringBuilder](#querystringbuilder) - построение строки с параметрами из словаря
 
 
 ## Утилиты
@@ -54,6 +55,15 @@ if JailbreakDetect.isJailBroken() {
 VibrationFeedbackManager.playVibrationFeedbackBy(event: .error)
 ```
 
+### QueryStringBuilder
+
+Утилита позволяет построить строку типа "key1=value1&key2=2.15&key3=true", в виде которой обычно представляются параметры GET запроса, из словаря [String: Any].
+
+Пример:
+```Swift
+let dict: [String: Any] = ["key1": "value1", "key2": 2.15, "key3": true]
+let queryString = dict.toQueryString()
+```
 
 ## Версионирование
 

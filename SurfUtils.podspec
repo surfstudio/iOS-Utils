@@ -1,13 +1,14 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "3.0.0"
+  s.version = "4.0.0"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
     - Extension for easy use NSAttributedString
     - Method for detection JailBreak
     - Manager for easily use vibration features
+    - Extension for building query string from dictionary
                    DESC
 
   s.homepage  = "https://github.com/surfstudio/ios-utils"
@@ -30,6 +31,11 @@ Pod::Spec.new do |s|
   s.subspec 'VibrationFeedbackManager' do |sp|
     sp.source_files = 'Utils/Utils/VibrationFeedbackManager/*.swift'
     sp.framework = 'AudioToolbox'
+  end
+
+  s.subspec 'QueryStringBuilder' do |sp|
+    sp.source_files = 'Utils/Utils/Dictionary/Dictionary+QueryStringBuilder.swift'
+    sp.framework = 'Foundation'
   end
 
 end
