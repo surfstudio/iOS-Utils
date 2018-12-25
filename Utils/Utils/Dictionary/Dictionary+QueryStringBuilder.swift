@@ -13,7 +13,7 @@ extension Dictionary where Key == String, Value == Any {
     /// Method allows you convert [String: Any] object into query string like "key1=value1&key3=true&key2=2.15"
     public func toQueryString() -> String? {
         let items = queryItems()
-        let components = URLComponents(scheme: "https", host: "someurl.ru", path: "/path", queryItems: items)
+        let components = URLComponents(queryItems: items)
         return components.query
     }
 
@@ -35,11 +35,8 @@ extension Dictionary where Key == String, Value == Any {
 private extension URLComponents {
 
     /// Support init for toQueryString() method
-    init(scheme: String, host: String, path: String, queryItems: [URLQueryItem]) {
+    init(queryItems: [URLQueryItem]) {
         self.init()
-        self.scheme = scheme
-        self.host = host
-        self.path = path
         self.queryItems = queryItems
     }
 
