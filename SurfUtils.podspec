@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "4.0.0"
+  s.version = "5.0.0"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -35,6 +35,31 @@ Pod::Spec.new do |s|
 
   s.subspec 'QueryStringBuilder' do |sp|
     sp.source_files = 'Utils/Utils/Dictionary/Dictionary+QueryStringBuilder.swift'
+    sp.framework = 'Foundation'
+  end
+
+  s.subspec 'BlurBuilder' do |sp|
+    sp.source_files = 'Utils/Utils/BlurBuilder/BlurBuilder.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'RouteMeasurer' do |sp|
+    sp.source_files = 'Utils/Utils/RouteMeasurer/RouteMeasurer.swift'
+    sp.framework = 'MapKit'
+  end
+
+  s.subspec 'SettingsRouter' do |sp|
+    sp.source_files = 'Utils/Utils/SettingsRouter/SettingsRouter.swift'
+    sp.framework = 'Foundation'
+  end
+
+  s.subspec 'AdvancedNavigationStackManagement' do |sp|
+    sp.source_files = 'Utils/Utils/UINavigationController/UINavigationController+AdvancedNavigationStackManagement.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'WordDeclinationSelector' do |sp|
+    sp.source_files = 'Utils/Utils/WordDeclinationSelector/WordDeclinationSelector.swift'
     sp.framework = 'Foundation'
   end
 
