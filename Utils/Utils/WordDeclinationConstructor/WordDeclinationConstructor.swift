@@ -9,7 +9,7 @@
 import Foundation
 
 /// An instance of this class is used to generate the correct word declination for a number and contains all the available declensions.
-public final class WordDeclensions {
+public final class WordDeclinations {
     let singularNominative: String
     let genetiveSingular: String
     let genetivePlural: String
@@ -34,7 +34,7 @@ public final class WordDeclinationSelector {
     ///   - number: The number to which you want to find the declination.
     ///   - declensions: An instance of the word declinations.
     /// - Returns: Returns a word from the word declensions in the right form.
-    public static func declineWord(for number: Int, from declensions: WordDeclensions) -> String {
+    public static func declineWord(for number: Int, from declensions: WordDeclinations) -> String {
         let ending = number % 100
         if (ending >= 11 && ending <= 19) {
             return declensions.genetivePlural
