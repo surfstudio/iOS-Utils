@@ -115,7 +115,7 @@ navigationController?.pushViewController(controller, animated: true, completion:
 
 ### WordDeclinationSelector
 
-Утилита, позволяющая получить верное склонение слово в зависимости от числа элементов.
+Утилита, позволяющая получить верное склонение слова в зависимости от числа элементов.
 
 Пример:
 ```Swift
