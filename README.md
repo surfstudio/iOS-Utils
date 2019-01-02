@@ -19,6 +19,11 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [JailbreakDetect](#jailbreakdetect) - позволяет определить наличие root на девайсе.
 - [VibrationFeedbackManager](#vibrationfeedbackmanager) - позволяет воспроизвести вибрацию на устройстве.
 - [QueryStringBuilder](#querystringbuilder) - построение строки с параметрами из словаря
+- [BlurBuilder](#blurbuilder) - упрощение работы с blur-эффектом
+- [RouteMeasurer](#routemeasurer) - вычисление расстояния между двумя координатами
+- [SettingsRouter](#settingsrouter) - позволяет выполнить переход в настройки приложения/устройства
+- [AdvancedNavigationStackManagement](#advancednavigationstackmanagement) - расширенная версия методов push/pop у UINavigationController
+- [WordDeclinationSelector](#worddeclinationselector) - позволяет получить нужное склонение слова
 
 
 ## Утилиты
@@ -63,6 +68,58 @@ VibrationFeedbackManager.playVibrationFeedbackBy(event: .error)
 ```Swift
 let dict: [String: Any] = ["key1": "value1", "key2": 2.15, "key3": true]
 let queryString = dict.toQueryString()
+```
+
+### BlurBuilder
+
+Утилита для упрощения добавления стандартного блюра на какое-либо View, позволяет управлять стилем и цветом блюра.
+
+Пример:
+```Swift
+BlurBuilder.addBlur(on: bluredView, with: UIColor.white.withAlphaComponent(0.1), style: .light)
+```
+
+### RouteMeasurer
+
+Утилита для вычисления расстояния между двумя точками, как напрямую, так и с учетом возможного маршрута. Помимо прочего, предоставляет метод для форматирования результата.
+
+Пример:
+```Swift
+RouteMeasurer.calculateDistance(between: firstCoordinate, and: secondCoordinate) { (distance) in
+    guard let distance = distance else {
+        return
+    }
+    let formattedDistance = RouteMeasurer.formatDistance(distance, meterPattern: "м", kilometrPatter: "км"))
+}
+```
+
+### SettingsRouter
+
+Утилита для упрощения перехода к настройкам приложения или к конкретному разделу настроек устройства.
+
+Пример:
+```Swift
+SettingsRouter.openDeviceSettings()
+```
+
+### AdvancedNavigationStackManagement
+
+Данная утилита предоставляет возможность вызова методов push и pop у UINavigationController с последующим вызывом completion-замыкания после завершения действия. 
+
+Пример:
+```Swift
+navigationController?.pushViewController(controller, animated: true, completion: {
+    print("do something else")
+})
+```
+
+### WordDeclinationSelector
+
+Утилита, позволяющая получить верное склонение слово в зависимости от числа элементов.
+
+Пример:
+```Swift
+let correctForm = WordDeclinationSelector.declineWord(for: 6, from: WordDeclensions("день", "дня", "дней"))
 ```
 
 ## Версионирование
