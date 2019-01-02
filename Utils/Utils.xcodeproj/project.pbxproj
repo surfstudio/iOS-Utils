@@ -13,6 +13,11 @@
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */; };
 		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
+		907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE221DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift */; };
+		907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */; };
+		907F0FE921DCD5C5001CCB07 /* BlurBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE821DCD5C5001CCB07 /* BlurBuilder.swift */; };
+		907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FEB21DCD7E1001CCB07 /* RouteMeasurer.swift */; };
+		907F0FEF21DCDB43001CCB07 /* WordDeclinationConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FEE21DCDB43001CCB07 /* WordDeclinationConstructor.swift */; };
 		E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */; };
 		E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */; };
 		E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */; };
@@ -39,6 +44,11 @@
 		4F3ED9EF211C27CF0030DD45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
+		907F0FE221DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+AdvancedNavigationStackManagement.swift"; sourceTree = "<group>"; };
+		907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		907F0FE821DCD5C5001CCB07 /* BlurBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurBuilder.swift; sourceTree = "<group>"; };
+		907F0FEB21DCD7E1001CCB07 /* RouteMeasurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMeasurer.swift; sourceTree = "<group>"; };
+		907F0FEE21DCDB43001CCB07 /* WordDeclinationConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDeclinationConstructor.swift; sourceTree = "<group>"; };
 		E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationFeedbackManager.swift; sourceTree = "<group>"; };
 		E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasTapticEngine.swift"; sourceTree = "<group>"; };
 		E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasHapticFeedback.swift"; sourceTree = "<group>"; };
@@ -93,10 +103,15 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				907F0FE721DCD5B9001CCB07 /* BlurBuilder */,
 				18F2361221D214CC00169AC9 /* Dictionary */,
 				80437D24214045B30095A8D0 /* JailbreakDetect */,
+				907F0FEA21DCD7C6001CCB07 /* RouteMeasurer */,
+				907F0FE421DCD375001CCB07 /* SettingsRouter */,
 				4F3ED9FA211C27E80030DD45 /* String */,
+				907F0FE121DCD1DB001CCB07 /* UINavigationController */,
 				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
+				907F0FED21DCDB1F001CCB07 /* WordDeclinationConstructor */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
 				4F3ED9E3211C27CF0030DD45 /* Info.plist */,
 			);
@@ -126,6 +141,46 @@
 				80437D25214045EF0095A8D0 /* JailbreakDetect.swift */,
 			);
 			path = JailbreakDetect;
+			sourceTree = "<group>";
+		};
+		907F0FE121DCD1DB001CCB07 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				907F0FE221DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift */,
+			);
+			path = UINavigationController;
+			sourceTree = "<group>";
+		};
+		907F0FE421DCD375001CCB07 /* SettingsRouter */ = {
+			isa = PBXGroup;
+			children = (
+				907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */,
+			);
+			path = SettingsRouter;
+			sourceTree = "<group>";
+		};
+		907F0FE721DCD5B9001CCB07 /* BlurBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				907F0FE821DCD5C5001CCB07 /* BlurBuilder.swift */,
+			);
+			path = BlurBuilder;
+			sourceTree = "<group>";
+		};
+		907F0FEA21DCD7C6001CCB07 /* RouteMeasurer */ = {
+			isa = PBXGroup;
+			children = (
+				907F0FEB21DCD7E1001CCB07 /* RouteMeasurer.swift */,
+			);
+			path = RouteMeasurer;
+			sourceTree = "<group>";
+		};
+		907F0FED21DCDB1F001CCB07 /* WordDeclinationConstructor */ = {
+			isa = PBXGroup;
+			children = (
+				907F0FEE21DCDB43001CCB07 /* WordDeclinationConstructor.swift */,
+			);
+			path = WordDeclinationConstructor;
 			sourceTree = "<group>";
 		};
 		E9B06306214691F30080C391 /* VibrationFeedbackManager */ = {
@@ -248,13 +303,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */,
 				18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */,
 				E9B063102147AECC0080C391 /* UIDevice+feedbackType.swift in Sources */,
+				907F0FE921DCD5C5001CCB07 /* BlurBuilder.swift in Sources */,
 				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
+				907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */,
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
 				80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */,
 				E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */,
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
+				907F0FEF21DCDB43001CCB07 /* WordDeclinationConstructor.swift in Sources */,
+				907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
