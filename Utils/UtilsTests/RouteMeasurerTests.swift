@@ -34,12 +34,12 @@ final class RouteMeasurerTests: XCTestCase {
     }
 
     func testBigDistanceFormat() {
-        let result = RouteMeasurer.formatDistance(1234, meterPattern: meterPattern, kilometrPatter: kilometrPattern)
-        XCTAssertEqual(result, "12,3 " + kilometrPattern)
+        let result = RouteMeasurer.formatDistance(12310, meterPattern: meterPattern, kilometrPatter: kilometrPattern)
+        XCTAssertEqual(result, "12.3 " + kilometrPattern)
     }
 
     func testHugeDistanceFormat() {
-        let result = RouteMeasurer.formatDistance(104523, meterPattern: meterPattern, kilometrPatter: kilometrPattern)
+        let result = RouteMeasurer.formatDistance(104123, meterPattern: meterPattern, kilometrPatter: kilometrPattern)
         XCTAssertEqual(result, "104 " + kilometrPattern)
     }
 

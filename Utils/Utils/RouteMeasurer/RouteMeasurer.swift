@@ -48,8 +48,8 @@ public final class RouteMeasurer {
     ///
     /// Example of usage:
     /// ```
-    /// print(formatDistance(1231, meterPattern: "m", kilometrPattern: "km"))
-    /// // Prints "12,3 km"
+    /// print(formatDistance(12310, meterPattern: "m", kilometrPattern: "km"))
+    /// // Prints "12.3 km"
     /// ```
     ///
     /// - Parameters:
