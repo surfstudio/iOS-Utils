@@ -11,9 +11,13 @@ import XCTest
 
 final class WordDeclinationSelectorTests: XCTestCase {
 
-    let form1 = "книга"
-    let form2 = "книги"
-    let form3 = "книг"
+    // MARK: - Constants
+
+    private let form1 = "книга"
+    private let form2 = "книги"
+    private let form3 = "книг"
+
+    // MARK: - Tests
 
     func testDeclinationFor11_19() {
         testWordDeclinationSelector(sequence: [11, 12, 13, 14, 15, 16, 17, 18, 19, 115, 1018, 10912], correctForm: form3)
