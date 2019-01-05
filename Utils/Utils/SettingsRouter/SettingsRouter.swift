@@ -17,18 +17,20 @@ public final class SettingsRouter {
         static let deviceSettingsUrl = "App-prefs:root=General"
     }
 
-    // MARK: - Internal Methods
+    // MARK: - Public Methods
 
     public static func openAppSettings() {
-        if let url = URL(string: UIApplicationOpenSettingsURLString) {
-            openExpectedURL(url)
+        guard let url = URL(string: UIApplicationOpenSettingsURLString) else {
+            return
         }
+        openExpectedURL(url)
     }
 
     public static func openDeviceSettings() {
-        if let url = URL(string: Constants.deviceSettingsUrl) {
-            openExpectedURL(url)
+        guard let url = URL(string: Constants.deviceSettingsUrl) else {
+            return
         }
+        openExpectedURL(url)
     }
 
 }
@@ -38,9 +40,10 @@ public final class SettingsRouter {
 private extension SettingsRouter {
 
     static func openExpectedURL(_ url: URL) {
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        guard UIApplication.shared.canOpenURL(url) else {
+            return
         }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
 }

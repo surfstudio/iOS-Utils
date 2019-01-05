@@ -44,30 +44,31 @@ public final class RouteMeasurer {
         }
     }
 
-    /// Method allows you formate distance value, using your pattern for meters and kilometers.
-    /// You can pass in the method kmBoundaryLevel value, after which the value of kilometers will be rounded to an integer value.
+    /// Formats distance value using your pattern for meters and kilometers.
+    ///
+    /// Example of usage:
+    /// ```
+    /// print(formatDistance(1231, meterPattern: "m", kilometrPattern: "km"))
+    /// // Prints "12,3 km"
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - distance: Distance in meters that should be formatted
+    ///   - meterPattern: Pattern for meters formatting
+    ///   - kilometrPatter: Pattern for kilometers formatting
+    ///   - kmBoundaryLevel: Pass in kmBoundaryLevel value, after which the value of kilometers will be rounded to an integer value. Default value is 50000
+    /// - Returns: Formatted distance string
     public static func formatDistance(_ distance: Double, meterPattern: String, kilometrPatter: String, kmBoundaryLevel: Double = 50000) -> String {
         switch distance {
         case ..<0:
-            return join(distance: "0", pattern: meterPattern)
+            return ["0", meterPattern].joined(separator: " ")
         case ..<1000:
-            return join(distance: String(format: "%.0f", distance), pattern: meterPattern)
+            return [String(format: "%.0f", distance), meterPattern].joined(separator: " ")
         case ..<kmBoundaryLevel:
-            return join(distance: String(format: "%.1f", distance / 1000), pattern: kilometrPatter)
+            return [String(format: "%.1f", distance / 1000), kilometrPatter].joined(separator: " ")
         default:
-            return join(distance: String(format: "%.0f", distance / 1000), pattern: kilometrPatter)
+            return [String(format: "%.0f", distance / 1000), kilometrPatter].joined(separator: " ")
         }
     }
 
 }
-
-// MARK: - Private Methods
-
-private extension RouteMeasurer {
-
-    static func join(distance: String, pattern: String) -> String {
-        return distance + " " + pattern
-    }
-
-}
-

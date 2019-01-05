@@ -16,9 +16,9 @@ public final class WordDeclinations {
 
     /// Initialization of the class instance. You have to provide three word declensions.
     /// - Parameters:
-    ///   - singularNominative: the word nominative case in the singular, for example "День"
-    ///   - genetiveSingular: the word genitive in the singular, for example "Дня"
-    ///   - genetivePlural: is the word genitive in the plural, for example "Дней"
+    ///   - singularNominative: The word nominative case in the singular, for example "День"
+    ///   - genetiveSingular: The word genitive in the singular, for example "Дня"
+    ///   - genetivePlural: The word genitive in the plural, for example "Дней"
     init(_ singularNominative: String, _ genetiveSingular: String, _ genetivePlural: String) {
         self.singularNominative = singularNominative
         self.genetiveSingular = genetiveSingular
@@ -30,6 +30,12 @@ public final class WordDeclinations {
 public final class WordDeclinationSelector {
 
     /// This method is used to get correct declension of word for some number
+    ///
+    /// Example of usage:
+    /// ```
+    /// let correctForm = WordDeclinationSelector.declineWord(for: 6, from: WordDeclensions("день", "дня", "дней"))
+    /// ```
+    ///
     /// - Parameters:
     ///   - number: The number to which you want to find the declination.
     ///   - declensions: An instance of the word declinations.
@@ -38,15 +44,14 @@ public final class WordDeclinationSelector {
         let ending = number % 100
         if (ending >= 11 && ending <= 19) {
             return declensions.genetivePlural
-        } else {
-            switch (ending % 10) {
-            case (1):
-                return declensions.singularNominative
-            case 2, 3, 4:
-                return declensions.genetiveSingular
-            default:
-                return declensions.genetivePlural
-            }
+        }
+        switch (ending % 10) {
+        case (1):
+            return declensions.singularNominative
+        case 2, 3, 4:
+            return declensions.genetiveSingular
+        default:
+            return declensions.genetivePlural
         }
     }
 
