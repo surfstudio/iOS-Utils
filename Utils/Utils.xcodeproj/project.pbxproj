@@ -18,6 +18,7 @@
 		907F0FE921DCD5C5001CCB07 /* BlurBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE821DCD5C5001CCB07 /* BlurBuilder.swift */; };
 		907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FEB21DCD7E1001CCB07 /* RouteMeasurer.swift */; };
 		907F0FEF21DCDB43001CCB07 /* WordDeclinationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FEE21DCDB43001CCB07 /* WordDeclinationSelector.swift */; };
+		90C101C821E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */; };
 		E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */; };
 		E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */; };
 		E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */; };
@@ -49,6 +50,7 @@
 		907F0FE821DCD5C5001CCB07 /* BlurBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurBuilder.swift; sourceTree = "<group>"; };
 		907F0FEB21DCD7E1001CCB07 /* RouteMeasurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMeasurer.swift; sourceTree = "<group>"; };
 		907F0FEE21DCDB43001CCB07 /* WordDeclinationSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelector.swift; sourceTree = "<group>"; };
+		90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorTests.swift; sourceTree = "<group>"; };
 		E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationFeedbackManager.swift; sourceTree = "<group>"; };
 		E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasTapticEngine.swift"; sourceTree = "<group>"; };
 		E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasHapticFeedback.swift"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3ED9ED211C27CF0030DD45 /* UtilsTests.swift */,
+				90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */,
 				4F3ED9EF211C27CF0030DD45 /* Info.plist */,
 			);
 			path = UtilsTests;
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3ED9EE211C27CF0030DD45 /* UtilsTests.swift in Sources */,
+				90C101C821E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
