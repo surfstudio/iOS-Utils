@@ -30,7 +30,6 @@ import UIKit
 ///     }
 ///
 /// }
-///
 /// ```
 public final class ItemsScrollManager {
 

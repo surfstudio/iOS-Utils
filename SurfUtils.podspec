@@ -63,4 +63,9 @@ Pod::Spec.new do |s|
     sp.framework = 'Foundation'
   end
 
+  s.subspec 'ItemsScrollManager' do |sp|
+    sp.source_files = 'Utils/Utils/ItemsScrollManager/ItemsScrollManager.swift'
+    sp.framework = 'UIKit'
+  end
+
 end

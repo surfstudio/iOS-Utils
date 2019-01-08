@@ -24,6 +24,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [SettingsRouter](#settingsrouter) - позволяет выполнить переход в настройки приложения/устройства
 - [AdvancedNavigationStackManagement](#advancednavigationstackmanagement) - расширенная версия методов push/pop у UINavigationController
 - [WordDeclinationSelector](#worddeclinationselector) - позволяет получить нужное склонение слова
+- [ItemsScrollManager](#itemsscrollmanager) - менеджер для поэлементного скролла карусели
 
 
 ## Утилиты
@@ -120,6 +121,33 @@ navigationController?.pushViewController(controller, animated: true, completion:
 Пример:
 ```Swift
 let correctForm = WordDeclinationSelector.declineWord(for: 6, from: WordDeclensions("день", "дня", "дней"))
+```
+
+### ItemsScrollManager
+
+Утилита для так называемого "порционного скролла".
+Очень часто в проекте необходимо реализовать так называемую "карусель", где представлены некоторые элементы, просматривать которые можно посредством горизонтального скролла. При этом очень часто требуется, чтобы после скролла такой карусели она автоматически подскралливалась к какому-либо элементу, а не застывала на полпути, обрезая элементы в карусели.
+Данная утилита предназначена для того, чтобы в левой части экрана всегда находилось начало какого-либо элемента.
+
+Пример:
+```Swift
+// Создаем менеджер, указывая ширину ячейки карусели, расстояние между ячейками, а также отступы для секции UICollectionView с каруселью
+scrollManager = ItemsScrollManager(cellWidth: 200,
+                                   cellOffset: 10,
+                                   insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
+
+// После чего необходимо добавить вызовы следующих методов в методы UIScrollViewDelegate
+extension ViewController: UIScrollViewDelegate {
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        scrollManager?.setTargetContentOffset(targetContentOffset, for: scrollView)
+    }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollManager?.setBeginDraggingOffset(scrollView.contentOffset.x)
+    }
+
+}
 ```
 
 ## Версионирование
