@@ -15,12 +15,13 @@ public final class SettingsRouter {
 
     private enum Constants {
         static let deviceSettingsUrl = "App-prefs:root=General"
+        static let appSettingsUrl = UIApplicationOpenSettingsURLString
     }
 
     // MARK: - Public Methods
 
     public static func openAppSettings() {
-        guard let url = URL(string: UIApplicationOpenSettingsURLString) else {
+        guard let url = URL(string: Constants.appSettingsUrl) else {
             return
         }
         openExpectedURL(url)

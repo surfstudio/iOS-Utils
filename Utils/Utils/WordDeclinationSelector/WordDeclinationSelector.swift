@@ -46,7 +46,7 @@ public final class WordDeclinationSelector {
             return declensions.genetivePlural
         }
         switch (ending % 10) {
-        case (1):
+        case 1:
             return declensions.singularNominative
         case 2, 3, 4:
             return declensions.genetiveSingular

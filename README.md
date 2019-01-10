@@ -77,7 +77,7 @@ let queryString = dict.toQueryString()
 
 Пример:
 ```Swift
-BlurBuilder.addBlur(on: bluredView, with: UIColor.white.withAlphaComponent(0.1), style: .light)
+bluredView.addBlur(color: UIColor.white.withAlphaComponent(0.1), style: .light)
 ```
 
 ### RouteMeasurer

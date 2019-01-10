@@ -13,9 +13,9 @@
 		4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */; };
 		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
 		902C67EC21E4D20B007B13CC /* ItemsScrollManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */; };
+		902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */; };
 		907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE221DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift */; };
 		907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */; };
-		907F0FE921DCD5C5001CCB07 /* BlurBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE821DCD5C5001CCB07 /* BlurBuilder.swift */; };
 		907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FEB21DCD7E1001CCB07 /* RouteMeasurer.swift */; };
 		907F0FEF21DCDB43001CCB07 /* WordDeclinationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FEE21DCDB43001CCB07 /* WordDeclinationSelector.swift */; };
 		90C101C821E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */; };
@@ -46,9 +46,9 @@
 		4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
 		902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManager.swift; sourceTree = "<group>"; };
+		902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BlurBuilder.swift"; sourceTree = "<group>"; };
 		907F0FE221DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+AdvancedNavigationStackManagement.swift"; sourceTree = "<group>"; };
 		907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
-		907F0FE821DCD5C5001CCB07 /* BlurBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurBuilder.swift; sourceTree = "<group>"; };
 		907F0FEB21DCD7E1001CCB07 /* RouteMeasurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMeasurer.swift; sourceTree = "<group>"; };
 		907F0FEE21DCDB43001CCB07 /* WordDeclinationSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelector.swift; sourceTree = "<group>"; };
 		90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorTests.swift; sourceTree = "<group>"; };
@@ -107,7 +107,6 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				907F0FE721DCD5B9001CCB07 /* BlurBuilder */,
 				18F2361221D214CC00169AC9 /* Dictionary */,
 				902C67EA21E4D1EF007B13CC /* ItemsScrollManager */,
 				80437D24214045B30095A8D0 /* JailbreakDetect */,
@@ -115,6 +114,7 @@
 				907F0FE421DCD375001CCB07 /* SettingsRouter */,
 				4F3ED9FA211C27E80030DD45 /* String */,
 				907F0FE121DCD1DB001CCB07 /* UINavigationController */,
+				902CA33F21E732F700396923 /* UIView */,
 				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
 				907F0FED21DCDB1F001CCB07 /* WordDeclinationSelector */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
@@ -157,6 +157,14 @@
 			path = ItemsScrollManager;
 			sourceTree = "<group>";
 		};
+		902CA33F21E732F700396923 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		907F0FE121DCD1DB001CCB07 /* UINavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,14 +179,6 @@
 				907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */,
 			);
 			path = SettingsRouter;
-			sourceTree = "<group>";
-		};
-		907F0FE721DCD5B9001CCB07 /* BlurBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				907F0FE821DCD5C5001CCB07 /* BlurBuilder.swift */,
-			);
-			path = BlurBuilder;
 			sourceTree = "<group>";
 		};
 		907F0FEA21DCD7C6001CCB07 /* RouteMeasurer */ = {
@@ -320,7 +320,6 @@
 				907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */,
 				18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */,
 				E9B063102147AECC0080C391 /* UIDevice+feedbackType.swift in Sources */,
-				907F0FE921DCD5C5001CCB07 /* BlurBuilder.swift in Sources */,
 				902C67EC21E4D20B007B13CC /* ItemsScrollManager.swift in Sources */,
 				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
 				907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */,
@@ -328,6 +327,7 @@
 				80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */,
 				E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */,
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
+				902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */,
 				907F0FEF21DCDB43001CCB07 /* WordDeclinationSelector.swift in Sources */,
 				907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */,
 			);

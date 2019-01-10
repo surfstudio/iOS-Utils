@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'BlurBuilder' do |sp|
-    sp.source_files = 'Utils/Utils/BlurBuilder/BlurBuilder.swift'
+    sp.source_files = 'Utils/Utils/UIView/UIView+BlurBuilder.swift'
     sp.framework = 'UIKit'
   end
 
