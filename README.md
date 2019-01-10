@@ -19,6 +19,12 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [JailbreakDetect](#jailbreakdetect) - позволяет определить наличие root на девайсе.
 - [VibrationFeedbackManager](#vibrationfeedbackmanager) - позволяет воспроизвести вибрацию на устройстве.
 - [QueryStringBuilder](#querystringbuilder) - построение строки с параметрами из словаря
+- [BlurBuilder](#blurbuilder) - упрощение работы с blur-эффектом
+- [RouteMeasurer](#routemeasurer) - вычисление расстояния между двумя координатами
+- [SettingsRouter](#settingsrouter) - позволяет выполнить переход в настройки приложения/устройства
+- [AdvancedNavigationStackManagement](#advancednavigationstackmanagement) - расширенная версия методов push/pop у UINavigationController
+- [WordDeclinationSelector](#worddeclinationselector) - позволяет получить нужное склонение слова
+- [ItemsScrollManager](#itemsscrollmanager) - менеджер для поэлементного скролла карусели
 
 
 ## Утилиты
@@ -63,6 +69,85 @@ VibrationFeedbackManager.playVibrationFeedbackBy(event: .error)
 ```Swift
 let dict: [String: Any] = ["key1": "value1", "key2": 2.15, "key3": true]
 let queryString = dict.toQueryString()
+```
+
+### BlurBuilder
+
+Утилита для упрощения добавления стандартного блюра на какое-либо View, позволяет управлять стилем и цветом блюра.
+
+Пример:
+```Swift
+bluredView.addBlur(color: UIColor.white.withAlphaComponent(0.1), style: .light)
+```
+
+### RouteMeasurer
+
+Утилита для вычисления расстояния между двумя точками, как напрямую, так и с учетом возможного маршрута. Помимо прочего, предоставляет метод для форматирования результата.
+
+Пример:
+```Swift
+RouteMeasurer.calculateDistance(between: firstCoordinate, and: secondCoordinate) { (distance) in
+    guard let distance = distance else {
+        return
+    }
+    let formattedDistance = RouteMeasurer.formatDistance(distance, meterPattern: "м", kilometrPatter: "км"))
+}
+```
+
+### SettingsRouter
+
+Утилита для упрощения перехода к настройкам приложения или к конкретному разделу настроек устройства.
+
+Пример:
+```Swift
+SettingsRouter.openDeviceSettings()
+```
+
+### AdvancedNavigationStackManagement
+
+Данная утилита предоставляет возможность вызова методов push и pop у UINavigationController с последующим вызывом completion-замыкания после завершения действия. 
+
+Пример:
+```Swift
+navigationController?.pushViewController(controller, animated: true, completion: {
+    print("do something else")
+})
+```
+
+### WordDeclinationSelector
+
+Утилита, позволяющая получить верное склонение слова в зависимости от числа элементов.
+
+Пример:
+```Swift
+let correctForm = WordDeclinationSelector.declineWord(for: 6, from: WordDeclensions("день", "дня", "дней"))
+```
+
+### ItemsScrollManager
+
+Утилита для так называемого "порционного скролла".
+Очень часто в проекте необходимо реализовать так называемую "карусель", где представлены некоторые элементы, просматривать которые можно посредством горизонтального скролла. При этом очень часто требуется, чтобы после скролла такой карусели она автоматически подскралливалась к какому-либо элементу, а не застывала на полпути, обрезая элементы в карусели.
+Данная утилита предназначена для того, чтобы в левой части экрана всегда находилось начало какого-либо элемента.
+
+Пример:
+```Swift
+// Создаем менеджер, указывая ширину ячейки карусели, расстояние между ячейками, а также отступы для секции UICollectionView с каруселью
+scrollManager = ItemsScrollManager(cellWidth: 200,
+                                   cellOffset: 10,
+                                   insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
+
+// После чего необходимо добавить вызовы следующих методов в методы UIScrollViewDelegate
+extension ViewController: UIScrollViewDelegate {
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        scrollManager?.setTargetContentOffset(targetContentOffset, for: scrollView)
+    }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollManager?.setBeginDraggingOffset(scrollView.contentOffset.x)
+    }
+
+}
 ```
 
 ## Версионирование
