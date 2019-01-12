@@ -25,6 +25,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [AdvancedNavigationStackManagement](#advancednavigationstackmanagement) - расширенная версия методов push/pop у UINavigationController
 - [WordDeclinationSelector](#worddeclinationselector) - позволяет получить нужное склонение слова
 - [ItemsScrollManager](#itemsscrollmanager) - менеджер для поэлементного скролла карусели
+- [KeyboardPresentable](#keyboardpresentable) - протокол для упрощения работы с клавиатурой и сокращения количества одинакового кода
 
 
 ## Утилиты
@@ -145,6 +146,36 @@ extension ViewController: UIScrollViewDelegate {
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         scrollManager?.setBeginDraggingOffset(scrollView.contentOffset.x)
+    }
+
+}
+```
+
+### KeyboardPresentable
+
+Протокол, цель которого - сократить кол-во одинаковых действий при работе с клавиатурой. В ходе данных работ выполняется, как правило, ряд действий, код которых идентичен в большинстве случаев - подписка на нотификации, отписывание от них, извлечение параметров из нотификации, таких как высота клавиатуры или время анимации. Протокол KeyboardPresentable написан с целью сокращения количества одинакового кода.
+Для его использования достаточно создать extension на необходимый UIViewController, в котором переопределить при необходимости два метода. Для подписки же или отписывания от нотификации - нужно вызывать методы данного протокола, реализация которых уже заложена внутри.
+
+Пример:
+```Swift
+/// Для подписки на нотификации появления/сокрытия клавиатуры необходимо вызывать:
+subscribeOnKeyboardNotifications()
+
+/// Для отписывания от нотификаций появления/сокрытия клавиатуры необходимо вызывать:
+unsubscribeFromKeyboardNotifications()
+
+/// В результате появления/сокрытия клавиатуры будут вызываться следующие методы, в которые приходят такие параметры, как высота клавиатуры и время анимации
+
+// MARK: - KeyboardPresentable
+
+extension ViewController: KeyboardPresentable {
+
+    func keyboardWillBeShown(keyboardHeight: CGFloat, duration: TimeInterval) {
+        // do something useful
+    }
+
+    func keyboardWillBeHidden(duration: TimeInterval) {
+        // do something useful
     }
 
 }

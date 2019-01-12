@@ -68,4 +68,9 @@ Pod::Spec.new do |s|
     sp.framework = 'UIKit'
   end
 
+  s.subspec 'KeyboardPresentable' do |sp|
+    sp.source_files = 'Utils/Utils/KeyboardPresentable/KeyboardPresentable.swift', 'Utils/Utils/KeyboardPresentable/KeyboardNotificationsObserver.swift'
+    sp.framework = 'UIKit'
+  end
+
 end
