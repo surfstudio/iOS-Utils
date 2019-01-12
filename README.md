@@ -137,6 +137,12 @@ scrollManager = ItemsScrollManager(cellWidth: 200,
                                    cellOffset: 10,
                                    insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
 
+// При этом необходимо помнить о том, что отступы для секции UICollectionView необходимо установить самому, к примеру:
+let flowLayout = UICollectionViewFlowLayout()
+flowLayout.scrollDirection = .horizontal
+flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
+collectionView.setCollectionViewLayout(flowLayout, animated: false)
+
 // После чего необходимо добавить вызовы следующих методов в методы UIScrollViewDelegate
 extension ViewController: UIScrollViewDelegate {
 
@@ -158,15 +164,13 @@ extension ViewController: UIScrollViewDelegate {
 
 Пример:
 ```Swift
-/// Для подписки на нотификации появления/сокрытия клавиатуры необходимо вызывать:
+// Для подписки на нотификации появления/сокрытия клавиатуры необходимо вызывать:
 subscribeOnKeyboardNotifications()
 
-/// Для отписывания от нотификаций появления/сокрытия клавиатуры необходимо вызывать:
+// Для отписывания от нотификаций появления/сокрытия клавиатуры необходимо вызывать:
 unsubscribeFromKeyboardNotifications()
 
-/// В результате появления/сокрытия клавиатуры будут вызываться следующие методы, в которые приходят такие параметры, как высота клавиатуры и время анимации
-
-// MARK: - KeyboardPresentable
+// В результате появления/сокрытия клавиатуры будут вызываться следующие методы, в которые приходят такие параметры, как высота клавиатуры и время анимации
 
 extension ViewController: KeyboardPresentable {
 
