@@ -14,6 +14,8 @@
 		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
 		902C67EC21E4D20B007B13CC /* ItemsScrollManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */; };
 		902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */; };
+		90718AEF21EA36F300C81002 /* KeyboardPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90718AEE21EA36F300C81002 /* KeyboardPresentable.swift */; };
+		90718AF121EA370000C81002 /* KeyboardNotificationsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90718AF021EA370000C81002 /* KeyboardNotificationsObserver.swift */; };
 		907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE221DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift */; };
 		907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */; };
 		907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FEB21DCD7E1001CCB07 /* RouteMeasurer.swift */; };
@@ -47,6 +49,8 @@
 		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
 		902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManager.swift; sourceTree = "<group>"; };
 		902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BlurBuilder.swift"; sourceTree = "<group>"; };
+		90718AEE21EA36F300C81002 /* KeyboardPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPresentable.swift; sourceTree = "<group>"; };
+		90718AF021EA370000C81002 /* KeyboardNotificationsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsObserver.swift; sourceTree = "<group>"; };
 		907F0FE221DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+AdvancedNavigationStackManagement.swift"; sourceTree = "<group>"; };
 		907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		907F0FEB21DCD7E1001CCB07 /* RouteMeasurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMeasurer.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				18F2361221D214CC00169AC9 /* Dictionary */,
 				902C67EA21E4D1EF007B13CC /* ItemsScrollManager */,
 				80437D24214045B30095A8D0 /* JailbreakDetect */,
+				90718AED21EA36CA00C81002 /* KeyboardPresentable */,
 				907F0FEA21DCD7C6001CCB07 /* RouteMeasurer */,
 				907F0FE421DCD375001CCB07 /* SettingsRouter */,
 				4F3ED9FA211C27E80030DD45 /* String */,
@@ -163,6 +168,15 @@
 				902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		90718AED21EA36CA00C81002 /* KeyboardPresentable */ = {
+			isa = PBXGroup;
+			children = (
+				90718AEE21EA36F300C81002 /* KeyboardPresentable.swift */,
+				90718AF021EA370000C81002 /* KeyboardNotificationsObserver.swift */,
+			);
+			path = KeyboardPresentable;
 			sourceTree = "<group>";
 		};
 		907F0FE121DCD1DB001CCB07 /* UINavigationController */ = {
@@ -325,7 +339,9 @@
 				907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */,
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
 				80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */,
+				90718AEF21EA36F300C81002 /* KeyboardPresentable.swift in Sources */,
 				E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */,
+				90718AF121EA370000C81002 /* KeyboardNotificationsObserver.swift in Sources */,
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
 				902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */,
 				907F0FEF21DCDB43001CCB07 /* WordDeclinationSelector.swift in Sources */,
