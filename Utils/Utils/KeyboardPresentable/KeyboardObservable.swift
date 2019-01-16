@@ -32,7 +32,7 @@ extension KeyboardObservable {
 
     // MARK: - Public Methods
 
-    func subscribeOnKeyboardNotifications() {
+    public func subscribeOnKeyboardNotifications() {
         guard let notificationsObserver = KeyboardNotificationsObserverPool.shared.newObserver(for: self) else {
             // case when view already subscribed on notifications
             return
@@ -48,7 +48,7 @@ extension KeyboardObservable {
                            object: nil)
     }
 
-    func unsubscribeFromKeyboardNotifications() {
+    public func unsubscribeFromKeyboardNotifications() {
         KeyboardNotificationsObserverPool.shared.removeInvalid()
         KeyboardNotificationsObserverPool.shared.releaseObserver(for: self)
     }

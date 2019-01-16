@@ -18,9 +18,9 @@ extension Notification {
         var frameEnd: CGRect?
     }
 
-    // MARK: - Properties
+    // MARK: - Public Properties
 
-    var keyboardInfo: KeyboardInfo {
+    public var keyboardInfo: KeyboardInfo {
         return KeyboardInfo(frameBegin: keyboardFrameBegin,
                             animationCurve: keyboradAnimationCurve,
                             animationDuration: keyboardAnimationDuration,
