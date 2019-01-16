@@ -16,6 +16,12 @@ final class KeyboardNotificationsObserver {
 
     private weak var view: KeyboardObservable?
 
+    // MARK: - Properties
+
+    var isInvalid: Bool {
+        return view == nil
+    }
+
     // MARK: - Initialization
 
     init(view: KeyboardObservable) {
@@ -32,6 +38,13 @@ final class KeyboardNotificationsObserver {
     @objc
     func keyboardWillBeHidden(notification: Notification) {
         view?.keyboardWillBeHidden(notification: notification)
+    }
+
+    func isLinked(to view: KeyboardObservable) -> Bool {
+        guard let guardedView = self.view else {
+            return false
+        }
+        return guardedView === view
     }
 
 }

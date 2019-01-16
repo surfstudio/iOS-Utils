@@ -12,7 +12,7 @@ extension Notification {
 
     /// Instance of this structure keeps info about keyboard from notification
     public struct KeyboardInfo {
-        var frame: CGRect?
+        var frameBegin: CGRect?
         var animationCurve: UInt?
         var animationDuration: Double?
         var frameEnd: CGRect?
@@ -21,7 +21,7 @@ extension Notification {
     // MARK: - Properties
 
     var keyboardInfo: KeyboardInfo {
-        return KeyboardInfo(frame: keyboardFrame,
+        return KeyboardInfo(frameBegin: keyboardFrameBegin,
                             animationCurve: keyboradAnimationCurve,
                             animationDuration: keyboardAnimationDuration,
                             frameEnd: keyboardFrameEnd)
@@ -29,8 +29,8 @@ extension Notification {
 
     // MARK: - Private Properties
 
-    private var keyboardFrame: CGRect? {
-        return userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect
+    private var keyboardFrameBegin: CGRect? {
+        return userInfo?[UIKeyboardFrameBeginUserInfoKey] as? CGRect
     }
 
     private var keyboradAnimationCurve: UInt? {

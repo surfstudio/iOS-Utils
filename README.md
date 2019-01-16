@@ -166,10 +166,10 @@ extension ViewController: UIScrollViewDelegate {
 - FullKeyboardPresentable: позволяет получить полную информацию о параметрах клавиатуры в виде структуры KeyboardInfo:
 ```Swift
 public struct KeyboardInfo {
-    var frame: CGRect?
+    var frameBegin: CGRect?
     var animationCurve: UInt?
     var animationDuration: Double?
-    var frameEnd: NSValue?
+    var frameEnd: CGRect?
 }
 ```
 

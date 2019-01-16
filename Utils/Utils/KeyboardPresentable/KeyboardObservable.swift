@@ -8,10 +8,6 @@
 
 import UIKit
 
-fileprivate enum AssociatedKeys {
-    static var observer: UInt8 = 0
-}
-
 /// This protocol carries out all the necessary actions for subscribing / unsubscribing from keyboard notifications.
 /// You can use only this protocol, or you can use Common/FullKeyboardPresentable or you own implementation for getting necessary parameters.
 public protocol KeyboardObservable: class {
@@ -34,23 +30,13 @@ public protocol KeyboardObservable: class {
 
 extension KeyboardObservable {
 
-    // MARK: - Private Properties
-
-    private var observer: KeyboardNotificationsObserver? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.observer) as? KeyboardNotificationsObserver
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.observer, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-
     // MARK: - Public Methods
 
     func subscribeOnKeyboardNotifications() {
-        let notificationsObserver = KeyboardNotificationsObserver(view: self)
-        observer = notificationsObserver
-
+        guard let notificationsObserver = KeyboardNotificationsObserverPool.shared.newObserver(for: self) else {
+            // case when view already subscribed on notifications
+            return
+        }
         let center = NotificationCenter.default
         center.addObserver(notificationsObserver,
                            selector: #selector(KeyboardNotificationsObserver.keyboardWillBeShown(notification:)),
@@ -63,10 +49,8 @@ extension KeyboardObservable {
     }
 
     func unsubscribeFromKeyboardNotifications() {
-        guard let observer = observer else {
-            return
-        }
-        NotificationCenter.default.removeObserver(observer)
+        KeyboardNotificationsObserverPool.shared.removeInvalid()
+        KeyboardNotificationsObserverPool.shared.releaseObserver(for: self)
     }
 
 }
