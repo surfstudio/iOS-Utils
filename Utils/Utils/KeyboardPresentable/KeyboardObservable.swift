@@ -1,8 +1,8 @@
 //
-//  KeyboardPresentable.swift
+//  KeyboardObservable.swift
 //  Utils
 //
-//  Created by Александр Чаусов on 12/01/2019.
+//  Created by Александр Чаусов on 16/01/2019.
 //  Copyright © 2019 Surf. All rights reserved.
 //
 
@@ -12,8 +12,7 @@ fileprivate enum AssociatedKeys {
     static var observer: UInt8 = 0
 }
 
-/// This protocol carries out all the necessary actions for subscribing / unsubscribing from keyboard notifications, as well as calculating the keyboard height and animation time
-public protocol KeyboardPresentable: class {
+public protocol KeyboardObservable: class {
 
     /// Method for subscribing on keyboard notifications
     func subscribeOnKeyboardNotifications()
@@ -22,14 +21,15 @@ public protocol KeyboardPresentable: class {
     func unsubscribeFromKeyboardNotifications()
 
     /// This method is called when the keyboard appears on the device screen
-    func keyboardWillBeShown(keyboardHeight: CGFloat, duration: TimeInterval)
+    func keyboardWillBeShown(notification: Notification)
 
     /// This method is called when the keyboard disappears from the device screen
-    func keyboardWillBeHidden(duration: TimeInterval)
+    func keyboardWillBeHidden(notification: Notification)
 
 }
 
-extension KeyboardPresentable where Self: UIViewController {
+
+extension KeyboardObservable {
 
     // MARK: - Private Properties
 
@@ -55,7 +55,7 @@ extension KeyboardPresentable where Self: UIViewController {
                            object: nil)
         center.addObserver(notificationsObserver,
                            selector: #selector(KeyboardNotificationsObserver.keyboardWillBeHidden(notification:)),
-                           name: NSNotification.Name.UIKeyboardWillShow,
+                           name: NSNotification.Name.UIKeyboardWillHide,
                            object: nil)
     }
 
@@ -65,9 +65,5 @@ extension KeyboardPresentable where Self: UIViewController {
         }
         NotificationCenter.default.removeObserver(observer)
     }
-
-    func keyboardWillBeShown(keyboardHeight: CGFloat, duration: TimeInterval) {}
-
-    func keyboardWillBeHidden(duration: TimeInterval) {}
 
 }
