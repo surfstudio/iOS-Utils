@@ -12,10 +12,10 @@ extension Notification {
 
     /// Instance of this structure keeps info about keyboard from notification
     public struct KeyboardInfo {
-        var frameBegin: CGRect?
-        var animationCurve: UInt?
-        var animationDuration: Double?
-        var frameEnd: CGRect?
+        public var frameBegin: CGRect?
+        public var animationCurve: UInt?
+        public var animationDuration: Double?
+        public var frameEnd: CGRect?
     }
 
     // MARK: - Public Properties
