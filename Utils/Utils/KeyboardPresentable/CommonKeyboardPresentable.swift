@@ -12,7 +12,8 @@ fileprivate enum Constants {
     static let animationDuration: TimeInterval = 0.25
 }
 
-/// This protocol carries out all the necessary actions for subscribing / unsubscribing from keyboard notifications, as well as calculating the keyboard height and animation time
+/// This protocol allows you to get plain keyboard parameters on keyboard appear/disappear.
+/// But you have to use this protocol along with KeyboardObservable protocol.
 public protocol CommonKeyboardPresentable: class {
 
     /// This method is called when the keyboard appears on the device screen

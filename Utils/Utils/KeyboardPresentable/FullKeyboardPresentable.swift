@@ -8,7 +8,8 @@
 
 import UIKit
 
-/// This protocol carries out all the necessary actions for subscribing / unsubscribing from keyboard notifications, as well as calculating the keyboard height and animation time
+/// This protocol allows you to get full keyboard parameters on keyboard appear/disappear.
+/// But you have to use this protocol along with KeyboardObservable protocol.
 public protocol FullKeyboardPresentable: class {
 
     /// This method is called when the keyboard appears on the device screen

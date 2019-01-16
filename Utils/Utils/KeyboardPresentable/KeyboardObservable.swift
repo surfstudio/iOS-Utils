@@ -12,12 +12,15 @@ fileprivate enum AssociatedKeys {
     static var observer: UInt8 = 0
 }
 
+/// This protocol carries out all the necessary actions for subscribing / unsubscribing from keyboard notifications.
+/// You can use only this protocol, or you can use Common/FullKeyboardPresentable or you own implementation for getting necessary parameters.
 public protocol KeyboardObservable: class {
 
     /// Method for subscribing on keyboard notifications
     func subscribeOnKeyboardNotifications()
 
-    /// Method for unsubscribing from keyboard notifications
+    /// Method for unsubscribing from keyboard notifications.
+    /// You must call this method for unsubscriibing if you call subscribeOnKeyboardNotifications() method before
     func unsubscribeFromKeyboardNotifications()
 
     /// This method is called when the keyboard appears on the device screen
