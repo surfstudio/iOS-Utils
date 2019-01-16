@@ -1,5 +1,5 @@
 //
-//  NSNotification.swift
+//  Notification.swift
 //  Utils
 //
 //  Created by Александр Чаусов on 16/01/2019.
@@ -15,7 +15,7 @@ extension Notification {
         var frame: CGRect?
         var animationCurve: UInt?
         var animationDuration: Double?
-        var frameEnd: NSValue?
+        var frameEnd: CGRect?
     }
 
     // MARK: - Properties
@@ -41,8 +41,8 @@ extension Notification {
         return userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double
     }
 
-    private var keyboardFrameEnd: NSValue? {
-        return userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
+    private var keyboardFrameEnd: CGRect? {
+        return userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect
     }
 
 }
