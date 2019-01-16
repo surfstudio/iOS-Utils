@@ -24,9 +24,9 @@ public protocol CommonKeyboardPresentable: class {
 
 }
 
-extension CommonKeyboardPresentable where Self: KeyboardObservable {
+public extension CommonKeyboardPresentable where Self: KeyboardObservable {
 
-    public func keyboardWillBeShown(notification: Notification) {
+    func keyboardWillBeShown(notification: Notification) {
         guard let keyboardHeight = notification.keyboardInfo.frameEnd?.height else {
             return
         }
@@ -34,7 +34,7 @@ extension CommonKeyboardPresentable where Self: KeyboardObservable {
         keyboardWillBeShown(keyboardHeight: keyboardHeight, duration: duration)
     }
 
-    public func keyboardWillBeHidden(notification: Notification) {
+    func keyboardWillBeHidden(notification: Notification) {
         let duration = notification.keyboardInfo.animationDuration ?? Constants.animationDuration
         keyboardWillBeHidden(duration: duration)
     }

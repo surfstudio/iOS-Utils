@@ -20,13 +20,13 @@ public protocol FullKeyboardPresentable: class {
 
 }
 
-extension FullKeyboardPresentable where Self: KeyboardObservable {
+public extension FullKeyboardPresentable where Self: KeyboardObservable {
 
-    public func keyboardWillBeShown(notification: Notification) {
+    func keyboardWillBeShown(notification: Notification) {
         keyboardWillBeShown(keyboardInfo: notification.keyboardInfo)
     }
 
-    public func keyboardWillBeHidden(notification: Notification) {
+    func keyboardWillBeHidden(notification: Notification) {
         keyboardWillBeHidden(keyboardInfo: notification.keyboardInfo)
     }
 
