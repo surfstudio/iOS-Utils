@@ -22,11 +22,11 @@ public protocol FullKeyboardPresentable: class {
 
 extension FullKeyboardPresentable where Self: KeyboardObservable {
 
-    func keyboardWillBeShown(notification: Notification) {
+    public func keyboardWillBeShown(notification: Notification) {
         keyboardWillBeShown(keyboardInfo: notification.keyboardInfo)
     }
 
-    func keyboardWillBeHidden(notification: Notification) {
+    public func keyboardWillBeHidden(notification: Notification) {
         keyboardWillBeHidden(keyboardInfo: notification.keyboardInfo)
     }
 
