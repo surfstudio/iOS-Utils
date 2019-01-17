@@ -25,6 +25,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [AdvancedNavigationStackManagement](#advancednavigationstackmanagement) - расширенная версия методов push/pop у UINavigationController
 - [WordDeclinationSelector](#worddeclinationselector) - позволяет получить нужное склонение слова
 - [ItemsScrollManager](#itemsscrollmanager) - менеджер для поэлементного скролла карусели
+- [KeyboardPresentable](#keyboardpresentable) - семейство протоколов для упрощения работы с клавиатурой и сокращения количества одинакового кода
 
 
 ## Утилиты
@@ -136,6 +137,12 @@ scrollManager = ItemsScrollManager(cellWidth: 200,
                                    cellOffset: 10,
                                    insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
 
+// При этом необходимо помнить о том, что отступы для секции UICollectionView необходимо установить самому, к примеру:
+let flowLayout = UICollectionViewFlowLayout()
+flowLayout.scrollDirection = .horizontal
+flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
+collectionView.setCollectionViewLayout(flowLayout, animated: false)
+
 // После чего необходимо добавить вызовы следующих методов в методы UIScrollViewDelegate
 extension ViewController: UIScrollViewDelegate {
 
@@ -145,6 +152,51 @@ extension ViewController: UIScrollViewDelegate {
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         scrollManager?.setBeginDraggingOffset(scrollView.contentOffset.x)
+    }
+
+}
+```
+
+### KeyboardPresentable
+
+Семейство протоколов, цель которых - сократить кол-во одинаковых действий при работе с клавиатурой. В ходе данных работ выполняется, как правило, ряд действий, код которых идентичен в большинстве случаев - подписка на нотификации, отписывание от них, извлечение параметров из нотификации, таких как высота клавиатуры или время анимации. Данное семейство взаимосвязанных протоколов написано с целью сокращения количества одинакового кода.
+Основной протокол - KeyboardObservable. Его вполне достаточно для работы, так как он позволяет инкапсулировать логику по подписыванию/отписыванию от нотификации, а при переопределении оставшихся двух методов - получить объект Notification из нотификации в чистом виде.
+Для более простого извлечения параметров из нотификации создано еще два протокола:
+- CommonKeyboardPresentable: позволяет получить информацию о высоте клавиатуры и времени анимации. При этом его методы не будут вызваны, если не удастся извлечь из нотификации высоту клавиатуры, а при невозможности извлечения времени анимации - будет использовано дефолтное значение.
+- FullKeyboardPresentable: позволяет получить полную информацию о параметрах клавиатуры в виде структуры KeyboardInfo:
+```Swift
+public struct KeyboardInfo {
+    var frameBegin: CGRect?
+    var animationCurve: UInt?
+    var animationDuration: Double?
+    var frameEnd: CGRect?
+}
+```
+
+Пример:
+```Swift
+// Рассмотрим необходимые действия для применения на примере CommonKeyboardPresentable
+// Во-первых, необходимо объявить, что используемый ViewController реализует протокол KeyboardObservable
+final class ViewController: UIViewController, KeyboardObservable {
+    ...
+}
+
+// Для подписки на нотификации появления/сокрытия клавиатуры необходимо вызывать:
+subscribeOnKeyboardNotifications()
+
+// Для отписывания от нотификаций появления/сокрытия клавиатуры необходимо вызывать:
+unsubscribeFromKeyboardNotifications()
+
+// Во-вторых, необходимо объявить, что используемый ViewController реализует протокол CommonKeyboardPresentable
+// В результате появления/сокрытия клавиатуры будут вызываться методы этого протокола, в которые приходят такие параметры, как высота клавиатуры и время анимации
+extension ViewController: CommonKeyboardPresentable {
+
+    func keyboardWillBeShown(keyboardHeight: CGFloat, duration: TimeInterval) {
+        // do something useful
+    }
+
+    func keyboardWillBeHidden(duration: TimeInterval) {
+        // do something useful
     }
 
 }

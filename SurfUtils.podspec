@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "5.0.0"
+  s.version = "6.0.0"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -65,6 +65,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'ItemsScrollManager' do |sp|
     sp.source_files = 'Utils/Utils/ItemsScrollManager/ItemsScrollManager.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'KeyboardPresentable' do |sp|
+    sp.source_files = 'Utils/Utils/KeyboardPresentable/*.swift'
     sp.framework = 'UIKit'
   end
 
