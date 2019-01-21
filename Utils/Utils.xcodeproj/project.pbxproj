@@ -12,6 +12,7 @@
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */; };
 		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
+		89293B2621F59F6A0016C6BE /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89293B2521F59F6A0016C6BE /* LocalStorage.swift */; };
 		902C67EC21E4D20B007B13CC /* ItemsScrollManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */; };
 		902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */; };
 		90718AF121EA370000C81002 /* KeyboardNotificationsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90718AF021EA370000C81002 /* KeyboardNotificationsObserver.swift */; };
@@ -51,6 +52,7 @@
 		4F3ED9EF211C27CF0030DD45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
+		89293B2521F59F6A0016C6BE /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManager.swift; sourceTree = "<group>"; };
 		902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BlurBuilder.swift"; sourceTree = "<group>"; };
 		90718AF021EA370000C81002 /* KeyboardNotificationsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsObserver.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				902CA33F21E732F700396923 /* UIView */,
 				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
 				907F0FED21DCDB1F001CCB07 /* WordDeclinationSelector */,
+				89293B2421F59F6A0016C6BE /* LocalStorage */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
 				4F3ED9E3211C27CF0030DD45 /* Info.plist */,
 			);
@@ -160,6 +163,14 @@
 				80437D25214045EF0095A8D0 /* JailbreakDetect.swift */,
 			);
 			path = JailbreakDetect;
+			sourceTree = "<group>";
+		};
+		89293B2421F59F6A0016C6BE /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				89293B2521F59F6A0016C6BE /* LocalStorage.swift */,
+			);
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 		902C67EA21E4D1EF007B13CC /* ItemsScrollManager */ = {
@@ -344,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */,
+				89293B2621F59F6A0016C6BE /* LocalStorage.swift in Sources */,
 				18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */,
 				E9B063102147AECC0080C391 /* UIDevice+feedbackType.swift in Sources */,
 				9087BC5421EF3BF200FCE1E1 /* FullKeyboardPresentable.swift in Sources */,

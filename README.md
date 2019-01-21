@@ -26,6 +26,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [WordDeclinationSelector](#worddeclinationselector) - позволяет получить нужное склонение слова
 - [ItemsScrollManager](#itemsscrollmanager) - менеджер для поэлементного скролла карусели
 - [KeyboardPresentable](#keyboardpresentable) - семейство протоколов для упрощения работы с клавиатурой и сокращения количества одинакового кода
+- [LocalStorage](#localstorage) – утилита для сохранения / удаления / загрузки `Codable` моделей данных в файловую систему
 
 
 ## Утилиты
@@ -200,6 +201,35 @@ extension ViewController: CommonKeyboardPresentable {
     }
 
 }
+```
+
+### LocalStorage
+
+Утилита для сохранения / удаления / загрузки `Codable` моделей данных в файловую систему.
+
+Пример:
+```Swift
+
+// Модель должна быть Codable
+
+struct Model: Codable {
+    let id: Int
+    let name: String
+}
+
+let model = Model(id: 2, name: "Ибрагим")
+
+// Сохранение модели с необходимым названием файла
+
+LocalStorage.store(object: model, as: "filename")
+
+// Загрузка модели с указанием имени файла и типом модели
+
+LocalStorage.load(fileName: "filename", as: Model.self)
+
+// Удаление модели с указанием имени файла
+
+LocalStorage.remove(fileName: Constants.newLocalPostFileName)
 ```
 
 ## Версионирование
