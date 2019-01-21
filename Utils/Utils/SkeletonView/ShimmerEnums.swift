@@ -1,6 +1,9 @@
 //
-//  Created by Artemii Shabanov on 18/01/2019.
-//  Copyright © 2019 Roni Leshes. All rights reserved.
+//  ShimmerEnums.swift
+//  Utils
+//
+//  Created by Artemii Shabanov on 21/01/2019.
+//  Copyright © 2019 Surf. All rights reserved.
 //
 
 import Foundation
