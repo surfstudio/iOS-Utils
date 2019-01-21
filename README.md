@@ -26,7 +26,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [WordDeclinationSelector](#worddeclinationselector) - позволяет получить нужное склонение слова
 - [ItemsScrollManager](#itemsscrollmanager) - менеджер для поэлементного скролла карусели
 - [KeyboardPresentable](#keyboardpresentable) - семейство протоколов для упрощения работы с клавиатурой и сокращения количества одинакового кода
-
+- [SkeletonView](#skeletonview) - cпециальная кастомная View для создания skeleton loader'ов
 
 ## Утилиты
 
@@ -200,6 +200,41 @@ extension ViewController: CommonKeyboardPresentable {
     }
 
 }
+```
+
+### SkeletonView
+
+Специальная кастомная View для создания skeleton loader'ов.
+Вместе с самой view поставляются enum'ы для ее конфигурации и extension на UIView для создания масок.
+Сценарий работы с SkeletonView:
+1. Добавляем в нужное нам место view типа SkeletonView
+2. Добавляем внутрь SkeletonView вьюхи, которые хотим использовать для анимации загрузки
+3. Во ViewController'e кастомизируем SkeletonView(возможности по кастомизации ниже) и запускаем анимацию, 
+установив .shimmering = true
+
+Возможности кастомизации:
+```Swift
+        // Устанавливаем какие view(разрешены только subview данного skeletonView) должны участвовать в анимации(по умолчанию все subviews)
+        skeletonView.maskingViews = [view1, view2]
+
+        // Направление в котором бегает шиммер(по умолчанию - вправо)
+        skeletonView.direction = .left
+
+        // Цвет, которым закрашиваются эти самые maskingViews
+        skeletonView.gradientBackgroundColor = UIColor.red.cgColor
+
+        // Цвет бегающего по ним шиммера
+        skeletonView.gradientMovingColor = UIColor.green.cgColor
+
+        // Ширина шиммера, можно задать значениями enum'а: .narrow, .default, .wide.
+        // Либо установить вручную как отношение ширины шиммера к ширине всего view. Пример: .custom(0.4)
+        skeletonView.shimmerWidth = .narrow
+
+        // Длительность одного пробега шиммера в секундах
+        skeletonView.movingAnimationDuration = 1.0
+
+        // Длительность задержки между шагами анимации в секундах
+        skeletonView.delayBetweenAnimationLoops = 1.0
 ```
 
 ## Версионирование

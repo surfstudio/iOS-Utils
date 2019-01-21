@@ -5,7 +5,7 @@
 
 import UIKit
 
-/// Special view for skeletons
+/// View for skeleton loaders
 open class SkeletonView: UIView {
 
     // MARK: - Properties

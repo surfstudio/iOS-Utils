@@ -30,5 +30,5 @@ extension UIView {
 
         self.layer.mask = maskLayer
     }
-}
 
+}
