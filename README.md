@@ -221,10 +221,10 @@ skeletonView.maskingViews = [view1, view2]
 skeletonView.direction = .left
 
 // Цвет, которым закрашиваются эти самые maskingViews
-skeletonView.gradientBackgroundColor = UIColor.red.cgColor
+skeletonView.gradientBackgroundColor = UIColor.red
 
 // Цвет бегающего по ним шиммера
-skeletonView.gradientMovingColor = UIColor.green.cgColor
+skeletonView.gradientMovingColor = UIColor.green
 
 // Отношение ширины шиммера к ширине view. Допустимы значения в диапазоне [0.0, 1.0]
 skeletonView.shimmerRatio = 0.7
