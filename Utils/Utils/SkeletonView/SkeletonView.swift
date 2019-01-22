@@ -11,6 +11,14 @@ import UIKit
 /// View for skeleton loaders
 open class SkeletonView: UIView {
 
+    // MARK: - Enum
+
+    /// Left or right
+    enum ShimmeringDirection {
+        case left
+        case right
+    }
+
     // MARK: - Properties
 
     // MARK: Masking
@@ -33,7 +41,7 @@ open class SkeletonView: UIView {
     /// Property is set to .right by default
     var direction: ShimmeringDirection = .right {
         didSet {
-            gradientLayer.locations = startLocations
+            gradientLayer?.locations = startLocations
         }
     }
     /// Set this property to true to start shimmering
@@ -46,22 +54,23 @@ open class SkeletonView: UIView {
             }
         }
     }
-    /// Provides different values of shimmer width
-    var shimmerWidth: GradientWidth = .default {
+    /// Ratio of the width of the shimmer to the width of the view (from 0.0 to 1.0)
+    var shimmerRatio: Double = 1.0 {
         didSet {
-            (leftLocations, rightLoactions) = shimmerWidth.gradientLocations
+            shimmerRatio = min(max(shimmerRatio, 0.0), 1.0)
+            (leftLocations, rightLocations) = configureGradientLocations(for: shimmerRatio)
         }
     }
 
 
     // MARK: Colors
 
-    var gradientBackgroundColor: CGColor = UIColor.lightGray.withAlphaComponent(0.7).cgColor {
+    var gradientBackgroundColor: UIColor = UIColor.lightGray.withAlphaComponent(0.7) {
         didSet {
             updateColors()
         }
     }
-    var gradientMovingColor: CGColor = UIColor.lightGray.withAlphaComponent(0.1).cgColor {
+    var gradientMovingColor: UIColor = UIColor.lightGray.withAlphaComponent(0.1) {
         didSet {
             updateColors()
         }
@@ -70,8 +79,8 @@ open class SkeletonView: UIView {
     // MARK: - Private Properties
 
     private var leftLocations:  [NSNumber] = []
-    private var rightLoactions: [NSNumber] = []
-    private var gradientLayer: CAGradientLayer!
+    private var rightLocations: [NSNumber] = []
+    private var gradientLayer: CAGradientLayer?
 
     // MARK: - UIView
 
@@ -80,9 +89,9 @@ open class SkeletonView: UIView {
         configureGradientLayer()
         updateColors()
         maskingViews = subviews
-        shimmerWidth = .default
+        shimmerRatio = 1.0
     }
-    
+
 }
 
 // MARK: - Private Methods and Computed Properties
@@ -94,14 +103,14 @@ private extension SkeletonView {
         case .right:
             return leftLocations
         case .left:
-            return rightLoactions
+            return rightLocations
         }
     }
 
     var endLocations: [NSNumber] {
         switch direction {
         case .right:
-            return rightLoactions
+            return rightLocations
         case .left:
             return leftLocations
         }
@@ -118,18 +127,18 @@ private extension SkeletonView {
         animationGroup.duration = movingAnimationDuration + delayBetweenAnimationLoops
         animationGroup.animations = [animation]
         animationGroup.repeatCount = .infinity
-        gradientLayer.add(animationGroup, forKey: animation.keyPath)
+        gradientLayer?.add(animationGroup, forKey: animation.keyPath)
     }
 
     func stopAnimating() {
-        gradientLayer.removeAllAnimations()
+        gradientLayer?.removeAllAnimations()
     }
 
     func updateColors() {
-        gradientLayer.colors = [
-            gradientBackgroundColor,
-            gradientMovingColor,
-            gradientBackgroundColor
+        gradientLayer?.colors = [
+            gradientBackgroundColor.cgColor,
+            gradientMovingColor.cgColor,
+            gradientBackgroundColor.cgColor
         ]
     }
 
@@ -141,6 +150,12 @@ private extension SkeletonView {
         gradientLayer.locations = startLocations
         layer.addSublayer(gradientLayer)
         self.gradientLayer = gradientLayer
+    }
+
+    func configureGradientLocations(for ratio: Double) -> (left: [NSNumber], right: [NSNumber]) {
+        let leftLocations  = [0 - ratio, 0 - ratio / 2,         0] as [NSNumber]
+        let rightLocations = [        1, 1 + ratio / 2, 1 + ratio] as [NSNumber]
+        return (left: leftLocations, right: rightLocations)
     }
 
 }

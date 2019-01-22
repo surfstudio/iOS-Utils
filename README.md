@@ -214,27 +214,26 @@ extension ViewController: CommonKeyboardPresentable {
 
 Возможности кастомизации:
 ```Swift
-        // Устанавливаем какие view(разрешены только subview данного skeletonView) должны участвовать в анимации(по умолчанию все subviews)
-        skeletonView.maskingViews = [view1, view2]
+// Устанавливаем какие view(разрешены только subview данного skeletonView) должны участвовать в анимации(по умолчанию все subviews)
+skeletonView.maskingViews = [view1, view2]
 
-        // Направление в котором бегает шиммер(по умолчанию - вправо)
-        skeletonView.direction = .left
+// Направление в котором бегает шиммер(по умолчанию - вправо)
+skeletonView.direction = .left
 
-        // Цвет, которым закрашиваются эти самые maskingViews
-        skeletonView.gradientBackgroundColor = UIColor.red.cgColor
+// Цвет, которым закрашиваются эти самые maskingViews
+skeletonView.gradientBackgroundColor = UIColor.red.cgColor
 
-        // Цвет бегающего по ним шиммера
-        skeletonView.gradientMovingColor = UIColor.green.cgColor
+// Цвет бегающего по ним шиммера
+skeletonView.gradientMovingColor = UIColor.green.cgColor
 
-        // Ширина шиммера, можно задать значениями enum'а: .narrow, .default, .wide.
-        // Либо установить вручную как отношение ширины шиммера к ширине всего view. Пример: .custom(0.4)
-        skeletonView.shimmerWidth = .narrow
+// Отношение ширины шиммера к ширине view. Допустимы значения в диапазоне [0.0, 1.0]
+skeletonView.shimmerRatio = 0.7
 
-        // Длительность одного пробега шиммера в секундах
-        skeletonView.movingAnimationDuration = 1.0
+// Длительность одного пробега шиммера в секундах
+skeletonView.movingAnimationDuration = 1.0
 
-        // Длительность задержки между шагами анимации в секундах
-        skeletonView.delayBetweenAnimationLoops = 1.0
+// Длительность задержки между шагами анимации в секундах
+skeletonView.delayBetweenAnimationLoops = 1.0
 ```
 
 ## Версионирование
