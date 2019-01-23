@@ -11,7 +11,7 @@ final public class LocalStorage {
 
     // MARK: - Enums
 
-    public enum Error {
+    public enum Error: Swift.Error {
         /// Load method error
         ///
         /// - fileNotExist: file does not exist
@@ -29,7 +29,6 @@ final public class LocalStorage {
         /// - cannotUpdate: file manager can't remove previous file with given filename
         public enum Store: Swift.Error {
             case fileNameNotExist
-            case fileNotExist
             case cannotEncode
             case cannotUpdate
         }
@@ -132,8 +131,6 @@ final public class LocalStorage {
                     } catch _ {
                         error = Error.Store.cannotUpdate
                     }
-                } else {
-                    error = Error.Store.fileNotExist
                 }
 
                 manager.createFile(atPath: url.path, contents: data, attributes: nil)
