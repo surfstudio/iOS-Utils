@@ -9,7 +9,8 @@
 import Foundation
 
 /// An instance of this class is responsible for handling notifications when the keyboard appears and disappears.
-/// Its necessity is caused by the fact that in the protocol extension you cannot declare methods with the @objc identifier.
+/// Its necessity is caused by the fact that in the protocol extension you cannot declare methods with
+/// the @objc identifier.
 final class KeyboardNotificationsObserver {
 
     // MARK: - Private Properties
