@@ -27,7 +27,9 @@ public final class JailbreakDetect {
         // Check 3 : Reading and writing in system directories (sandbox violation)
         let stringToWrite = "Jailbreak Test"
         do {
-            try stringToWrite.write(toFile: "/private/JailbreakTest.txt", atomically: true, encoding: String.Encoding.utf8)
+            try stringToWrite.write(toFile: "/private/JailbreakTest.txt",
+                                    atomically: true,
+                                    encoding: String.Encoding.utf8)
             //Device is jailbroken
             return true
         } catch {
@@ -43,7 +45,14 @@ private extension JailbreakDetect {
 
     /// Method will return true, if any of the files typical for the jailbreak exists
     private static func isJailbreakDirectoriesExist() -> Bool {
-        let jailbreakDirectories = ["/Applications/Cydia.app", "/Library/MobileSubstrate/MobileSubstrate.dylib", "/bin/bash", "/usr/sbin/sshd", "/etc/apt", "/private/var/lib/apt/"]
+        let jailbreakDirectories = [
+            "/Applications/Cydia.app",
+            "/Library/MobileSubstrate/MobileSubstrate.dylib",
+            "/bin/bash",
+            "/usr/sbin/sshd",
+            "/etc/apt",
+            "/private/var/lib/apt/"
+        ]
         return jailbreakDirectories.map { FileManager.default.fileExists(atPath: $0) }.reduce(false, { $0 || $1 })
     }
 
@@ -61,4 +70,3 @@ private extension JailbreakDetect {
     }
 
 }
-
