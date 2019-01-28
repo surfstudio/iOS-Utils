@@ -14,7 +14,7 @@ extension UIView {
     ///
     /// - Parameter views: Views to apply as mask.
     /// ## Note: The view calling this function must have all the views in the given array as subviews.
-    public func setMaskingViews(_ views: [UIView]){
+    public func setMaskingViews(_ views: [UIView]) {
 
         let mutablePath = CGMutablePath()
 

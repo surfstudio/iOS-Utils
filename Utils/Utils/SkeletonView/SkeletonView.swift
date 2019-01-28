@@ -70,6 +70,7 @@ open class SkeletonView: UIView {
             updateColors()
         }
     }
+
     var gradientMovingColor: UIColor = UIColor.lightGray.withAlphaComponent(0.1) {
         didSet {
             updateColors()
@@ -153,8 +154,8 @@ private extension SkeletonView {
     }
 
     func configureGradientLocations(for ratio: Double) -> (left: [NSNumber], right: [NSNumber]) {
-        let leftLocations  = [0 - ratio, 0 - ratio / 2,         0] as [NSNumber]
-        let rightLocations = [        1, 1 + ratio / 2, 1 + ratio] as [NSNumber]
+        let leftLocations  = [0 - ratio, 0 - ratio / 2.0, 0] as [NSNumber]
+        let rightLocations = [1, 1 + ratio / 2.0, 1 + ratio] as [NSNumber]
         return (left: leftLocations, right: rightLocations)
     }
 
