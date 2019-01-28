@@ -9,7 +9,8 @@
 import UIKit
 
 /// This protocol carries out all the necessary actions for subscribing / unsubscribing from keyboard notifications.
-/// You can use only this protocol, or you can use Common/FullKeyboardPresentable or you own implementation for getting necessary parameters.
+/// You can use only this protocol, or you can use Common/FullKeyboardPresentable or you own implementation for getting
+/// necessary parameters.
 public protocol KeyboardObservable: class {
 
     /// Method for subscribing on keyboard notifications
@@ -26,7 +27,6 @@ public protocol KeyboardObservable: class {
     func keyboardWillBeHidden(notification: Notification)
 
 }
-
 
 public extension KeyboardObservable {
 

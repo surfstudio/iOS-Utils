@@ -31,5 +31,5 @@ extension UIView {
 
         self.insertSubview(blurEffectView, at: 0)
     }
-    
+
 }
