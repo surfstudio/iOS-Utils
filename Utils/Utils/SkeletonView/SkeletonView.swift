@@ -32,9 +32,8 @@ open class SkeletonView: UIView {
 
     // MARK: Animation time
 
-    var movingAnimationDuration : CFTimeInterval = 0.5
-    var delayBetweenAnimationLoops : CFTimeInterval = 1.0
-
+    var movingAnimationDuration: CFTimeInterval = 0.5
+    var delayBetweenAnimationLoops: CFTimeInterval = 1.0
 
     // MARK: Animation Logic
 
@@ -62,7 +61,6 @@ open class SkeletonView: UIView {
         }
     }
 
-
     // MARK: Colors
 
     var gradientBackgroundColor: UIColor = UIColor.lightGray.withAlphaComponent(0.7) {
@@ -79,7 +77,7 @@ open class SkeletonView: UIView {
 
     // MARK: - Private Properties
 
-    private var leftLocations:  [NSNumber] = []
+    private var leftLocations: [NSNumber] = []
     private var rightLocations: [NSNumber] = []
     private var gradientLayer: CAGradientLayer?
 
@@ -91,6 +89,9 @@ open class SkeletonView: UIView {
         updateColors()
         maskingViews = subviews
         shimmerRatio = 1.0
+        if shimmering {
+            startAnimating()
+        }
     }
 
 }
@@ -117,7 +118,7 @@ private extension SkeletonView {
         }
     }
 
-    func startAnimating(){
+    func startAnimating() {
         let animation = CABasicAnimation(keyPath: "locations")
         animation.fromValue = startLocations
         animation.toValue = endLocations
