@@ -8,7 +8,8 @@
 
 import Foundation
 
-/// An instance of this class is used to generate the correct word declination for a number and contains all the available declensions.
+/// An instance of this class is used to generate the correct word declination
+/// for a number and contains all the available declensions.
 public final class WordDeclinations {
     let singularNominative: String
     let genetiveSingular: String
