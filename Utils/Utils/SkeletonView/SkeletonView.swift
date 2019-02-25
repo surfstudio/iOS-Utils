@@ -14,7 +14,7 @@ open class SkeletonView: UIView {
     // MARK: - Enum
 
     /// Left or right
-    enum ShimmeringDirection {
+    public enum ShimmeringDirection {
         case left
         case right
     }
@@ -24,7 +24,7 @@ open class SkeletonView: UIView {
     // MARK: Masking
 
     /// ## Note: Only subviews of current SkeletonView can be added to maskingViews
-    var maskingViews: [UIView] = [] {
+    public var maskingViews: [UIView] = [] {
         didSet {
             setMaskingViews(maskingViews)
         }
@@ -32,20 +32,20 @@ open class SkeletonView: UIView {
 
     // MARK: Animation time
 
-    var movingAnimationDuration : CFTimeInterval = 0.5
-    var delayBetweenAnimationLoops : CFTimeInterval = 1.0
+    public var movingAnimationDuration : CFTimeInterval = 0.5
+    public var delayBetweenAnimationLoops : CFTimeInterval = 1.0
 
 
     // MARK: Animation Logic
 
     /// Property is set to .right by default
-    var direction: ShimmeringDirection = .right {
+    public var direction: ShimmeringDirection = .right {
         didSet {
             gradientLayer?.locations = startLocations
         }
     }
     /// Set this property to true to start shimmering
-    var shimmering = false {
+    public var shimmering = false {
         didSet {
             if shimmering {
                 startAnimating()
@@ -55,7 +55,7 @@ open class SkeletonView: UIView {
         }
     }
     /// Ratio of the width of the shimmer to the width of the view (from 0.0 to 1.0)
-    var shimmerRatio: Double = 1.0 {
+    public var shimmerRatio: Double = 1.0 {
         didSet {
             shimmerRatio = min(max(shimmerRatio, 0.0), 1.0)
             (leftLocations, rightLocations) = configureGradientLocations(for: shimmerRatio)
@@ -65,13 +65,13 @@ open class SkeletonView: UIView {
 
     // MARK: Colors
 
-    var gradientBackgroundColor: UIColor = UIColor.lightGray.withAlphaComponent(0.7) {
+    public var gradientBackgroundColor: UIColor = UIColor.lightGray.withAlphaComponent(0.7) {
         didSet {
             updateColors()
         }
     }
 
-    var gradientMovingColor: UIColor = UIColor.lightGray.withAlphaComponent(0.1) {
+    public var gradientMovingColor: UIColor = UIColor.lightGray.withAlphaComponent(0.1) {
         didSet {
             updateColors()
         }
