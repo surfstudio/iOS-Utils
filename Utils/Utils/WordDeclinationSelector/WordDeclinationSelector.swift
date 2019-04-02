@@ -20,7 +20,7 @@ public final class WordDeclinations {
     ///   - singularNominative: The word nominative case in the singular, for example "День"
     ///   - genetiveSingular: The word genitive in the singular, for example "Дня"
     ///   - genetivePlural: The word genitive in the plural, for example "Дней"
-    init(_ singularNominative: String, _ genetiveSingular: String, _ genetivePlural: String) {
+    public init(_ singularNominative: String, _ genetiveSingular: String, _ genetivePlural: String) {
         self.singularNominative = singularNominative
         self.genetiveSingular = genetiveSingular
         self.genetivePlural = genetivePlural
