@@ -98,6 +98,9 @@ private extension Array where Element == StringAttribute {
 
         return result
     }
+}
+
+public extension Array where Element == StringAttribute {
     func toDictionary() -> [NSAttributedStringKey: Any] {
         var result = [NSAttributedStringKey: Any]()
         self.forEach { item in
