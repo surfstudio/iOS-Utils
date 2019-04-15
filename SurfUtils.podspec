@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.author  = { "Alexander Kravchenkov" => "akravchenkov@surfstudio.co" }
   s.source = { :git => "https://github.com/surfstudio/ios-utils.git", :tag => "#{s.version}" }
   s.ios.deployment_target = '10.0'
-  s.swift_version = '4.1'
+  s.swift_version = '5.0'
 
   s.subspec 'StringAttributes' do |sp|
     sp.source_files = 'Utils/Utils/String/String+Attributes.swift'
