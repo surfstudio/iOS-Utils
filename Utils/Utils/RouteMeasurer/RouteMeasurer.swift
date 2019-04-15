@@ -23,7 +23,7 @@ public final class RouteMeasurer {
     public static func calculateDistance(between firstPoint: CLLocationCoordinate2D,
                                          and secondPoint: CLLocationCoordinate2D,
                                          completion: @escaping ((Double?) -> Void)) {
-        let directionRequest = MKDirectionsRequest()
+        let directionRequest = MKDirections.Request()
         let sourcePlacemark = MKPlacemark(coordinate: firstPoint, addressDictionary: nil)
         let destinationPlacemark = MKPlacemark(coordinate: secondPoint, addressDictionary: nil)
         let source = MKMapItem(placemark: sourcePlacemark)

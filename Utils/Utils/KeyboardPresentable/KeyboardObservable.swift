@@ -40,11 +40,11 @@ public extension KeyboardObservable {
         let center = NotificationCenter.default
         center.addObserver(notificationsObserver,
                            selector: #selector(KeyboardNotificationsObserver.keyboardWillBeShown(notification:)),
-                           name: NSNotification.Name.UIKeyboardWillShow,
+                           name: UIResponder.keyboardWillShowNotification,
                            object: nil)
         center.addObserver(notificationsObserver,
                            selector: #selector(KeyboardNotificationsObserver.keyboardWillBeHidden(notification:)),
-                           name: NSNotification.Name.UIKeyboardWillHide,
+                           name: UIResponder.keyboardWillHideNotification,
                            object: nil)
     }
 

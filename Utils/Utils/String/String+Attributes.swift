@@ -28,16 +28,16 @@ public enum StringAttribute {
     /// For more details see [#14](https://github.com/surfstudio/iOS-Utils/issues/14)
     case lineHeight(CGFloat, font: UIFont)
 
-    var attributeKey: NSAttributedStringKey {
+    var attributeKey: NSAttributedString.Key {
         switch self {
         case .lineSpacing, .aligment, .lineHeight:
-            return NSAttributedStringKey.paragraphStyle
+            return NSAttributedString.Key.paragraphStyle
         case .kern:
-            return NSAttributedStringKey.kern
+            return NSAttributedString.Key.kern
         case .font:
-            return NSAttributedStringKey.font
+            return NSAttributedString.Key.font
         case .foregroundColor:
-            return NSAttributedStringKey.foregroundColor
+            return NSAttributedString.Key.foregroundColor
         }
     }
 
@@ -84,8 +84,8 @@ private extension Array where Element == StringAttribute {
 }
 
 public extension Array where Element == StringAttribute {
-    func toDictionary() -> [NSAttributedStringKey: Any] {
-        var resultAttributes = [NSAttributedStringKey: Any]()
+    func toDictionary() -> [NSAttributedString.Key: Any] {
+        var resultAttributes = [NSAttributedString.Key: Any]()
         let paragraph = NSMutableParagraphStyle()
         for attribute in self.normalizedAttributes() {
             switch attribute {
