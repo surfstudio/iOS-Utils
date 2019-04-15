@@ -79,7 +79,7 @@ open class SkeletonView: UIView {
 
     // MARK: - Private Properties
 
-    private var leftLocations:  [NSNumber] = []
+    private var leftLocations: [NSNumber] = []
     private var rightLocations: [NSNumber] = []
     private var gradientLayer: CAGradientLayer?
 
@@ -117,7 +117,7 @@ private extension SkeletonView {
         }
     }
 
-    func startAnimating(){
+    func startAnimating() {
         let animation = CABasicAnimation(keyPath: "locations")
         animation.fromValue = startLocations
         animation.toValue = endLocations
