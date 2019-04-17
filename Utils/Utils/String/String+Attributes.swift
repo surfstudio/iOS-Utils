@@ -63,24 +63,7 @@ public extension String {
 
     /// Apply attributes to string and returns new attributes string
     func with(attributes: [StringAttribute]) -> NSAttributedString {
-        var resultAttributes = [NSAttributedStringKey: Any]()
-        let paragraph = NSMutableParagraphStyle()
-        for attribute in attributes.normalizedAttributes() {
-            switch attribute {
-            case .lineHeight(let lineHeight, let font):
-                paragraph.lineSpacing = lineHeight - font.lineHeight
-                resultAttributes[attribute.attributeKey] = paragraph
-            case .lineSpacing(let value):
-                paragraph.lineSpacing = value
-                resultAttributes[attribute.attributeKey] = paragraph
-            case .aligment(let value):
-                paragraph.alignment = value
-                resultAttributes[attribute.attributeKey] = paragraph
-            default:
-                resultAttributes[attribute.attributeKey] = attribute.value
-            }
-        }
-        return NSAttributedString(string: self, attributes: resultAttributes)
+        return NSAttributedString(string: self, attributes: attributes.toDictionary())
     }
 }
 
@@ -97,5 +80,28 @@ private extension Array where Element == StringAttribute {
         }
 
         return result
+    }
+}
+
+public extension Array where Element == StringAttribute {
+    func toDictionary() -> [NSAttributedStringKey: Any] {
+        var resultAttributes = [NSAttributedStringKey: Any]()
+        let paragraph = NSMutableParagraphStyle()
+        for attribute in self.normalizedAttributes() {
+            switch attribute {
+            case .lineHeight(let lineHeight, let font):
+                paragraph.lineSpacing = lineHeight - font.lineHeight
+                resultAttributes[attribute.attributeKey] = paragraph
+            case .lineSpacing(let value):
+                paragraph.lineSpacing = value
+                resultAttributes[attribute.attributeKey] = paragraph
+            case .aligment(let value):
+                paragraph.alignment = value
+                resultAttributes[attribute.attributeKey] = paragraph
+            default:
+                resultAttributes[attribute.attributeKey] = attribute.value
+            }
+        }
+        return resultAttributes
     }
 }
