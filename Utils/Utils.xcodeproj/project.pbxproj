@@ -26,6 +26,8 @@
 		9087BC5A21EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087BC5921EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift */; };
 		90C101C821E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */; };
 		90C101CA21E0B62D002E8E65 /* RouteMeasurerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C101C921E0B62D002E8E65 /* RouteMeasurerTests.swift */; };
+		A439074B21F5C52A0034C455 /* UIView+Masking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439074A21F5C52A0034C455 /* UIView+Masking.swift */; };
+		A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439074D21F5C5880034C455 /* SkeletonView.swift */; };
 		E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */; };
 		E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */; };
 		E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */; };
@@ -65,6 +67,8 @@
 		9087BC5921EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsObserverPool.swift; sourceTree = "<group>"; };
 		90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorTests.swift; sourceTree = "<group>"; };
 		90C101C921E0B62D002E8E65 /* RouteMeasurerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMeasurerTests.swift; sourceTree = "<group>"; };
+		A439074A21F5C52A0034C455 /* UIView+Masking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Masking.swift"; sourceTree = "<group>"; };
+		A439074D21F5C5880034C455 /* SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
 		E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationFeedbackManager.swift; sourceTree = "<group>"; };
 		E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasTapticEngine.swift"; sourceTree = "<group>"; };
 		E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasHapticFeedback.swift"; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				90718AED21EA36CA00C81002 /* KeyboardPresentable */,
 				907F0FEA21DCD7C6001CCB07 /* RouteMeasurer */,
 				907F0FE421DCD375001CCB07 /* SettingsRouter */,
+				A439074C21F5C5510034C455 /* SkeletonView */,
 				4F3ED9FA211C27E80030DD45 /* String */,
 				907F0FE121DCD1DB001CCB07 /* UINavigationController */,
 				902CA33F21E732F700396923 /* UIView */,
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */,
+				A439074A21F5C52A0034C455 /* UIView+Masking.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -221,6 +227,14 @@
 				907F0FEE21DCDB43001CCB07 /* WordDeclinationSelector.swift */,
 			);
 			path = WordDeclinationSelector;
+			sourceTree = "<group>";
+		};
+		A439074C21F5C5510034C455 /* SkeletonView */ = {
+			isa = PBXGroup;
+			children = (
+				A439074D21F5C5880034C455 /* SkeletonView.swift */,
+			);
+			path = SkeletonView;
 			sourceTree = "<group>";
 		};
 		E9B06306214691F30080C391 /* VibrationFeedbackManager */ = {
@@ -373,6 +387,7 @@
 				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
 				907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */,
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
+				A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */,
 				80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */,
 				9087BC5221EF3BE700FCE1E1 /* CommonKeyboardPresentable.swift in Sources */,
 				9087BC5021EF3BD400FCE1E1 /* KeyboardObservable.swift in Sources */,
@@ -382,6 +397,7 @@
 				902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */,
 				9087BC5621EF3BFB00FCE1E1 /* Notification.swift in Sources */,
 				907F0FEF21DCDB43001CCB07 /* WordDeclinationSelector.swift in Sources */,
+				A439074B21F5C52A0034C455 /* UIView+Masking.swift in Sources */,
 				9087BC5A21EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift in Sources */,
 				907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */,
 			);
