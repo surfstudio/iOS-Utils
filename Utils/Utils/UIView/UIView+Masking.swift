@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-    
+
     /// Apply given views as masks
     ///
     /// - Parameter views: Views to apply as mask.

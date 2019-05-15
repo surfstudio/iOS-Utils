@@ -32,9 +32,8 @@ open class SkeletonView: UIView {
 
     // MARK: Animation time
 
-    public var movingAnimationDuration : CFTimeInterval = 0.5
-    public var delayBetweenAnimationLoops : CFTimeInterval = 1.0
-
+    public var movingAnimationDuration: CFTimeInterval = 0.5
+    public var delayBetweenAnimationLoops: CFTimeInterval = 1.0
 
     // MARK: Animation Logic
 
@@ -61,7 +60,6 @@ open class SkeletonView: UIView {
             (leftLocations, rightLocations) = configureGradientLocations(for: shimmerRatio)
         }
     }
-
 
     // MARK: Colors
 
@@ -122,7 +120,7 @@ private extension SkeletonView {
         animation.fromValue = startLocations
         animation.toValue = endLocations
         animation.duration = movingAnimationDuration
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 
         let animationGroup = CAAnimationGroup()
         animationGroup.duration = movingAnimationDuration + delayBetweenAnimationLoops
