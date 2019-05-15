@@ -88,7 +88,10 @@ open class SkeletonView: UIView {
         configureGradientLayer()
         updateColors()
         maskingViews = subviews
-        shimmerRatio = 1.0
+        (leftLocations, rightLocations) = configureGradientLocations(for: shimmerRatio)
+        if shimmering {
+            startAnimating()
+        }
     }
 
 }
