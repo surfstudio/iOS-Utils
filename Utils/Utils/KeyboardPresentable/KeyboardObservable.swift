@@ -26,6 +26,12 @@ public protocol KeyboardObservable: class {
     /// This method is called when the keyboard disappears from the device screen
     func keyboardWillBeHidden(notification: Notification)
 
+    /// This method is called after the keyboard appears on the device screen. Optional Method
+    func keyboardWasShown(notification: Notification)
+
+    /// This method is called after the keyboard disappears from the device screen. Optional Method
+    func keyboardWasHidden(notification: Notification)
+
 }
 
 public extension KeyboardObservable {
@@ -46,11 +52,27 @@ public extension KeyboardObservable {
                            selector: #selector(KeyboardNotificationsObserver.keyboardWillBeHidden(notification:)),
                            name: UIResponder.keyboardWillHideNotification,
                            object: nil)
+        center.addObserver(notificationsObserver,
+                           selector: #selector(KeyboardNotificationsObserver.keyboardWasShown(notification:)),
+                           name: UIResponder.keyboardDidShowNotification,
+                           object: nil)
+        center.addObserver(notificationsObserver,
+                           selector: #selector(KeyboardNotificationsObserver.keyboardWasHidden(notification:)),
+                           name: UIResponder.keyboardDidHideNotification,
+                           object: nil)
     }
 
     func unsubscribeFromKeyboardNotifications() {
         KeyboardNotificationsObserverPool.shared.removeInvalid()
         KeyboardNotificationsObserverPool.shared.releaseObserver(for: self)
+    }
+
+    // MARK: - Optional Methods
+
+    func keyboardWasShown(notification: Notification) {
+    }
+
+    func keyboardWasHidden(notification: Notification) {
     }
 
 }

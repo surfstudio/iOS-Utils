@@ -41,6 +41,16 @@ final class KeyboardNotificationsObserver {
         view?.keyboardWillBeHidden(notification: notification)
     }
 
+    @objc
+    func keyboardWasShown(notification: Notification) {
+        view?.keyboardWasShown(notification: notification)
+    }
+
+    @objc
+    func keyboardWasHidden(notification: Notification) {
+        view?.keyboardWasHidden(notification: notification)
+    }
+
     func isLinked(to view: KeyboardObservable) -> Bool {
         guard let guardedView = self.view else {
             return false
