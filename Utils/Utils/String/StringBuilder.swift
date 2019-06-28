@@ -12,22 +12,29 @@ public class StringBuilder {
 
     // MARK: - Nested types
 
-    typealias StringPart = (string: String, attributes: [StringAttribute])
+    struct StringPart {
+        let string: String
+        let attributes: [StringAttribute]
+        var range: NSRange?
 
-    // MARK: - Properties
+        init(string: String, attributes: [StringAttribute]) {
+            self.string = string
+            self.attributes = attributes
+        }
+
+        mutating func addRange(_ range: NSRange) {
+            self.range = range
+        }
+    }
+
+    // MARK: - Readonly properties
 
     public var value: NSMutableAttributedString {
-        get {
-            return renderAttributedString()
-        }
-        set {
-            string = newValue
-        }
+        return renderAttributedString()
     }
 
     // MARK: - Private properties
 
-    private var string = NSMutableAttributedString()
     private var parts: [StringPart] = []
     private var globalAttributes: [StringAttribute] = []
 
@@ -41,7 +48,7 @@ public class StringBuilder {
 
     @discardableResult
     public func clear() -> StringBuilder {
-        value = NSMutableAttributedString()
+        parts = []
         return self
     }
 
@@ -53,21 +60,32 @@ public class StringBuilder {
 
     @discardableResult
     public func add(text: String, with attributes: [StringAttribute] = []) -> StringBuilder {
-        parts.append((string: text, attributes: attributes))
+        parts.append(StringPart(string: text, attributes: attributes))
         return self
     }
 
     // MARK: - Private methods
 
     private func renderAttributedString() -> NSMutableAttributedString {
-        let attributedString = string
+        let attributedString = NSMutableAttributedString()
+
+        for var part in parts {
+            attributedString.append(NSAttributedString(string: part.string))
+            part.addRange(NSRange(location: attributedString.length, length: part.string.count))
+        }
+
+        // add global attributes
         attributedString.addAttributes(
             globalAttributes.toDictionary(),
             range: NSRange(location: 0, length: attributedString.length)
         )
 
+        // add local attributes
         for part in parts {
-            attributedString.append(part.string.with(attributes: part.attributes))
+            guard let range = part.range else {
+                continue
+            }
+            attributedString.addAttributes(part.attributes.toDictionary(), range: range)
         }
 
         return attributedString
