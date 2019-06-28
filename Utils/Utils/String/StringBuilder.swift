@@ -12,7 +12,7 @@ public class StringBuilder {
 
     // MARK: - Properties
 
-    var value: NSMutableAttributedString {
+    public var value: NSMutableAttributedString {
         get {
             let attributedString = string
             attributedString.addAttributes(
