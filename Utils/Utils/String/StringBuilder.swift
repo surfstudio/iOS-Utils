@@ -10,16 +10,15 @@ import Foundation
 
 public class StringBuilder {
 
+    // MARK: - Nested types
+
+    typealias StringPart = (string: String, attributes: [StringAttribute])
+
     // MARK: - Properties
 
     public var value: NSMutableAttributedString {
         get {
-            let attributedString = string
-            attributedString.addAttributes(
-                globalAttributes.toDictionary(),
-                range: NSRange(location: 0, length: attributedString.length)
-            )
-            return attributedString
+            return renderAttributedString()
         }
         set {
             string = newValue
@@ -29,6 +28,7 @@ public class StringBuilder {
     // MARK: - Private properties
 
     private var string = NSMutableAttributedString()
+    private var parts: [StringPart] = []
     private var globalAttributes: [StringAttribute] = []
 
     // MARK: - Initialization
@@ -53,8 +53,24 @@ public class StringBuilder {
 
     @discardableResult
     public func add(text: String, with attributes: [StringAttribute] = []) -> StringBuilder {
-        string.append(text.with(attributes: attributes))
+        parts.append((string: text, attributes: attributes))
         return self
+    }
+
+    // MARK: - Private methods
+
+    private func renderAttributedString() -> NSMutableAttributedString {
+        let attributedString = string
+        attributedString.addAttributes(
+            globalAttributes.toDictionary(),
+            range: NSRange(location: 0, length: attributedString.length)
+        )
+
+        for part in parts {
+            attributedString.append(part.string.with(attributes: part.attributes))
+        }
+
+        return attributedString
     }
 
 }
