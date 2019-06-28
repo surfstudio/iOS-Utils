@@ -70,8 +70,8 @@ public class StringBuilder {
         let attributedString = NSMutableAttributedString()
 
         for var part in parts {
-            attributedString.append(NSAttributedString(string: part.string))
             part.addRange(NSRange(location: attributedString.length, length: part.string.count))
+            attributedString.append(NSAttributedString(string: part.string))
         }
 
         // add global attributes
