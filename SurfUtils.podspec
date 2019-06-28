@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   s.subspec 'StringAttributes' do |sp|
-    sp.source_files = 'Utils/Utils/String/String+Attributes.swift'
+    sp.source_files = 'Utils/Utils/String/*.swift'
     sp.framework = 'Foundation', 'UIKit'
   end
 
