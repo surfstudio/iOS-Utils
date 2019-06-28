@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class StringBuilder {
+public class StringBuilder {
 
     // MARK: - Properties
 
@@ -31,6 +31,12 @@ open class StringBuilder {
     private var string = NSMutableAttributedString()
     private var globalAttributes: [StringAttribute] = []
 
+    // MARK: - Initialization
+
+    public init(attributes: [StringAttribute] = []) {
+        self.globalAttributes = attributes
+    }
+
     // MARK: - Public methods
 
     @discardableResult
@@ -41,13 +47,13 @@ open class StringBuilder {
 
     @discardableResult
     public func add(attributes: [StringAttribute]) -> StringBuilder {
-        self.globalAttributes = attributes
+        self.globalAttributes.append(contentsOf: attributes)
         return self
     }
 
     @discardableResult
-    public func add(text: String, with attributed: [StringAttribute]) -> StringBuilder {
-        string.append(text.with(attributes: attributed))
+    public func add(text: String, with attributes: [StringAttribute] = []) -> StringBuilder {
+        string.append(text.with(attributes: attributes))
         return self
     }
 
