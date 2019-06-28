@@ -12,18 +12,14 @@ public class StringBuilder {
 
     // MARK: - Nested types
 
-    struct StringPart {
+    class StringPart {
         let string: String
         let attributes: [StringAttribute]
         var range: NSRange?
 
-        init(string: String, attributes: [StringAttribute]) {
+        init(string: String, attributes: [StringAttribute] = []) {
             self.string = string
             self.attributes = attributes
-        }
-
-        mutating func addRange(_ range: NSRange) {
-            self.range = range
         }
     }
 
@@ -64,13 +60,25 @@ public class StringBuilder {
         return self
     }
 
+    @discardableResult
+    public func addSpace() -> StringBuilder {
+        parts.append(StringPart(string: " "))
+        return self
+    }
+
+    @discardableResult
+    public func addLineBreak() -> StringBuilder {
+        parts.append(StringPart(string: "\n"))
+        return self
+    }
+
     // MARK: - Private methods
 
     private func renderAttributedString() -> NSMutableAttributedString {
         let attributedString = NSMutableAttributedString()
 
-        for var part in parts {
-            part.addRange(NSRange(location: attributedString.length, length: part.string.count))
+        for part in parts {
+            part.range = NSRange(location: attributedString.length, length: part.string.count)
             attributedString.append(NSAttributedString(string: part.string))
         }
 
