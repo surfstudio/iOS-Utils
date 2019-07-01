@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Class for building NSAttributedString with different styles for different parts
 public class StringBuilder {
 
     // MARK: - Nested types
@@ -23,6 +24,11 @@ public class StringBuilder {
         }
     }
 
+    private enum Constants {
+        static let breakSymbol = "\n"
+        static let spaceSymbol = " "
+    }
+
     // MARK: - Readonly properties
 
     public var value: NSMutableAttributedString {
@@ -36,8 +42,8 @@ public class StringBuilder {
 
     // MARK: - Initialization
 
-    public init(attributes: [StringAttribute] = []) {
-        self.globalAttributes = attributes
+    public init(globalAttributes: [StringAttribute] = []) {
+        self.globalAttributes = globalAttributes
     }
 
     // MARK: - Public methods
@@ -49,8 +55,8 @@ public class StringBuilder {
     }
 
     @discardableResult
-    public func add(attributes: [StringAttribute]) -> StringBuilder {
-        self.globalAttributes.append(contentsOf: attributes)
+    public func add(globalAttributes: [StringAttribute]) -> StringBuilder {
+        self.globalAttributes.append(contentsOf: globalAttributes)
         return self
     }
 
@@ -62,21 +68,21 @@ public class StringBuilder {
 
     @discardableResult
     public func addSpace() -> StringBuilder {
-        parts.append(StringPart(string: " "))
+        parts.append(StringPart(string: Constants.spaceSymbol))
         return self
     }
 
     @discardableResult
     public func addLineBreak() -> StringBuilder {
-        parts.append(StringPart(string: "\n"))
+        parts.append(StringPart(string: Constants.breakSymbol))
         return self
     }
 
     // MARK: - Private methods
 
     private func renderAttributedString() -> NSMutableAttributedString {
+        // combline attributedString
         let attributedString = NSMutableAttributedString()
-
         for part in parts {
             part.range = NSRange(location: attributedString.length, length: part.string.count)
             attributedString.append(NSAttributedString(string: part.string))
