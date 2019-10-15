@@ -106,6 +106,14 @@ public class OTPField: UIView {
         }
     }
 
+    public setNumber(font: UIFont) {
+        stackView.subviews.forEach { label in
+            guard let label = label as? OTPLabel else { return }
+
+            label.set(font: font)
+        }
+    }
+
     // MARK: - Private Methods
 
     private func configure(for state: State) {
