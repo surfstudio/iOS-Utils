@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     func xibSetup() {
         let view = loadFromNib()
         addSubview(view)

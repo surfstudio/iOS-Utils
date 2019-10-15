@@ -6,11 +6,11 @@
 //  Copyright © 2019 Surf. All rights reserved.
 //
 
-final class OTPLabel: UILabel {
+public  class OTPLabel: UILabel {
 
     // MARK: - Nested
 
-    enum State {
+    public enum State {
         case active
         case inactive
         case error
@@ -38,19 +38,19 @@ final class OTPLabel: UILabel {
 
     // MARK: - Lifecycle
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configure()
     }
 
     // MARK: - Public Methods
 
-    func configure(for state: State) {
+    public func configure(for state: State) {
         switch state {
         case .active:
             textColor = activeTextColor
@@ -66,21 +66,21 @@ final class OTPLabel: UILabel {
         self.state = state
     }
 
-    func set(font: UIFont) {
+    public func set(font: UIFont) {
         self.font = font
     }
 
-    func setActive(textColor: UIColor, bottomLineColor: UIColor) {
+    public func setActive(textColor: UIColor, bottomLineColor: UIColor) {
         activeTextColor = textColor
         activeBottomLineColor = bottomLineColor
     }
 
-    func setInactive(textColor: UIColor, bottomLineColor: UIColor) {
+    public func setInactive(textColor: UIColor, bottomLineColor: UIColor) {
         inactiveTextColor = textColor
         inactiveBottomLineColor = bottomLineColor
     }
 
-    func setError(textColor: UIColor, bottomLineColor: UIColor) {
+    public func setError(textColor: UIColor, bottomLineColor: UIColor) {
         errorTextColor = textColor
         errorBottomLineColor = bottomLineColor
     }

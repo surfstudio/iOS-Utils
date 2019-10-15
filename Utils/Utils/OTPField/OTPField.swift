@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class OTPField: UIView {
+public class OTPField: UIView {
 
     // MARK: - IBOutlets
 
@@ -17,7 +17,7 @@ final class OTPField: UIView {
 
     // MARK: - Enums
 
-    enum State {
+    public enum State {
         case `default`
         case error(message: String)
     }
@@ -29,8 +29,8 @@ final class OTPField: UIView {
 
     // MARK: - Public Properties
 
-    var didCodeEnter: ((String) -> ())?
-    private(set) var text = ""
+    public var didCodeEnter: ((String) -> Void)?
+    public private(set) var text = ""
     private var state: State = .default
     private var labels: [OTPLabel] {
         return stackView.subviews as? [OTPLabel] ?? []
@@ -38,13 +38,13 @@ final class OTPField: UIView {
 
     // MARK: - Lifecycle
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
         configureInitialState()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
         configureInitialState()
@@ -52,13 +52,13 @@ final class OTPField: UIView {
 
     // MARK: - UIKit
 
-    override var canBecomeFirstResponder: Bool {
+    override public var canBecomeFirstResponder: Bool {
         return true
     }
 
     // MARK: - Internal helpers
 
-    func clear() {
+    public func clear() {
         text = ""
 
         stackView.subviews.forEach { label in
@@ -69,17 +69,41 @@ final class OTPField: UIView {
         }
     }
 
-    func showError(message: String) {
+    public func showError(message: String) {
         configure(for: .error(message: message))
     }
 
-    func clearError() {
+    public func clearError() {
         configure(for: .default)
     }
 
-    func setError(textColor: UIColor, font: UIFont) {
+    public func setError(textColor: UIColor, font: UIFont) {
         errorLabel.textColor = textColor
         errorLabel.font = font
+    }
+
+    public func setActive(textColor: UIColor, bottomLineColor: UIColor) {
+        stackView.subviews.forEach { label in
+            guard let label = label as? OTPLabel else { return }
+
+            label.setActive(textColor: textColor, bottomLineColor: bottomLineColor)
+        }
+    }
+
+    public func setInactive(textColor: UIColor, bottomLineColor: UIColor) {
+        stackView.subviews.forEach { label in
+            guard let label = label as? OTPLabel else { return }
+
+            label.setInactive(textColor: textColor, bottomLineColor: bottomLineColor)
+        }
+    }
+
+    public func setError(textColor: UIColor, bottomLineColor: UIColor) {
+        stackView.subviews.forEach { label in
+            guard let label = label as? OTPLabel else { return }
+
+            label.setError(textColor: textColor, bottomLineColor: bottomLineColor)
+        }
     }
 
     // MARK: - Private Methods
@@ -112,11 +136,11 @@ final class OTPField: UIView {
 // MARK: - UIKeyInput
 
 extension OTPField: UIKeyInput {
-    var hasText: Bool {
+    public var hasText: Bool {
         return !text.isEmpty
     }
 
-    func insertText(_ text: String) {
+    public func insertText(_ text: String) {
         guard self.text.count < Constants.maxLength else { return }
 
         labels[self.text.count].text = text
@@ -130,7 +154,7 @@ extension OTPField: UIKeyInput {
         configure(for: .default)
     }
 
-    func deleteBackward() {
+    public func deleteBackward() {
         guard !text.isEmpty else { return }
 
         text = String(text.dropLast())
@@ -144,7 +168,7 @@ extension OTPField: UIKeyInput {
 
 // swiftlint:disable unused_setter_value
 extension OTPField: UITextInputTraits {
-    var keyboardType: UIKeyboardType {
+    public var keyboardType: UIKeyboardType {
         get {
             return .numberPad
         }
