@@ -73,16 +73,19 @@ public  class OTPLabel: UILabel {
     public func setActive(textColor: UIColor, bottomLineColor: UIColor) {
         activeTextColor = textColor
         activeBottomLineColor = bottomLineColor
+        configure(for: state)
     }
 
     public func setInactive(textColor: UIColor, bottomLineColor: UIColor) {
         inactiveTextColor = textColor
         inactiveBottomLineColor = bottomLineColor
+        configure(for: state)
     }
 
     public func setError(textColor: UIColor, bottomLineColor: UIColor) {
         errorTextColor = textColor
         errorBottomLineColor = bottomLineColor
+        configure(for: state)
     }
 
     // MARK: - Private Methods
