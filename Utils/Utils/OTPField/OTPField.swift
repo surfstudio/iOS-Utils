@@ -135,6 +135,11 @@ public class OTPField: UIView {
         backgroundColor = UIColor.white.withAlphaComponent(0.0)
         digits.first?.delegate = self
         digits.first?.becomeFirstResponder()
+        digits.forEach { digit in
+            if digit != self.digits.first {
+                digit.isUserInteractionEnabled = false
+            }
+        }
         clear()
         configure(for: .default)
     }
