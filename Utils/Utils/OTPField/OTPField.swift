@@ -190,7 +190,7 @@ extension OTPField: UITextInputTraits {
             if #available(iOS 12.0, *) {
                 return .oneTimeCode
             } else {
-                return .password
+                return nil
             }
         }
         set {
