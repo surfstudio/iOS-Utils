@@ -15,16 +15,11 @@ public class OTPField: UIView {
     @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var errorLabel: UILabel!
 
-    // MARK: - Enums
+    // MARK: - Nested
 
     public enum State {
         case `default`
         case error(message: String)
-    }
-
-    private enum Constants {
-        static let maxLength = 4
-        static let errorFontSize: CGFloat = 12.0
     }
 
     // MARK: - Public Properties
@@ -32,8 +27,14 @@ public class OTPField: UIView {
     public var didCodeEnter: ((String) -> Void)?
     public private(set) var text = ""
     private var state: State = .default
-    private var labels: [OTPLabel] {
-        return stackView.subviews as? [OTPLabel] ?? []
+    private var style = OTPFieldStyle()
+    private var digitSize = CGSize(width: 32.0, height: 32.0)
+    private var betweenDigitsSpace: CGFloat = 6.0
+    private var maxLength: Int {
+        return digits.count
+    }
+    private var digits: [DigitField] {
+        return stackView.subviews as? [DigitField] ?? []
     }
 
     // MARK: - Lifecycle
@@ -61,11 +62,9 @@ public class OTPField: UIView {
     public func clear() {
         text = ""
 
-        stackView.subviews.forEach { label in
-            guard let label = label as? OTPLabel else { return }
-
-            label.text = nil
-            label.configure(for: .inactive)
+        digits.forEach { digit in
+            digit.text = nil
+            digit.configure(for: .inactive)
         }
     }
 
@@ -77,41 +76,34 @@ public class OTPField: UIView {
         configure(for: .default)
     }
 
-    public func setError(textColor: UIColor, font: UIFont) {
-        errorLabel.textColor = textColor
-        errorLabel.font = font
+    public func setDigits(count: Int) {
+        stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+
+        for _ in 0...(count - 1) {
+            let digit = DigitField()
+            digit.set(style: style.digitStyle)
+            digit.set(size: digitSize)
+            stackView.addArrangedSubview(digit)
+        }
+
+        configureInitialState()
     }
 
-    public func setActive(textColor: UIColor, bottomLineColor: UIColor) {
-        stackView.subviews.forEach { label in
-            guard let label = label as? OTPLabel else { return }
+    public func set(style: OTPFieldStyle) {
+        errorLabel.textColor = style.errorTextColor
+        errorLabel.font = style.errorFont
 
-            label.setActive(textColor: textColor, bottomLineColor: bottomLineColor)
-        }
+        self.style = style
+        digits.forEach { $0.set(style: style.digitStyle) }
     }
 
-    public func setInactive(textColor: UIColor, bottomLineColor: UIColor) {
-        stackView.subviews.forEach { label in
-            guard let label = label as? OTPLabel else { return }
-
-            label.setInactive(textColor: textColor, bottomLineColor: bottomLineColor)
-        }
+    public func setDigit(size: CGSize) {
+        self.digitSize = size
+        digits.forEach { $0.set(size: size) }
     }
 
-    public func setError(textColor: UIColor, bottomLineColor: UIColor) {
-        stackView.subviews.forEach { label in
-            guard let label = label as? OTPLabel else { return }
-
-            label.setError(textColor: textColor, bottomLineColor: bottomLineColor)
-        }
-    }
-
-    public func setNumber(font: UIFont) {
-        stackView.subviews.forEach { label in
-            guard let label = label as? OTPLabel else { return }
-
-            label.set(font: font)
-        }
+    public func setBetween(space: CGFloat) {
+        stackView.spacing = space
     }
 
     // MARK: - Private Methods
@@ -120,82 +112,63 @@ public class OTPField: UIView {
         switch state {
         case .default:
             errorLabel.isHidden = true
-            labels.forEach { label in
-                if let text = label.text, !text.isEmpty {
-                    label.configure(for: .active)
+            digits.forEach { digit in
+                if let text = digit.text, !text.isEmpty {
+                    digit.configure(for: .active)
                 } else {
-                    label.configure(for: .inactive)
+                    digit.configure(for: .inactive)
                 }
             }
         case .error(let message):
             errorLabel.isHidden = false
             errorLabel.text = message
-            labels.forEach { $0.configure(for: .error) }
+            digits.forEach { $0.configure(for: .error) }
         }
     }
 
     private func configureInitialState() {
-        becomeFirstResponder()
+        errorLabel.textColor = style.errorTextColor
+        errorLabel.font = style.errorFont
+        errorLabel.textAlignment = .center
+        backgroundColor = UIColor.white.withAlphaComponent(0.0)
+        digits.first?.delegate = self
+        digits.first?.becomeFirstResponder()
         clear()
         configure(for: .default)
     }
 }
 
-// MARK: - UIKeyInput
+// MARK: - UITextFieldDelegate
 
-extension OTPField: UIKeyInput {
-    public var hasText: Bool {
-        return !text.isEmpty
-    }
+extension OTPField: UITextFieldDelegate {
+    public func textField(_ textField: UITextField,
+                          shouldChangeCharactersIn range: NSRange,
+                          replacementString string: String) -> Bool {
 
-    public func insertText(_ text: String) {
-        guard self.text.count < Constants.maxLength else { return }
+        if string == "" {
+            guard !text.isEmpty else { return false }
 
-        labels[self.text.count].text = text
+            text = String(text.dropLast())
+            digits[self.text.count].text = nil
 
-        self.text += text
+            configure(for: .default)
 
-        if self.text.count == Constants.maxLength {
-            didCodeEnter?(self.text)
-        }
+            return false
+        } else {
+            guard self.text.count < self.maxLength else { return false }
 
-        configure(for: .default)
-    }
+            digits[self.text.count].text = string
 
-    public func deleteBackward() {
-        guard !text.isEmpty else { return }
+            self.text += string
 
-        text = String(text.dropLast())
-        labels[self.text.count].text = nil
-
-        configure(for: .default)
-    }
-}
-
-// MARK: - UITextInputTraits
-
-// swiftlint:disable unused_setter_value implicitly_unwrapped_optional
-extension OTPField: UITextInputTraits {
-    public var keyboardType: UIKeyboardType {
-        get {
-            return .numberPad
-        }
-        set {
-            assertionFailure()
-        }
-    }
-
-    public var textContentType: UITextContentType! {
-        get {
-            if #available(iOS 12.0, *) {
-                return .oneTimeCode
-            } else {
-                return nil
+            if self.text.count == self.maxLength {
+                didCodeEnter?(self.text)
             }
-        }
-        set {
-            assertionFailure()
+
+            configure(for: .default)
+
+            textField.text = digits.first?.text
+            return false
         }
     }
 }
-// swiftlint:enable unused_setter_value implicitly_unwrapped_optional

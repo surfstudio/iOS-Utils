@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTPField" customModule="Utils" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTPField" customModule="SurfUtils" customModuleProvider="target">
             <connections>
                 <outlet property="errorLabel" destination="xhv-Fc-4DR" id="Ln3-GP-cJq"/>
                 <outlet property="stackView" destination="q7f-Uo-PgT" id="Rvs-ZL-U3V"/>
@@ -20,54 +20,38 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="q7f-Uo-PgT">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="630.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3U-MW-CU1" customClass="OTPLabel" customModule="Utils" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="56" height="20.5"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="56" id="Aiw-Kw-OfI"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiY-lB-MzM" customClass="OTPLabel" customModule="Utils" customModuleProvider="target">
-                            <rect key="frame" x="106.5" y="0.0" width="56" height="20.5"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="56" id="Gc5-tc-dK6"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC2-p2-rFy" customClass="OTPLabel" customModule="Utils" customModuleProvider="target">
-                            <rect key="frame" x="212.5" y="0.0" width="56" height="20.5"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="56" id="rd0-zl-MB7"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74o-jT-Xc4" customClass="OTPLabel" customModule="Utils" customModuleProvider="target">
-                            <rect key="frame" x="319" y="0.0" width="56" height="20.5"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="56" id="od8-0Z-p1F"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IaJ-Q7-BEJ" customClass="DigitField" customModule="SurfUtils" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="32" height="630.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZTI-wF-Ql3" customClass="DigitField" customModule="SurfUtils" customModuleProvider="target">
+                            <rect key="frame" x="114.5" y="0.0" width="32" height="630.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j1Y-2h-JW9" customClass="DigitField" customModule="SurfUtils" customModuleProvider="target">
+                            <rect key="frame" x="228.5" y="0.0" width="32" height="630.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XcH-9I-AHQ" customClass="DigitField" customModule="SurfUtils" customModuleProvider="target">
+                            <rect key="frame" x="343" y="0.0" width="32" height="630.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhv-Fc-4DR">
-                    <rect key="frame" x="16" y="44.5" width="343" height="630.5"/>
+                    <rect key="frame" x="16" y="654.5" width="343" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="q7f-Uo-PgT" secondAttribute="trailing" id="2G2-WE-dep"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="q7f-Uo-PgT" secondAttribute="top" id="2MA-7g-dc5"/>
