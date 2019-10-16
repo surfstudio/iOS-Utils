@@ -106,7 +106,7 @@ public class OTPField: UIView {
         }
     }
 
-    public setNumber(font: UIFont) {
+    public func setNumber(font: UIFont) {
         stackView.subviews.forEach { label in
             guard let label = label as? OTPLabel else { return }
 
@@ -174,7 +174,7 @@ extension OTPField: UIKeyInput {
 
 // MARK: - UITextInputTraits
 
-// swiftlint:disable unused_setter_value
+// swiftlint:disable unused_setter_value implicitly_unwrapped_optional
 extension OTPField: UITextInputTraits {
     public var keyboardType: UIKeyboardType {
         get {
@@ -184,5 +184,18 @@ extension OTPField: UITextInputTraits {
             assertionFailure()
         }
     }
+
+    public var textContentType: UITextContentType! {
+        get {
+            if #available(iOS 12.0, *) {
+                return .oneTimeCode
+            } else {
+                return .password
+            }
+        }
+        set {
+            assertionFailure()
+        }
+    }
 }
-// swiftlint:enable unused_setter_value
+// swiftlint:enable unused_setter_value implicitly_unwrapped_optional
