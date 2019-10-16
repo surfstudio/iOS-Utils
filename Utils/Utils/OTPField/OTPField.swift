@@ -51,12 +51,6 @@ public class OTPField: UIView {
         configureInitialState()
     }
 
-    // MARK: - UIKit
-
-    override public var canBecomeFirstResponder: Bool {
-        return true
-    }
-
     // MARK: - Internal helpers
 
     public func clear() {
