@@ -106,6 +106,14 @@ public class OTPField: UIView {
         stackView.spacing = space
     }
 
+    public func showKeyboard() {
+        digits.first?.becomeFirstResponder()
+    }
+
+    public func hideKeyboard() {
+        digits.first?.resignFirstResponder()
+    }
+
     // MARK: - Private Methods
 
     private func configure(for state: State) {

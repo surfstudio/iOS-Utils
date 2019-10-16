@@ -90,6 +90,7 @@ public class DigitField: UITextField {
         textAlignment = .center
         borderStyle = .none
         translatesAutoresizingMaskIntoConstraints = false
+        isUserInteractionEnabled = false
 
         keyboardType = .numberPad
 
