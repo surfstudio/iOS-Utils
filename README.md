@@ -27,8 +27,8 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [ItemsScrollManager](#itemsscrollmanager) - менеджер для поэлементного скролла карусели
 - [KeyboardPresentable](#keyboardpresentable) - семейство протоколов для упрощения работы с клавиатурой и сокращения количества одинакового кода
 - [SkeletonView](#skeletonview) - cпециальная кастомная View для создания skeleton loader'ов
+- [OTPField](#otpfield) - кастомный филд для работы с One Time Password 
 - [XibView](#xibview) - для работы UIView + xib
-
 
 ## Утилиты
 
@@ -236,6 +236,58 @@ skeletonView.movingAnimationDuration = 1.0
 
 // Длительность задержки между шагами анимации в секундах
 skeletonView.delayBetweenAnimationLoops = 1.0
+```
+
+### OTPField
+
+Кастомный филд для ввода OTP (One Time Password), который поддерживает Secure Code Autofill начиная с iOS 12.
+Можно использовать как из Storyboard так и из кода.
+Алгоритм работы:
+1. Добавить из кода или xib
+2. Установить стиль цифр через объект `DigitFieldStyle`
+3. Установить стиль отображения ошибки через объект `OTPFieldStyle`
+4. Применить стиль для `OTPField` с помощью метода `set(style:)`
+5. Установить количество символов методом `setDigits(count:)`
+6. Установить размер цифр методом `setDigit(size:)`
+7. Установить расстояние между цифрами методом `setBetween(space:)`
+8. Дернуть блок для обработки результата `didCodeEnter`
+
+```Swift
+
+        let otpField = OTPField()
+        otpField.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(otpField)
+
+        NSLayoutConstraint.activate([
+            otpField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            otpField.topAnchor.constraint(equalTo: view.topAnchor, constant: 64.0)
+        ])
+
+        let digitStyle = DigitFieldStyle(font: UIFont.boldSystemFont(ofSize: 34.0), activeTextColor: .green, inactiveTextColor: .gray, errorTextColor: .red, activeBottomLineColor: .green, inactiveBottomLineColor: .gray, errorBottomLineColor: .red)
+
+        let style = OTPFieldStyle(digitStyle: digitStyle, errorTextColor: .red, errorFont: UIFont.italicSystemFont(ofSize: 17.0))
+
+        otpField.setDigits(count: 4)
+
+        otpField.set(style: style)
+
+        otpField.setDigit(size: CGSize(width: 32.0, height: 32.0))
+
+        otpField.setBetween(space: 6.0)
+
+        otpField.didCodeEnter = { code in
+            self.auth(
+                code: code,
+                success: {
+                    print("success")
+                },
+                error: {
+                    otpField.showError(message: "Ошибка")
+                    otpField.clear()
+                }
+            )
+        }
 ```
 
 ### XibView
