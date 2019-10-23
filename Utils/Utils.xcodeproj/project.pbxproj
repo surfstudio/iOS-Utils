@@ -14,7 +14,7 @@
 		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
 		8953A46D23560A2F007AD110 /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8953A46C23560A2F007AD110 /* OTPField.swift */; };
 		8953A46F23560A4C007AD110 /* OTPField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8953A46E23560A4C007AD110 /* OTPField.xib */; };
-		8953A47123560AA8007AD110 /* UIView+XibSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8953A47023560AA8007AD110 /* UIView+XibSetup.swift */; };
+		898845202360482D004940DC /* UIView+XibSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8988451F2360482D004940DC /* UIView+XibSetup.swift */; };
 		89F23A69235733BC005112E1 /* DigitField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F23A68235733BC005112E1 /* DigitField.swift */; };
 		89F23A6B23575D97005112E1 /* DigitFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F23A6A23575D97005112E1 /* DigitFieldStyle.swift */; };
 		89F23A6D23576452005112E1 /* OTPFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F23A6C23576452005112E1 /* OTPFieldStyle.swift */; };
@@ -62,7 +62,7 @@
 		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
 		8953A46C23560A2F007AD110 /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
 		8953A46E23560A4C007AD110 /* OTPField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTPField.xib; sourceTree = "<group>"; };
-		8953A47023560AA8007AD110 /* UIView+XibSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+XibSetup.swift"; sourceTree = "<group>"; };
+		8988451F2360482D004940DC /* UIView+XibSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+XibSetup.swift"; sourceTree = "<group>"; };
 		89F23A68235733BC005112E1 /* DigitField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitField.swift; sourceTree = "<group>"; };
 		89F23A6A23575D97005112E1 /* DigitFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitFieldStyle.swift; sourceTree = "<group>"; };
 		89F23A6C23576452005112E1 /* OTPFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldStyle.swift; sourceTree = "<group>"; };
@@ -186,7 +186,6 @@
 		8953A46B23560726007AD110 /* OTPField */ = {
 			isa = PBXGroup;
 			children = (
-				8953A47023560AA8007AD110 /* UIView+XibSetup.swift */,
 				89F23A6A23575D97005112E1 /* DigitFieldStyle.swift */,
 				89F23A68235733BC005112E1 /* DigitField.swift */,
 				89F23A6C23576452005112E1 /* OTPFieldStyle.swift */,
@@ -209,6 +208,7 @@
 			children = (
 				902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */,
 				A439074A21F5C52A0034C455 /* UIView+Masking.swift */,
+				8988451F2360482D004940DC /* UIView+XibSetup.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -423,13 +423,13 @@
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
 				A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */,
 				80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */,
+				898845202360482D004940DC /* UIView+XibSetup.swift in Sources */,
 				9087BC5221EF3BE700FCE1E1 /* CommonKeyboardPresentable.swift in Sources */,
 				9087BC5021EF3BD400FCE1E1 /* KeyboardObservable.swift in Sources */,
 				E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */,
 				90718AF121EA370000C81002 /* KeyboardNotificationsObserver.swift in Sources */,
 				8953A46D23560A2F007AD110 /* OTPField.swift in Sources */,
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
-				8953A47123560AA8007AD110 /* UIView+XibSetup.swift in Sources */,
 				902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */,
 				9087BC5621EF3BFB00FCE1E1 /* Notification.swift in Sources */,
 				89F23A6B23575D97005112E1 /* DigitFieldStyle.swift in Sources */,

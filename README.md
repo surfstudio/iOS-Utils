@@ -28,6 +28,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [KeyboardPresentable](#keyboardpresentable) - семейство протоколов для упрощения работы с клавиатурой и сокращения количества одинакового кода
 - [SkeletonView](#skeletonview) - cпециальная кастомная View для создания skeleton loader'ов
 - [OTPField](#otpfield) - кастомный филд для работы с One Time Password 
+- [XibView](#xibview) - для работы UIView + xib
 
 ## Утилиты
 
@@ -287,6 +288,27 @@ skeletonView.delayBetweenAnimationLoops = 1.0
                 }
             )
         }
+```
+
+### XibView
+
+Утилита для использования .xib + UIView. Работает в коде через конструктор и в сторибордах.
+Алгоритм:
+1. Необходимо создать файлы – View.swift и View.xib.
+2. У View.xib указать View.swift у FileOwner
+3. Во View.swift в конструкторе вызвать метод xibSetup.
+
+Пример:
+```Swift
+override init(frame: CGRect) {
+    super.init(frame: frame)
+    xibSetup()
+}
+
+required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    xibSetup()
+}
 ```
 
 ## Версионирование
