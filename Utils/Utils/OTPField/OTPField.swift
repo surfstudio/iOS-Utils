@@ -73,7 +73,7 @@ public class OTPField: UIView {
     public func setDigits(count: Int) {
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
-        for _ in 0...(count - 1) {
+        for _ in 0..<count {
             let digit = DigitField()
             digit.set(style: style.digitStyle)
             digit.set(size: digitSize)
