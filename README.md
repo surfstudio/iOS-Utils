@@ -27,6 +27,8 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [ItemsScrollManager](#itemsscrollmanager) - менеджер для поэлементного скролла карусели
 - [KeyboardPresentable](#keyboardpresentable) - семейство протоколов для упрощения работы с клавиатурой и сокращения количества одинакового кода
 - [SkeletonView](#skeletonview) - cпециальная кастомная View для создания skeleton loader'ов
+- [XibView](#xibview) - для работы UIView + xib
+
 
 ## Утилиты
 
@@ -106,7 +108,7 @@ SettingsRouter.openDeviceSettings()
 
 ### AdvancedNavigationStackManagement
 
-Данная утилита предоставляет возможность вызова методов push и pop у UINavigationController с последующим вызывом completion-замыкания после завершения действия. 
+Данная утилита предоставляет возможность вызова методов push и pop у UINavigationController с последующим вызывом completion-замыкания после завершения действия.
 
 Пример:
 ```Swift
@@ -209,7 +211,7 @@ extension ViewController: CommonKeyboardPresentable {
 Сценарий работы с SkeletonView:
 1. Добавляем в нужное нам место view типа SkeletonView
 2. Добавляем внутрь SkeletonView вьюхи, которые хотим использовать для анимации загрузки
-3. Во ViewController'e кастомизируем SkeletonView(возможности по кастомизации ниже) и запускаем анимацию, 
+3. Во ViewController'e кастомизируем SkeletonView(возможности по кастомизации ниже) и запускаем анимацию,
 установив .shimmering = true
 
 Возможности кастомизации:
@@ -234,6 +236,27 @@ skeletonView.movingAnimationDuration = 1.0
 
 // Длительность задержки между шагами анимации в секундах
 skeletonView.delayBetweenAnimationLoops = 1.0
+```
+
+### XibView
+
+Утилита для использования .xib + UIView. Работает в коде через конструктор и в сторибордах.
+Алгоритм:
+1. Необходимо создать файлы – View.swift и View.xib.
+2. У View.xib указать View.swift у FileOwner
+3. Во View.swift в конструкторе вызвать метод xibSetup.
+
+Пример:
+```Swift
+override init(frame: CGRect) {
+    super.init(frame: frame)
+    xibSetup()
+}
+
+required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    xibSetup()
+}
 ```
 
 ## Версионирование
