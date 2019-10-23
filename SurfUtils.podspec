@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'OTPField' do |sp|
-    sp.source_files = 'Utils/Utils/OTPField/*.swift', 'Utils/Utils/OTPField/*.xib'
+    sp.source_files = 'Utils/Utils/OTPField/*.swift', 'Utils/Utils/OTPField/*.xib', 'Utils/Utils/UIView/UIView+XibSetup.swift'
     sp.framework = 'UIKit'
   end
 
