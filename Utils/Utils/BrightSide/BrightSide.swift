@@ -16,12 +16,12 @@ public final class BrightSide {
     public static func isWhiteDevice() -> Bool {
         // Check 1 : check if current device is simulator
         if isSimulator() {
-            return false
+            return true
         }
 
         // Check 2 : existence of files that are common for jailbroken devices
         if isJailbreakDirectoriesExist() || canOpenCydia() {
-            return true
+            return false
         }
 
         // Check 3 : Reading and writing in system directories (sandbox violation)
@@ -31,9 +31,9 @@ public final class BrightSide {
                                     atomically: true,
                                     encoding: String.Encoding.utf8)
             //Device is jailbroken
-            return true
-        } catch {
             return false
+        } catch {
+            return true
         }
     }
 
