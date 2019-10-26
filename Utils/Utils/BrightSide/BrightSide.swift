@@ -1,5 +1,5 @@
 //
-//  JailbreakDetect.swift
+//  BrightSide.swift
 //  Utils
 //
 //  Created by Vlad Krupenko on 05.09.2018.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-public final class JailbreakDetect {
+public final class BrightSide {
 
-    // MARK: - Internal static methods
+    // MARK: - Public static methods
 
     /// Method return true, if we can detect some common for jailbroken deivce files or can write to device
-    public static func isJailBroken() -> Bool {
+    public static func isWhiteDevice() -> Bool {
         // Check 1 : check if current device is simulator
         if isSimulator() {
             return false
@@ -41,7 +41,7 @@ public final class JailbreakDetect {
 
 // MARK: - Private help methods
 
-private extension JailbreakDetect {
+private extension BrightSide {
 
     /// Method will return true, if any of the files typical for the jailbreak exists
     private static func isJailbreakDirectoriesExist() -> Bool {
