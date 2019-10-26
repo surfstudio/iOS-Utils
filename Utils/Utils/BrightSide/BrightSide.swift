@@ -13,7 +13,7 @@ public final class BrightSide {
     // MARK: - Public static methods
 
     /// Method return false, if we can detect some common for jailbroken deivce files or can write to device
-    public static func isWhiteDevice() -> Bool {
+    public static func isBright() -> Bool {
         // Check 1 : check if current device is simulator
         if isSimulator() {
             return true
