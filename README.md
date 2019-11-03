@@ -16,7 +16,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 ## Список утилит
 
 - [StringAttributes](#stringattributes) - упрощение работы с `NSAttributedString`
-- [JailbreakDetect](#jailbreakdetect) - позволяет определить наличие root на девайсе.
+- [BrightSide](#brightside) - позволяет определить наличие root на девайсе.
 - [VibrationFeedbackManager](#vibrationfeedbackmanager) - позволяет воспроизвести вибрацию на устройстве.
 - [QueryStringBuilder](#querystringbuilder) - построение строки с параметрами из словаря
 - [BlurBuilder](#blurbuilder) - упрощение работы с blur-эффектом
@@ -43,16 +43,16 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 let attrString = "Awesome attributed srting".with(attributes: [.kern(9), lineHeight(20)])
 ```
 
-### JailbreakDetect
+### BrightSide
 
 Утилита позволяет определить наличие root на устройстве.
 
 Пример:
 ```Swift
-if JailbreakDetect.isJailBroken() {
-    print("На девайсе установлен jailbreak")
+if BrightSide.isBright() {
+    print("Девайс чист как белый лист")
 } else {
-    print("Девайс чист")
+    print("На девайсе получен root доступ")
 }
 ```
 
