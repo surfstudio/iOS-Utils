@@ -11,7 +11,7 @@
 		4F3ED9E9211C27CF0030DD45 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3ED9DF211C27CF0030DD45 /* Utils.framework */; };
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */; };
-		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
+		80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* BrightSide.swift */; };
 		8953A46D23560A2F007AD110 /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8953A46C23560A2F007AD110 /* OTPField.swift */; };
 		8953A46F23560A4C007AD110 /* OTPField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8953A46E23560A4C007AD110 /* OTPField.xib */; };
 		898845202360482D004940DC /* UIView+XibSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8988451F2360482D004940DC /* UIView+XibSetup.swift */; };
@@ -59,7 +59,7 @@
 		4F3ED9E8211C27CF0030DD45 /* UtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3ED9EF211C27CF0030DD45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
-		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
+		80437D25214045EF0095A8D0 /* BrightSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightSide.swift; sourceTree = "<group>"; };
 		8953A46C23560A2F007AD110 /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
 		8953A46E23560A4C007AD110 /* OTPField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTPField.xib; sourceTree = "<group>"; };
 		8988451F2360482D004940DC /* UIView+XibSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+XibSetup.swift"; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 			children = (
 				18F2361221D214CC00169AC9 /* Dictionary */,
 				902C67EA21E4D1EF007B13CC /* ItemsScrollManager */,
-				80437D24214045B30095A8D0 /* JailbreakDetect */,
+				80437D24214045B30095A8D0 /* BrightSide */,
 				90718AED21EA36CA00C81002 /* KeyboardPresentable */,
 				907F0FEA21DCD7C6001CCB07 /* RouteMeasurer */,
 				907F0FE421DCD375001CCB07 /* SettingsRouter */,
@@ -175,12 +175,12 @@
 			path = String;
 			sourceTree = "<group>";
 		};
-		80437D24214045B30095A8D0 /* JailbreakDetect */ = {
+		80437D24214045B30095A8D0 /* BrightSide */ = {
 			isa = PBXGroup;
 			children = (
-				80437D25214045EF0095A8D0 /* JailbreakDetect.swift */,
+				80437D25214045EF0095A8D0 /* BrightSide.swift */,
 			);
-			path = JailbreakDetect;
+			path = BrightSide;
 			sourceTree = "<group>";
 		};
 		8953A46B23560726007AD110 /* OTPField */ = {
@@ -422,7 +422,7 @@
 				89F23A69235733BC005112E1 /* DigitField.swift in Sources */,
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
 				A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */,
-				80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */,
+				80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */,
 				898845202360482D004940DC /* UIView+XibSetup.swift in Sources */,
 				9087BC5221EF3BE700FCE1E1 /* CommonKeyboardPresentable.swift in Sources */,
 				9087BC5021EF3BD400FCE1E1 /* KeyboardObservable.swift in Sources */,
