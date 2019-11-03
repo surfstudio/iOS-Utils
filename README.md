@@ -29,8 +29,8 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [SkeletonView](#skeletonview) - cпециальная кастомная View для создания skeleton loader'ов
 - [OTPField](#otpfield) - кастомный филд для работы с One Time Password 
 - [XibView](#xibview) - для работы UIView + xib
-- [UIImageExtensions](UIImageExtensions) - набор часто используемых extensions для UIImage
-- [CommonButton](CommonButton) - Базовый класс для кнопки
+- [UIImageExtensions](#uiimageextensions) - набор часто используемых extensions для UIImage
+- [CommonButton](#commonbutton) - Базовый класс для кнопки
 
 ## Утилиты
 
