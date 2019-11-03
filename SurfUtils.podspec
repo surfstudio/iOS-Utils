@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "9.0.1"
+  s.version = "10.0.0"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -85,6 +85,16 @@ Pod::Spec.new do |s|
 
   s.subspec 'XibView' do |sp|
     sp.source_files = 'Utils/Utils/UIView/UIView+XibSetup.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'UIImageExtensions' do |sp|
+    sp.source_files = 'Utils/Utils/UIImage/UIImageExtensions.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'UIImageExtensions' do |sp|
+    sp.source_files = 'Utils/Utils/CommonButton/CommonButton.swift'
     sp.framework = 'UIKit'
   end
 
