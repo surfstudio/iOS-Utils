@@ -141,7 +141,6 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5709EC68236F55AA00EEBD93 /* UIImage */,
 				5709EC5B236F4C2200EEBD93 /* CommonButton */,
 				18F2361221D214CC00169AC9 /* Dictionary */,
 				902C67EA21E4D1EF007B13CC /* ItemsScrollManager */,
@@ -151,6 +150,7 @@
 				907F0FE421DCD375001CCB07 /* SettingsRouter */,
 				A439074C21F5C5510034C455 /* SkeletonView */,
 				4F3ED9FA211C27E80030DD45 /* String */,
+				5709EC68236F55AA00EEBD93 /* UIImage */,
 				907F0FE121DCD1DB001CCB07 /* UINavigationController */,
 				902CA33F21E732F700396923 /* UIView */,
 				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
