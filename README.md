@@ -336,7 +336,7 @@ required init?(coder aDecoder: NSCoder) {
 
 Базовые возможности: 
 
-* Устанавливать бекграунд у кнопки для состояний: normal, highlighted, disabled
+* Устанавливать бекграунд у кнопки
 * Устанавливать цвет тайтла кнопки для состояний: normal, highlighted, disabled
 * Устанавливать значения для border у кнопки
 * Изменять cornerRadius
