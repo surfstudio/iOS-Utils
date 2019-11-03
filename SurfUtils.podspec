@@ -93,8 +93,8 @@ Pod::Spec.new do |s|
     sp.framework = 'UIKit'
   end
 
-  s.subspec 'UIImageExtensions' do |sp|
-    sp.source_files = 'Utils/Utils/CommonButton/CommonButton.swift'
+  s.subspec 'CommonButton' do |sp|
+    sp.source_files = 'Utils/Utils/CommonButton/CommonButton.swift', 'Utils/Utils/UIImage/UIImageExtensions.swift'
     sp.framework = 'UIKit'
   end
 
