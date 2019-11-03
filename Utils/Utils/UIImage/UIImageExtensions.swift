@@ -1,5 +1,5 @@
 //
-//  UIImageExtension.swift
+//  UIImageExtensions.swift
 //  Utils
 //
 //  Created by Vladislav Krupenko on 03/11/2019.
