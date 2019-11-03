@@ -29,6 +29,8 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [SkeletonView](#skeletonview) - cпециальная кастомная View для создания skeleton loader'ов
 - [OTPField](#otpfield) - кастомный филд для работы с One Time Password 
 - [XibView](#xibview) - для работы UIView + xib
+- [UIImageExtensions](UIImageExtensions) - набор часто используемых extensions для UIImage
+- [CommonButton](CommonButton) - Базовый класс для кнопки
 
 ## Утилиты
 
@@ -310,6 +312,37 @@ required init?(coder aDecoder: NSCoder) {
     xibSetup()
 }
 ```
+
+### UIImageExtensions
+
+Набор часто используемых extensions для работы с UIImage
+
+* Инициализатор позволяющий создать картинку с заданным цветом и размером 
+
+  ```swift
+  convenience init?(color: UIColor?, size: CGSize = CGSize(width: 1, height: 1))
+  ```
+
+* Метод **mask** – позволяет сделать картинку с заданным цветом или изменить параметры альфы у цвета картинки 
+
+  ```swift
+  func mask(with color: UIColor) -> UIImage 
+  func mask(with alpha: CGFloat) -> UIImage
+  ```
+
+### CommonButton
+
+Базовый класс для UIButton. Упрощает работу с доступными у класса UIButton параметрами. 
+
+Базовые возможности: 
+
+* Устанавливать бекграунд у кнопки для состояний: normal, highlighted, disabled
+* Устанавливать цвет тайтла кнопки для состояний: normal, highlighted, disabled
+* Устанавливать значения для border у кнопки
+* Изменять cornerRadius
+* Увеличивать область нажатия у кнопки
+* Устанавливать значение тайтла для всех состояний сразу
+* Устанавливать значение картинки кнопки для всех состояний сразу
 
 ## Версионирование
 
