@@ -47,7 +47,7 @@ let attrString = "Awesome attributed srting".with(attributes: [.kern(9), lineHei
 
 Пример:
 ```Swift
-if BrightSide.isWhiteDevice() {
+if BrightSide.isBright() {
     print("Девайс чист как белый лист")
 } else {
     print("На девайсе получен root доступ")
