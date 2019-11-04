@@ -12,24 +12,6 @@ open class CommonButton: UIButton {
 
     // MARK: - Public Properties
 
-    public var activeTitleColor: UIColor? {
-        didSet {
-            setTitleColor(activeTitleColor, for: .normal)
-        }
-    }
-
-    public var highlightedTitleColor: UIColor? {
-        didSet {
-            setTitleColor(highlightedTitleColor, for: .highlighted)
-        }
-    }
-
-    public var disabledTitleColor: UIColor? {
-        didSet {
-            setTitleColor(disabledTitleColor, for: .disabled)
-        }
-    }
-
     public var borderColor: UIColor? {
         didSet {
             layer.borderColor = borderColor?.cgColor
@@ -106,9 +88,19 @@ open class CommonButton: UIButton {
         setImage(highlightedImage, for: .selected)
     }
 
-    /// Method will set background color for button state
+    /// Method will set background color for control state
     public func set(backgroundColor: UIColor, for state: UIControl.State) {
         setBackgroundImage(UIImage(color: backgroundColor), for: state)
+    }
+
+    /// Method will set background color for all choosed control states
+    public func set(backgroundColor: UIColor, for states: [UIControl.State]) {
+        states.forEach { setBackgroundImage(UIImage(color: backgroundColor), for:$0) }
+    }
+
+    /// Method will set title color for all choosed control states
+    public func set(titleColor: UIColor, for states: [UIControl.State]) {
+        states.forEach { setTitleColor(titleColor, for: $0) }
     }
 
 }
