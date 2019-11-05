@@ -23,8 +23,8 @@ Pod::Spec.new do |s|
     sp.framework = 'Foundation', 'UIKit'
   end
 
-  s.subspec 'JailbreakDetect' do |sp|
-    sp.source_files = 'Utils/Utils/JailbreakDetect/JailbreakDetect.swift'
+  s.subspec 'BrightSide' do |sp|
+    sp.source_files = 'Utils/Utils/BrightSide/BrightSide.swift'
     sp.framework = 'Foundation'
   end
 
