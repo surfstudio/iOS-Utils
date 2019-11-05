@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "10.0.0"
+  s.version = "10.0.1"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -23,8 +23,8 @@ Pod::Spec.new do |s|
     sp.framework = 'Foundation', 'UIKit'
   end
 
-  s.subspec 'JailbreakDetect' do |sp|
-    sp.source_files = 'Utils/Utils/JailbreakDetect/JailbreakDetect.swift'
+  s.subspec 'BrightSide' do |sp|
+    sp.source_files = 'Utils/Utils/BrightSide/BrightSide.swift'
     sp.framework = 'Foundation'
   end
 
