@@ -34,9 +34,32 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 
 Утилита для упрощения работы с `NSAttributedString`
 
+**Варианты использования:**
+
+1. Для простых строк можно использовать метод `.with(attributes: [StringAttribute])`
+
 Пример:
 ```Swift
 let attrString = "Awesome attributed srting".with(attributes: [.kern(9), lineHeight(20)])
+```
+
+2. Для строк, где для разных участков текста необходим различный стиль есть `StringBuilder`. 
+
+Пример:
+```Swift
+let globalSttributes: [StringAttribute] = [
+    .font(.systemFont(ofSize: 14)),
+    .foregroundColor(.black)
+]
+let attributedString = StringBuilder(globalAttributes: globalSttributes)
+    .add(text: "Title")
+    .addSpace()
+    .add(text: "blue", with: [.foregroundColor(.blue)])
+    .addLineBreak()
+    .add(text: "Base style on new line")
+    .addSpace()
+    .add(text: "last word with it's own style", with: [.font(.boldSystemFont(ofSize: 16)), .foregroundColor(.red)])
+    .value
 ```
 
 ### JailbreakDetect
