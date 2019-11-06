@@ -11,7 +11,15 @@
 		4F3ED9E9211C27CF0030DD45 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3ED9DF211C27CF0030DD45 /* Utils.framework */; };
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */; };
-		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
+		5709EC5D236F4C6500EEBD93 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5709EC5C236F4C6500EEBD93 /* CommonButton.swift */; };
+		5709EC6A236F562400EEBD93 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5709EC69236F562400EEBD93 /* UIImageExtensions.swift */; };
+		80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* BrightSide.swift */; };
+		8953A46D23560A2F007AD110 /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8953A46C23560A2F007AD110 /* OTPField.swift */; };
+		8953A46F23560A4C007AD110 /* OTPField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8953A46E23560A4C007AD110 /* OTPField.xib */; };
+		898845202360482D004940DC /* UIView+XibSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8988451F2360482D004940DC /* UIView+XibSetup.swift */; };
+		89F23A69235733BC005112E1 /* DigitField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F23A68235733BC005112E1 /* DigitField.swift */; };
+		89F23A6B23575D97005112E1 /* DigitFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F23A6A23575D97005112E1 /* DigitFieldStyle.swift */; };
+		89F23A6D23576452005112E1 /* OTPFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F23A6C23576452005112E1 /* OTPFieldStyle.swift */; };
 		902C67EC21E4D20B007B13CC /* ItemsScrollManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */; };
 		902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */; };
 		90718AF121EA370000C81002 /* KeyboardNotificationsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90718AF021EA370000C81002 /* KeyboardNotificationsObserver.swift */; };
@@ -53,7 +61,15 @@
 		4F3ED9E8211C27CF0030DD45 /* UtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3ED9EF211C27CF0030DD45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
-		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
+		5709EC5C236F4C6500EEBD93 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+		5709EC69236F562400EEBD93 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		80437D25214045EF0095A8D0 /* BrightSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightSide.swift; sourceTree = "<group>"; };
+		8953A46C23560A2F007AD110 /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
+		8953A46E23560A4C007AD110 /* OTPField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTPField.xib; sourceTree = "<group>"; };
+		8988451F2360482D004940DC /* UIView+XibSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+XibSetup.swift"; sourceTree = "<group>"; };
+		89F23A68235733BC005112E1 /* DigitField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitField.swift; sourceTree = "<group>"; };
+		89F23A6A23575D97005112E1 /* DigitFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitFieldStyle.swift; sourceTree = "<group>"; };
+		89F23A6C23576452005112E1 /* OTPFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldStyle.swift; sourceTree = "<group>"; };
 		902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManager.swift; sourceTree = "<group>"; };
 		902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BlurBuilder.swift"; sourceTree = "<group>"; };
 		90718AF021EA370000C81002 /* KeyboardNotificationsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsObserver.swift; sourceTree = "<group>"; };
@@ -125,18 +141,21 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5709EC5B236F4C2200EEBD93 /* CommonButton */,
 				18F2361221D214CC00169AC9 /* Dictionary */,
 				902C67EA21E4D1EF007B13CC /* ItemsScrollManager */,
-				80437D24214045B30095A8D0 /* JailbreakDetect */,
+				80437D24214045B30095A8D0 /* BrightSide */,
 				90718AED21EA36CA00C81002 /* KeyboardPresentable */,
 				907F0FEA21DCD7C6001CCB07 /* RouteMeasurer */,
 				907F0FE421DCD375001CCB07 /* SettingsRouter */,
 				A439074C21F5C5510034C455 /* SkeletonView */,
 				4F3ED9FA211C27E80030DD45 /* String */,
+				5709EC68236F55AA00EEBD93 /* UIImage */,
 				907F0FE121DCD1DB001CCB07 /* UINavigationController */,
 				902CA33F21E732F700396923 /* UIView */,
 				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
 				907F0FED21DCDB1F001CCB07 /* WordDeclinationSelector */,
+				8953A46B23560726007AD110 /* OTPField */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
 				4F3ED9E3211C27CF0030DD45 /* Info.plist */,
 			);
@@ -162,12 +181,40 @@
 			path = String;
 			sourceTree = "<group>";
 		};
-		80437D24214045B30095A8D0 /* JailbreakDetect */ = {
+		5709EC5B236F4C2200EEBD93 /* CommonButton */ = {
 			isa = PBXGroup;
 			children = (
-				80437D25214045EF0095A8D0 /* JailbreakDetect.swift */,
+				5709EC5C236F4C6500EEBD93 /* CommonButton.swift */,
 			);
-			path = JailbreakDetect;
+			path = CommonButton;
+			sourceTree = "<group>";
+		};
+		5709EC68236F55AA00EEBD93 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				5709EC69236F562400EEBD93 /* UIImageExtensions.swift */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		80437D24214045B30095A8D0 /* BrightSide */ = {
+			isa = PBXGroup;
+			children = (
+				80437D25214045EF0095A8D0 /* BrightSide.swift */,
+			);
+			path = BrightSide;
+			sourceTree = "<group>";
+		};
+		8953A46B23560726007AD110 /* OTPField */ = {
+			isa = PBXGroup;
+			children = (
+				89F23A6A23575D97005112E1 /* DigitFieldStyle.swift */,
+				89F23A68235733BC005112E1 /* DigitField.swift */,
+				89F23A6C23576452005112E1 /* OTPFieldStyle.swift */,
+				8953A46C23560A2F007AD110 /* OTPField.swift */,
+				8953A46E23560A4C007AD110 /* OTPField.xib */,
+			);
+			path = OTPField;
 			sourceTree = "<group>";
 		};
 		902C67EA21E4D1EF007B13CC /* ItemsScrollManager */ = {
@@ -183,6 +230,7 @@
 			children = (
 				902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */,
 				A439074A21F5C52A0034C455 /* UIView+Masking.swift */,
+				8988451F2360482D004940DC /* UIView+XibSetup.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -345,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8953A46F23560A4C007AD110 /* OTPField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,18 +438,25 @@
 				9087BC5421EF3BF200FCE1E1 /* FullKeyboardPresentable.swift in Sources */,
 				D6040DFC22C5F3E20088BB50 /* StringBuilder.swift in Sources */,
 				902C67EC21E4D20B007B13CC /* ItemsScrollManager.swift in Sources */,
+				89F23A6D23576452005112E1 /* OTPFieldStyle.swift in Sources */,
 				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
 				907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */,
+				89F23A69235733BC005112E1 /* DigitField.swift in Sources */,
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
 				A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */,
-				80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */,
+				80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */,
+				898845202360482D004940DC /* UIView+XibSetup.swift in Sources */,
+				5709EC5D236F4C6500EEBD93 /* CommonButton.swift in Sources */,
 				9087BC5221EF3BE700FCE1E1 /* CommonKeyboardPresentable.swift in Sources */,
 				9087BC5021EF3BD400FCE1E1 /* KeyboardObservable.swift in Sources */,
 				E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */,
 				90718AF121EA370000C81002 /* KeyboardNotificationsObserver.swift in Sources */,
+				5709EC6A236F562400EEBD93 /* UIImageExtensions.swift in Sources */,
+				8953A46D23560A2F007AD110 /* OTPField.swift in Sources */,
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
 				902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */,
 				9087BC5621EF3BFB00FCE1E1 /* Notification.swift in Sources */,
+				89F23A6B23575D97005112E1 /* DigitFieldStyle.swift in Sources */,
 				907F0FEF21DCDB43001CCB07 /* WordDeclinationSelector.swift in Sources */,
 				A439074B21F5C52A0034C455 /* UIView+Masking.swift in Sources */,
 				9087BC5A21EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift in Sources */,

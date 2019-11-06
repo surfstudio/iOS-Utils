@@ -16,7 +16,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 ## Список утилит
 
 - [StringAttributes](#stringattributes) - упрощение работы с `NSAttributedString`
-- [JailbreakDetect](#jailbreakdetect) - позволяет определить наличие root на девайсе.
+- [BrightSide](#brightside) - позволяет определить наличие root на девайсе.
 - [VibrationFeedbackManager](#vibrationfeedbackmanager) - позволяет воспроизвести вибрацию на устройстве.
 - [QueryStringBuilder](#querystringbuilder) - построение строки с параметрами из словаря
 - [BlurBuilder](#blurbuilder) - упрощение работы с blur-эффектом
@@ -27,6 +27,10 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [ItemsScrollManager](#itemsscrollmanager) - менеджер для поэлементного скролла карусели
 - [KeyboardPresentable](#keyboardpresentable) - семейство протоколов для упрощения работы с клавиатурой и сокращения количества одинакового кода
 - [SkeletonView](#skeletonview) - cпециальная кастомная View для создания skeleton loader'ов
+- [OTPField](#otpfield) - кастомный филд для работы с One Time Password 
+- [XibView](#xibview) - для работы UIView + xib
+- [UIImageExtensions](#uiimageextensions) - набор часто используемых extensions для UIImage
+- [CommonButton](#commonbutton) - Базовый класс для кнопки
 
 ## Утилиты
 
@@ -43,7 +47,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 let attrString = "Awesome attributed srting".with(attributes: [.kern(9), lineHeight(20)])
 ```
 
-2. Для строк, где для разных участков текста необходим различный стиль есть `StringBuilder`. 
+2. Для строк, где для разных участков текста необходим различный стиль, есть `StringBuilder`. 
 
 Пример:
 ```Swift
@@ -62,16 +66,16 @@ let attributedString = StringBuilder(globalAttributes: globalSttributes)
     .value
 ```
 
-### JailbreakDetect
+### BrightSide
 
 Утилита позволяет определить наличие root на устройстве.
 
 Пример:
 ```Swift
-if JailbreakDetect.isJailBroken() {
-    print("На девайсе установлен jailbreak")
+if BrightSide.isBright() {
+    print("Девайс чист как белый лист")
 } else {
-    print("Девайс чист")
+    print("На девайсе получен root доступ")
 }
 ```
 
@@ -129,7 +133,7 @@ SettingsRouter.openDeviceSettings()
 
 ### AdvancedNavigationStackManagement
 
-Данная утилита предоставляет возможность вызова методов push и pop у UINavigationController с последующим вызывом completion-замыкания после завершения действия. 
+Данная утилита предоставляет возможность вызова методов push и pop у UINavigationController с последующим вызывом completion-замыкания после завершения действия.
 
 Пример:
 ```Swift
@@ -232,7 +236,7 @@ extension ViewController: CommonKeyboardPresentable {
 Сценарий работы с SkeletonView:
 1. Добавляем в нужное нам место view типа SkeletonView
 2. Добавляем внутрь SkeletonView вьюхи, которые хотим использовать для анимации загрузки
-3. Во ViewController'e кастомизируем SkeletonView(возможности по кастомизации ниже) и запускаем анимацию, 
+3. Во ViewController'e кастомизируем SkeletonView(возможности по кастомизации ниже) и запускаем анимацию,
 установив .shimmering = true
 
 Возможности кастомизации:
@@ -258,6 +262,110 @@ skeletonView.movingAnimationDuration = 1.0
 // Длительность задержки между шагами анимации в секундах
 skeletonView.delayBetweenAnimationLoops = 1.0
 ```
+
+### OTPField
+
+Кастомный филд для ввода OTP (One Time Password), который поддерживает Secure Code Autofill начиная с iOS 12.
+Можно использовать как из Storyboard так и из кода.
+Алгоритм работы:
+1. Добавить из кода или xib
+2. Установить стиль цифр через объект `DigitFieldStyle`
+3. Установить стиль отображения ошибки через объект `OTPFieldStyle`
+4. Применить стиль для `OTPField` с помощью метода `set(style:)`
+5. Установить количество символов методом `setDigits(count:)`
+6. Установить размер цифр методом `setDigit(size:)`
+7. Установить расстояние между цифрами методом `setBetween(space:)`
+8. Дернуть блок для обработки результата `didCodeEnter`
+
+```Swift
+
+        let otpField = OTPField()
+        otpField.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(otpField)
+
+        NSLayoutConstraint.activate([
+            otpField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            otpField.topAnchor.constraint(equalTo: view.topAnchor, constant: 64.0)
+        ])
+
+        let digitStyle = DigitFieldStyle(font: UIFont.boldSystemFont(ofSize: 34.0), activeTextColor: .green, inactiveTextColor: .gray, errorTextColor: .red, activeBottomLineColor: .green, inactiveBottomLineColor: .gray, errorBottomLineColor: .red)
+
+        let style = OTPFieldStyle(digitStyle: digitStyle, errorTextColor: .red, errorFont: UIFont.italicSystemFont(ofSize: 17.0))
+
+        otpField.setDigits(count: 4)
+
+        otpField.set(style: style)
+
+        otpField.setDigit(size: CGSize(width: 32.0, height: 32.0))
+
+        otpField.setBetween(space: 6.0)
+
+        otpField.didCodeEnter = { code in
+            self.auth(
+                code: code,
+                success: {
+                    print("success")
+                },
+                error: {
+                    otpField.showError(message: "Ошибка")
+                    otpField.clear()
+                }
+            )
+        }
+```
+
+### XibView
+
+Утилита для использования .xib + UIView. Работает в коде через конструктор и в сторибордах.
+Алгоритм:
+1. Необходимо создать файлы – View.swift и View.xib.
+2. У View.xib указать View.swift у FileOwner
+3. Во View.swift в конструкторе вызвать метод xibSetup.
+
+Пример:
+```Swift
+override init(frame: CGRect) {
+    super.init(frame: frame)
+    xibSetup()
+}
+
+required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    xibSetup()
+}
+```
+
+### UIImageExtensions
+
+Набор часто используемых extensions для работы с UIImage
+
+* Инициализатор позволяющий создать картинку с заданным цветом и размером 
+
+  ```swift
+  convenience init?(color: UIColor?, size: CGSize = CGSize(width: 1, height: 1))
+  ```
+
+* Метод **mask** – позволяет сделать картинку с заданным цветом или изменить параметры альфы у цвета картинки 
+
+  ```swift
+  func mask(with color: UIColor) -> UIImage 
+  func mask(with alpha: CGFloat) -> UIImage
+  ```
+
+### CommonButton
+
+Базовый класс для UIButton. Упрощает работу с доступными у класса UIButton параметрами. 
+
+Базовые возможности: 
+
+* Устанавливать бекграунд у кнопки для массива состояний
+* Устанавливать цвет тайтла кнопки для массива состояний
+* Устанавливать значения для border у кнопки
+* Изменять cornerRadius
+* Увеличивать область нажатия у кнопки
+* Устанавливать значение тайтла для всех состояний сразу
+* Устанавливать значение картинки кнопки для всех состояний сразу
 
 ## Версионирование
 

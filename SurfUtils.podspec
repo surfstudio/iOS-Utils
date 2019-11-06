@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "8.2.0"
+  s.version = "10.0.0"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -23,8 +23,8 @@ Pod::Spec.new do |s|
     sp.framework = 'Foundation', 'UIKit'
   end
 
-  s.subspec 'JailbreakDetect' do |sp|
-    sp.source_files = 'Utils/Utils/JailbreakDetect/JailbreakDetect.swift'
+  s.subspec 'BrightSide' do |sp|
+    sp.source_files = 'Utils/Utils/BrightSide/BrightSide.swift'
     sp.framework = 'Foundation'
   end
 
@@ -75,6 +75,26 @@ Pod::Spec.new do |s|
 
   s.subspec 'SkeletonView' do |sp|
     sp.source_files = 'Utils/Utils/SkeletonView/*.swift', 'Utils/Utils/UIView/UIView+Masking.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'OTPField' do |sp|
+    sp.source_files = 'Utils/Utils/OTPField/*.swift', 'Utils/Utils/OTPField/*.xib', 'Utils/Utils/UIView/UIView+XibSetup.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'XibView' do |sp|
+    sp.source_files = 'Utils/Utils/UIView/UIView+XibSetup.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'UIImageExtensions' do |sp|
+    sp.source_files = 'Utils/Utils/UIImage/UIImageExtensions.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'CommonButton' do |sp|
+    sp.source_files = 'Utils/Utils/CommonButton/CommonButton.swift', 'Utils/Utils/UIImage/UIImageExtensions.swift'
     sp.framework = 'UIKit'
   end
 
