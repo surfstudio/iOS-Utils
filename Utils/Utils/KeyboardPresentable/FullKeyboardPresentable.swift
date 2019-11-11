@@ -18,6 +18,12 @@ public protocol FullKeyboardPresentable: class {
     /// This method is called when the keyboard disappears from the device screen
     func keyboardWillBeHidden(keyboardInfo: Notification.KeyboardInfo)
 
+    /// This method is called after the keyboard appears on the device screen
+    func keyboardWasShown(keyboardInfo: Notification.KeyboardInfo)
+
+    /// This method is called after the keyboard disappears from the device screen
+    func keyboardWasHidden(keyboardInfo: Notification.KeyboardInfo)
+
 }
 
 public extension FullKeyboardPresentable where Self: KeyboardObservable {
@@ -28,6 +34,22 @@ public extension FullKeyboardPresentable where Self: KeyboardObservable {
 
     func keyboardWillBeHidden(notification: Notification) {
         keyboardWillBeHidden(keyboardInfo: notification.keyboardInfo)
+    }
+
+    func keyboardWasShown(notification: Notification) {
+        keyboardWasShown(keyboardInfo: notification.keyboardInfo)
+    }
+
+    func keyboardWasHidden(notification: Notification) {
+        keyboardWasHidden(keyboardInfo: notification.keyboardInfo)
+    }
+
+    // MARK: - Optional Method
+
+    func keyboardWasShown(keyboardInfo: Notification.KeyboardInfo) {
+    }
+
+    func keyboardWasHidden(keyboardInfo: Notification.KeyboardInfo) {
     }
 
 }

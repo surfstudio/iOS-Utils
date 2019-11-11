@@ -15,7 +15,7 @@ final class RouteMeasurerTests: XCTestCase {
 
     private let meterPattern = "м"
     private let kilometrPattern = "км"
-    
+
     // MARK: - Tests
 
     func testNegativeDistanceFormat() {

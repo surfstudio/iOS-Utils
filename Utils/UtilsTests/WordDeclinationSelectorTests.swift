@@ -20,19 +20,23 @@ final class WordDeclinationSelectorTests: XCTestCase {
     // MARK: - Tests
 
     func testDeclinationFor11_19() {
-        testWordDeclinationSelector(sequence: [11, 12, 13, 14, 15, 16, 17, 18, 19, 115, 1018, 10912], correctForm: form3)
+        testWordDeclinationSelector(sequence: [11, 12, 13, 14, 15, 16, 17, 18, 19, 115, 1018, 10912],
+                                    correctForm: form3)
     }
 
     func testDeclinationForEndsIn1() {
-        testWordDeclinationSelector(sequence: [1, 31, 141, 1941, 1081], correctForm: form1)
+        testWordDeclinationSelector(sequence: [1, 31, 141, 1941, 1081],
+                                    correctForm: form1)
     }
 
     func testDeclinationForEndsIn2_4() {
-        testWordDeclinationSelector(sequence: [2, 23, 54, 142, 5683, 49654], correctForm: form2)
+        testWordDeclinationSelector(sequence: [2, 23, 54, 142, 5683, 49654],
+                                    correctForm: form2)
     }
 
     func testDeclinationForEndsIn5_0() {
-        testWordDeclinationSelector(sequence: [0, 5, 6, 7, 8, 9, 20, 50, 75, 106, 4267, 1088, 55439, 100000], correctForm: form3)
+        testWordDeclinationSelector(sequence: [0, 5, 6, 7, 8, 9, 20, 50, 75, 106, 4267, 1088, 55439, 100000],
+                                    correctForm: form3)
     }
 
 }

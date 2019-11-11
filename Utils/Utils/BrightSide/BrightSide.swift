@@ -1,5 +1,5 @@
 //
-//  JailbreakDetect.swift
+//  BrightSide.swift
 //  Utils
 //
 //  Created by Vlad Krupenko on 05.09.2018.
@@ -8,30 +8,32 @@
 
 import Foundation
 
-public final class JailbreakDetect {
+public final class BrightSide {
 
-    // MARK: - Internal static methods
+    // MARK: - Public static methods
 
-    /// Method return true, if we can detect some common for jailbroken deivce files or can write to device
-    public static func isJailBroken() -> Bool {
+    /// Method return false, if we can detect some common for jailbroken deivce files or can write to device
+    public static func isBright() -> Bool {
         // Check 1 : check if current device is simulator
         if isSimulator() {
-            return false
+            return true
         }
 
         // Check 2 : existence of files that are common for jailbroken devices
         if isJailbreakDirectoriesExist() || canOpenCydia() {
-            return true
+            return false
         }
 
         // Check 3 : Reading and writing in system directories (sandbox violation)
         let stringToWrite = "Jailbreak Test"
         do {
-            try stringToWrite.write(toFile: "/private/JailbreakTest.txt", atomically: true, encoding: String.Encoding.utf8)
+            try stringToWrite.write(toFile: "/private/JailbreakTest.txt",
+                                    atomically: true,
+                                    encoding: String.Encoding.utf8)
             //Device is jailbroken
-            return true
-        } catch {
             return false
+        } catch {
+            return true
         }
     }
 
@@ -39,11 +41,18 @@ public final class JailbreakDetect {
 
 // MARK: - Private help methods
 
-private extension JailbreakDetect {
+private extension BrightSide {
 
     /// Method will return true, if any of the files typical for the jailbreak exists
     private static func isJailbreakDirectoriesExist() -> Bool {
-        let jailbreakDirectories = ["/Applications/Cydia.app", "/Library/MobileSubstrate/MobileSubstrate.dylib", "/bin/bash", "/usr/sbin/sshd", "/etc/apt", "/private/var/lib/apt/"]
+        let jailbreakDirectories = [
+            "/Applications/Cydia.app",
+            "/Library/MobileSubstrate/MobileSubstrate.dylib",
+            "/bin/bash",
+            "/usr/sbin/sshd",
+            "/etc/apt",
+            "/private/var/lib/apt/"
+        ]
         return jailbreakDirectories.map { FileManager.default.fileExists(atPath: $0) }.reduce(false, { $0 || $1 })
     }
 
@@ -61,4 +70,3 @@ private extension JailbreakDetect {
     }
 
 }
-

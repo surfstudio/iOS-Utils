@@ -9,7 +9,8 @@
 import Foundation
 
 /// An instance of this class is responsible for handling notifications when the keyboard appears and disappears.
-/// Its necessity is caused by the fact that in the protocol extension you cannot declare methods with the @objc identifier.
+/// Its necessity is caused by the fact that in the protocol extension you cannot declare methods with
+/// the @objc identifier.
 final class KeyboardNotificationsObserver {
 
     // MARK: - Private Properties
@@ -38,6 +39,16 @@ final class KeyboardNotificationsObserver {
     @objc
     func keyboardWillBeHidden(notification: Notification) {
         view?.keyboardWillBeHidden(notification: notification)
+    }
+
+    @objc
+    func keyboardWasShown(notification: Notification) {
+        view?.keyboardWasShown(notification: notification)
+    }
+
+    @objc
+    func keyboardWasHidden(notification: Notification) {
+        view?.keyboardWasHidden(notification: notification)
     }
 
     func isLinked(to view: KeyboardObservable) -> Bool {

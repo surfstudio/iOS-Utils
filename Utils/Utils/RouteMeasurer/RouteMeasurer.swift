@@ -12,15 +12,18 @@ import MapKit
 public final class RouteMeasurer {
 
     /// Method returns direct distance between two points
-    public static func calculateApproximateDistance(between firstPoint: CLLocationCoordinate2D, and secondPoint: CLLocationCoordinate2D) -> Double {
+    public static func calculateApproximateDistance(between firstPoint: CLLocationCoordinate2D,
+                                                    and secondPoint: CLLocationCoordinate2D) -> Double {
         let sourceLocation = CLLocation(latitude: firstPoint.latitude, longitude: firstPoint.longitude)
         let destinationLocation = CLLocation(latitude: secondPoint.latitude, longitude: secondPoint.longitude)
         return destinationLocation.distance(from: sourceLocation)
     }
 
     /// Method returns nearest route distance between two points, using MKDirections
-    public static func calculateDistance(between firstPoint: CLLocationCoordinate2D, and secondPoint: CLLocationCoordinate2D, completion: @escaping ((Double?) -> Void)) {
-        let directionRequest = MKDirectionsRequest()
+    public static func calculateDistance(between firstPoint: CLLocationCoordinate2D,
+                                         and secondPoint: CLLocationCoordinate2D,
+                                         completion: @escaping ((Double?) -> Void)) {
+        let directionRequest = MKDirections.Request()
         let sourcePlacemark = MKPlacemark(coordinate: firstPoint, addressDictionary: nil)
         let destinationPlacemark = MKPlacemark(coordinate: secondPoint, addressDictionary: nil)
         let source = MKMapItem(placemark: sourcePlacemark)
@@ -56,9 +59,11 @@ public final class RouteMeasurer {
     ///   - distance: Distance in meters that should be formatted
     ///   - meterPattern: Pattern for meters formatting
     ///   - kilometrPatter: Pattern for kilometers formatting
-    ///   - kmBoundaryLevel: Pass in kmBoundaryLevel value, after which the value of kilometers will be rounded to an integer value. Default value is 50000
+    ///   - kmBoundaryLevel: Pass in kmBoundaryLevel value, after which the
+    /// value of kilometers will be rounded to an integer value. Default value is 50000
     /// - Returns: Formatted distance string
-    public static func formatDistance(_ distance: Double, meterPattern: String, kilometrPatter: String, kmBoundaryLevel: Double = 50000) -> String {
+    public static func formatDistance(_ distance: Double, meterPattern: String,
+                                      kilometrPatter: String, kmBoundaryLevel: Double = 50000) -> String {
         switch distance {
         case ..<0:
             return ["0", meterPattern].joined(separator: " ")

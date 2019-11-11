@@ -131,21 +131,15 @@ public final class VibrationFeedbackManager {
         }
     }
 
-}
-
-// MARK: - Private methods
-
-private extension VibrationFeedbackManager {
-
-    private static func playDefaultFeedbackBy(type: DefaultVibrationType) {
+    public static func playDefaultFeedbackBy(type: DefaultVibrationType) {
         AudioServicesPlaySystemSound(type.systemSound)
     }
 
-    private static func playTapticFeedbackBy(type: TapticEngineVibrationType) {
+    public static func playTapticFeedbackBy(type: TapticEngineVibrationType) {
         AudioServicesPlaySystemSound(type.systemSound)
     }
 
-    private static func playHapticFeedbackBy(type: HapticFeedbackVibrationType) {
+    public static func playHapticFeedbackBy(type: HapticFeedbackVibrationType) {
         switch type {
         case .success:
             let hapticNotification = UINotificationFeedbackGenerator()

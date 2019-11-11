@@ -8,8 +8,10 @@
 
 import UIKit
 
-/// Manager allows you to organize the scroll inside the carousel in such a way that the beginning of a new element always appears on the left of the screen.
-/// To organize a scroll, it is enough to create an instance of the manager and call two of its methods at the necessary points described in the example below.
+/// Manager allows you to organize the scroll inside the carousel in such a way that
+/// the beginning of a new element always appears on the left of the screen.
+/// To organize a scroll, it is enough to create an instance of the manager
+/// and call two of its methods at the necessary points described in the example below.
 ///
 /// Example of usage:
 /// ```
@@ -21,7 +23,9 @@ import UIKit
 /// // And call two of its methods inside the UISCrollViewDelegate methods
 /// extension ViewController: UIScrollViewDelegate {
 ///
-///     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+///     func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+///                                    withVelocity velocity: CGPoint,
+///                                    targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 ///         scrollManager?.setTargetContentOffset(targetContentOffset, for: scrollView)
 ///     }
 ///
@@ -60,7 +64,8 @@ public final class ItemsScrollManager {
     ///   - cellOffset: Inter item space between two items inside the carousel
     ///   - insets: Insets for section with carousel items in collection view
     ///   - containerWidth: Carousel width, by default equal to screen width
-    public init(cellWidth: CGFloat, cellOffset: CGFloat, insets: UIEdgeInsets, containerWidth: CGFloat = UIScreen.main.bounds.width) {
+    public init(cellWidth: CGFloat, cellOffset: CGFloat,
+                insets: UIEdgeInsets, containerWidth: CGFloat = UIScreen.main.bounds.width) {
         self.cellWidth = cellWidth
         self.cellOffset = cellOffset
         self.insets = insets
@@ -90,7 +95,9 @@ public final class ItemsScrollManager {
     ///
     /// Example of usage:
     /// ```
-    /// func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    /// func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+    ///                                withVelocity velocity: CGPoint,
+    ///                                targetContentOffset: UnsafeMutablePointer<CGPoint>) {
     ///     scrollManager?.setTargetContentOffset(targetContentOffset, for: scrollView)
     /// }
     /// ```
@@ -98,7 +105,8 @@ public final class ItemsScrollManager {
     /// - Parameters:
     ///   - targetContentOffset: Scroll view targetContentOffset from delegate method scrollViewWillEndDragging(...)
     ///   - scrollView: Scroll view with carousel
-    public func setTargetContentOffset(_ targetContentOffset: UnsafeMutablePointer<CGPoint>, for scrollView: UIScrollView) {
+    public func setTargetContentOffset(_ targetContentOffset: UnsafeMutablePointer<CGPoint>,
+                                       for scrollView: UIScrollView) {
         let pageWidth = cellWidth + cellOffset
         let firstCellOffset = insets.left - cellOffset
         var targetX = targetContentOffset.pointee.x
