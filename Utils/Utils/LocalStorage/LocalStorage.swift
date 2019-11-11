@@ -11,12 +11,12 @@ final public class LocalStorage {
 
     // MARK: - Enums
 
-    public enum Error: Swift.Error {
+    public enum Error: Swift.Error, Equatable {
         /// Load method error
         ///
         /// - fileNotExist: file does not exist
         /// - cannotDecode: JSONDecoder can't decode data
-        public enum Load: Swift.Error {
+        public enum Load: Swift.Error, Equatable {
             case fileNotExist
             case cannotDecode
         }
@@ -27,7 +27,7 @@ final public class LocalStorage {
         /// - fileNotExist: file does not exist
         /// - cannotEncode: JSONEncoder can't encode data
         /// - cannotUpdate: file manager can't remove previous file with given filename
-        public enum Store: Swift.Error {
+        public enum Store: Swift.Error, Equatable {
             case fileNameNotExist
             case cannotEncode
             case cannotUpdate
@@ -37,7 +37,7 @@ final public class LocalStorage {
         ///
         /// - fileNotExist: file does not exist
         /// - cannotRemove: file manager can't remove previous file with given filename
-        public enum Remove: Swift.Error {
+        public enum Remove: Swift.Error, Equatable {
             case fileNotExist
             case cannotRemove
         }
@@ -45,16 +45,10 @@ final public class LocalStorage {
 
     // MARK: - Constants
 
-    /// Default operation queue with .userItitiated qos
-    public static let operationQueue: OperationQueue = {
-        let operationQueue = OperationQueue()
-        operationQueue.qualityOfService = .userInitiated
-        return operationQueue
-    }()
+    /// Default dispatch queue with .userItitiated qos
+    public static let dispatchQueue = DispatchQueue.global(qos: .userInitiated)
     /// Default filemanager
     private static let manager = FileManager.default
-    /// Needs for wait result value for load method and catch errors in all methods
-    private static let semaphore = DispatchSemaphore(value: 0)
 
     // MARK: - Initialization and deinitialization
 
@@ -69,19 +63,18 @@ final public class LocalStorage {
     ///   - type: type of Codable object
     ///   - operationQueue: custom operationQueue (.userInitiated qos by default)
     /// - Returns: value with given type
-    static public func load<T: Codable>(fileName: String, as type: T.Type, operationQueue: OperationQueue = operationQueue) throws -> T? {
+    static public func load<T: Codable>(fileName: String, as type: T.Type, dispatchQueue: DispatchQueue = dispatchQueue) throws -> T? {
 
         var entity: T?
         var error: Swift.Error?
 
-        operationQueue.addOperation {
+        dispatchQueue.sync {
             guard
                 let url = url(for: fileName),
                 manager.fileExists(atPath: url.path),
                 let data = manager.contents(atPath: url.path)
             else {
                 error = Error.Load.fileNotExist
-                semaphore.signal()
                 return
             }
 
@@ -93,11 +86,7 @@ final public class LocalStorage {
             } catch _ {
                 error = Error.Load.cannotDecode
             }
-
-            semaphore.signal()
         }
-
-        semaphore.wait()
 
         if let error = error {
             throw error
@@ -112,7 +101,7 @@ final public class LocalStorage {
     ///   - object: file for store
     ///   - fileName: file name for load operation
     ///   - operationQueue: custom operationQueue (.userInitiated qos by default)
-    static public func store<T: Codable>(object: T, as fileName: String, operationQueue: OperationQueue = operationQueue) throws {
+    static public func store<T: Codable>(object: T, as fileName: String, dispatchQueue: DispatchQueue = dispatchQueue) throws {
         var error: Swift.Error?
 
         guard
@@ -121,7 +110,7 @@ final public class LocalStorage {
             throw Error.Store.fileNameNotExist
         }
 
-        operationQueue.addOperation {
+        dispatchQueue.sync {
             do {
                 let data = try JSONEncoder().encode(object)
 
@@ -137,11 +126,7 @@ final public class LocalStorage {
             } catch _ {
                 error = Error.Store.cannotEncode
             }
-
-            semaphore.signal()
         }
-
-        semaphore.wait()
 
         if let error = error {
             throw error
@@ -153,17 +138,16 @@ final public class LocalStorage {
     /// - Parameters:
     ///   - fileName: filename given on store operation
     ///   - operationQueue: custom operationQueue (.userInitiated qos by default)
-    static public func remove(fileName: String, operationQueue: OperationQueue = operationQueue) throws {
+    static public func remove(fileName: String, dispatchQueue: DispatchQueue = dispatchQueue) throws {
 
         var error: Swift.Error?
 
-        operationQueue.addOperation {
+        dispatchQueue.sync {
             guard
                 let url = url(for: fileName),
                 manager.fileExists(atPath: url.path)
             else {
                 error = Error.Remove.fileNotExist
-                semaphore.signal()
                 return
             }
 
@@ -172,11 +156,7 @@ final public class LocalStorage {
             } catch _ {
                 error = Error.Remove.cannotRemove
             }
-
-            semaphore.signal()
         }
-
-        semaphore.wait()
 
         if let error = error {
             throw error

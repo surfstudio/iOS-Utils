@@ -107,7 +107,7 @@ SettingsRouter.openDeviceSettings()
 
 ### AdvancedNavigationStackManagement
 
-Данная утилита предоставляет возможность вызова методов push и pop у UINavigationController с последующим вызывом completion-замыкания после завершения действия. 
+Данная утилита предоставляет возможность вызова методов push и pop у UINavigationController с последующим вызывом completion-замыкания после завершения действия.
 
 Пример:
 ```Swift
@@ -206,6 +206,8 @@ extension ViewController: CommonKeyboardPresentable {
 ### LocalStorage
 
 Утилита для сохранения / удаления / загрузки `Codable` моделей данных в файловую систему.
+
+ВАЖНО: работает на синхронной очереди
 
 Пример:
 ```Swift

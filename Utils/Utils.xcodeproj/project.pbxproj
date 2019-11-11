@@ -12,6 +12,7 @@
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */; };
 		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
+		890C428423795BF100FF63A7 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C428323795BF100FF63A7 /* LocalStorageTests.swift */; };
 		89293B2621F59F6A0016C6BE /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89293B2521F59F6A0016C6BE /* LocalStorage.swift */; };
 		902C67EC21E4D20B007B13CC /* ItemsScrollManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */; };
 		902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */; };
@@ -52,6 +53,7 @@
 		4F3ED9EF211C27CF0030DD45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
+		890C428323795BF100FF63A7 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
 		89293B2521F59F6A0016C6BE /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManager.swift; sourceTree = "<group>"; };
 		902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BlurBuilder.swift"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				90C101C921E0B62D002E8E65 /* RouteMeasurerTests.swift */,
 				90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */,
+				890C428323795BF100FF63A7 /* LocalStorageTests.swift */,
 				4F3ED9EF211C27CF0030DD45 /* Info.plist */,
 			);
 			path = UtilsTests;
@@ -383,6 +386,7 @@
 			files = (
 				90C101CA21E0B62D002E8E65 /* RouteMeasurerTests.swift in Sources */,
 				90C101C821E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift in Sources */,
+				890C428423795BF100FF63A7 /* LocalStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
