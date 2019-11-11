@@ -63,7 +63,9 @@ final public class LocalStorage {
     ///   - type: type of Codable object
     ///   - operationQueue: custom operationQueue (.userInitiated qos by default)
     /// - Returns: value with given type
-    static public func load<T: Codable>(fileName: String, as type: T.Type, dispatchQueue: DispatchQueue = dispatchQueue) throws -> T? {
+    static public func load<T: Codable>(fileName: String,
+                                        as type: T.Type,
+                                        dispatchQueue: DispatchQueue = dispatchQueue) throws -> T? {
 
         var entity: T?
         var error: Swift.Error?
@@ -101,7 +103,9 @@ final public class LocalStorage {
     ///   - object: file for store
     ///   - fileName: file name for load operation
     ///   - operationQueue: custom operationQueue (.userInitiated qos by default)
-    static public func store<T: Codable>(object: T, as fileName: String, dispatchQueue: DispatchQueue = dispatchQueue) throws {
+    static public func store<T: Codable>(object: T,
+                                         as fileName: String,
+                                         dispatchQueue: DispatchQueue = dispatchQueue) throws {
         var error: Swift.Error?
 
         guard

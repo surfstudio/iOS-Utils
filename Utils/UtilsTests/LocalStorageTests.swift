@@ -31,7 +31,7 @@ final class LocalStorageTests: XCTestCase {
 
         // when
 
-        try! LocalStorage.store(object: user, as: filename)
+        try? LocalStorage.store(object: user, as: filename)
 
         // then
 
@@ -47,8 +47,8 @@ final class LocalStorageTests: XCTestCase {
 
         // when
 
-        try! LocalStorage.store(object: user, as: filename)
-        let loadedUser = try! LocalStorage.load(fileName: filename, as: User.self)
+        try? LocalStorage.store(object: user, as: filename)
+        let loadedUser = try? LocalStorage.load(fileName: filename, as: User.self)
 
         // then
 
@@ -61,12 +61,12 @@ final class LocalStorageTests: XCTestCase {
 
         let user = User(id: 3, name: "Jesus")
         let filename = "testRemoving"
-        var error: Error!
+        var error: Error?
 
         // when
 
-        try! LocalStorage.store(object: user, as: filename)
-        try! LocalStorage.remove(fileName: filename)
+        try? LocalStorage.store(object: user, as: filename)
+        try? LocalStorage.remove(fileName: filename)
 
         // then
 
@@ -75,7 +75,7 @@ final class LocalStorageTests: XCTestCase {
         }
 
         XCTAssertTrue(error is LocalStorage.Error.Load)
-        XCTAssertEqual(error as! LocalStorage.Error.Load, .fileNotExist)
+        XCTAssertEqual(error as? LocalStorage.Error.Load, .fileNotExist)
     }
 
     // MARK: - Test error catching
@@ -86,7 +86,7 @@ final class LocalStorageTests: XCTestCase {
 
         let time = Time(seconds: .infinity)
         let filename = "testStoringErrorCannotEncode"
-        var error: Error!
+        var error: Error?
 
         // when
 
@@ -97,7 +97,7 @@ final class LocalStorageTests: XCTestCase {
         // then
 
         XCTAssertTrue(error is LocalStorage.Error.Store)
-        XCTAssertEqual(error as! LocalStorage.Error.Store, .cannotEncode)
+        XCTAssertEqual(error as? LocalStorage.Error.Store, .cannotEncode)
     }
 
     func testLoadingErrorCannotDecode() {
@@ -106,11 +106,11 @@ final class LocalStorageTests: XCTestCase {
 
         let user = User(id: 3, name: "Jesus")
         let filename = "testLoadingErrorCannotDecode"
-        var error: Error!
+        var error: Error?
 
         // when
 
-        try! LocalStorage.store(object: user, as: filename)
+        try? LocalStorage.store(object: user, as: filename)
 
         XCTAssertThrowsError(try LocalStorage.load(fileName: filename, as: Time.self)) {
             error = $0
@@ -119,6 +119,6 @@ final class LocalStorageTests: XCTestCase {
         // then
 
         XCTAssertTrue(error is LocalStorage.Error.Load)
-        XCTAssertEqual(error as! LocalStorage.Error.Load, .cannotDecode)
+        XCTAssertEqual(error as? LocalStorage.Error.Load, .cannotDecode)
     }
 }
