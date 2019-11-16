@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "10.0.0"
+  s.version = "10.0.1"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -96,6 +96,11 @@ Pod::Spec.new do |s|
   s.subspec 'CommonButton' do |sp|
     sp.source_files = 'Utils/Utils/CommonButton/CommonButton.swift', 'Utils/Utils/UIImage/UIImageExtensions.swift'
     sp.framework = 'UIKit'
+  end
+
+  s.subspec 'LocalStorage' do |sp|
+    sp.source_files = 'Utils/Utils/LocalStorage/LocalStorage.swift'
+    sp.framework = 'Foundation'
   end
 
 end

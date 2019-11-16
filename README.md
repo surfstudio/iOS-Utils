@@ -31,7 +31,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [XibView](#xibview) - для работы UIView + xib
 - [UIImageExtensions](#uiimageextensions) - набор часто используемых extensions для UIImage
 - [CommonButton](#commonbutton) - Базовый класс для кнопки
-
+- [LocalStorage](#localstorage) – утилита для сохранения / удаления / загрузки `Codable` моделей данных в файловую систему
 ## Утилиты
 
 ### StringAttributes
@@ -366,6 +366,37 @@ required init?(coder aDecoder: NSCoder) {
 * Увеличивать область нажатия у кнопки
 * Устанавливать значение тайтла для всех состояний сразу
 * Устанавливать значение картинки кнопки для всех состояний сразу
+
+### LocalStorage
+
+Утилита для сохранения / удаления / загрузки `Codable` моделей данных в файловую систему.
+
+ВАЖНО: работает на синхронной очереди
+
+Пример:
+```Swift
+
+// Модель должна быть Codable
+
+struct Model: Codable {
+    let id: Int
+    let name: String
+}
+
+let model = Model(id: 2, name: "Ибрагим")
+
+// Сохранение модели с необходимым названием файла
+
+LocalStorage.store(object: model, as: "filename")
+
+// Загрузка модели с указанием имени файла и типом модели
+
+LocalStorage.load(fileName: "filename", as: Model.self)
+
+// Удаление модели с указанием имени файла
+
+LocalStorage.remove(fileName: Constants.newLocalPostFileName)
+```
 
 ## Версионирование
 

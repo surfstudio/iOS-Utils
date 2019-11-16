@@ -95,7 +95,7 @@ open class CommonButton: UIButton {
 
     /// Method will set background color for all choosed control states
     public func set(backgroundColor: UIColor, for states: [UIControl.State]) {
-        states.forEach { setBackgroundImage(UIImage(color: backgroundColor), for:$0) }
+        states.forEach { setBackgroundImage(UIImage(color: backgroundColor), for: $0) }
     }
 
     /// Method will set title color for all choosed control states
