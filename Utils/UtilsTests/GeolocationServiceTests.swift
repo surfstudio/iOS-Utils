@@ -10,6 +10,68 @@ import XCTest
 import CoreLocation
 @testable import Utils
 
+// MARK: - MockError
+
+enum MockError: Error {
+    case `default`
+}
+
+// MARK: - LocationManagerMock
+
+final class LocationManagerMock: LocationManagerInterface {
+
+    // MARK: - Properties
+
+    var currentStatus: CLAuthorizationStatus = .denied
+    var updatingIsEnabled = false
+    var requestOnAuthIsInvoked = false
+    var desiredAccuracy: CLLocationAccuracy = kCLLocationAccuracyHundredMeters
+
+    // MARK: - LocationManagerInterface
+
+    weak var delegate: CLLocationManagerDelegate?
+    var status: CLAuthorizationStatus {
+        return currentStatus
+    }
+
+    func requestLocation() {
+        updatingIsEnabled = true
+    }
+
+    func requestWhenInUseAuthorization() {
+        requestOnAuthIsInvoked = true
+    }
+
+    // MARK: - Internal Methods
+
+    func sendErrorEvent() {
+        delegate?.locationManager?(CLLocationManager(),
+                                   didFailWithError: MockError.default)
+        updatingIsEnabled = false
+    }
+
+    func sendLocationEvent() {
+        delegate?.locationManager?(CLLocationManager(),
+                                   didUpdateLocations: [CLLocation(latitude: 12,
+                                                                   longitude: 12)])
+        updatingIsEnabled = false
+    }
+
+    func sendEmptyLocationEvent() {
+        delegate?.locationManager?(CLLocationManager(),
+                                   didUpdateLocations: [])
+        updatingIsEnabled = false
+    }
+
+    func sendAuthEvent() {
+        delegate?.locationManager?(CLLocationManager(),
+                                   didChangeAuthorization: currentStatus)
+    }
+
+}
+
+// MARK: - GeolocationServiceTests
+
 final class GeolocationServiceTests: XCTestCase {
 
     // MARK: - Tests
@@ -277,66 +339,6 @@ final class GeolocationServiceTests: XCTestCase {
         XCTAssertTrue(manager.updatingIsEnabled)
         manager.sendLocationEvent()
         XCTAssertFalse(manager.updatingIsEnabled)
-    }
-
-}
-
-// MARK: - MockError
-
-enum MockError: Error {
-    case `default`
-}
-
-// MARK: - LocationManagerMock
-
-final class LocationManagerMock: LocationManagerInterface {
-
-    // MARK: - Properties
-
-    var currentStatus: CLAuthorizationStatus = .denied
-    var updatingIsEnabled = false
-    var requestOnAuthIsInvoked = false
-    var desiredAccuracy: CLLocationAccuracy = kCLLocationAccuracyHundredMeters
-
-    // MARK: - LocationManagerInterface
-
-    weak var delegate: CLLocationManagerDelegate?
-    var status: CLAuthorizationStatus {
-        return currentStatus
-    }
-
-    func requestLocation() {
-        updatingIsEnabled = true
-    }
-
-    func requestWhenInUseAuthorization() {
-        requestOnAuthIsInvoked = true
-    }
-
-    // MARK: - Internal Methods
-
-    func sendErrorEvent() {
-        delegate?.locationManager?(CLLocationManager(),
-                                   didFailWithError: MockError.default)
-        updatingIsEnabled = false
-    }
-
-    func sendLocationEvent() {
-        delegate?.locationManager?(CLLocationManager(),
-                                   didUpdateLocations: [CLLocation(latitude: 12,
-                                                                   longitude: 12)])
-        updatingIsEnabled = false
-    }
-
-    func sendEmptyLocationEvent() {
-        delegate?.locationManager?(CLLocationManager(),
-                                   didUpdateLocations: [])
-        updatingIsEnabled = false
-    }
-
-    func sendAuthEvent() {
-        delegate?.locationManager?(CLLocationManager(),
-                                   didChangeAuthorization: currentStatus)
     }
 
 }
