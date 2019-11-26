@@ -103,4 +103,9 @@ Pod::Spec.new do |s|
     sp.framework = 'Foundation'
   end
 
+  s.subspec 'GeolocationService' do |sp|
+    sp.source_files = 'Utils/Utils/GeolocationService/**/*.swift'
+    sp.framework = 'Foundation', 'CoreLocation'
+  end
+
 end
