@@ -1,5 +1,5 @@
 //
-//  AbstractLocationManager.swift
+//  LocationManagerInterface.swift
 //  Utils
 //
 //  Created by Александр Чаусов on 20/11/2019.
@@ -8,8 +8,8 @@
 
 import CoreLocation
 
-/// Abstarct protocol with 'CLLocationManager' interface for testing GeolocationService.
-public protocol AbstractLocationManager {
+/// Protocol with 'CLLocationManager' interface for testing GeolocationService.
+public protocol LocationManagerInterface {
     /// The delegate object to receive update events.
     var delegate: CLLocationManagerDelegate? { get set }
     /// Returns the app’s authorization status for using location services.
@@ -25,7 +25,7 @@ public protocol AbstractLocationManager {
 
 // MARK: - CLLocationManager
 
-extension CLLocationManager: AbstractLocationManager {
+extension CLLocationManager: LocationManagerInterface {
 
     public var status: CLAuthorizationStatus {
         return CLLocationManager.authorizationStatus()

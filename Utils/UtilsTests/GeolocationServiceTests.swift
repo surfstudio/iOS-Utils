@@ -283,7 +283,7 @@ final class GeolocationServiceTests: XCTestCase {
 
 // MARK: - LocationManagerMock
 
-final class LocationManagerMock: AbstractLocationManager {
+final class LocationManagerMock: LocationManagerInterface {
 
     // MARK: - Properties
 
@@ -292,7 +292,7 @@ final class LocationManagerMock: AbstractLocationManager {
     var requestOnAuthIsInvoked = false
     var desiredAccuracy: CLLocationAccuracy = kCLLocationAccuracyHundredMeters
 
-    // MARK: - AbstractLocationManager
+    // MARK: - LocationManagerInterface
 
     weak var delegate: CLLocationManagerDelegate?
     var status: CLAuthorizationStatus {

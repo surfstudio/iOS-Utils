@@ -9,11 +9,11 @@
 import CoreLocation
 
 /// Service for working with user geoposition
-public final class GeolocationService: NSObject, GeolocationAbstractService {
+public final class GeolocationService: NSObject, GeolocationServiceInterface {
 
     // MARK: - Private Properties
 
-    private var locationManager: AbstractLocationManager
+    private var locationManager: LocationManagerInterface
     private var locationRequests: [GeolocationCompletion] = []
     private var authRequests: [GeolocationAuthCompletion] = []
 
@@ -28,7 +28,7 @@ public final class GeolocationService: NSObject, GeolocationAbstractService {
 
     // MARK: - Initialization
 
-    public init(manager: AbstractLocationManager = CLLocationManager(),
+    public init(manager: LocationManagerInterface = CLLocationManager(),
                 accuracy: GeolocationAccuracy = .hundredMeters) {
         self.locationManager = manager
         self.accuracy = accuracy
@@ -37,7 +37,7 @@ public final class GeolocationService: NSObject, GeolocationAbstractService {
         self.locationManager.delegate = self
     }
 
-    // MARK: - GeolocationAbstractService
+    // MARK: - GeolocationServiceInterface
 
     public func getCurrentLocation(_ completion: @escaping GeolocationCompletion) {
         let status = locationManager.status
@@ -75,9 +75,7 @@ extension GeolocationService: CLLocationManagerDelegate {
             notifySubscribersAboutError()
             return
         }
-        for request in locationRequests {
-            request(.success(location))
-        }
+        locationRequests.forEach { $0(.success(location)) }
         locationRequests.removeAll()
     }
 
@@ -92,9 +90,7 @@ extension GeolocationService: CLLocationManagerDelegate {
             return
         }
         let authStatus: GeolocationAuthResult = isAuthorizedStatus(status) ? .success : .failure
-        for request in authRequests {
-            request(authStatus)
-        }
+        authRequests.forEach { $0(authStatus) }
         authRequests.removeAll()
     }
 
@@ -105,9 +101,7 @@ extension GeolocationService: CLLocationManagerDelegate {
 private extension GeolocationService {
 
     func notifySubscribersAboutError() {
-        for request in locationRequests {
-            request(.error)
-        }
+        locationRequests.forEach { $0(.error) }
         locationRequests.removeAll()
     }
 
