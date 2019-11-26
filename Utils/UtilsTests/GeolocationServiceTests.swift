@@ -160,8 +160,8 @@ final class GeolocationServiceTests: XCTestCase {
         }
         manager.currentStatus = .authorizedWhenInUse
         manager.sendAuthEvent()
-        XCTAssertEqual(responses.count, 2)
         guard responses.count == 2 else {
+            XCTFail()
             return
         }
         XCTAssertEqual(responses[0], .requesting)
@@ -281,6 +281,12 @@ final class GeolocationServiceTests: XCTestCase {
 
 }
 
+// MARK: - MockError
+
+enum MockError: Error {
+    case `default`
+}
+
 // MARK: - LocationManagerMock
 
 final class LocationManagerMock: LocationManagerInterface {
@@ -333,10 +339,4 @@ final class LocationManagerMock: LocationManagerInterface {
                                    didChangeAuthorization: currentStatus)
     }
 
-}
-
-// MARK: - MockError
-
-enum MockError: Error {
-    case `default`
 }
