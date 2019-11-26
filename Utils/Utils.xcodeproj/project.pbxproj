@@ -11,6 +11,9 @@
 		4F3ED9E9211C27CF0030DD45 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3ED9DF211C27CF0030DD45 /* Utils.framework */; };
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */; };
+		80437D26214045EF0095A8D0 /* JailbreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* JailbreakDetect.swift */; };
+		890C428423795BF100FF63A7 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C428323795BF100FF63A7 /* LocalStorageTests.swift */; };
+		89293B2621F59F6A0016C6BE /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89293B2521F59F6A0016C6BE /* LocalStorage.swift */; };
 		5709EC5D236F4C6500EEBD93 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5709EC5C236F4C6500EEBD93 /* CommonButton.swift */; };
 		5709EC6A236F562400EEBD93 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5709EC69236F562400EEBD93 /* UIImageExtensions.swift */; };
 		80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* BrightSide.swift */; };
@@ -61,6 +64,9 @@
 		4F3ED9E8211C27CF0030DD45 /* UtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3ED9EF211C27CF0030DD45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
+		80437D25214045EF0095A8D0 /* JailbreakDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetect.swift; sourceTree = "<group>"; };
+		890C428323795BF100FF63A7 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
+		89293B2521F59F6A0016C6BE /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		5709EC5C236F4C6500EEBD93 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		5709EC69236F562400EEBD93 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		80437D25214045EF0095A8D0 /* BrightSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightSide.swift; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 				902CA33F21E732F700396923 /* UIView */,
 				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
 				907F0FED21DCDB1F001CCB07 /* WordDeclinationSelector */,
+				89293B2421F59F6A0016C6BE /* LocalStorage */,
 				8953A46B23560726007AD110 /* OTPField */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
 				4F3ED9E3211C27CF0030DD45 /* Info.plist */,
@@ -167,6 +174,7 @@
 			children = (
 				90C101C921E0B62D002E8E65 /* RouteMeasurerTests.swift */,
 				90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */,
+				890C428323795BF100FF63A7 /* LocalStorageTests.swift */,
 				4F3ED9EF211C27CF0030DD45 /* Info.plist */,
 			);
 			path = UtilsTests;
@@ -215,6 +223,14 @@
 				8953A46E23560A4C007AD110 /* OTPField.xib */,
 			);
 			path = OTPField;
+			sourceTree = "<group>";
+		};
+		89293B2421F59F6A0016C6BE /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				89293B2521F59F6A0016C6BE /* LocalStorage.swift */,
+			);
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 		902C67EA21E4D1EF007B13CC /* ItemsScrollManager */ = {
@@ -433,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */,
+				89293B2621F59F6A0016C6BE /* LocalStorage.swift in Sources */,
 				18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */,
 				E9B063102147AECC0080C391 /* UIDevice+feedbackType.swift in Sources */,
 				9087BC5421EF3BF200FCE1E1 /* FullKeyboardPresentable.swift in Sources */,
@@ -470,6 +487,7 @@
 			files = (
 				90C101CA21E0B62D002E8E65 /* RouteMeasurerTests.swift in Sources */,
 				90C101C821E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift in Sources */,
+				890C428423795BF100FF63A7 /* LocalStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
