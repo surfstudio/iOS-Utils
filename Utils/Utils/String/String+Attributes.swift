@@ -21,7 +21,7 @@ public enum StringAttribute {
     case foregroundColor(UIColor)
     /// Text aligment
     case aligment(NSTextAlignment)
-    /// Test crossing out
+    /// Text crossing out
     case crossOut(style: CrossOutStyle)
 
     /// Figma friendly case means that lineSpacing = lineHeight - font.lineHeight
