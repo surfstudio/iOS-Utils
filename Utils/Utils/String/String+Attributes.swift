@@ -23,6 +23,8 @@ public enum StringAttribute {
     case aligment(NSTextAlignment)
     /// Text crossing out
     case crossOut(style: CrossOutStyle)
+    /// Text line break mode
+    case lineBreakMode(NSLineBreakMode)
 
     /// Figma friendly case means that lineSpacing = lineHeight - font.lineHeight
     /// This case provide possibility to set both `font` and `lineSpacing`
@@ -55,7 +57,7 @@ extension StringAttribute{
 extension StringAttribute {
     var attributeKey: NSAttributedString.Key {
         switch self {
-        case .lineSpacing, .aligment, .lineHeight:
+        case .lineSpacing, .aligment, .lineHeight, .lineBreakMode:
             return NSAttributedString.Key.paragraphStyle
         case .kern:
             return NSAttributedString.Key.kern
@@ -84,6 +86,8 @@ extension StringAttribute {
             return lineHeight - font.lineHeight
         case .crossOut(let style):
             return style.coreValue.rawValue
+        case .lineBreakMode(let value):
+            return value
         }
     }
 }
@@ -107,7 +111,8 @@ private extension Array where Element == StringAttribute {
             switch item {
             case .lineHeight(_, let font):
                 result.append(.font(font))
-            default: break
+            default:
+                break
             }
         }
 
@@ -128,6 +133,9 @@ public extension Array where Element == StringAttribute {
                 resultAttributes[attribute.attributeKey] = paragraph
             case .lineSpacing(let value):
                 paragraph.lineSpacing = value
+                resultAttributes[attribute.attributeKey] = paragraph
+            case .lineBreakMode(let value):
+                paragraph.lineBreakMode = value
                 resultAttributes[attribute.attributeKey] = paragraph
             case .aligment(let value):
                 paragraph.alignment = value
