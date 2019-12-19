@@ -21,16 +21,43 @@ public enum StringAttribute {
     case foregroundColor(UIColor)
     /// Text aligment
     case aligment(NSTextAlignment)
+    /// Text crossing out
+    case crossOut(style: CrossOutStyle)
+    /// Text line break mode
+    case lineBreakMode(NSLineBreakMode)
 
     /// Figma friendly case means that lineSpacing = lineHeight - font.lineHeight
     /// This case provide possibility to set both `font` and `lineSpacing`
     /// First parameter is Font and second parameter is lineHeight property from Figma
     /// For more details see [#14](https://github.com/surfstudio/iOS-Utils/issues/14)
     case lineHeight(CGFloat, font: UIFont)
+}
 
+// MARK: - Nested types
+
+extension StringAttribute{
+    /// Enum for configuring style of crossOut text
+    public enum CrossOutStyle {
+        case single
+        case double
+
+        var coreValue: NSUnderlineStyle {
+            switch self {
+            case .double:
+                return NSUnderlineStyle.double
+            case .single:
+                return NSUnderlineStyle.single
+            }
+        }
+    }
+}
+
+// MARK: - StringAttribute extension
+
+extension StringAttribute {
     var attributeKey: NSAttributedString.Key {
         switch self {
-        case .lineSpacing, .aligment, .lineHeight:
+        case .lineSpacing, .aligment, .lineHeight, .lineBreakMode:
             return NSAttributedString.Key.paragraphStyle
         case .kern:
             return NSAttributedString.Key.kern
@@ -38,6 +65,8 @@ public enum StringAttribute {
             return NSAttributedString.Key.font
         case .foregroundColor:
             return NSAttributedString.Key.foregroundColor
+        case .crossOut:
+            return NSAttributedString.Key.strikethroughStyle
         }
     }
 
@@ -55,17 +84,24 @@ public enum StringAttribute {
             return value
         case .lineHeight(let lineHeight, let font):
             return lineHeight - font.lineHeight
+        case .crossOut(let style):
+            return style.coreValue.rawValue
+        case .lineBreakMode(let value):
+            return value
         }
     }
 }
 
-public extension String {
+// MARK: - String extension
 
+public extension String {
     /// Apply attributes to string and returns new attributes string
     func with(attributes: [StringAttribute]) -> NSAttributedString {
         return NSAttributedString(string: self, attributes: attributes.toDictionary())
     }
 }
+
+// MARK: - Private array extension
 
 private extension Array where Element == StringAttribute {
     func normalizedAttributes() -> [StringAttribute] {
@@ -75,13 +111,16 @@ private extension Array where Element == StringAttribute {
             switch item {
             case .lineHeight(_, let font):
                 result.append(.font(font))
-            default: break
+            default:
+                break
             }
         }
 
         return result
     }
 }
+
+// MARK: - Public array extension
 
 public extension Array where Element == StringAttribute {
     func toDictionary() -> [NSAttributedString.Key: Any] {
@@ -94,6 +133,9 @@ public extension Array where Element == StringAttribute {
                 resultAttributes[attribute.attributeKey] = paragraph
             case .lineSpacing(let value):
                 paragraph.lineSpacing = value
+                resultAttributes[attribute.attributeKey] = paragraph
+            case .lineBreakMode(let value):
+                paragraph.lineBreakMode = value
                 resultAttributes[attribute.attributeKey] = paragraph
             case .aligment(let value):
                 paragraph.alignment = value

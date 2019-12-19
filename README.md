@@ -32,6 +32,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [UIImageExtensions](#uiimageextensions) - набор часто используемых extensions для UIImage
 - [CommonButton](#commonbutton) - Базовый класс для кнопки
 - [LocalStorage](#localstorage) – утилита для сохранения / удаления / загрузки `Codable` моделей данных в файловую систему
+- [GeolocationService](#geolocationservice) – сервис для определения геопозиции пользователя
 ## Утилиты
 
 ### StringAttributes
@@ -396,6 +397,46 @@ LocalStorage.load(fileName: "filename", as: Model.self)
 // Удаление модели с указанием имени файла
 
 LocalStorage.remove(fileName: Constants.newLocalPostFileName)
+```
+
+### GeolocationService
+
+Сервис для определения геопозиции пользователя. Позволяет получить текущее местоположение пользователя и узнать статус доступа к сервисам геопозиции. Выполнен в виде сервиса, закрытого абстрактным протоколом, потому имеется возможность инжектить его в `Presenter` наравне с другими сервисами, а также покрыть его тестами, при необходимости.
+
+Пример:
+```Swift
+
+// Создание сервиса:
+
+let service = GeolocationService()
+
+// Получение статуса доступа к сервисам геолокации:
+
+service.requestAuthorization { result in
+    switch result {
+    case .success:
+        // access is allowed
+    case .denied:
+        // user denied access to geolocation
+    case .failure:
+        // user doesn't gave permission on his geolocation in the system dialog
+    case .requesting:
+        // system dialog is currently displayed
+    }
+}
+
+// Получение геопозиции пользователя:
+
+service.getCurrentLocation { result in
+    switch result {
+    case .success(let location):
+        // do something usefull with user location
+    case .denied:
+        // user denied access to geolocation
+    case .error:
+        // some error ocured
+    }
+}
 ```
 
 ## Версионирование
