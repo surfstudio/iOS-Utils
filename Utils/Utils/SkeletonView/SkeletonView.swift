@@ -85,6 +85,7 @@ open class SkeletonView: UIView {
 
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
+        removeGradientLayerIfNeeded()
         configureGradientLayer()
         updateColors()
         maskingViews = subviews
@@ -142,6 +143,11 @@ private extension SkeletonView {
             gradientMovingColor.cgColor,
             gradientBackgroundColor.cgColor
         ]
+    }
+
+    func removeGradientLayerIfNeeded() {
+        gradientLayer?.removeFromSuperlayer()
+        gradientLayer = nil
     }
 
     func configureGradientLayer() {
