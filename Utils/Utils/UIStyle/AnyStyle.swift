@@ -17,7 +17,7 @@ public struct AnyStyle<Control: UIView>: UIStyleProtocol {
     // MARK: - Initialization
 
     public init<T>(style: T) where T: UIStyleProtocol, T.Control == Control {
-        self.box = Box(style: style)
+        self.box = StyleBox(style: style)
     }
 
     // MARK: - Public Methods
@@ -42,7 +42,7 @@ public class BaseBox<Control: UIView>: UIStyleProtocol {
 
 }
 
-public class Box<Style: UIStyleProtocol>: BaseBox<Style.Control> {
+public class StyleBox<Style: UIStyleProtocol>: BaseBox<Style.Control> {
 
     // MARK: - Public Properties
 

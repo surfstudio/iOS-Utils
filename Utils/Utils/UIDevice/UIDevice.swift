@@ -10,15 +10,6 @@ import Device
 
 public extension UIDevice {
 
-    /// Returns 'true' if iOS 13 is available
-    static var isAvailableIos13: Bool {
-        if #available(iOS 13.0, *) {
-            return true
-        } else {
-            return false
-        }
-    }
-
     /// Returns 'true' if device have 4inch diagonal screen or smaller (5, 5s, 5c, SE)
     static var isSmallPhone: Bool {
         let smallSizes: [Size] = [.screen3_5Inch,
@@ -28,7 +19,9 @@ public extension UIDevice {
 
     /// Returns `true` if device have screen size of X version
     static var isXPhone: Bool {
-        let xSizes: [Size] = [.screen5_8Inch, .screen6_1Inch, .screen6_5Inch]
+        let xSizes: [Size] = [.screen5_8Inch,
+                              .screen6_1Inch,
+                              .screen6_5Inch]
         return xSizes.contains(Device.size())
     }
 
@@ -37,14 +30,6 @@ public extension UIDevice {
         let normalSizes: [Size] = [.screen4_7Inch,
                                    .screen5_5Inch]
         return normalSizes.contains(Device.size())
-    }
-
-    /// Returns 'true' if device is phone and have dioganal screen 5.8inch or bigger (X, XS, XR, XS Max).
-    static var isLargePhone: Bool {
-        let largeSizes: [Size] = [.screen5_8Inch,
-                                  .screen6_1Inch,
-                                  .screen6_5Inch]
-        return largeSizes.contains(Device.size())
     }
 
     /// Returns 'true' if current device is iPad
