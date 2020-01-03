@@ -1,0 +1,65 @@
+# Customise this file, documentation can be found here:
+# https://docs.fastlane.tools/actions/
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+default_platform :ios
+
+platform :ios do
+
+  workspace_file = 'Utils.xcworkspace'
+  project_file = 'Utils.xcodeproj'
+  default_scheme = 'Utils'
+  bundle_name = "Surf.Utils"
+  derived_data_path = "./buildData"
+
+  before_all do |lane, options|  
+    # ensure_git_status_clean 
+  end
+
+  desc "Build Main scheme of Xcode target in Debug configuration"
+  desc "Parameters:
+  - clean: Pass **true** if you need to clean project before build
+  "
+  lane :build do |options|
+    xcodebuild(
+      workspace: workspace_file,
+      scheme: default_scheme,
+      configuration: "Debug",
+      clean: options[:clean],
+      build: true,
+      destination: "generic/platform=iOS\" CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=\"",
+      xcargs: "-sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build-for-testing",
+      derivedDataPath: derived_data_path
+    )
+  end
+
+  desc "Run tests"
+  lane :tests do
+    run_tests(
+      workspace: workspace_file,
+      devices: ["iPhone SE"],
+      scheme: debug_scheme,
+      code_coverage: false,
+      test_without_building: true,
+      skip_build: true,
+      derived_data_path: derived_data_path,
+      xcargs: "-sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build-for-testing",
+      output_types: "html,junit"
+  )
+  end
+
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used. No personal data is recorded. 
+# Learn more at https://github.com/fastlane/fastlane#metrics
