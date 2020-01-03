@@ -120,4 +120,9 @@ Pod::Spec.new do |s|
     sp.dependency 'Device', '3.1.2'
   end
 
+  s.subspec 'UIStyle' do |sp|
+    sp.source_files = 'Utils/Utils/UIStyle/UIStyle.swift', 'Utils/Utils/UIStyle/AnyStyle.swift'
+    sp.framework = 'UIKit'
+  end
+
 end
