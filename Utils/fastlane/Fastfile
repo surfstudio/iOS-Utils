@@ -45,7 +45,7 @@ platform :ios do
     run_tests(
       workspace: workspace_file,
       devices: ["iPhone SE"],
-      scheme: debug_scheme,
+      scheme: default_scheme,
       code_coverage: false,
       test_without_building: true,
       skip_build: true,

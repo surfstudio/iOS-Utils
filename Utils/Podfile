@@ -1,15 +1,17 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+def common_pods 
+	pod 'Device', '3.1.2'
+end 
+
 target 'Utils' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Device', '3.1.2'
+  common_pods
 
   target 'UtilsTests' do
-    inherit! :search_paths
-    # Pods for testing
+  	common_pods
   end
 
 end
