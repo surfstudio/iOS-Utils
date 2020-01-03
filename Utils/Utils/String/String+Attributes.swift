@@ -35,7 +35,7 @@ public enum StringAttribute {
 
 // MARK: - Nested types
 
-extension StringAttribute{
+extension StringAttribute {
     /// Enum for configuring style of crossOut text
     public enum CrossOutStyle {
         case single

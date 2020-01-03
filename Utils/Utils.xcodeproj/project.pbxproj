@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -372,7 +372,6 @@
 				03334A1D4618E8D80FE93B35 /* Pods-Utils-UtilsTests.debug.xcconfig */,
 				02F9B416D59467D2B80A9C5F /* Pods-Utils-UtilsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -407,10 +406,10 @@
 			buildPhases = (
 				A9A2EC798088A2C3686B19BB /* [CP] Check Pods Manifest.lock */,
 				4F3ED9DA211C27CF0030DD45 /* Sources */,
-				8B66F35C21FDB938000BDCB8 /* Swift Lint */,
 				4F3ED9DB211C27CF0030DD45 /* Frameworks */,
 				4F3ED9DC211C27CF0030DD45 /* Headers */,
 				4F3ED9DD211C27CF0030DD45 /* Resources */,
+				8B66F35C21FDB938000BDCB8 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -531,7 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which ${PODS_ROOT}/SwiftLint/swiftlint >/dev/null; then\n  ${PODS_ROOT}/SwiftLint/swiftlint --config \"${SRCROOT}/.swiftlint.yml\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		A9A2EC798088A2C3686B19BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -824,7 +823,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 03334A1D4618E8D80FE93B35 /* Pods-Utils-UtilsTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJ45BEVK69;
 				INFOPLIST_FILE = UtilsTests/Info.plist;
@@ -844,7 +843,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02F9B416D59467D2B80A9C5F /* Pods-Utils-UtilsTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJ45BEVK69;
 				INFOPLIST_FILE = UtilsTests/Info.plist;
