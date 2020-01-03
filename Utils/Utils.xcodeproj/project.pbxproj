@@ -15,6 +15,8 @@
 		5709EC6A236F562400EEBD93 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5709EC69236F562400EEBD93 /* UIImageExtensions.swift */; };
 		573117D123BF84C400491781 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573117D023BF84C400491781 /* UIDevice.swift */; };
 		573117D623BF889000491781 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573117D523BF889000491781 /* LayoutHelper.swift */; };
+		573117D923BFD28300491781 /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573117D823BFD28300491781 /* UIStyle.swift */; };
+		573117DB23BFD33000491781 /* AnyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573117DA23BFD33000491781 /* AnyStyle.swift */; };
 		80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* BrightSide.swift */; };
 		8223ED95F8D4355B6D1B4403 /* Pods_Utils_UtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102A9A8EF253FEE66EBF94C1 /* Pods_Utils_UtilsTests.framework */; };
 		890C428423795BF100FF63A7 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C428323795BF100FF63A7 /* LocalStorageTests.swift */; };
@@ -82,6 +84,8 @@
 		5709EC69236F562400EEBD93 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		573117D023BF84C400491781 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		573117D523BF889000491781 /* LayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutHelper.swift; sourceTree = "<group>"; };
+		573117D823BFD28300491781 /* UIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyle.swift; sourceTree = "<group>"; };
+		573117DA23BFD33000491781 /* AnyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyStyle.swift; sourceTree = "<group>"; };
 		632D58609B21028A5FFDF22F /* Pods-Utils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils.debug.xcconfig"; path = "Target Support Files/Pods-Utils/Pods-Utils.debug.xcconfig"; sourceTree = "<group>"; };
 		80437D25214045EF0095A8D0 /* BrightSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightSide.swift; sourceTree = "<group>"; };
 		890C428323795BF100FF63A7 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				573117CF23BF84B300491781 /* UIDevice */,
 				5709EC68236F55AA00EEBD93 /* UIImage */,
 				907F0FE121DCD1DB001CCB07 /* UINavigationController */,
+				573117D723BFD26800491781 /* UIStyle */,
 				902CA33F21E732F700396923 /* UIView */,
 				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
 				907F0FED21DCDB1F001CCB07 /* WordDeclinationSelector */,
@@ -262,6 +267,15 @@
 				573117D523BF889000491781 /* LayoutHelper.swift */,
 			);
 			path = LayoutHelper;
+			sourceTree = "<group>";
+		};
+		573117D723BFD26800491781 /* UIStyle */ = {
+			isa = PBXGroup;
+			children = (
+				573117D823BFD28300491781 /* UIStyle.swift */,
+				573117DA23BFD33000491781 /* AnyStyle.swift */,
+			);
+			path = UIStyle;
 			sourceTree = "<group>";
 		};
 		80437D24214045B30095A8D0 /* BrightSide */ = {
@@ -639,10 +653,12 @@
 				573117D123BF84C400491781 /* UIDevice.swift in Sources */,
 				9087BC5621EF3BFB00FCE1E1 /* Notification.swift in Sources */,
 				89F23A6B23575D97005112E1 /* DigitFieldStyle.swift in Sources */,
+				573117DB23BFD33000491781 /* AnyStyle.swift in Sources */,
 				907F0FEF21DCDB43001CCB07 /* WordDeclinationSelector.swift in Sources */,
 				A439074B21F5C52A0034C455 /* UIView+Masking.swift in Sources */,
 				9087BC5A21EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift in Sources */,
 				907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */,
+				573117D923BFD28300491781 /* UIStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
