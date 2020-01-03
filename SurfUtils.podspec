@@ -108,4 +108,10 @@ Pod::Spec.new do |s|
     sp.framework = 'Foundation', 'CoreLocation'
   end
 
+  s.subspec 'UIDevice' do |sp|
+    sp.source_files = 'Utils/Utils/UIDevice/UIDevice.swift'
+    sp.framework = 'UIKit'
+    sp.dependency 'Device', '3.1.2'
+  end
+
 end
