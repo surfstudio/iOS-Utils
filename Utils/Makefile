@@ -23,7 +23,6 @@ format:
 ## Run SwiftLint check
 lint:
 	./Pods/SwiftLint/swiftlint lint --config .swiftlint.yml
-	npx jscpd --config ./.jscpd.json ./
 
 ## Execute pod install command
 pod:
