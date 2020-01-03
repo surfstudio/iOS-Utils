@@ -12,25 +12,28 @@ public class LayoutHelper: NSLayoutConstraint {
 
     @IBInspectable public var isSmallPhone: CGFloat = 0.0 {
         didSet {
-            if UIDevice.isSmallPhone {
-                constant = isSmallPhone
+            guard UIDevice.isSmallPhone else {
+                return
             }
+            constant = isSmallPhone
         }
     }
 
     @IBInspectable public var isNormal: CGFloat = 0.0 {
         didSet {
-            if !UIDevice.isSmallPhone && !UIDevice.isXPhone {
-                constant = isNormal
+            guard !UIDevice.isSmallPhone && !UIDevice.isXPhone else {
+                return
             }
+            constant = isNormal
         }
     }
 
     @IBInspectable public var isXPhone: CGFloat = 0.0 {
         didSet {
-            if UIDevice.isXPhone {
-                constant = isXPhone
+            guard UIDevice.isXPhone else {
+                return
             }
+            constant = isXPhone
         }
     }
 
