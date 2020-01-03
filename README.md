@@ -13,6 +13,28 @@
 pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.git"
 ```
 
+## Как собрать проект
+
+Проект использует [Bundler](https://bundler.io/). 
+
+Перед стартом разработки необходимо вызвать `make init`. 
+
+Также в проекте есть makefile, в котором есть небольшой набор полезных команд.
+
+`make init` – загрузит и инициализирует все необходимые зависимости.
+
+`make build` – соберет проект локально.
+
+`make test` – выполнит прогон всех тестов.
+
+`make format` – выполнит команду swiftlint autocorrect.
+
+`make lint` – выполнит проверку swiftlint и предоставит отчет. 
+
+`make pod`  – рекомендуется использовать эту команду для того, чтобы установить поды. И **не использовать** `pod install`
+
+`make help` – выведет перечень доступных команд из makefile
+
 ## Список утилит
 
 - [StringAttributes](#stringattributes) - упрощение работы с `NSAttributedString`
