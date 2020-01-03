@@ -63,10 +63,14 @@ Carthage/Build
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
+fastlane/local_config.sh
 fastlane/test_output
+fastlane/Provisioning
+fastlane/Build
+fastlane/report.xml
+buildData
 
 # Bundler
 .bundle/
