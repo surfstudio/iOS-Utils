@@ -1,6 +1,6 @@
 language: Swift
 osx_image: xcode10.2
-xcode_project: Utils/Utils.xcodeproj
+xcode_project: Utils/Utils.xcworkspace
 xcode_scheme: Utils
 
 jobs:
