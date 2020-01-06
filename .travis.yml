@@ -10,6 +10,7 @@ jobs:
       script:
         - set -o pipefail
         - cd Utils
+        - make init
         - xcodebuild test -scheme Utils -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=12.2' | xcpretty -c
     - stage: Pod Lib Lint
       name: Pod Lib Lint
