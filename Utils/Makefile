@@ -10,11 +10,11 @@ init:
 
 ## Used to build target. Usually, it is not called manually, it is necessary for the CI to work.
 build:
-	bundle exec fastlane build clean:true
+	xcodebuild -scheme Utils -workspace Utils.xcworkspace/ build
 
 ## Run tests
 test:
-	bundle exec fastlane tests
+	xcodebuild test -scheme Utils -workspace Utils.xcworkspace/ -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=13.3' | xcpretty -c
 
 ## Allows you to perfrom swiftlint autocorrect command.
 format:
