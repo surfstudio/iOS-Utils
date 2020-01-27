@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "10.0.4"
+  s.version = "10.0.5"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -106,6 +106,23 @@ Pod::Spec.new do |s|
   s.subspec 'GeolocationService' do |sp|
     sp.source_files = 'Utils/Utils/GeolocationService/**/*.swift'
     sp.framework = 'Foundation', 'CoreLocation'
+  end
+
+  s.subspec 'UIDevice' do |sp|
+    sp.source_files = 'Utils/Utils/UIDevice/UIDevice.swift'
+    sp.framework = 'UIKit'
+    sp.dependency 'Device', '3.1.2'
+  end
+
+  s.subspec 'LayoutHelper' do |sp|
+    sp.source_files = 'Utils/Utils/LayoutHelper/LayoutHelper.swift', 'Utils/Utils/UIDevice/UIDevice.swift'
+    sp.framework = 'UIKit'
+    sp.dependency 'Device', '3.1.2'
+  end
+
+  s.subspec 'UIStyle' do |sp|
+    sp.source_files = 'Utils/Utils/UIStyle/UIStyle.swift', 'Utils/Utils/UIStyle/AnyStyle.swift'
+    sp.framework = 'UIKit'
   end
 
 end
