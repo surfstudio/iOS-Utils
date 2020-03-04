@@ -58,7 +58,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [UIDevice](#uidevice) – набор вспомогательных методов для определения типа девайса 
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
-- [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимамированием
+- [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
 
 ## Утилиты
 
