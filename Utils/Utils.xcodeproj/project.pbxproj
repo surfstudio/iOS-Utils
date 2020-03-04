@@ -56,6 +56,7 @@
 		E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */; };
 		E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */; };
 		E9B063102147AECC0080C391 /* UIDevice+feedbackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B0630F2147AECC0080C391 /* UIDevice+feedbackType.swift */; };
+		EE0C5D92241026CB006B8C28 /* TouchableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0C5D91241026CB006B8C28 /* TouchableControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasTapticEngine.swift"; sourceTree = "<group>"; };
 		E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasHapticFeedback.swift"; sourceTree = "<group>"; };
 		E9B0630F2147AECC0080C391 /* UIDevice+feedbackType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+feedbackType.swift"; sourceTree = "<group>"; };
+		EE0C5D91241026CB006B8C28 /* TouchableControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EE0C5D9024102671006B8C28 /* UIControl */,
 				5709EC5B236F4C2200EEBD93 /* CommonButton */,
 				18F2361221D214CC00169AC9 /* Dictionary */,
 				902C67EA21E4D1EF007B13CC /* ItemsScrollManager */,
@@ -420,6 +423,14 @@
 				E9B0630F2147AECC0080C391 /* UIDevice+feedbackType.swift */,
 			);
 			path = VibrationFeedbackManager;
+			sourceTree = "<group>";
+		};
+		EE0C5D9024102671006B8C28 /* UIControl */ = {
+			isa = PBXGroup;
+			children = (
+				EE0C5D91241026CB006B8C28 /* TouchableControl.swift */,
+			);
+			path = UIControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -654,6 +665,7 @@
 				9087BC5621EF3BFB00FCE1E1 /* Notification.swift in Sources */,
 				89F23A6B23575D97005112E1 /* DigitFieldStyle.swift in Sources */,
 				573117DB23BFD33000491781 /* AnyStyle.swift in Sources */,
+				EE0C5D92241026CB006B8C28 /* TouchableControl.swift in Sources */,
 				907F0FEF21DCDB43001CCB07 /* WordDeclinationSelector.swift in Sources */,
 				A439074B21F5C52A0034C455 /* UIView+Masking.swift in Sources */,
 				9087BC5A21EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift in Sources */,

@@ -58,6 +58,8 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [UIDevice](#uidevice) – набор вспомогательных методов для определения типа девайса 
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
+- [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимамированием
+
 ## Утилиты
 
 ### StringAttributes
@@ -548,6 +550,74 @@ someView.apply(style: .styleForSomeView)
 ```swift
 let anyStyle = AnyStyle(style: UIStyle.styleForSomeView)
 anyStyle.apply(for: someView)
+```
+
+### TouchableControl
+
+Данный класс унаследован от стандартного UIControl. Позволяет принимать на вход различные UI элементы и, при нажатии на этот контрол,
+анимировать их, иммтируя как бы нажатие на кнопку. То есть, по сути является аналагом кнопки с возможностью кастомизировать анимацию 
+нажатия(затемнение или изменение цвета только некоторых элементов) 
+
+**Доступные параметры:** 
+
+`animatingViewsByAlpha` – сюда можно передать одну или несколько `UIView`, которые будут уменьшать `alpha` параметр, при
+нажатии на контрол.
+
+`onTouchUpInside`,  `onTouchCancel`, `onTouchDown` - блоки, для управления событий нажатия.
+
+`touchAlphaValue` - параметр, типа `CGFloat`, определяющий на какое значени `alpha` будет изменяться элементы при нажатии
+
+`normalDuration` - параметр, типа `TimeInterval`, определяющий в тчечение какого времени будет происходить затемнение
+
+**Доступные методы:** 
+
+`addChangeColor(to: UIView, initColor: UIColor?, goalColor: UIColor?)` - добавляет вью, у которой будет изменяться цвет при нажатии
+на контрол
+
+`clearControl()` - Для случаев, когда данный класс добавлен во вью, которая будет сама передана в него. 
+Устонавливается в deinit ViewController'а с этой view
+
+**Использование:**
+
+```swift
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var someView: UIView!
+    @IBOutlet weak var someLabel: UILabel!
+    @IBOutlet weak var secondSomeLabel: UILabel!
+
+    private let control = TouchableControl()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        control.translatesAutoresizingMaskIntoConstraints = false
+        someView.addSubview(control)
+        NSLayoutConstraint.activate([
+            control.topAnchor.constraint(equalTo: someView.topAnchor),
+            control.leftAnchor.constraint(equalTo: someView.leftAnchor),
+            control.rightAnchor.constraint(equalTo: someView.rightAnchor),
+            control.bottomAnchor.constraint(equalTo: someView.bottomAnchor)
+        ])
+
+        control.animatingViewsByAlpha = [someLabel]
+        control.addChangeColor(to: someView, initColor: someView.backgroundColor, goalColor: .blue)
+        control.addChangeColor(to: secondSomeLabel, initColor: secondSomeLabel.textColor, goalColor: .orange)
+
+        control.onTouchUpInside = {
+        }
+        control.onTouchCancel = {
+        }
+        control.onTouchDown = {
+        }
+    }
+
+    deinit {
+        control.clearControl()
+    }
+}
+
+
 ```
 
 ## Версионирование
