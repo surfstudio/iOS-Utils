@@ -567,11 +567,11 @@ anyStyle.apply(for: someView)
 
 `touchAlphaValue` - параметр, типа `CGFloat`, определяющий на какое значени `alpha` будет изменяться элементы при нажатии
 
-`normalDuration` - параметр, типа `TimeInterval`, определяющий в тчечение какого времени будет происходить затемнение
+`normalDuration` - параметр, типа `TimeInterval`, определяющий в течение какого времени будет происходить затемнение
 
 **Доступные методы:** 
 
-`addChangeColor(to: UIView, initColor: UIColor?, goalColor: UIColor?)` - добавляет вью, у которой будет изменяться цвет при нажатии
+`addChangeColor(to: UIView, normalColor: UIColor, touchedColor: UIColor)` - добавляет вью, у которой будет изменяться цвет при нажатии
 на контрол
 
 `clearControl()` - Для случаев, когда данный класс добавлен во вью, которая будет сама передана в него. 
@@ -601,7 +601,7 @@ class ViewController: UIViewController {
         ])
 
         control.animatingViewsByAlpha = [someLabel]
-        control.addChangeColor(to: someView, initColor: someView.backgroundColor, goalColor: .blue)
+        control.addChangeColor(to: someView, normalColor: someView.backgroundColor, touchedColor: .blue)
         control.addChangeColor(to: secondSomeLabel, initColor: secondSomeLabel.textColor, goalColor: .orange)
 
         control.onTouchUpInside = {

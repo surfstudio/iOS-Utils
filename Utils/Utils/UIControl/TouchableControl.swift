@@ -8,30 +8,34 @@
 
 import UIKit
 
-public class TouchableControl: UIControl {
+open class TouchableControl: UIControl {
+
+    // MARK: - Typealiases
+
+    private typealias ColoredView = (view: UIView, normalColor: UIColor, touchedColor: UIColor)
 
     // MARK: - Constants
 
     private enum Constants {
-        static let normalAlhpaValue: CGFloat = 1
+        static let initialAlhpaValue: CGFloat = 1
     }
 
     // MARK: - Public Properties
 
-    open var animatingViewsByAlpha: [UIView]?
+    public var animatingViewsByAlpha: [UIView]?
 
-    open var onTouchUpInside: (() -> Void)?
-    open var onTouchCancel: (() -> Void)?
-    open var onTouchDown: (() -> Void)?
+    public var onTouchUpInside: (() -> Void)?
+    public var onTouchCancel: (() -> Void)?
+    public var onTouchDown: (() -> Void)?
 
-    open var touchAlphaValue: CGFloat = 0.7
-    open var normalDuration: TimeInterval = 0.2
+    public var touchAlphaValue: CGFloat = 0.7
+    public var animationDuration: TimeInterval = 0.2
 
     // MARK: - Private Properties
 
     private var animating = false
     private var shouldAnimateBack = false
-    private var coloredViews: [(UIView, UIColor, UIColor)]?
+    private var coloredViews = [ColoredView]()
 
     // MARK: - Lifecycle
 
@@ -47,21 +51,17 @@ public class TouchableControl: UIControl {
 
     // MARK: - Public Properties
 
-    open func addChangeColor(to view: UIView, initColor: UIColor?, goalColor: UIColor?) {
-        let realInitColor = initColor ?? .black
-        let realGoalColor = goalColor ?? .black
-        if coloredViews == nil {
-            coloredViews = [(view, realInitColor, realGoalColor)]
-        } else {
-            coloredViews?.append((view, realInitColor, realGoalColor))
-        }
+    public func addChangeColor(to view: UIView, normalColor: UIColor?, touchedColor: UIColor?) {
+        let realInitColor = normalColor ?? .black
+        let realGoalColor = touchedColor ?? .black
+        coloredViews.append((view, realInitColor, realGoalColor))
     }
 
-    // Для случаев, когда данный класс добавлен во вью, которая будет сама
-    // передана в него. Устонавливается в deinit ViewController'а с этой view
-    open func clearControl() {
+    // Для случаев, когда данный класс добавлен во вью, которая будет менять свои свойства
+    // из-за данного класса. Устонавливается в deinit ViewController'а с этой view
+    public func clearControl() {
         animatingViewsByAlpha = nil
-        coloredViews = nil
+        coloredViews = []
     }
 }
 
@@ -87,12 +87,12 @@ private extension TouchableControl {
     }
 
     @objc
-    private func touchDragExit() {
+    func touchDragExit() {
         animateBack()
     }
 
     @objc
-    private func touchDown() {
+    func touchDown() {
         onTouchDown?()
         animateDown()
     }
@@ -112,11 +112,11 @@ private extension TouchableControl {
             self.animatingViewsByAlpha?.forEach { (view) in
                 view.alpha = self.touchAlphaValue
             }
-            self.coloredViews?.forEach { (view, _, goalColor) in
+            self.coloredViews.forEach { (view, _, touchedColor) in
                 if let label = view as? UILabel {
-                    label.textColor = goalColor
+                    label.textColor = touchedColor
                 } else {
-                    view.backgroundColor = goalColor
+                    view.backgroundColor = touchedColor
                 }
             }
         }
@@ -129,7 +129,7 @@ private extension TouchableControl {
         }
 
         UIView.animate(
-            withDuration: normalDuration,
+            withDuration: animationDuration,
             animations: animations,
             completion: completion
         )
@@ -143,15 +143,15 @@ private extension TouchableControl {
         animating = true
 
         let animations: () -> Void = {
-            self.alpha = Constants.normalAlhpaValue
+            self.alpha = Constants.initialAlhpaValue
             self.animatingViewsByAlpha?.forEach({ (view) in
-                view.alpha = Constants.normalAlhpaValue
+                view.alpha = Constants.initialAlhpaValue
             })
-            self.coloredViews?.forEach { (view, initColor, _) in
+            self.coloredViews.forEach { (view, normalColor, _) in
                 if let label = view as? UILabel {
-                    label.textColor = initColor
+                    label.textColor = normalColor
                 } else {
-                    view.backgroundColor = initColor
+                    view.backgroundColor = normalColor
                 }
             }
         }
@@ -162,7 +162,7 @@ private extension TouchableControl {
         }
 
         UIView.animate(
-            withDuration: normalDuration,
+            withDuration: animationDuration,
             animations: animations,
             completion: completion
         )
