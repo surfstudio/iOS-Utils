@@ -47,7 +47,7 @@ public class StringBuilder {
             return String(repeating: type.string, count: count)
         }
 
-        init(type: TextDelimeterType, count: Int = 1) {
+        public init(type: TextDelimeterType, count: Int = 1) {
             self.type = type
             self.count = count
         }
