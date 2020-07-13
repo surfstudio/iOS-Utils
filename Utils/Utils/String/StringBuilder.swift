@@ -64,11 +64,13 @@ public class StringBuilder {
             case .string(let string):
                 return string
             case .delimeterWithString(let delimeter, let string):
-                let parts = [delimeter.string, string].compactMap { $0 }
-                guard !parts.isEmpty else {
+                guard
+                    let string = string,
+                    !string.isEmpty
+                else {
                     return nil
                 }
-                return parts.joined()
+                return (delimeter.string ?? "") + string
             case .delimeter(let delimeter):
                 return delimeter.string
             }
@@ -187,8 +189,10 @@ public class StringBuilder {
     // MARK: - Private methods
 
     private func renderAttributedString() -> NSMutableAttributedString {
-        // combline attributedString
+        // create attributedString to render
         let attributedString = NSMutableAttributedString()
+
+        // create normalized parts (empty string are not included)
         let normalizedParts = parts.compactMap { StringPartNormalized(from: $0) }
         for part in normalizedParts {
             part.range = NSRange(location: attributedString.length, length: part.string.count)

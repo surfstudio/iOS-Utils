@@ -82,15 +82,18 @@ let globalSttributes: [StringAttribute] = [
     .foregroundColor(.black)
 ]
 let attributedString = StringBuilder(globalAttributes: globalSttributes)
-    .add(text: "Title")
-    .addSpace()
-    .add(text: "blue", with: [.foregroundColor(.blue)])
-    .addLineBreak()
-    .add(text: "Base style on new line")
-    .addSpace()
-    .add(text: "last word with it's own style", with: [.font(.boldSystemFont(ofSize: 16)), .foregroundColor(.red)])
+    .add(.string("Title"))
+    .add(.delimeterWithString(delimeter: .init(type: .space), string: "blue"), 
+         with: [.foregroundColor(.blue)])
+    .add(.delimeterWithString(delimeter: .init(type: .lineBreak), string: "Base style on new line"))
+    .add(.delimeterWithString(delimeter: .init(type: .space), string: "last word with it's own style"), 
+         with: [.font(.boldSystemFont(ofSize: 16)), .foregroundColor(.red)])
     .value
 ```
+
+Возможные проблемы:
+
+- при добавлении к `StringBuilder` только разделителя (`.add(.delimeter)`) (без указания шрифта как локально, так и в рамках текущего блока) может произойти потеря равнения параграфа по вертикали потому что для разделителя будет использоваться стандартный шрифт системы (лейбла). Для предотвращения данной проблемы желательно использование разделителей в паре с текстом (`.add(.delimeterWithString(...))`)
 
 ### BrightSide
 
