@@ -13,6 +13,28 @@
 pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.git"
 ```
 
+## Как собрать проект
+
+Проект использует [Bundler](https://bundler.io/). 
+
+Перед стартом разработки необходимо вызвать `make init`. 
+
+Также в проекте есть makefile, в котором есть небольшой набор полезных команд.
+
+`make init` – загрузит и инициализирует все необходимые зависимости.
+
+`make build` – соберет проект локально.
+
+`make test` – выполнит прогон всех тестов.
+
+`make format` – выполнит команду swiftlint autocorrect.
+
+`make lint` – выполнит проверку swiftlint и предоставит отчет. 
+
+`make pod`  – рекомендуется использовать эту команду для того, чтобы установить поды. И **не использовать** `pod install`
+
+`make help` – выведет перечень доступных команд из makefile
+
 ## Список утилит
 
 - [StringAttributes](#stringattributes) - упрощение работы с `NSAttributedString`
@@ -33,6 +55,9 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [CommonButton](#commonbutton) - Базовый класс для кнопки
 - [LocalStorage](#localstorage) – утилита для сохранения / удаления / загрузки `Codable` моделей данных в файловую систему
 - [GeolocationService](#geolocationservice) – сервис для определения геопозиции пользователя
+- [UIDevice](#uidevice) – набор вспомогательных методов для определения типа девайса 
+- [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
+- [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
 ## Утилиты
 
 ### StringAttributes
@@ -437,6 +462,92 @@ service.getCurrentLocation { result in
         // some error ocured
     }
 }
+```
+
+### UIDevice
+
+Набор вычисляемых проперти для определения размера экран телефона. Данный набор утилит основывается на библиотеке [Device](https://github.com/Ekhoo/Device). Как и любая другая библиотека определяющая текущий телефон она требует поддержки в случае выхода новых, но эта библиотека поддерживаемая. 
+
+**Доступные методы:** 
+
+`isSmallPhone` – возвращает `true`, если это телефон с размером экрана 5, 5c, 5s, SE
+
+`isXPhone` – возвращает `true`, если это телефон версии X. Т.е. с челкой, большой safeArea и т.д.
+
+`isNormalPhone` – возвращает `true`, если это телефон версии 6/7/8 или  '+'
+
+`isPad` – возвращает `true`, если это iPad любой модели.
+
+**Использование:**
+
+```swift
+guard UIDevice.isSmallPhone else {
+    return
+}
+```
+
+### LayoutHelper
+
+Простой класс упрощающий верстку сложных экранов для разных типов девайсов. Например, если нам необходимо сделать разных отступ от верха экрана для разных типов устройств (X, 5s и обычный  7+), то нам придется притянуть аутлет с констрейнтом в код и прописать ему логику. С классом LayoutHelper теперь этого делать не надо. 
+
+**Использование**
+
+1. Унаследовать констрейнт в InterfaceBuilder от класса LayoutHelper.
+2. На вкладке Attributes Inspector появится 3 вычисляемых проперти, которые можно задать для каждого типа экрана.
+3. Типы экрана аналогичны методам из extension для UIDevice
+
+### UIStyle
+
+Класс и набор протоколов позволяющие удобно работать со стилями в приложение. 
+
+`UIStyleProtocol` – протокол предоставляющий интерфейс любому наследнику UIView, к которому можно применить метод `apply`
+
+`UIStyle` – джинерик класс отвечающий за настройку стиля для выбранного наследника UIView. 
+
+`AttributableStyle` – вспомогательный протокол, который необходимо применять на класс UIStyle для того, чтобы была возможность вернуть массив атрибутов текущего стиля. 
+
+**Использование**
+
+```swift
+/// Какой-либо класс наследник от UIView
+class SomeView: UIView {}
+
+/// Расширение, которое применяет стиль к своему инстенсу класса
+extension SomeView {
+    func apply(style: UIStyle<SomeView>) {
+        style.apply(for: self)
+    }
+}
+
+/// Класс стиля, который может содежрать в себе различные настройки и способы инициализации
+final class SomeViewStyle: UIStyle<SomeView> {
+    override func apply(for view: SomeView) {
+        view.backgroundColor = .black
+    }
+}
+
+/// Расширение на класс UIStyle, которое возвращает инстенс стиля
+extension UIStyle {
+    static var styleForSomeView: UIStyle<SomeView> {
+        return SomeViewStyle()
+    }
+}
+
+/// Применение
+let someView = SomeView()
+someView.apply(style: .styleForSomeView)
+
+```
+
+#### AnyStyle
+
+В различных случаях может понадобиться возможность обернуть стиль в некий контейнер. Для этого есть класс AnyStyle. 
+
+**Использование**: 
+
+```swift
+let anyStyle = AnyStyle(style: UIStyle.styleForSomeView)
+anyStyle.apply(for: someView)
 ```
 
 ## Версионирование

@@ -46,7 +46,8 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-# Pods/
+Podfile.lock
+Pods/
 
 # Carthage
 #
@@ -62,7 +63,15 @@ Carthage/Build
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
+Utils/fastlane/Preview.html
+Utils/fastlane/screenshots/**/*.png
+Utils/fastlane/local_config.sh
+Utils/fastlane/test_output
+Utils/fastlane/Provisioning
+Utils/fastlane/Build
+Utils/fastlane/report.xml
+Utils/buildData
+
+# Bundler
+.bundle/
+Gemfile.lock
