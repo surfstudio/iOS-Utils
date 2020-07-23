@@ -34,8 +34,8 @@ public class StringBuilder {
         }
     }
 
-    /// Struct for describing delimeter and it's parameters
-    public struct TextDelimeter {
+    /// Struct for repeating delimeter and it's parameters
+    public struct TextDelimeterRepeater {
         let type: TextDelimeterType
         let count: Int
 
@@ -54,10 +54,13 @@ public class StringBuilder {
     }
 
     /// Enum for describing different types of text blocks in rendered attributed string
+    /// - string - only string
+    /// - delimeterWithString - string with delimeter
+    /// - delimeter - only delimeter
     public enum TextBlock {
         case string(String?)
-        case delimeterWithString(delimeter: TextDelimeter, string: String?)
-        case delimeter(delimeter: TextDelimeter)
+        case delimeterWithString(repeatedDelimeter: TextDelimeterRepeater, string: String?)
+        case delimeter(repeatedDelimeter: TextDelimeterRepeater)
 
         var string: String? {
             switch self {
@@ -169,7 +172,7 @@ public class StringBuilder {
     @discardableResult
     public func addSpace(count: Int = 1) -> StringBuilder {
         let attributes = parts.last?.attributes ?? []
-        parts.append(StringPart(block: .delimeter(delimeter: .init(type: .space, count: count)),
+        parts.append(StringPart(block: .delimeter(repeatedDelimeter: .init(type: .space, count: count)),
                                 attributes: attributes))
         return self
     }
@@ -181,7 +184,7 @@ public class StringBuilder {
     @discardableResult
     public func addLineBreak(count: Int = 1) -> StringBuilder {
         let attributes = parts.last?.attributes ?? []
-        parts.append(StringPart(block: .delimeter(delimeter: .init(type: .lineBreak, count: count)),
+        parts.append(StringPart(block: .delimeter(repeatedDelimeter: .init(type: .lineBreak, count: count)),
                                 attributes: attributes))
         return self
     }
