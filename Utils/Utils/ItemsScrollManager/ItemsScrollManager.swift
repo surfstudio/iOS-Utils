@@ -124,7 +124,9 @@ public final class ItemsScrollManager {
             currentPage = Int(ceil(targetOffset / pageWidth))
         }
 
-        pageOffset = currentPage == 0 ? 0 : CGFloat(currentPage) * pageWidth + firstCellOffset
+        let delta = firstCellOffset > 0 ? firstCellOffset : 0
+
+        pageOffset = currentPage == 0 ? 0 : CGFloat(currentPage) * pageWidth + delta
         pageOffset = min(scrollView.contentSize.width - containerWidth, pageOffset)
         lastOffset = pageOffset
         targetContentOffset.pointee.x = pageOffset
