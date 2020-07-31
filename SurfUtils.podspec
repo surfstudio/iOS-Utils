@@ -126,7 +126,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'MailUtil' do |sp|
-    sp.source_files = 'Utils/Utils/MailUtil/**/*.swift.swift'
+    sp.source_files = 'Utils/Utils/MailUtil/**/*.swift'
     sp.framework = 'UIKit'
   end
 
