@@ -19,6 +19,8 @@
 		573117DB23BFD33000491781 /* AnyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573117DA23BFD33000491781 /* AnyStyle.swift */; };
 		80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* BrightSide.swift */; };
 		8223ED95F8D4355B6D1B4403 /* Pods_Utils_UtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102A9A8EF253FEE66EBF94C1 /* Pods_Utils_UtilsTests.framework */; };
+		87239D7F24D41E8700D38EC7 /* MoneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87239D7E24D41E8700D38EC7 /* MoneyModel.swift */; };
+		87239D8124D4220600D38EC7 /* MoneyModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87239D8024D4220600D38EC7 /* MoneyModelTests.swift */; };
 		890C428423795BF100FF63A7 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C428323795BF100FF63A7 /* LocalStorageTests.swift */; };
 		89293B2621F59F6A0016C6BE /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89293B2521F59F6A0016C6BE /* LocalStorage.swift */; };
 		8953A46D23560A2F007AD110 /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8953A46C23560A2F007AD110 /* OTPField.swift */; };
@@ -88,6 +90,8 @@
 		573117DA23BFD33000491781 /* AnyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyStyle.swift; sourceTree = "<group>"; };
 		632D58609B21028A5FFDF22F /* Pods-Utils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils.debug.xcconfig"; path = "Target Support Files/Pods-Utils/Pods-Utils.debug.xcconfig"; sourceTree = "<group>"; };
 		80437D25214045EF0095A8D0 /* BrightSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightSide.swift; sourceTree = "<group>"; };
+		87239D7E24D41E8700D38EC7 /* MoneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyModel.swift; sourceTree = "<group>"; };
+		87239D8024D4220600D38EC7 /* MoneyModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyModelTests.swift; sourceTree = "<group>"; };
 		890C428323795BF100FF63A7 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
 		89293B2521F59F6A0016C6BE /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		8953A46C23560A2F007AD110 /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				87239D7D24D41E6500D38EC7 /* MoneyModel */,
 				5709EC5B236F4C2200EEBD93 /* CommonButton */,
 				18F2361221D214CC00169AC9 /* Dictionary */,
 				902C67EA21E4D1EF007B13CC /* ItemsScrollManager */,
@@ -222,6 +227,7 @@
 				90C101C921E0B62D002E8E65 /* RouteMeasurerTests.swift */,
 				90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */,
 				890C428323795BF100FF63A7 /* LocalStorageTests.swift */,
+				87239D8024D4220600D38EC7 /* MoneyModelTests.swift */,
 				90AC856C2385941D00DF7F3B /* GeolocationServiceTests.swift */,
 				4F3ED9EF211C27CF0030DD45 /* Info.plist */,
 			);
@@ -284,6 +290,14 @@
 				80437D25214045EF0095A8D0 /* BrightSide.swift */,
 			);
 			path = BrightSide;
+			sourceTree = "<group>";
+		};
+		87239D7D24D41E6500D38EC7 /* MoneyModel */ = {
+			isa = PBXGroup;
+			children = (
+				87239D7E24D41E8700D38EC7 /* MoneyModel.swift */,
+			);
+			path = MoneyModel;
 			sourceTree = "<group>";
 		};
 		89293B2421F59F6A0016C6BE /* LocalStorage */ = {
@@ -619,6 +633,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87239D7F24D41E8700D38EC7 /* MoneyModel.swift in Sources */,
 				90AC85652385929E00DF7F3B /* LocationManagerInterface.swift in Sources */,
 				907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */,
 				89293B2621F59F6A0016C6BE /* LocalStorage.swift in Sources */,
@@ -669,6 +684,7 @@
 				90AC856D2385941D00DF7F3B /* GeolocationServiceTests.swift in Sources */,
 				90C101CA21E0B62D002E8E65 /* RouteMeasurerTests.swift in Sources */,
 				90C101C821E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift in Sources */,
+				87239D8124D4220600D38EC7 /* MoneyModelTests.swift in Sources */,
 				890C428423795BF100FF63A7 /* LocalStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
