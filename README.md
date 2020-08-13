@@ -553,7 +553,7 @@ anyStyle.apply(for: someView)
 
 ### CustomSwitch
 
-Гибкая реализация Swtch ui элемента.
+Гибкая реализация ui элемента switch.
 1) Умеет адаптироваться под разный размер.
 2) Есть возможность задать закругления и отсутпы.
 3) Есть возможность задать градиент вместо цвета.
@@ -561,9 +561,13 @@ anyStyle.apply(for: someView)
 5) Есть возможность добавить тень для бегунка.
 
 `CustomSwitch` – непосредственно сам элемент.
+
 `CustomSwitch.LayoutConfiguration` - содержит padding(отступ от бегунка до краев), spacing(отступ от бегунка до сторон в обоих состояниях) и cornerRatio самого свитча.
+
 `CustomSwitch.ThumbConfiguration` - содержит cornerRatio и shadowConfiguration(CSShadowConfiguration) для самого бегунка.
+
 `CustomSwitch.ColorsConfiguration` - содержит в себе параметры для конигурации цвета подложки(on и off) и бегунка. Все три параметра имеют тип CSColorConfiguration. Это протокол с одним методом - `applyColor(for view: UIView)` и имеющий уже две реализации: `CSSimpleColorConfiguration` и `CSGradientColorConfiguration`.
+
 `CustomSwitch.AnimationsConfiguration` - содержит параметры для конфигурации анимации свитча(duration, delay, usingSpringWithDamping, initialSpringVelocity, options).
 
 Для обработки изменения стейта можно использовать стандартный event valueChanged.
@@ -574,9 +578,9 @@ anyStyle.apply(for: someView)
 let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
 customSwitch.layoutConfiguration = .init(padding: 1, spacing: 3, cornerRatio: 0.5)
 customSwitch.colorsConfiguration = .init(offColorConfiguraion: CSSimpleColorConfiguration(color: .white),
-                                     onColorConfiguraion: CSSimpleColorConfiguration(color: .green),
-                                     thumbColorConfiguraion: CSGradientColorConfiguration(colors: [.lightGray, .yellow],
-                                                                                          locations: [0, 1]))
+                                         onColorConfiguraion: CSSimpleColorConfiguration(color: .green),
+                                         thumbColorConfiguraion: CSGradientColorConfiguration(colors: [.lightGray, .yellow],
+                                                                                              locations: [0, 1]))
 customSwitch.thumbConfiguration = .init(cornerRatio: 0, shadowConfiguration: .init(color: .black, offset: CGSize(), radius: 5, oppacity: 0.1))
 customSwitch.animationsConfiguration = .init(duration: 0.1, usingSpringWithDamping: 0.7)
 
