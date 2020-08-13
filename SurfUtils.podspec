@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "10.0.6"
+  s.version = "10.0.7"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -126,7 +126,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'CustomSwitch' do |sp|
-    sp.source_files = 'Utils/Utils/CustomSwitch/CustomSwitch.swift', 'Utils/Utils/CustomSwitch/CustomSwitchExternalConfigurations.swift'
+    sp.source_files = 'Utils/Utils/CustomSwitch/*.swift'
     sp.framework = 'UIKit'
   end
 
