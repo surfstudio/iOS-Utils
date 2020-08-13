@@ -554,21 +554,17 @@ anyStyle.apply(for: someView)
 ### CustomSwitch
 
 Гибкая реализация Swtch ui элемента.
-1) Умеет адаптироваться под разный размер 
-2) Усть возможность задать закругления и отсутпы.
+1) Умеет адаптироваться под разный размер.
+2) Есть возможность задать закругления и отсутпы.
 3) Есть возможность задать градиент вместо цвета.
 4) Гибко настраивается анимация.
 5) Есть возможность добавить тень для бегунка.
 
 `CustomSwitch` – непосредственно сам элемент.
-
-`CustomSwitchю.LayoutConfiguration` - содержит padding(отступ от бегунка до краев), spacing(отступ от бегунка до сторон в обоих состояниях) и cornerRatio самого свитча.
-
-`CustomSwitchю.ThumbConfiguration` - содержит cornerRatio и shadowConfiguration(CSShadowConfiguration) для самого бегунка.
-
-`CustomSwitchю.ColorsConfiguration` - содержит в себе параметры для конигурации цвета подложки(on и off) и бегунка. Все три параметра имеют тип CSColorConfiguration. Это протокол с одним методом - `applyColor(for view: UIView)` и имеющий уже две реализации: `CSSimpleColorConfiguration` и `CSGradientColorConfiguration`.
-
-`CustomSwitchю.AnimationsConfiguration` - содержит параметры для конфигурации анимации свитча(duration, delay, usingSpringWithDamping, initialSpringVelocity, options).
+`CustomSwitch.LayoutConfiguration` - содержит padding(отступ от бегунка до краев), spacing(отступ от бегунка до сторон в обоих состояниях) и cornerRatio самого свитча.
+`CustomSwitch.ThumbConfiguration` - содержит cornerRatio и shadowConfiguration(CSShadowConfiguration) для самого бегунка.
+`CustomSwitch.ColorsConfiguration` - содержит в себе параметры для конигурации цвета подложки(on и off) и бегунка. Все три параметра имеют тип CSColorConfiguration. Это протокол с одним методом - `applyColor(for view: UIView)` и имеющий уже две реализации: `CSSimpleColorConfiguration` и `CSGradientColorConfiguration`.
+`CustomSwitch.AnimationsConfiguration` - содержит параметры для конфигурации анимации свитча(duration, delay, usingSpringWithDamping, initialSpringVelocity, options).
 
 Для обработки изменения стейта можно использовать стандартный event valueChanged.
 
