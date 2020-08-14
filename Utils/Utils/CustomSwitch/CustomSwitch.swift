@@ -48,7 +48,7 @@ public class CustomSwitch: UIControl {
         let thumbColor: CSColorConfiguration
 
         init(offColor: UIColor = .lightGray,
-             onColor: UIColor = .systemGreen,
+             onColor: UIColor = .green,
              thumbColor: UIColor = .white) {
             self.offColor = CSSimpleColorConfiguration(color: offColor)
             self.onColor = CSSimpleColorConfiguration(color: onColor)
