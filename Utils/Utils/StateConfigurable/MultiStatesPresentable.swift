@@ -245,13 +245,19 @@ private extension MultiStatesPresentable where Self: UIViewController {
             return
         }
         let topOffset = (view is LoadingView) ? (sharedLoadingTopOffset ?? 0) : (sharedErrorTopOffset ?? 0)
-        let safeArea = containerView.safeAreaLayoutGuide
+
+        let parent: UILayoutGuide
+        if #available(iOS 11.0, *) {
+            parent = containerView.safeAreaLayoutGuide
+        } else {
+            parent = containerView.layoutMarginsGuide
+        }
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: topOffset),
-            view.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
-            view.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
+            view.topAnchor.constraint(equalTo: parent.topAnchor, constant: topOffset),
+            view.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
+            view.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: parent.trailingAnchor)
         ])
     }
 

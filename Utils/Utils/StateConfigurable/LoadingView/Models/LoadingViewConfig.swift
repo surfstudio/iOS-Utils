@@ -13,13 +13,13 @@ public struct LoadingViewConfig {
     // MARK: - Properties
 
     /// Top offset for first block
-    let topOffset: CGFloat
-    let placeholderColor: UIColor
-    let shimmerColor: UIColor
+    public let topOffset: CGFloat
+    public let placeholderColor: UIColor
+    public let shimmerColor: UIColor
     /// If true it will nicely reduce the alpha to the bottom
-    let needGradient: Bool
+    public let needGradient: Bool
     /// Will repeat the last block to the end of the screen
-    let needRepeatLast: Bool
+    public let needRepeatLast: Bool
 
     // MARK: - Initialization
 

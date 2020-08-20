@@ -9,9 +9,9 @@
 import Foundation
 
 public struct ViewStateInfo {
-    let title: String
-    let message: String
-    let action: String
+    public let title: String
+    public let message: String
+    public let action: String
 
     public init(title: String = "", message: String = "", action: String = "") {
         self.title = title

@@ -9,8 +9,8 @@
 import UIKit
 /// Default model for configuring paddings
 public struct DefaultLoadingModel {
-    let topOffset: CGFloat
-    let bottomOffset: CGFloat
+    public let topOffset: CGFloat
+    public let bottomOffset: CGFloat
 
     public init(topOffset: CGFloat = 0, bottomOffset: CGFloat = 0) {
         self.topOffset = topOffset
