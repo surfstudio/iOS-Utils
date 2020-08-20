@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class LoadingView: UIView, LoadingViewAbstract {
+public final class LoadingView: UIView, LoadingViewAbstract {
 
     // MARK: - Constants
 
@@ -48,7 +48,7 @@ final class LoadingView: UIView, LoadingViewAbstract {
 
     // MARK: - Public Methods
 
-    func configure(blocks: [LoadingViewBlockAbstract], config: LoadingViewConfig) {
+    public func configure(blocks: [LoadingViewBlockAbstract], config: LoadingViewConfig) {
         removeOldBlocks()
         self.blocks = blocks
         self.config = config
