@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class LoadingViewBlock<Subview: LoadingSubviewAbstract & LoadingSubviewConfigurable>: LoadingViewBlockAbstract {
+public final class LoadingViewBlock<Subview: LoadingSubviewAbstract & LoadingSubviewConfigurable>: LoadingViewBlockAbstract {
 
     // MARK: - Public Properties
 
@@ -23,7 +23,7 @@ final class LoadingViewBlock<Subview: LoadingSubviewAbstract & LoadingSubviewCon
 
     // MARK: - Initialization
 
-    init(model: Subview.Model, repeatCount: Int = 1) {
+    public init(model: Subview.Model, repeatCount: Int = 1) {
         self.model = model
         self.repeatCount = repeatCount
     }

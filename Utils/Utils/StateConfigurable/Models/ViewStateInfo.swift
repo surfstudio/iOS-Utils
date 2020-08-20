@@ -13,7 +13,7 @@ public struct ViewStateInfo {
     let message: String
     let action: String
 
-    init(title: String = "", message: String = "", action: String = "") {
+    public init(title: String = "", message: String = "", action: String = "") {
         self.title = title
         self.message = message
         self.action = action

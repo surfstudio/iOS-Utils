@@ -31,7 +31,7 @@ public protocol MultiStatesPresentable {
     func performEmptyStateAction()
 }
 
-extension MultiStatesPresentable where Self: UIViewController {
+public extension MultiStatesPresentable where Self: UIViewController {
 
     var containerView: UIView {
         return view
@@ -41,7 +41,11 @@ extension MultiStatesPresentable where Self: UIViewController {
         return true
     }
 
-    var sharedTopOffset: CGFloat? {
+    var sharedLoadingTopOffset: CGFloat? {
+        return nil
+    }
+
+    var sharedErrorTopOffset: CGFloat? {
         return nil
     }
 
@@ -125,7 +129,7 @@ extension MultiStatesPresentable where Self: UIViewController {
 
 }
 
-extension MultiStatesPresentable where Self: UIView {
+public extension MultiStatesPresentable where Self: UIView {
 
     var useTopSafeArea: Bool {
         return false
@@ -135,7 +139,11 @@ extension MultiStatesPresentable where Self: UIView {
         return self
     }
 
-    var sharedTopOffset: CGFloat? {
+    var sharedLoadingTopOffset: CGFloat? {
+        return nil
+    }
+
+    var sharedErrorTopOffset: CGFloat? {
         return nil
     }
 
@@ -186,7 +194,7 @@ extension MultiStatesPresentable where Self: UIView {
 private extension MultiStatesPresentable where Self: UIViewController {
 
     var viewFrame: CGRect {
-        guard let topOffset = sharedTopOffset else {
+        guard let topOffset = sharedLoadingTopOffset else {
             return containerView.bounds
         }
         var frame = containerView.bounds

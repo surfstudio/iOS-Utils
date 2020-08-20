@@ -12,7 +12,7 @@ public struct DefaultLoadingModel {
     let topOffset: CGFloat
     let bottomOffset: CGFloat
 
-    init(topOffset: CGFloat = 0, bottomOffset: CGFloat = 0) {
+    public init(topOffset: CGFloat = 0, bottomOffset: CGFloat = 0) {
         self.topOffset = topOffset
         self.bottomOffset = bottomOffset
     }

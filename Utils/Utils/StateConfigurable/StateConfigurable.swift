@@ -12,7 +12,7 @@ public protocol StateConfigurable {
     func set(state: ViewState)
 }
 
-extension StateConfigurable where Self: MultiStatesPresentable {
+public extension StateConfigurable where Self: MultiStatesPresentable {
 
     func set(state: ViewState) {
         switch state {
