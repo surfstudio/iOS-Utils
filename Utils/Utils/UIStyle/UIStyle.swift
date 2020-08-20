@@ -6,6 +6,8 @@
 //  Copyright © 2020 Surf. All rights reserved.
 //
 
+import UIKit
+
 public protocol UIStyleProtocol {
     associatedtype Control: UIView
     func apply(for: Control)

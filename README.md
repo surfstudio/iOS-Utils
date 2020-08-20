@@ -58,6 +58,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [UIDevice](#uidevice) – набор вспомогательных методов для определения типа девайса 
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
+- [StateConfigurable] - семейство протоколов для упрощения реализации loading/view/empty/ стейтов экрана
 ## Утилиты
 
 ### StringAttributes
@@ -549,6 +550,70 @@ someView.apply(style: .styleForSomeView)
 let anyStyle = AnyStyle(style: UIStyle.styleForSomeView)
 anyStyle.apply(for: someView)
 ```
+### StateConfigurable
+
+Семейство протоколов для упрощения работы с различными стейтами экрана
+
+`StateConfigurable` - отвечает за отображение конкретного стейта, применяется, как правило, на ViewInput
+
+`MultiStatesPresentable` - протокол, реализующий методы для показа/скрытия стейтов, так же служит для определения контейнера стейтов и верхних отступов, применяется на UIViewController или UIView
+
+`LoadingSubviewAbstract` и `LoadingSubviewConfigurable` - протоколы для реализации и конфигурации loadingSubview
+
+`LoadingViewBlock` - Класс для инициализации и конфигурации конкретного loadingSubview
+
+`LoadingDataProvider` - протокол, формирующий блоки для loading стейта, применяется на UIVIewController
+
+Так как error/empty стейты могут сильно отличаться на каждом проекте, было принято решение не создавать для них дефолтную вью, вместого этого есть протокол  `ErrorViewAbstract` с помощью которого можно сверстать свою ErrorView, и иницилизировать ее с помощью протокола  `ErrorDataProvider`, который необходимо применить на UIVIewController.
+Обычно error и empty стейты похожи друг на друга и чтобы не верстать две разные вью, есть енам `ErrorViewState`, который отвечает за хранение стейта у условной ErrorView, для конфигурации каждого стейта есть протокол `ErrorViewConfigurable`, которым можно расширить енам и определить дефолтные отступы, стили и прочее для каждого стейта, так же можно написать свой протокол и расширять сколько угодно.
+`ViewStateInfo` - структура для передачи заголовка, сообщения и тайтла кнопки в ErrorView, так как какого-то из этих параметров может не быть на экране, для удобства параметры имеют дефолтную пустую реализацию
+
+**Использование**: 
+
+Отображение loading стейта:
+Верстаем LoadingSubview, и реализуем следующее в ViewController
+```swift
+extension viewController: MultiStatesPresentable {
+    var containerView: UIView {
+        return view
+    }
+}
+
+extension viewController: LoadingDataProvider {
+    func getBlocks() -> [LoadingViewBlockAbstract] {
+        return [LoadingViewBlock<MockLoaderView>(model: .init()]
+    }
+
+    var config: LoadingViewConfig {
+        return .init(topOffset: 150, placeholderColor: .gray)
+    }
+}
+```
+Применяем на viewInput или любую view `StateConfigurable`  и вызываем 
+
+```swift
+view?.set(state: .loading)
+```
+
+Отображение error/empty стейтов:
+Верстаем ErrorView c помощью `ErrorViewAbstract` , в ViewController применяем следующее
+```swift
+extension viewController: ErrorDataProvider {
+    var errorView: ErrorViewAbsract {
+        return ErrorView()
+    }
+}
+```
+и вызываем 
+```swift
+view?.set(state: .empty(.init(title: "", message: "", action: "")))
+view?.set(state: .error(..init(title: "", message: "", action: ""))
+```
+для скрытия стейтов используется 
+```swift
+view?.set(state: .normal)
+```
+
 
 ## Версионирование
 

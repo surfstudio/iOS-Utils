@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "10.0.5"
+  s.version = "13.0.0"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -122,6 +122,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIStyle' do |sp|
     sp.source_files = 'Utils/Utils/UIStyle/UIStyle.swift', 'Utils/Utils/UIStyle/AnyStyle.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'StateConfigurable' do |sp|
+    sp.source_files = 'Utils/Utils/StateConfigurable/**/*.swift', 'Utils/Utils/SkeletonView/*.swift', 'Utils/Utils/UIView/UIView+XibSetup.swift', 'Utils/Utils/UIView/UIView+Masking.swift', ''Utils/Utils/UIStyle/*.swift'
     sp.framework = 'UIKit'
   end
 

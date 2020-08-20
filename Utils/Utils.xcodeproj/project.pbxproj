@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */; };
+		3946574724EC13490069BDB0 /* StateConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946574624EC13490069BDB0 /* StateConfigurable.swift */; };
+		3946574924EC13550069BDB0 /* MultiStatesPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946574824EC13550069BDB0 /* MultiStatesPresentable.swift */; };
+		3946574B24EC144C0069BDB0 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946574A24EC144C0069BDB0 /* ViewState.swift */; };
+		3946574E24EC1A580069BDB0 /* LoadingViewBlockAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946574D24EC1A580069BDB0 /* LoadingViewBlockAbstract.swift */; };
+		3946575024EC1AAC0069BDB0 /* LoadingViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946574F24EC1AAC0069BDB0 /* LoadingViewConfig.swift */; };
+		3946575324EC1B580069BDB0 /* LoadingDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946575224EC1B580069BDB0 /* LoadingDataProvider.swift */; };
+		3946575524EC1E600069BDB0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946575424EC1E600069BDB0 /* LoadingView.swift */; };
+		3946575924EC21350069BDB0 /* LoadingSubviewAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946575824EC21350069BDB0 /* LoadingSubviewAbstract.swift */; };
+		3946575B24EC21480069BDB0 /* LoadingSubviewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946575A24EC21480069BDB0 /* LoadingSubviewConfigurable.swift */; };
+		3946575D24EC21890069BDB0 /* DefaultLoadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946575C24EC21890069BDB0 /* DefaultLoadingModel.swift */; };
+		3946576024EC255A0069BDB0 /* ErrorViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946575F24EC255A0069BDB0 /* ErrorViewState.swift */; };
+		3946576224EC25790069BDB0 /* ErrorViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946576124EC25790069BDB0 /* ErrorViewConfigurable.swift */; };
+		3952869924ED22FD00410DC9 /* LoadingViewBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952869824ED22FD00410DC9 /* LoadingViewBlock.swift */; };
+		3952870C24ED65B700410DC9 /* ErrorViewAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952870B24ED65B700410DC9 /* ErrorViewAbstract.swift */; };
+		3952870E24ED686500410DC9 /* ErrorDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952870D24ED686500410DC9 /* ErrorDataProvider.swift */; };
+		3952871124ED6ECA00410DC9 /* LoadingViewAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952871024ED6ECA00410DC9 /* LoadingViewAbstract.swift */; };
+		39DCF1A024EE5C0A007CCFBC /* ViewStateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DCF19F24EE5C0A007CCFBC /* ViewStateInfo.swift */; };
 		4F3ED9E9211C27CF0030DD45 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3ED9DF211C27CF0030DD45 /* Utils.framework */; };
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED9FB211C27FD0030DD45 /* String+Attributes.swift */; };
@@ -74,6 +91,23 @@
 		102A9A8EF253FEE66EBF94C1 /* Pods_Utils_UtilsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utils_UtilsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+QueryStringBuilder.swift"; sourceTree = "<group>"; };
 		243F44D696F7B70FA2E9207A /* Pods-UtilsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilsTests.debug.xcconfig"; path = "Target Support Files/Pods-UtilsTests/Pods-UtilsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3946574624EC13490069BDB0 /* StateConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateConfigurable.swift; sourceTree = "<group>"; };
+		3946574824EC13550069BDB0 /* MultiStatesPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiStatesPresentable.swift; sourceTree = "<group>"; };
+		3946574A24EC144C0069BDB0 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		3946574D24EC1A580069BDB0 /* LoadingViewBlockAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewBlockAbstract.swift; sourceTree = "<group>"; };
+		3946574F24EC1AAC0069BDB0 /* LoadingViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewConfig.swift; sourceTree = "<group>"; };
+		3946575224EC1B580069BDB0 /* LoadingDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDataProvider.swift; sourceTree = "<group>"; };
+		3946575424EC1E600069BDB0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		3946575824EC21350069BDB0 /* LoadingSubviewAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSubviewAbstract.swift; sourceTree = "<group>"; };
+		3946575A24EC21480069BDB0 /* LoadingSubviewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSubviewConfigurable.swift; sourceTree = "<group>"; };
+		3946575C24EC21890069BDB0 /* DefaultLoadingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoadingModel.swift; sourceTree = "<group>"; };
+		3946575F24EC255A0069BDB0 /* ErrorViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewState.swift; sourceTree = "<group>"; };
+		3946576124EC25790069BDB0 /* ErrorViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewConfigurable.swift; sourceTree = "<group>"; };
+		3952869824ED22FD00410DC9 /* LoadingViewBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewBlock.swift; sourceTree = "<group>"; };
+		3952870B24ED65B700410DC9 /* ErrorViewAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewAbstract.swift; sourceTree = "<group>"; };
+		3952870D24ED686500410DC9 /* ErrorDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDataProvider.swift; sourceTree = "<group>"; };
+		3952871024ED6ECA00410DC9 /* LoadingViewAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewAbstract.swift; sourceTree = "<group>"; };
+		39DCF19F24EE5C0A007CCFBC /* ViewStateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateInfo.swift; sourceTree = "<group>"; };
 		4F3ED9DF211C27CF0030DD45 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3ED9E2211C27CF0030DD45 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		4F3ED9E3211C27CF0030DD45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,6 +192,86 @@
 			path = Dictionary;
 			sourceTree = "<group>";
 		};
+		3946574524EC130F0069BDB0 /* StateConfigurable */ = {
+			isa = PBXGroup;
+			children = (
+				3946575E24EC238C0069BDB0 /* ErrorView */,
+				3946575124EC1B4C0069BDB0 /* LoadingView */,
+				3946574624EC13490069BDB0 /* StateConfigurable.swift */,
+				3946574824EC13550069BDB0 /* MultiStatesPresentable.swift */,
+				3946574C24EC19CB0069BDB0 /* Models */,
+			);
+			path = StateConfigurable;
+			sourceTree = "<group>";
+		};
+		3946574C24EC19CB0069BDB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3946574A24EC144C0069BDB0 /* ViewState.swift */,
+				39DCF19F24EE5C0A007CCFBC /* ViewStateInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3946575124EC1B4C0069BDB0 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				3952870F24ED6C1000410DC9 /* LoadingSubview */,
+				3952869724ED22ED00410DC9 /* LoadingViewBlock */,
+				3952869A24ED37C900410DC9 /* Models */,
+				3946575224EC1B580069BDB0 /* LoadingDataProvider.swift */,
+				3946575424EC1E600069BDB0 /* LoadingView.swift */,
+				3952871024ED6ECA00410DC9 /* LoadingViewAbstract.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		3946575E24EC238C0069BDB0 /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				3952870B24ED65B700410DC9 /* ErrorViewAbstract.swift */,
+				3952870D24ED686500410DC9 /* ErrorDataProvider.swift */,
+				3952869624ED1E4500410DC9 /* Models */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		3952869624ED1E4500410DC9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3946575F24EC255A0069BDB0 /* ErrorViewState.swift */,
+				3946576124EC25790069BDB0 /* ErrorViewConfigurable.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3952869724ED22ED00410DC9 /* LoadingViewBlock */ = {
+			isa = PBXGroup;
+			children = (
+				3946574D24EC1A580069BDB0 /* LoadingViewBlockAbstract.swift */,
+				3952869824ED22FD00410DC9 /* LoadingViewBlock.swift */,
+			);
+			path = LoadingViewBlock;
+			sourceTree = "<group>";
+		};
+		3952869A24ED37C900410DC9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3946575C24EC21890069BDB0 /* DefaultLoadingModel.swift */,
+				3946574F24EC1AAC0069BDB0 /* LoadingViewConfig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3952870F24ED6C1000410DC9 /* LoadingSubview */ = {
+			isa = PBXGroup;
+			children = (
+				3946575824EC21350069BDB0 /* LoadingSubviewAbstract.swift */,
+				3946575A24EC21480069BDB0 /* LoadingSubviewConfigurable.swift */,
+			);
+			path = LoadingSubview;
+			sourceTree = "<group>";
+		};
 		476135437ACA0805F9991794 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +304,7 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3946574524EC130F0069BDB0 /* StateConfigurable */,
 				5709EC5B236F4C2200EEBD93 /* CommonButton */,
 				18F2361221D214CC00169AC9 /* Dictionary */,
 				902C67EA21E4D1EF007B13CC /* ItemsScrollManager */,
@@ -622,16 +737,25 @@
 				90AC85652385929E00DF7F3B /* LocationManagerInterface.swift in Sources */,
 				907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */,
 				89293B2621F59F6A0016C6BE /* LocalStorage.swift in Sources */,
+				3952870C24ED65B700410DC9 /* ErrorViewAbstract.swift in Sources */,
+				3946576224EC25790069BDB0 /* ErrorViewConfigurable.swift in Sources */,
 				18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */,
+				39DCF1A024EE5C0A007CCFBC /* ViewStateInfo.swift in Sources */,
 				E9B063102147AECC0080C391 /* UIDevice+feedbackType.swift in Sources */,
+				3946576024EC255A0069BDB0 /* ErrorViewState.swift in Sources */,
 				9087BC5421EF3BF200FCE1E1 /* FullKeyboardPresentable.swift in Sources */,
 				D6040DFC22C5F3E20088BB50 /* StringBuilder.swift in Sources */,
+				3946574924EC13550069BDB0 /* MultiStatesPresentable.swift in Sources */,
 				902C67EC21E4D20B007B13CC /* ItemsScrollManager.swift in Sources */,
 				89F23A6D23576452005112E1 /* OTPFieldStyle.swift in Sources */,
 				573117D623BF889000491781 /* LayoutHelper.swift in Sources */,
 				90AC85632385928E00DF7F3B /* GeolocationServiceInterface.swift in Sources */,
+				3946574B24EC144C0069BDB0 /* ViewState.swift in Sources */,
 				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
+				3946575524EC1E600069BDB0 /* LoadingView.swift in Sources */,
 				907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */,
+				3946574724EC13490069BDB0 /* StateConfigurable.swift in Sources */,
+				3946575924EC21350069BDB0 /* LoadingSubviewAbstract.swift in Sources */,
 				89F23A69235733BC005112E1 /* DigitField.swift in Sources */,
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
 				A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */,
@@ -641,23 +765,31 @@
 				5709EC5D236F4C6500EEBD93 /* CommonButton.swift in Sources */,
 				9087BC5221EF3BE700FCE1E1 /* CommonKeyboardPresentable.swift in Sources */,
 				9087BC5021EF3BD400FCE1E1 /* KeyboardObservable.swift in Sources */,
+				3946574E24EC1A580069BDB0 /* LoadingViewBlockAbstract.swift in Sources */,
+				3952871124ED6ECA00410DC9 /* LoadingViewAbstract.swift in Sources */,
 				E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */,
+				3946575324EC1B580069BDB0 /* LoadingDataProvider.swift in Sources */,
 				90718AF121EA370000C81002 /* KeyboardNotificationsObserver.swift in Sources */,
 				90AC8569238592AF00DF7F3B /* GeolocationAuthResult.swift in Sources */,
 				5709EC6A236F562400EEBD93 /* UIImageExtensions.swift in Sources */,
 				8953A46D23560A2F007AD110 /* OTPField.swift in Sources */,
+				3952869924ED22FD00410DC9 /* LoadingViewBlock.swift in Sources */,
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
 				902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */,
 				90AC85612385928100DF7F3B /* GeolocationService.swift in Sources */,
 				90AC856B238592B800DF7F3B /* GeolocationResult.swift in Sources */,
 				573117D123BF84C400491781 /* UIDevice.swift in Sources */,
 				9087BC5621EF3BFB00FCE1E1 /* Notification.swift in Sources */,
+				3946575024EC1AAC0069BDB0 /* LoadingViewConfig.swift in Sources */,
 				89F23A6B23575D97005112E1 /* DigitFieldStyle.swift in Sources */,
 				573117DB23BFD33000491781 /* AnyStyle.swift in Sources */,
 				907F0FEF21DCDB43001CCB07 /* WordDeclinationSelector.swift in Sources */,
+				3952870E24ED686500410DC9 /* ErrorDataProvider.swift in Sources */,
 				A439074B21F5C52A0034C455 /* UIView+Masking.swift in Sources */,
 				9087BC5A21EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift in Sources */,
 				907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */,
+				3946575D24EC21890069BDB0 /* DefaultLoadingModel.swift in Sources */,
+				3946575B24EC21480069BDB0 /* LoadingSubviewConfigurable.swift in Sources */,
 				573117D923BFD28300491781 /* UIStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,10 +941,10 @@
 			baseConfigurationReference = 632D58609B21028A5FFDF22F /* Pods-Utils.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ZJ45BEVK69;
+				DEVELOPMENT_TEAM = 42CJ7GW5YG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -825,6 +957,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Surf.Utils;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -837,10 +971,10 @@
 			baseConfigurationReference = D06F434CB242A683A6DFCEC4 /* Pods-Utils.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ZJ45BEVK69;
+				DEVELOPMENT_TEAM = 42CJ7GW5YG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -853,6 +987,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Surf.Utils;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
