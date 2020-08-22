@@ -125,4 +125,10 @@ Pod::Spec.new do |s|
     sp.framework = 'UIKit'
   end
 
+  s.subspec 'SecurityService' do |sp|
+    sp.source_files = Utils/Utils/SecurityService/**/*.swift
+    sp.framework = 'UIKit'
+    sp.dependency 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :tag => '1.3.1'
+  end
+
 end

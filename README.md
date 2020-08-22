@@ -58,6 +58,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [UIDevice](#uidevice) – набор вспомогательных методов для определения типа девайса 
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
+- [SecurityService](#securityservice)  -  сервис для шифрования и сохранения в keychain/inMemory секретных данных
 ## Утилиты
 
 ### StringAttributes
@@ -548,6 +549,59 @@ someView.apply(style: .styleForSomeView)
 ```swift
 let anyStyle = AnyStyle(style: UIStyle.styleForSomeView)
 anyStyle.apply(for: someView)
+```
+
+### SecurityService 
+
+Сервис, который умеет шифровать и сохранять в keychain/inMemory секретные данные по ключу, например по пину
+Шифрование происходит по следующему принципу:
+1. Берется SHA3.224 от пина
+2. Генерируется криптостойкой случайное число на 32 бита - соль
+3. Из битового представления соли получаем hex-string
+4. Вставляется пин в соль - получаем ключ
+5. Генерируется вектор инициаллизации - 4 бита
+6. Шифруем наши данные алгоритмом Blowfish токены используя ключ.
+7. Полученный шифротекст сохраняем в кейчейн
+8. Ключ так же сохраняем в кейчейне
+
+`PinCryptoBox` - отвечает за шифрование/дешифрование и сохранение/загрузку из стореджа, при инициализации принимает `SecureStore`, `HashProvider`, `SymmetricCryptoService` и ключи к соли, вектору инициализации, шифруемым данным и хешу.  Реализует протокол `CryptoBox`
+
+`PinHackCryptoBox` - подобен `PinCryptoBox` , используется для обновления зашифрованных данных, его отличие в том, что он уже сам знает  откуда прочесть ключи и все остальное, ему нужно только получить данные. 
+
+`HackWrapperCryptoBox` - обертка для хак-бокса, используется чтобы на лету подменять шифровальщик.
+
+`BlowfishCryptoService` - шифрует данные алгоритмом Blowfish, передается в крипто-бокс.
+
+`InMemorySecureStore` - класс для хранения данных в оперативной памяти телефона
+
+`KeyChainSecureStore` - Инкапсулирует логику сохранения, загрузки и удаленния данных из keyChain, можно использовать отдельно от криптобоксов
+
+`GenericPasswordQueryable` - создает query c kSecClassGenericPassword для keyChain, инжектится в  `KeyChainSecureStore` 
+
+**Использование**: 
+Для начала в проекте следует определить константы для криптобокса и для удобства использования можно написать подобный конфигуратор
+```swift
+struct PinCryptoBoxConfigurator {
+    func produceClear() -> PinCryptoBox {
+        return PinCryptoBox(secureStore: { Settings.shared.secureStorage },
+                            hashProvider: SHA3(variant: .sha224),
+                            cryptoService: BlowfishCryptoService(),
+                            ivKey: Const.ivKey,
+                            dataKey: Const.dataKey,
+                            saltKey: Const.saltKey,
+                            hashKey: Const.hashKey)
+    }
+}
+```
+Инициализируем сервис, шифруем и дешифруем
+```swift
+let cryptoService = PinCryptoBoxConfigurator().produceClear()
+try? cryptoService.encrypt(data: token, auth: pin)
+let token = try? cryptoService.decrypt(auth: pin) 
+```
+Для обновления данных используем HackCryptoBox
+```swift
+let cryptoService = PinCryptoBoxConfigurator().produceClear().hack()
 ```
 
 ## Версионирование
