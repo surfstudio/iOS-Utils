@@ -581,6 +581,8 @@ anyStyle.apply(for: someView)
 **Использование**: 
 Для начала в проекте следует определить константы для криптобокса и для удобства использования можно написать подобный конфигуратор
 ```swift
+import CryptoSwift 
+
 struct PinCryptoBoxConfigurator {
     func produceClear() -> PinCryptoBox {
         return PinCryptoBox(secureStore: { Settings.shared.secureStorage },

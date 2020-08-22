@@ -11,6 +11,8 @@ import CryptoSwift
 
 public final class BlowfishCryptoService: SymmetricCryptoService {
 
+    public init() {}
+
     public func encrypt(data: [UInt8], key: String, iv: String) throws -> [UInt8] {
         let alg = try Blowfish(key: key, iv: iv, padding: .pkcs7)
         return try alg.encrypt(data)

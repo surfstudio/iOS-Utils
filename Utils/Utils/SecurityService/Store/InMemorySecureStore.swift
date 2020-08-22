@@ -10,6 +10,8 @@ import Foundation
 
 public class InMemorySecureStore: SecureStore {
 
+    public init() {}
+
     public var memory = [String: String]()
 
     public func remove(by key: String) throws {
