@@ -11,11 +11,11 @@ import Foundation
 public struct ViewStateInfo {
     public let title: String
     public let message: String
-    public let action: String
+    public let actionText: String
 
-    public init(title: String = "", message: String = "", action: String = "") {
+    public init(title: String = "", message: String = "", actionText: String = "") {
         self.title = title
         self.message = message
-        self.action = action
+        self.actionText = actionText
     }
 }
