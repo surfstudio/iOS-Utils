@@ -128,7 +128,7 @@ Pod::Spec.new do |s|
   s.subspec 'SecurityService' do |sp|
     sp.source_files = 'Utils/Utils/SecurityService/**/*.swift'
     sp.framework = 'Foundation'
-    sp.dependency 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :tag => '1.3.1'
+    sp.dependency 'CryptoSwift', '1.3.1'
   end
 
 end
