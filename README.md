@@ -380,7 +380,8 @@ required init?(coder aDecoder: NSCoder) {
   ```
   * Метод **drawInitials** – Рисует инициалы на картинке с заданным шрифтом и цветом текста
   
-  ![](Pictures/badge.png)
+  
+  ![](Pictures/initials.png)
   
   ```swift
   func drawInitials(firstname: String,
@@ -390,7 +391,7 @@ required init?(coder aDecoder: NSCoder) {
   ```
    * Метод **badgedImage** – Рисует бейдж на картинке 
    
-   ![](Pictures/initials.png)
+   ![](Pictures/badge.png)
    
    ```swift
    func badgedImage(count: Int, dimension: CGFloat, strokeWidth: CGFloat, backgroundBadgeColor: UIColor) -> UIImage? 
