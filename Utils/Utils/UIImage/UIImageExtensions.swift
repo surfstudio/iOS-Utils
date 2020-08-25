@@ -10,6 +10,12 @@ import UIKit
 
 public extension UIImage {
 
+    // MARK: - Constants
+
+    private enum Constants {
+        static let kern: CGFloat = -0.24
+    }
+
     /// Init method for creating UIImage of a given color
     /// - Parameters:
     ///     - color: Optional value, by default clear color
@@ -78,7 +84,7 @@ public extension UIImage {
             .font: font,
             .foregroundColor: textColor,
             .paragraphStyle: paragraphStyle,
-            .kern: -0.24
+            .kern: Constants.kern
         ]
         let string = String(firstname.prefix(1) + lastname.prefix(1))
         let initials = NSAttributedString(string: string,

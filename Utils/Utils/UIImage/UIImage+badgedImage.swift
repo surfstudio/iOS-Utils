@@ -10,6 +10,16 @@ import Foundation
 
 public extension UIImage {
 
+    // MARK: - Constants
+
+    private enum Constants {
+        static let kern: CGFloat = -0.24
+        static let normalFontSize: CGFloat = 10.0
+        static let smallFontSize: CGFloat = 9.0
+        static let positionMultiplier: CGFloat = 0.75
+        static let contextSizeMultiplier: CGFloat = 0.25
+    }
+
     // MARK: - Public Methods
 
     /// Draws a badge on the image
@@ -56,8 +66,8 @@ public extension UIImage {
     /// - Parameter image: picture of badge
     /// - Parameter dimension: size of badge
     func badgedImage(_ badgeImage: UIImage, dimension: CGFloat) -> UIImage? {
-        let x = size.width - dimension * 0.75
-        let y = size.height - dimension * 0.75
+        let x = size.width - dimension * Constants.positionMultiplier
+        let y = size.height - dimension * Constants.positionMultiplier
 
         let badgeRect = CGRect(x: x,
                                y: y,
@@ -69,8 +79,8 @@ public extension UIImage {
                                width: size.width,
                                height: size.height)
 
-        let contextSize = CGSize(width: size.width + dimension * 0.25,
-                                 height: size.height + dimension * 0.25)
+        let contextSize = CGSize(width: size.width + dimension * Constants.contextSizeMultiplier,
+                                 height: size.height + dimension * Constants.contextSizeMultiplier)
 
         UIGraphicsBeginImageContextWithOptions(contextSize, false, .zero)
 
@@ -84,20 +94,24 @@ public extension UIImage {
         return resultImage?.withRenderingMode(.alwaysOriginal)
     }
 
-    // MARK: - Private Methods
+}
+
+// MARK: - Private Methods
+
+private extension UIImage {
 
     /// Converts the number of notifications to a string with the system font and white color
     /// - Parameter count: count of notifications
-    private func getAttributedString(from count: Int) -> NSAttributedString {
+    func getAttributedString(from count: Int) -> NSAttributedString {
         let count = String(count)
 
         let baseLineOffset: NSNumber
         let fontSize: CGFloat
         if count.count > 2 {
-            fontSize = 9.0
+            fontSize = Constants.smallFontSize
             baseLineOffset = NSNumber(value: -2.0)
         } else {
-            fontSize = 10.0
+            fontSize = Constants.normalFontSize
             baseLineOffset = NSNumber(value: -1.0)
         }
 
@@ -110,7 +124,7 @@ public extension UIImage {
             .foregroundColor: UIColor.white,
             .baselineOffset: baseLineOffset,
             .paragraphStyle: paragraphStyle,
-            .kern: -0.24
+            .kern: Constants.kern
         ]
 
         return NSAttributedString(string: count, attributes: attributes)
@@ -119,7 +133,7 @@ public extension UIImage {
     /// Draws background of badge
     /// - Parameter rect: size of badge
     /// - Parameter backgroundColor: badge background color
-    private func drawBadgeBackground(in rect: CGRect, backgroundColor: UIColor) {
+    func drawBadgeBackground(in rect: CGRect, backgroundColor: UIColor) {
         let path = UIBezierPath(roundedRect: rect, cornerRadius: rect.height / 2.0)
         let context = UIGraphicsGetCurrentContext()
         context?.setFillColor(backgroundColor.cgColor)
@@ -132,7 +146,7 @@ public extension UIImage {
     ///   - rect: size of badge
     ///   - size: size of result image
     ///   - strokeWidth: width of transparent line
-    private func drawMaskedStroke(over rect: CGRect, in size: CGSize, strokeWidth: CGFloat) {
+    func drawMaskedStroke(over rect: CGRect, in size: CGSize, strokeWidth: CGFloat) {
         let rect = CGRect(x: rect.origin.x - strokeWidth,
                           y: rect.origin.y,
                           width: rect.width + strokeWidth,
