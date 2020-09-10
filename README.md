@@ -291,6 +291,7 @@ skeletonView.delayBetweenAnimationLoops = 1.0
 <details><summary>Примеры</summary>
 
 ![LeftToRight](Examples/skeleton1.gif)
+
 ![RightToLeftFaster](Examples/skeleton2.gif)
 
 </details>
