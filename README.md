@@ -393,6 +393,10 @@ required init?(coder aDecoder: NSCoder) {
 * Устанавливать значение тайтла для всех состояний сразу
 * Устанавливать значение картинки кнопки для всех состояний сразу
 
+<details><summary>Примеры</summary>
+![](Examples/commonButton.gif)
+</details>
+
 ### LocalStorage
 
 Утилита для сохранения / удаления / загрузки `Codable` моделей данных в файловую систему.
