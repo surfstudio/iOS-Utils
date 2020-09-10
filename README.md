@@ -288,6 +288,12 @@ skeletonView.movingAnimationDuration = 1.0
 // Длительность задержки между шагами анимации в секундах
 skeletonView.delayBetweenAnimationLoops = 1.0
 ```
+<details><summary>Примеры</summary>
+
+![LeftToRight](Examples/skeleton1.gif)
+![RightToLeftFaster](Examples/skeleton2.gif)
+
+</details>
 
 ### OTPField
 
