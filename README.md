@@ -341,6 +341,12 @@ skeletonView.delayBetweenAnimationLoops = 1.0
         }
 ```
 
+<details><summary>Примеры</summary>
+
+![OTPField](Examples/otpField.gif)
+
+</details>
+
 ### XibView
 
 Утилита для использования .xib + UIView. Работает в коде через конструктор и в сторибордах.
