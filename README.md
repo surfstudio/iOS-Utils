@@ -394,7 +394,9 @@ required init?(coder aDecoder: NSCoder) {
 * Устанавливать значение картинки кнопки для всех состояний сразу
 
 <details><summary>Примеры</summary>
-![](Examples/commonButton.gif)
+
+![Common Button](Examples/commonButton.gif)
+
 </details>
 
 ### LocalStorage
