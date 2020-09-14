@@ -288,6 +288,13 @@ skeletonView.movingAnimationDuration = 1.0
 // Длительность задержки между шагами анимации в секундах
 skeletonView.delayBetweenAnimationLoops = 1.0
 ```
+<details><summary>Примеры</summary>
+
+![LeftToRight](Examples/skeleton1.gif)
+
+![RightToLeftFaster](Examples/skeleton2.gif)
+
+</details>
 
 ### OTPField
 
@@ -340,6 +347,12 @@ skeletonView.delayBetweenAnimationLoops = 1.0
             )
         }
 ```
+
+<details><summary>Примеры</summary>
+
+![OTPField](Examples/otpField.gif)
+
+</details>
 
 ### XibView
 
@@ -416,6 +429,12 @@ required init?(coder aDecoder: NSCoder) {
 * Увеличивать область нажатия у кнопки
 * Устанавливать значение тайтла для всех состояний сразу
 * Устанавливать значение картинки кнопки для всех состояний сразу
+
+<details><summary>Примеры</summary>
+
+![Common Button](Examples/commonButton.gif)
+
+</details>
 
 ### LocalStorage
 
