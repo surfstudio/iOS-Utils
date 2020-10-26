@@ -125,4 +125,9 @@ Pod::Spec.new do |s|
     sp.framework = 'UIKit'
   end
 
+  s.subspec 'CustomSwitch' do |sp|
+    sp.source_files = 'Utils/Utils/CustomSwitch/*.swift'
+    sp.framework = 'UIKit'
+  end
+
 end
