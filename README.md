@@ -288,6 +288,13 @@ skeletonView.movingAnimationDuration = 1.0
 // Длительность задержки между шагами анимации в секундах
 skeletonView.delayBetweenAnimationLoops = 1.0
 ```
+<details><summary>Примеры</summary>
+
+![LeftToRight](Examples/skeleton1.gif)
+
+![RightToLeftFaster](Examples/skeleton2.gif)
+
+</details>
 
 ### OTPField
 
@@ -341,6 +348,12 @@ skeletonView.delayBetweenAnimationLoops = 1.0
         }
 ```
 
+<details><summary>Примеры</summary>
+
+![OTPField](Examples/otpField.gif)
+
+</details>
+
 ### XibView
 
 Утилита для использования .xib + UIView. Работает в коде через конструктор и в сторибордах.
@@ -378,6 +391,30 @@ required init?(coder aDecoder: NSCoder) {
   func mask(with color: UIColor) -> UIImage 
   func mask(with alpha: CGFloat) -> UIImage
   ```
+  * Метод **drawInitials** – Рисует инициалы на картинке с заданным шрифтом и цветом текста
+  
+  
+  ![](Pictures/initials.png)
+  
+  ```swift
+  func drawInitials(firstname: String,
+                    lastname: String,
+                    font: UIFont,
+                    textColor: UIColor) -> UIImage?
+  ```
+   * Метод **badgedImage** – Рисует бейдж на картинке 
+   
+   ![](Pictures/badge.png)
+   
+   ```swift
+   func badgedImage(count: Int, dimension: CGFloat, strokeWidth: CGFloat, backgroundBadgeColor: UIColor) -> UIImage? 
+   ``` 
+   Рисует бейдж в правом верхнем углу с цифрой, используется, например, для непрочитанных уведомлений, можно конфигурировать размер бейджа, его фон и ширину прозрачной линии между картинкой и бейджом
+    ```swift
+   func badgedImage(_ badgeImage: UIImage, dimension: CGFloat) -> UIImage?
+    ``` 
+    Рисует бейдж с заданной картинкой в правом нижнем углу, можно конфигурировать размер бейджа
+  
 
 ### CommonButton
 
@@ -392,6 +429,12 @@ required init?(coder aDecoder: NSCoder) {
 * Увеличивать область нажатия у кнопки
 * Устанавливать значение тайтла для всех состояний сразу
 * Устанавливать значение картинки кнопки для всех состояний сразу
+
+<details><summary>Примеры</summary>
+
+![Common Button](Examples/commonButton.gif)
+
+</details>
 
 ### LocalStorage
 
