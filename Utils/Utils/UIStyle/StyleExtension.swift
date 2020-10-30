@@ -30,14 +30,6 @@ public extension UIButton {
     }
 }
 
-// MARK: - CommonButton
-
-public extension CommonButton {
-    func apply(style: UIStyle<CommonButton>) {
-        style.apply(for: self)
-    }
-}
-
 // MARK: - UIImageView
 
 public extension UIImageView {
