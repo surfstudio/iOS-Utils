@@ -19,7 +19,6 @@
 		3946575B24EC21480069BDB0 /* LoadingSubviewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946575A24EC21480069BDB0 /* LoadingSubviewConfigurable.swift */; };
 		3946575D24EC21890069BDB0 /* DefaultLoadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946575C24EC21890069BDB0 /* DefaultLoadingModel.swift */; };
 		3946576024EC255A0069BDB0 /* ErrorViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946575F24EC255A0069BDB0 /* ErrorViewState.swift */; };
-		3946576224EC25790069BDB0 /* ErrorViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946576124EC25790069BDB0 /* ErrorViewConfigurable.swift */; };
 		394F78D5254C16B200C2D320 /* DefaultErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F78D4254C16B200C2D320 /* DefaultErrorView.swift */; };
 		394F78DE254C1B7E00C2D320 /* DefaultErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 394F78DD254C1B7E00C2D320 /* DefaultErrorView.xib */; };
 		394F78E6254C3E8900C2D320 /* ViewStateConfigutration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F78E5254C3E8900C2D320 /* ViewStateConfigutration.swift */; };
@@ -106,7 +105,6 @@
 		3946575A24EC21480069BDB0 /* LoadingSubviewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSubviewConfigurable.swift; sourceTree = "<group>"; };
 		3946575C24EC21890069BDB0 /* DefaultLoadingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoadingModel.swift; sourceTree = "<group>"; };
 		3946575F24EC255A0069BDB0 /* ErrorViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewState.swift; sourceTree = "<group>"; };
-		3946576124EC25790069BDB0 /* ErrorViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewConfigurable.swift; sourceTree = "<group>"; };
 		394F78D4254C16B200C2D320 /* DefaultErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultErrorView.swift; sourceTree = "<group>"; };
 		394F78DD254C1B7E00C2D320 /* DefaultErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultErrorView.xib; sourceTree = "<group>"; };
 		394F78E5254C3E8900C2D320 /* ViewStateConfigutration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateConfigutration.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				3946575F24EC255A0069BDB0 /* ErrorViewState.swift */,
-				3946576124EC25790069BDB0 /* ErrorViewConfigurable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -759,7 +756,6 @@
 				907F0FEC21DCD7E1001CCB07 /* RouteMeasurer.swift in Sources */,
 				89293B2621F59F6A0016C6BE /* LocalStorage.swift in Sources */,
 				3952870C24ED65B700410DC9 /* ErrorView.swift in Sources */,
-				3946576224EC25790069BDB0 /* ErrorViewConfigurable.swift in Sources */,
 				394F78D5254C16B200C2D320 /* DefaultErrorView.swift in Sources */,
 				18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */,
 				39DCF1A024EE5C0A007CCFBC /* ViewStateInfo.swift in Sources */,
