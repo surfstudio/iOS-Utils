@@ -59,6 +59,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
 - [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
+- [CustomSwitch](#customswitch) – более гибкая реализация Switch ui элемента
 
 ## Утилиты
 
@@ -84,15 +85,18 @@ let globalSttributes: [StringAttribute] = [
     .foregroundColor(.black)
 ]
 let attributedString = StringBuilder(globalAttributes: globalSttributes)
-    .add(text: "Title")
-    .addSpace()
-    .add(text: "blue", with: [.foregroundColor(.blue)])
-    .addLineBreak()
-    .add(text: "Base style on new line")
-    .addSpace()
-    .add(text: "last word with it's own style", with: [.font(.boldSystemFont(ofSize: 16)), .foregroundColor(.red)])
+    .add(.string("Title"))
+    .add(.delimeterWithString(delimeter: .init(type: .space), string: "blue"), 
+         with: [.foregroundColor(.blue)])
+    .add(.delimeterWithString(delimeter: .init(type: .lineBreak), string: "Base style on new line"))
+    .add(.delimeterWithString(delimeter: .init(type: .space), string: "last word with it's own style"), 
+         with: [.font(.boldSystemFont(ofSize: 16)), .foregroundColor(.red)])
     .value
 ```
+
+Возможные проблемы:
+
+- при добавлении к `StringBuilder` только разделителя (`.add(.delimeter)`) (без указания шрифта как локально, так и в рамках текущего блока) может произойти потеря равнения параграфа по вертикали потому что для разделителя будет использоваться стандартный шрифт системы (лейбла). Для предотвращения данной проблемы желательно использование разделителей в паре с текстом (`.add(.delimeterWithString(...))`)
 
 ### BrightSide
 
@@ -290,6 +294,13 @@ skeletonView.movingAnimationDuration = 1.0
 // Длительность задержки между шагами анимации в секундах
 skeletonView.delayBetweenAnimationLoops = 1.0
 ```
+<details><summary>Примеры</summary>
+
+![LeftToRight](Examples/skeleton1.gif)
+
+![RightToLeftFaster](Examples/skeleton2.gif)
+
+</details>
 
 ### OTPField
 
@@ -343,6 +354,12 @@ skeletonView.delayBetweenAnimationLoops = 1.0
         }
 ```
 
+<details><summary>Примеры</summary>
+
+![OTPField](Examples/otpField.gif)
+
+</details>
+
 ### XibView
 
 Утилита для использования .xib + UIView. Работает в коде через конструктор и в сторибордах.
@@ -380,6 +397,30 @@ required init?(coder aDecoder: NSCoder) {
   func mask(with color: UIColor) -> UIImage 
   func mask(with alpha: CGFloat) -> UIImage
   ```
+  * Метод **drawInitials** – Рисует инициалы на картинке с заданным шрифтом и цветом текста
+  
+  
+  ![](Pictures/initials.png)
+  
+  ```swift
+  func drawInitials(firstname: String,
+                    lastname: String,
+                    font: UIFont,
+                    textColor: UIColor) -> UIImage?
+  ```
+   * Метод **badgedImage** – Рисует бейдж на картинке 
+   
+   ![](Pictures/badge.png)
+   
+   ```swift
+   func badgedImage(count: Int, dimension: CGFloat, strokeWidth: CGFloat, backgroundBadgeColor: UIColor) -> UIImage? 
+   ``` 
+   Рисует бейдж в правом верхнем углу с цифрой, используется, например, для непрочитанных уведомлений, можно конфигурировать размер бейджа, его фон и ширину прозрачной линии между картинкой и бейджом
+    ```swift
+   func badgedImage(_ badgeImage: UIImage, dimension: CGFloat) -> UIImage?
+    ``` 
+    Рисует бейдж с заданной картинкой в правом нижнем углу, можно конфигурировать размер бейджа
+  
 
 ### CommonButton
 
@@ -394,6 +435,12 @@ required init?(coder aDecoder: NSCoder) {
 * Увеличивать область нажатия у кнопки
 * Устанавливать значение тайтла для всех состояний сразу
 * Устанавливать значение картинки кнопки для всех состояний сразу
+
+<details><summary>Примеры</summary>
+
+![Common Button](Examples/commonButton.gif)
+
+</details>
 
 ### LocalStorage
 
@@ -618,6 +665,48 @@ class ViewController: UIViewController {
 }
 
 
+```
+
+### CustomSwitch
+
+Гибкая реализация ui элемента switch.
+1) Умеет адаптироваться под разный размер.
+2) Есть возможность задать закругления и отсутпы.
+3) Есть возможность задать градиент вместо цвета.
+4) Гибко настраивается анимация.
+5) Есть возможность добавить тень для бегунка.
+
+`CustomSwitch` – непосредственно сам элемент.
+
+`CustomSwitch.LayoutConfiguration` - содержит padding(отступ от бегунка до краев), spacing(отступ от бегунка до сторон в обоих состояниях) и cornerRatio самого свитча.
+
+`CustomSwitch.ThumbConfiguration` - содержит cornerRatio и shadowConfiguration(CSShadowConfiguration) для самого бегунка.
+
+`CustomSwitch.ColorsConfiguration` - содержит в себе параметры для конигурации цвета подложки(on и off) и бегунка. Все три параметра имеют тип CSColorConfiguration. Это протокол с одним методом - `applyColor(for view: UIView)` и имеющий уже две реализации: `CSSimpleColorConfiguration` и `CSGradientColorConfiguration`.
+
+`CustomSwitch.AnimationsConfiguration` - содержит параметры для конфигурации анимации свитча(duration, delay, usingSpringWithDamping, initialSpringVelocity, options).
+
+Для обработки изменения стейта можно использовать стандартный event valueChanged.
+
+**Использование**
+
+```swift
+let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+customSwitch.layoutConfiguration = .init(padding: 1, spacing: 3, cornerRatio: 0.5)
+customSwitch.colorsConfiguration = .init(offColorConfiguraion: CSSimpleColorConfiguration(color: .white),
+                                         onColorConfiguraion: CSSimpleColorConfiguration(color: .green),
+                                         thumbColorConfiguraion: CSGradientColorConfiguration(colors: [.lightGray, .yellow],
+                                                                                              locations: [0, 1]))
+customSwitch.thumbConfiguration = .init(cornerRatio: 0, shadowConfiguration: .init(color: .black, offset: CGSize(), radius: 5, oppacity: 0.1))
+customSwitch.animationsConfiguration = .init(duration: 0.1, usingSpringWithDamping: 0.7)
+
+customSwitch.setOn(true, animated: false)
+
+// обработка
+
+@IBAction func switchValueDidChange(_ sender: CustomSwitch) {
+	print(sender.isOn)
+}
 ```
 
 ## Версионирование

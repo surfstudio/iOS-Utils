@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "11.0.0"
+  s.version = "12.1.0"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'UIImageExtensions' do |sp|
-    sp.source_files = 'Utils/Utils/UIImage/UIImageExtensions.swift'
+    sp.source_files = 'Utils/Utils/UIImage/*.swift'
     sp.framework = 'UIKit'
   end
 
@@ -127,6 +127,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'TouchableControl' do |sp|
     sp.source_files = 'Utils/Utils/UIControl/TouchableControl.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'CustomSwitch' do |sp|
+    sp.source_files = 'Utils/Utils/CustomSwitch/*.swift'
     sp.framework = 'UIKit'
   end
 
