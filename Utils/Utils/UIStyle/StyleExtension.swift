@@ -1,5 +1,5 @@
 //
-//  StylesExtension.swift
+//  StyleExtension.swift
 //  Utils
 //
 //  Created by Никита Гагаринов on 30.10.2020.
