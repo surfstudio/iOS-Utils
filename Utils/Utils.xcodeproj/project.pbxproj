@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */; };
+		394F78F4254C50D500C2D320 /* StyleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F78F3254C50D500C2D320 /* StyleExtension.swift */; };
 		39DCF1A224EE7C66007CCFBC /* UIImage+badgedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DCF1A124EE7C66007CCFBC /* UIImage+badgedImage.swift */; };
 		4F3ED9E9211C27CF0030DD45 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3ED9DF211C27CF0030DD45 /* Utils.framework */; };
 		4F3ED9F0211C27CF0030DD45 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3ED9E2211C27CF0030DD45 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,6 +81,7 @@
 		102A9A8EF253FEE66EBF94C1 /* Pods_Utils_UtilsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utils_UtilsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+QueryStringBuilder.swift"; sourceTree = "<group>"; };
 		243F44D696F7B70FA2E9207A /* Pods-UtilsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilsTests.debug.xcconfig"; path = "Target Support Files/Pods-UtilsTests/Pods-UtilsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		394F78F3254C50D500C2D320 /* StyleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleExtension.swift; sourceTree = "<group>"; };
 		39DCF1A124EE7C66007CCFBC /* UIImage+badgedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+badgedImage.swift"; sourceTree = "<group>"; };
 		4F3ED9DF211C27CF0030DD45 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3ED9E2211C27CF0030DD45 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				573117D823BFD28300491781 /* UIStyle.swift */,
 				573117DA23BFD33000491781 /* AnyStyle.swift */,
+				394F78F3254C50D500C2D320 /* StyleExtension.swift */,
 			);
 			path = UIStyle;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				39DCF1A224EE7C66007CCFBC /* UIImage+badgedImage.swift in Sources */,
 				90AC8569238592AF00DF7F3B /* GeolocationAuthResult.swift in Sources */,
 				5709EC6A236F562400EEBD93 /* UIImageExtensions.swift in Sources */,
+				394F78F4254C50D500C2D320 /* StyleExtension.swift in Sources */,
 				8953A46D23560A2F007AD110 /* OTPField.swift in Sources */,
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
 				902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */,
