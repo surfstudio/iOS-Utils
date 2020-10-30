@@ -1,5 +1,5 @@
 //
-//  ErrorViewAbstract.swift
+//  ErrorView.swift
 //  Utils
 //
 //  Created by Никита Гагаринов on 19.08.2020.
@@ -9,9 +9,9 @@
 import UIKit
 
 /// Protocol for implementing custom ErrorView/EmptyView
-public protocol ErrorViewAbsract: UIView {
+public protocol ErrorView: UIView {
     var state: ErrorViewState { get }
     var onAction: ((ErrorViewState) -> Void)? { get set }
 
-    func configure(info: ViewStateInfo, config: ErrorViewState)
+    func configure(info: ViewStateInfo, config: ViewStateConfiguration, state: ErrorViewState)
 }

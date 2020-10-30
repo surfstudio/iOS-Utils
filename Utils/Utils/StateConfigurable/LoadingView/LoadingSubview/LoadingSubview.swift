@@ -1,5 +1,5 @@
 //
-//  LoadingSubviewAbstract.swift
+//  LoadingSubview.swift
 //  Utils
 //
 //  Created by Никита Гагаринов on 18.08.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol LoadingSubviewAbstract: UIView {
+public protocol LoadingSubview: UIView {
     var height: CGFloat { get }
 
     /// Configuration for placeholders color

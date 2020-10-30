@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol ErrorDataProvider {
-    var errorView: ErrorViewAbsract { get }
+    var errorView: ErrorView { get }
 }

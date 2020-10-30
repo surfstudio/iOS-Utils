@@ -16,14 +16,14 @@ public extension StateConfigurable where Self: MultiStatesPresentable {
 
     func set(state: ViewState) {
         switch state {
-        case .empty(let model):
+        case .empty(let model, let config):
             hideErrorView()
             hideLoaderView()
-            showEmptyView(info: model, nil)
-        case .error(let model):
+            showEmptyView(info: model, config: config, nil)
+        case .error(let model, let config):
             hideEmptyView()
             hideLoaderView()
-            showErrorView(info: model, nil)
+            showErrorView(info: model, config: config, nil)
         case .loading:
             hideEmptyView()
             hideErrorView()

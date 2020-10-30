@@ -18,8 +18,8 @@ public protocol MultiStatesPresentable {
 
     /// If the callback parameter is specified, then only callback will be called on the action
     /// If it is nil, then the corresponding performErrorStateAction / performEmptyStateAction method will be called
-    func showErrorView(info: ViewStateInfo, _ callback: (() -> Void)?)
-    func showEmptyView(info: ViewStateInfo, _ callback: (() -> Void)?)
+    func showErrorView(info: ViewStateInfo, config: ViewStateConfiguration, _ callback: (() -> Void)?)
+    func showEmptyView(info: ViewStateInfo, config: ViewStateConfiguration, _ callback: (() -> Void)?)
     func showLoaderView()
 
     func hideErrorView()
@@ -49,34 +49,44 @@ public extension MultiStatesPresentable where Self: UIViewController {
         return nil
     }
 
-    private var loaderView: LoadingView? {
-        return containerView.subviews.first { $0 is LoadingView } as? LoadingView
+    var viewFrame: CGRect {
+        guard let topOffset = sharedLoadingTopOffset else {
+            return containerView.bounds
+        }
+        var frame = containerView.bounds
+        frame.origin.y += topOffset
+        frame.size.height -= topOffset
+        return frame
     }
 
-    private var errorView: ErrorViewAbsract? {
-        let errorView = containerView.subviews.first { ($0 as? ErrorViewAbsract)?.state == .error }
-        return errorView as? ErrorViewAbsract
+    private var loaderView: BaseLoadingView? {
+        return containerView.subviews.first { $0 is BaseLoadingView } as? BaseLoadingView
     }
 
-    private var emptyView: ErrorViewAbsract? {
-        let emptyView = containerView.subviews.first { ($0 as? ErrorViewAbsract)?.state == .empty }
-        return emptyView as? ErrorViewAbsract
+    private var errorView: ErrorView? {
+        let errorView = containerView.subviews.first { ($0 as? ErrorView)?.state == .error }
+        return errorView as? ErrorView
     }
 
-    func showEmptyView(info: ViewStateInfo, _ callback: (() -> Void)?) {
+    private var emptyView: ErrorView? {
+        let emptyView = containerView.subviews.first { ($0 as? ErrorView)?.state == .empty }
+        return emptyView as? ErrorView
+    }
+
+    func showEmptyView(info: ViewStateInfo, config: ViewStateConfiguration, _ callback: (() -> Void)?) {
         guard emptyView == nil else {
-            emptyView?.configure(info: info, config: .empty)
+            emptyView?.configure(info: info, config: config, state: .empty)
             return
         }
-        createView(with: .empty, info: info, callback: callback)
+        createView(with: .empty, info: info, config: config, callback: callback)
     }
 
-    func showErrorView(info: ViewStateInfo, _ callback: (() -> Void)?) {
+    func showErrorView(info: ViewStateInfo, config: ViewStateConfiguration, _ callback: (() -> Void)?) {
         guard emptyView == nil else {
-            emptyView?.configure(info: info, config: .error)
+            emptyView?.configure(info: info, config: config, state: .error)
             return
         }
-        createView(with: .error, info: info, callback: callback)
+        createView(with: .error, info: info, config: config, callback: callback)
     }
 
     func showLoaderView() {
@@ -89,7 +99,7 @@ public extension MultiStatesPresentable where Self: UIViewController {
             return
         }
 
-        let loadingView = LoadingView(frame: viewFrame)
+        let loadingView = BaseLoadingView(frame: viewFrame)
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         loadingView.backgroundColor = containerView.backgroundColor
         loadingView.configure(blocks: provider.getBlocks(), config: provider.config)
@@ -147,18 +157,18 @@ public extension MultiStatesPresentable where Self: UIView {
         return nil
     }
 
-    private var loaderView: LoadingView? {
-        return containerView.subviews.first { $0 is LoadingView } as? LoadingView
+    private var loaderView: BaseLoadingView? {
+        return containerView.subviews.first { $0 is BaseLoadingView } as? BaseLoadingView
     }
 
-    private var errorView: ErrorViewAbsract? {
-        let errorView = containerView.subviews.first { ($0 as? ErrorViewAbsract)?.state == .error }
-        return errorView as? ErrorViewAbsract
+    private var errorView: ErrorView? {
+        let errorView = containerView.subviews.first { ($0 as? ErrorView)?.state == .error }
+        return errorView as? ErrorView
     }
 
-    private var emptyView: ErrorViewAbsract? {
-        let emptyView = containerView.subviews.first { ($0 as? ErrorViewAbsract)?.state == .empty }
-        return emptyView as? ErrorViewAbsract
+    private var emptyView: ErrorView? {
+        let emptyView = containerView.subviews.first { ($0 as? ErrorView)?.state == .empty }
+        return emptyView as? ErrorView
     }
 
     func showLoaderView() {
@@ -193,16 +203,6 @@ public extension MultiStatesPresentable where Self: UIView {
 
 private extension MultiStatesPresentable where Self: UIViewController {
 
-    var viewFrame: CGRect {
-        guard let topOffset = sharedLoadingTopOffset else {
-            return containerView.bounds
-        }
-        var frame = containerView.bounds
-        frame.origin.y += topOffset
-        frame.size.height -= topOffset
-        return frame
-    }
-
     func updateContainerState() {
         guard containerView != view else {
             return
@@ -212,13 +212,15 @@ private extension MultiStatesPresentable where Self: UIViewController {
 
     func createView(with type: ErrorViewState,
                     info: ViewStateInfo,
+                    config: ViewStateConfiguration,
                     callback: (() -> Void)?) {
-
-        guard let provider = self as? ErrorDataProvider else {
-                return
+        let errorView: ErrorView
+        if let provider = self as? ErrorDataProvider {
+            errorView = provider.errorView
+        } else {
+            errorView = DefaultErrorView(frame: viewFrame)
         }
-        let errorView = provider.errorView
-        errorView.configure(info: info, config: type)
+        errorView.configure(info: info, config: config, state: type)
         errorView.backgroundColor = containerView.backgroundColor
         errorView.onAction = { [weak self] type in
             guard callback == nil else {
@@ -244,7 +246,7 @@ private extension MultiStatesPresentable where Self: UIViewController {
             containerView.stretch(view: view)
             return
         }
-        let topOffset = (view is LoadingView) ? (sharedLoadingTopOffset ?? 0) : (sharedErrorTopOffset ?? 0)
+        let topOffset = (view is BaseLoadingView) ? (sharedLoadingTopOffset ?? 0) : (sharedErrorTopOffset ?? 0)
 
         let parent: UILayoutGuide
         if #available(iOS 11.0, *) {
@@ -272,8 +274,8 @@ private extension MultiStatesPresentable where Self: UIView {
         containerView.isUserInteractionEnabled = !containerView.subviews.isEmpty
     }
 
-    func addLoadingView(needAnimating: Bool = true, blocks: [LoadingViewBlockAbstract], config: LoadingViewConfig) {
-        let loadingView = LoadingView()
+    func addLoadingView(needAnimating: Bool = true, blocks: [LoadingViewBlock], config: LoadingViewConfig) {
+        let loadingView = BaseLoadingView()
         loadingView.configure(blocks: blocks, config: config)
         loadingView.setNeedAnimating(needAnimating)
         loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

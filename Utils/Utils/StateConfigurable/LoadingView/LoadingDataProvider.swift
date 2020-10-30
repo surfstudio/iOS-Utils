@@ -9,5 +9,5 @@
 public protocol LoadingDataProvider {
     var config: LoadingViewConfig { get }
 
-    func getBlocks() -> [LoadingViewBlockAbstract]
+    func getBlocks() -> [LoadingViewBlock]
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 public enum ViewState {
-    case error(ViewStateInfo)
-    case empty(ViewStateInfo)
+    case error(ViewStateInfo, ViewStateConfiguration)
+    case empty(ViewStateInfo, ViewStateConfiguration)
     case loading
     case normal
 }
