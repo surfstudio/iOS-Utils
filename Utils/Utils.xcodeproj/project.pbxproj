@@ -55,6 +55,7 @@
 		A16A8CBC4A8CC4DBDF4E6427 /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0A89DF1B751C2D2CAC7179 /* Pods_Utils.framework */; };
 		A439074B21F5C52A0034C455 /* UIView+Masking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439074A21F5C52A0034C455 /* UIView+Masking.swift */; };
 		A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439074D21F5C5880034C455 /* SkeletonView.swift */; };
+		A4F4B13724ED24A4009FA920 /* BeanPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F4B13624ED24A4009FA920 /* BeanPageControl.swift */; };
 		A4D5D5FD24E57A6A004ABFBC /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5D5FC24E57A6A004ABFBC /* CustomSwitch.swift */; };
 		A4D5D5FF24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5D5FE24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift */; };
 		D6040DFC22C5F3E20088BB50 /* StringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6040DFB22C5F3E20088BB50 /* StringBuilder.swift */; };
@@ -131,6 +132,7 @@
 		A439074A21F5C52A0034C455 /* UIView+Masking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Masking.swift"; sourceTree = "<group>"; };
 		A439074D21F5C5880034C455 /* SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
 		A48BDCA594019F58493D65E7 /* Pods-UtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilsTests.release.xcconfig"; path = "Target Support Files/Pods-UtilsTests/Pods-UtilsTests.release.xcconfig"; sourceTree = "<group>"; };
+		A4F4B13624ED24A4009FA920 /* BeanPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanPageControl.swift; sourceTree = "<group>"; };
 		A4D5D5FC24E57A6A004ABFBC /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		A4D5D5FE24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchExternalConfigurations.swift; sourceTree = "<group>"; };
 		CB0A89DF1B751C2D2CAC7179 /* Pods_Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +206,7 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A4F4B13524ED2490009FA920 /* BeanPageControl */,
 				EE0C5D9024102671006B8C28 /* UIControl */,
 				87239D7D24D41E6500D38EC7 /* MoneyModel */,
 				5709EC5B236F4C2200EEBD93 /* CommonButton */,
@@ -424,6 +427,14 @@
 				A439074D21F5C5880034C455 /* SkeletonView.swift */,
 			);
 			path = SkeletonView;
+			sourceTree = "<group>";
+		};
+		A4F4B13524ED2490009FA920 /* BeanPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				A4F4B13624ED24A4009FA920 /* BeanPageControl.swift */,
+			);
+			path = BeanPageControl;
 			sourceTree = "<group>";
 		};
 		A4D5D5FB24E57A50004ABFBC /* CustomSwitch */ = {
@@ -683,6 +694,7 @@
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
 				A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */,
 				80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */,
+				A4F4B13724ED24A4009FA920 /* BeanPageControl.swift in Sources */,
 				898845202360482D004940DC /* UIView+XibSetup.swift in Sources */,
 				90AC8567238592A700DF7F3B /* GeolocationAccuracy.swift in Sources */,
 				5709EC5D236F4C6500EEBD93 /* CommonButton.swift in Sources */,

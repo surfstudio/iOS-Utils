@@ -58,6 +58,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [UIDevice](#uidevice) – набор вспомогательных методов для определения типа девайса 
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
+- [BeanPageControl](#beanPageControl) – page control с перетекающими индикаторами-бобами
 - [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
 - [CustomSwitch](#customswitch) – более гибкая реализация Switch ui элемента
 
@@ -597,6 +598,45 @@ someView.apply(style: .styleForSomeView)
 ```swift
 let anyStyle = AnyStyle(style: UIStyle.styleForSomeView)
 anyStyle.apply(for: someView)
+```
+
+
+### BeanPageControl
+
+Page control с перетекающими индикаторами-бобами.
+
+![](Pictures/beans1.gif)
+
+![](Pictures/beans2.gif)
+
+Набор кастомизируемых полей: 
+- `count`
+- `beanHeight`
+- `inactiveBeanWidth`
+- `activeBeanWidth`
+- `padding`
+- `beanCornerRadius`
+- `beanActiveColor`
+- `beanInactiveColor`
+
+**Использование**
+
+```swift
+// Инициализация
+
+let pageControl = BeanPageControl()
+pageControlContainer.addSubview(pageControl)
+pageControl.anchorCenter(to: pageControlContainer)
+pageControl.activeBeanWidth = 100
+pageControl.beanActiveColor = .yellow
+self.pageControl = pageControl
+
+// Обновление
+
+adapter?.onChangePage = { [weak self] page, progress in
+    self?.pageControl?.set(index: page, progress: progress)
+}
+
 ```
 
 ### TouchableControl
