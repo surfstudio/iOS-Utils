@@ -136,6 +136,21 @@ public final class BeanPageControl: UIView {
         updateBeans()
     }
 
+    override public func willMove(toWindow newWindow: UIWindow?) {
+        // rest animator on return to screen with BeanPageControl
+        guard newWindow != nil else {
+            return
+        }
+        updateBeans()
+    }
+
+    // MARK: - Deinitialization
+
+    deinit {
+        animator?.stopAnimation(true)
+        animator?.finishAnimation(at: .current)
+    }
+
 }
 
 // MARK: - Layout
