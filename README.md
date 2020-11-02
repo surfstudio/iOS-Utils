@@ -601,9 +601,9 @@ anyStyle.apply(for: someView)
 
 Page control с перетекающими индикаторами-бобами.
 
-![](Pictures/beans1.png)
+![](Pictures/beans1.gif)
 
-![](Pictures/beans2.png)
+![](Pictures/beans2.gif)
 
 Набор кастомизируемых полей: 
 - `count`
