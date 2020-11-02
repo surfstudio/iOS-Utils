@@ -10,6 +10,12 @@ import UIKit
 
 public extension UIImage {
 
+    // MARK: - Constants
+
+    private enum Constants {
+        static let kern: CGFloat = -0.24
+    }
+
     /// Init method for creating UIImage of a given color
     /// - Parameters:
     ///     - color: Optional value, by default clear color
@@ -63,6 +69,38 @@ public extension UIImage {
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage ?? self
+    }
+
+    /// Draws initials
+    func drawInitials(firstname: String,
+                      lastname: String,
+                      font: UIFont,
+                      textColor: UIColor) -> UIImage? {
+
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: textColor,
+            .paragraphStyle: paragraphStyle,
+            .kern: Constants.kern
+        ]
+        let string = String(firstname.prefix(1) + lastname.prefix(1))
+        let initials = NSAttributedString(string: string,
+                                          attributes: attributes)
+        let x = size.width / 2.0 - initials.size().width / 2.0
+        let y = size.height / 2.0 - initials.size().height / 2.0
+        let textRect = CGRect(origin: CGPoint(x: x, y: y), size: initials.size())
+        UIGraphicsBeginImageContextWithOptions(size, false, .zero)
+        draw(in: CGRect(origin: .zero, size: size))
+        initials.draw(in: textRect)
+
+        let resultImage = UIGraphicsGetImageFromCurrentImageContext()
+
+        UIGraphicsEndImageContext()
+
+        return resultImage
     }
 
 }

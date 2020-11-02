@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'UIImageExtensions' do |sp|
-    sp.source_files = 'Utils/Utils/UIImage/UIImageExtensions.swift'
+    sp.source_files = 'Utils/Utils/UIImage/*.swift'
     sp.framework = 'UIKit'
   end
 
@@ -129,6 +129,16 @@ Pod::Spec.new do |s|
     sp.source_files = 'Utils/Utils/SecurityService/**/*.swift'
     sp.framework = 'Foundation'
     sp.dependency 'CryptoSwift', '1.3.1'
+  end
+
+  s.subspec 'TouchableControl' do |sp|
+    sp.source_files = 'Utils/Utils/UIControl/TouchableControl.swift'
+    sp.framework = 'UIKit'
+  end
+
+  s.subspec 'CustomSwitch' do |sp|
+    sp.source_files = 'Utils/Utils/CustomSwitch/*.swift'
+    sp.framework = 'UIKit'
   end
 
 end
