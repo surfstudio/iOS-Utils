@@ -59,6 +59,9 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
 - [BeanPageControl](#beanPageControl) – page control с перетекающими индикаторами-бобами
+- [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
+- [CustomSwitch](#customswitch) – более гибкая реализация Switch ui элемента
+
 ## Утилиты
 
 ### StringAttributes
@@ -597,6 +600,7 @@ let anyStyle = AnyStyle(style: UIStyle.styleForSomeView)
 anyStyle.apply(for: someView)
 ```
 
+
 ### BeanPageControl
 
 Page control с перетекающими индикаторами-бобами.
@@ -634,6 +638,117 @@ adapter?.onChangePage = { [weak self] page, progress in
 }
 
 ```
+
+### TouchableControl
+
+Данный класс унаследован от стандартного UIControl. Позволяет принимать на вход различные UI элементы и, при нажатии на этот контрол,
+анимировать их, иммтируя как бы нажатие на кнопку. То есть, по сути является аналагом кнопки с возможностью кастомизировать анимацию 
+нажатия(затемнение или изменение цвета только некоторых элементов) 
+
+**Доступные параметры:** 
+
+`animatingViewsByAlpha` – сюда можно передать одну или несколько `UIView`, которые будут уменьшать `alpha` параметр, при
+нажатии на контрол.
+
+`onTouchUpInside`,  `onTouchCancel`, `onTouchDown` - блоки, для управления событий нажатия.
+
+`touchAlphaValue` - параметр, типа `CGFloat`, определяющий на какое значени `alpha` будет изменяться элементы при нажатии
+
+`normalDuration` - параметр, типа `TimeInterval`, определяющий в течение какого времени будет происходить затемнение
+
+**Доступные методы:** 
+
+`addChangeColor(to: UIView, normalColor: UIColor, touchedColor: UIColor)` - добавляет вью, у которой будет изменяться цвет при нажатии
+на контрол
+
+`clearControl()` - Для случаев, когда данный класс добавлен во вью, которая будет сама передана в него. 
+Устонавливается в deinit ViewController'а с этой view
+
+**Использование:**
+
+```swift
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var someView: UIView!
+    @IBOutlet weak var someLabel: UILabel!
+    @IBOutlet weak var secondSomeLabel: UILabel!
+
+    private let control = TouchableControl()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        control.translatesAutoresizingMaskIntoConstraints = false
+        someView.addSubview(control)
+        NSLayoutConstraint.activate([
+            control.topAnchor.constraint(equalTo: someView.topAnchor),
+            control.leftAnchor.constraint(equalTo: someView.leftAnchor),
+            control.rightAnchor.constraint(equalTo: someView.rightAnchor),
+            control.bottomAnchor.constraint(equalTo: someView.bottomAnchor)
+        ])
+
+        control.animatingViewsByAlpha = [someLabel]
+        control.addChangeColor(to: someView, normalColor: someView.backgroundColor, touchedColor: .blue)
+        control.addChangeColor(to: secondSomeLabel, initColor: secondSomeLabel.textColor, goalColor: .orange)
+
+        control.onTouchUpInside = {
+        }
+        control.onTouchCancel = {
+        }
+        control.onTouchDown = {
+        }
+    }
+
+    deinit {
+        control.clearControl()
+    }
+}
+
+
+```
+
+### CustomSwitch
+
+Гибкая реализация ui элемента switch.
+1) Умеет адаптироваться под разный размер.
+2) Есть возможность задать закругления и отсутпы.
+3) Есть возможность задать градиент вместо цвета.
+4) Гибко настраивается анимация.
+5) Есть возможность добавить тень для бегунка.
+
+`CustomSwitch` – непосредственно сам элемент.
+
+`CustomSwitch.LayoutConfiguration` - содержит padding(отступ от бегунка до краев), spacing(отступ от бегунка до сторон в обоих состояниях) и cornerRatio самого свитча.
+
+`CustomSwitch.ThumbConfiguration` - содержит cornerRatio и shadowConfiguration(CSShadowConfiguration) для самого бегунка.
+
+`CustomSwitch.ColorsConfiguration` - содержит в себе параметры для конигурации цвета подложки(on и off) и бегунка. Все три параметра имеют тип CSColorConfiguration. Это протокол с одним методом - `applyColor(for view: UIView)` и имеющий уже две реализации: `CSSimpleColorConfiguration` и `CSGradientColorConfiguration`.
+
+`CustomSwitch.AnimationsConfiguration` - содержит параметры для конфигурации анимации свитча(duration, delay, usingSpringWithDamping, initialSpringVelocity, options).
+
+Для обработки изменения стейта можно использовать стандартный event valueChanged.
+
+**Использование**
+
+```swift
+let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+customSwitch.layoutConfiguration = .init(padding: 1, spacing: 3, cornerRatio: 0.5)
+customSwitch.colorsConfiguration = .init(offColorConfiguraion: CSSimpleColorConfiguration(color: .white),
+                                         onColorConfiguraion: CSSimpleColorConfiguration(color: .green),
+                                         thumbColorConfiguraion: CSGradientColorConfiguration(colors: [.lightGray, .yellow],
+                                                                                              locations: [0, 1]))
+customSwitch.thumbConfiguration = .init(cornerRatio: 0, shadowConfiguration: .init(color: .black, offset: CGSize(), radius: 5, oppacity: 0.1))
+customSwitch.animationsConfiguration = .init(duration: 0.1, usingSpringWithDamping: 0.7)
+
+customSwitch.setOn(true, animated: false)
+
+// обработка
+
+@IBAction func switchValueDidChange(_ sender: CustomSwitch) {
+	print(sender.isOn)
+}
+```
+
 ## Версионирование
 
 В качестве принципа версионирования используется [Семантическое версионирования (Semantic Versioning)](https://semver.org/).
