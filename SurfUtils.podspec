@@ -126,7 +126,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'LoadingView' do |sp|
-    sp.source_files = 'Utils/Utils/LoadingView/**/*.swift', 'Utils/Utils/SkeletonView/*.swift', 'Utils/Utils/UIView/UIView+Masking.swift'
+    sp.source_files = 'Utils/Utils/LoadingView/**/*.swift', 'Utils/Utils/SkeletonView/*.swift', 'Utils/Utils/UIView/UIView+Masking.swift', 'Utils/Utils/UIView/UIView+XibSetup.swift'
     sp.framework = 'UIKit'
   end
 

@@ -31,7 +31,7 @@ public struct LoadingViewConfig {
                 shimmerRatio: Double = 0.5,
                 movingAnimationDuration: CFTimeInterval = 1,
                 needGradient: Bool = false,
-                needRepeatLast: Bool = true) {
+                needRepeatLast: Bool = false) {
         self.topOffset = topOffset
         self.placeholderColor = placeholderColor
         self.shimmerColor = shimmerColor
