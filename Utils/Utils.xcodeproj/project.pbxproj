@@ -10,12 +10,12 @@
 		18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */; };
 		39262D2725516CA700591787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39262D2625516CA700591787 /* AppDelegate.swift */; };
 		39262D2B25516CA700591787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39262D2A25516CA700591787 /* ViewController.swift */; };
-		39262D2E25516CA700591787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39262D2C25516CA700591787 /* Main.storyboard */; };
 		39262D3025516CA800591787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39262D2F25516CA800591787 /* Assets.xcassets */; };
-		39262D3325516CA800591787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39262D3125516CA800591787 /* LaunchScreen.storyboard */; };
 		39262D452551713B00591787 /* PinCryptoBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39262D442551713B00591787 /* PinCryptoBoxTests.swift */; };
 		39262D4D2551714F00591787 /* PinHackCryptoBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39262D4C2551714F00591787 /* PinHackCryptoBoxTests.swift */; };
 		39262D522551715C00591787 /* KeyChainSecureStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39262D512551715C00591787 /* KeyChainSecureStoreTests.swift */; };
+		39262D6F2551986300591787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39262D2C25516CA700591787 /* Main.storyboard */; };
+		39262D702551986300591787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39262D3125516CA800591787 /* LaunchScreen.storyboard */; };
 		3971F71524F1842300597F9D /* SymmetricCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3971F71324F1842300597F9D /* SymmetricCryptoService.swift */; };
 		3971F71624F1842300597F9D /* BlowfishCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3971F71424F1842300597F9D /* BlowfishCryptoService.swift */; };
 		3971F71924F1842A00597F9D /* SHA3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3971F71724F1842A00597F9D /* SHA3.swift */; };
@@ -754,9 +754,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39262D3325516CA800591787 /* LaunchScreen.storyboard in Resources */,
+				39262D6F2551986300591787 /* Main.storyboard in Resources */,
 				39262D3025516CA800591787 /* Assets.xcassets in Resources */,
-				39262D2E25516CA700591787 /* Main.storyboard in Resources */,
+				39262D702551986300591787 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
