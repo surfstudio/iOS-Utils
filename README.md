@@ -604,13 +604,13 @@ anyStyle.apply(for: someView)
 
 Используется для упрощения работы с загрузочными состояними экрана на основе шиммеров. Позволяет формировать загрузочный экран из нескольких и даже разных блоков, блоком является кастомное View, выступающее в роли загрузочного элемента экрана, блоки можно дублировать сколько угодно раз, что может быть удобным для коллекций. 
 
-`BaseLoadingView` - основная View, которая отвечает за отображение loading стейта, состоит из кастомных блоков, которых может быть сколько угодно
+`BaseLoadingView` - основная View, которая отвечает за отображение loading стейта, состоит из блоков и SkeletonView
 
-`LoadingSubview` и `LoadingSubviewConfigurable` - протоколы, с помощью которых верстается LoadingSubview
+`LoadingSubview` и `LoadingSubviewConfigurable` - протоколы, с помощью которых верстается LoadingSubview(блок)
 
 `BaseLoadingViewBlock` - используется для инициализации и конфигурации LoadingSubview
 
-`LoadingDataProvider` - протокол, формирующий блоки для loading стейта, применяется на UIVIewController
+`LoadingDataProvider` - протокол, формирующий блоки для loading стейта, применяется на UIViewController
 
 **Использование**: 
 
