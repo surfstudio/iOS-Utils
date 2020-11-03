@@ -58,7 +58,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [UIDevice](#uidevice) – набор вспомогательных методов для определения типа девайса 
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
-- [StateConfigurable](#stateconfigurable) - семейство протоколов для упрощения реализации loading/view/empty/ стейтов экрана
+- [LoadingView](#loadingview) - набор классов и протоколов для удобного отображения загрузочных состояний с шиммерами
 - [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
 - [CustomSwitch](#customswitch) – более гибкая реализация Switch ui элемента
 
@@ -599,71 +599,43 @@ someView.apply(style: .styleForSomeView)
 let anyStyle = AnyStyle(style: UIStyle.styleForSomeView)
 anyStyle.apply(for: someView)
 ```
-### StateConfigurable
+### LoadingView
 
-Семейство протоколов для упрощения работы с различными стейтами экрана
+Используется для упрощения работы с загрузочными состояними экрана на основе шиммеров. Позволяет формировать загрузочный экран из нескольких и даже разных блоков, блоком является кастомное View, выступающее в роли загрузочного элемента экрана, блоки можно дублировать сколько угодно раз, что может быть удобным для коллекций. 
 
-`StateConfigurable` - отвечает за отображение конкретного стейта, применяется, как правило, на ViewInput
+`BaseLoadingView` - основная View, которая отвечает за отображение loading стейта, состоит из кастомных блоков, которых может быть сколько угодно
 
-`MultiStatesPresentable` - протокол, реализующий методы для показа/скрытия стейтов, так же служит для определения контейнера стейтов и верхних отступов, применяется на UIViewController или UIView
-
-`LoadingSubview` и `LoadingSubviewConfigurable` - протоколы для реализации LoadingSubview, применяются на кастомное UIView, которое будет выступать в качестве загрузочного
+`LoadingSubview` и `LoadingSubviewConfigurable` - протоколы, с помощью которых верстается LoadingSubview
 
 `BaseLoadingViewBlock` - используется для инициализации и конфигурации LoadingSubview
 
 `LoadingDataProvider` - протокол, формирующий блоки для loading стейта, применяется на UIVIewController
 
-`ViewStateInfo` - структура для передачи заголовка, сообщения и тайтла кнопки в ErrorView, так как какого-то из этих параметров может не быть на экране, для удобства параметры имеют дефолтную пустую реализацию
-
-Утилита содержит дефолтную реализацию Empty/ErrorView с возможностью конфигурации. Конфигурация передается в метод вызова данных состояний. Конфигурация представляет из себя структуру(`ViewStateConfiguration`), которую следует расширить и перегрузить инициализатор, передавать в инициализатор стейт и в зависимости от стейта устанавливать дефолтный конфиг( отступы, шрифты и пр.) и при вызове состояния указывать в стейт, как на примере ниже
-```swift
-view?.set(state: .empty(.init(title: "", message: "", action: ""), .init(state: .empty)))
-```
-Так как дефолтной реализации может не хватить, можно сверстать свою Empty/ErrorView, подписав ее под `ErrorView` протокол. Если имющейся конфигурации не будет хватать, то можно расширить енам `ErrorViewState` и описать в нем любые проперти для конфигурации.
-Для подставления кастомной Empty/ErrorView есть протокол  `ErrorDataProvider`, подписываем под него контроллер и инициализируем вашу вью, в качестве frame желательно указать viewFrame(чтобы корректно регулировать отступы)
-
-В качестве контейнера для стейтов может выступать любая вью, необходимо только переопределить свойство containerView у `MultiStatesPresentable`
-
 **Использование**: 
 
-Отображение loading стейта:
-Верстаем LoadingSubview, подписываем ViewController под `MultiStatesPresentable` и реализуем в нем следующее:
+Верстаем LoadingSubview, подписываем UIViewController под `LoadingDataProvider`, формируем блоки и инициализируем модель конфигурации `LoadingViewConfig`
 ```swift
-
 extension viewController: LoadingDataProvider {
     func getBlocks() -> [LoadingViewBlock] {
-        return [BaseLoadingViewBlock<MockLoaderView>(model: .init()]
+        return [BaseLoadingViewBlock<CustomLoadingSubview>(model: .init()]
     }
 
     var config: LoadingViewConfig {
-        return .init(topOffset: 150, placeholderColor: .gray)
+        return .init(placeholderColor: .gray)
     }
 }
 ```
-Применяем на viewInput или любую view `StateConfigurable`  и вызываем 
+Инициализируем BaseLoadingView, передаем в метод configure наши блоки и конфиг, отображаем
+```
+let loadingView = BaseLoadingView(frame: view.bounds)
+loadingView.configure(blocks: self.getBlocks(), config: self.config)
+loadingView.setNeedAnimating(true)
+loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-```swift
-view?.set(state: .loading)
+view.addSubview(loadingView)
+view.stretch(loadingView)
+view.bringSubviewToFront(loadingView)
 ```
-Отображение error/empty стейтов:
-Верстаем ErrorView c помощью протокола `ErrorView` , в ViewController применяем следующее(Опционально)
-```swift
-extension viewController: ErrorDataProvider {
-    var errorView: ErrorView {
-        return SpecificErrorView(frame: viewFrame)
-    }
-}
-```
-и вызываем 
-```swift
-view?.set(state: .empty(.init(title: "", message: "", action: ""), .init(state: .empty))
-view?.set(state: .error(.init(title: "", message: "", action: ""), .init(state: .error))
-```
-для скрытия стейтов используется 
-```swift
-view?.set(state: .normal)
-```
-
 
 
 ### TouchableControl

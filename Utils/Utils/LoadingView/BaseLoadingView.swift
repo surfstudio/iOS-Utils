@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class BaseLoadingView: UIView, LoadingView {
+open class BaseLoadingView: UIView, LoadingView {
 
     // MARK: - Constants
 
@@ -20,12 +20,12 @@ public final class BaseLoadingView: UIView, LoadingView {
 
     // MARK: - Properties
 
-    private var blocks: [LoadingViewBlock] = []
-    private var config = LoadingViewConfig(placeholderColor: .white)
-    private var topOffset: CGFloat = 0
-    private var skeletonView = SkeletonView()
-    private var gradientContainer = UIView()
-    private var gradientLayer = CAGradientLayer()
+    open var blocks: [LoadingViewBlock] = []
+    open var config = LoadingViewConfig(placeholderColor: .white)
+    open var topOffset: CGFloat = 0
+    open var skeletonView = SkeletonView()
+    open var gradientContainer = UIView()
+    open var gradientLayer = CAGradientLayer()
 
     // MARK: - Initialization
 
@@ -41,14 +41,14 @@ public final class BaseLoadingView: UIView, LoadingView {
 
     // MARK: - UIView
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = gradientContainer.bounds
     }
 
-    // MARK: - Public Methods
+    // MARK: - Open Methods
 
-    public func configure(blocks: [LoadingViewBlock], config: LoadingViewConfig) {
+    open func configure(blocks: [LoadingViewBlock], config: LoadingViewConfig) {
         removeOldBlocks()
         self.blocks = blocks
         self.config = config
@@ -66,7 +66,7 @@ public final class BaseLoadingView: UIView, LoadingView {
 
     // MARK: - LoadingView
 
-    public func setNeedAnimating(_ needAnimating: Bool) {
+    open func setNeedAnimating(_ needAnimating: Bool) {
         skeletonView.shimmering = needAnimating
     }
 
@@ -94,8 +94,8 @@ private extension BaseLoadingView {
         skeletonView.maskingViews = [skeletonSubview]
         skeletonView.gradientBackgroundColor = config.shimmerColor.withAlphaComponent(0)
         skeletonView.gradientMovingColor = config.shimmerColor.withAlphaComponent(0.5)
-        skeletonView.shimmerRatio = 0.5
-        skeletonView.movingAnimationDuration = 1
+        skeletonView.shimmerRatio = config.shimmerRatio
+        skeletonView.movingAnimationDuration = config.movingAnimationDuration
     }
 
     func configureGradient() {
