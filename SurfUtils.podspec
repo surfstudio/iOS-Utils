@@ -131,6 +131,11 @@ Pod::Spec.new do |s|
     sp.dependency 'CryptoSwift', '1.3.1'
   end
 
+  s.subspec 'BeanPageControl' do |sp|
+    sp.source_files = 'Utils/Utils/BeanPageControl/*.swift'
+    sp.framework = 'UIKit'
+  end
+
   s.subspec 'TouchableControl' do |sp|
     sp.source_files = 'Utils/Utils/UIControl/TouchableControl.swift'
     sp.framework = 'UIKit'

@@ -59,6 +59,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
 - [SecurityService](#securityservice)  -  сервис для шифрования и сохранения в keychain/inMemory секретных данных
+- [BeanPageControl](#beanPageControl) – page control с перетекающими индикаторами-бобами
 - [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
 - [CustomSwitch](#customswitch) – более гибкая реализация Switch ui элемента
 
@@ -653,6 +654,45 @@ let token = try? cryptoService.decrypt(auth: pin)
 Для обновления данных используем HackCryptoBox
 ```swift
 let cryptoService = PinCryptoBoxConfigurator().produceClear().hack()
+```
+
+### BeanPageControl
+
+Page control с перетекающими индикаторами-бобами.
+
+![](Pictures/beans1.gif)
+
+![](Pictures/beans2.gif)
+
+Набор кастомизируемых полей: 
+- `count`
+- `beanHeight`
+- `inactiveBeanWidth`
+- `activeBeanWidth`
+- `padding`
+- `beanCornerRadius`
+- `beanActiveColor`
+- `beanInactiveColor`
+
+**Использование**
+
+```swift
+// Инициализация
+
+let pageControl = BeanPageControl()
+pageControlContainer.addSubview(pageControl)
+pageControl.anchorCenter(to: pageControlContainer)
+pageControl.activeBeanWidth = 100
+pageControl.beanActiveColor = .yellow
+self.pageControl = pageControl
+
+// Обновление
+
+adapter?.onChangePage = { [weak self] page, progress in
+    self?.pageControl?.set(index: page, progress: progress)
+}
+
+>>>>>>> master
 ```
 
 ### TouchableControl
