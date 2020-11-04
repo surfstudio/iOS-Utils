@@ -1063,10 +1063,7 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTestsHost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(FRAMEWORK_SEARCH_PATHS)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1076,8 +1073,6 @@
 					"\"CryptoSwift\"",
 					"-framework",
 					"\"Device\"",
-					"-framework",
-					"\"KeychainAccess\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Surf.Utils.UtilsTestsHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1098,10 +1093,7 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTestsHost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(FRAMEWORK_SEARCH_PATHS)";
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1109,8 +1101,6 @@
 					"\"CryptoSwift\"",
 					"-framework",
 					"\"Device\"",
-					"-framework",
-					"\"KeychainAccess\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Surf.Utils.UtilsTestsHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
