@@ -692,7 +692,6 @@ adapter?.onChangePage = { [weak self] page, progress in
     self?.pageControl?.set(index: page, progress: progress)
 }
 
->>>>>>> master
 ```
 
 ### TouchableControl
@@ -802,7 +801,6 @@ customSwitch.setOn(true, animated: false)
 @IBAction func switchValueDidChange(_ sender: CustomSwitch) {
 	print(sender.isOn)
 }
->>>>>>> master
 ```
 
 ## Версионирование

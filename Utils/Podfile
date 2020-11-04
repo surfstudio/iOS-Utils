@@ -19,17 +19,16 @@ target 'Utils' do
 
   common_pods
 
-end
+  target 'UtilsTests' do
+    common_pods
+  end
 
-target 'UtilsTests' do
-
-  common_pods
-
-end
-
-target 'UtilsTestsHost' do
-  use_frameworks!
-  
-  common_pods
+  target 'UtilsTestsHost' do
+    common_pods
+  end
 
 end
+
+
+
+
