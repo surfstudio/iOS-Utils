@@ -2,6 +2,7 @@ language: Swift
 osx_image: xcode12.1
 xcode_project: Utils/Utils.xcworkspace
 xcode_scheme: Utils
+install: travis_wait 20 mvn install
 
 jobs:
   include:
