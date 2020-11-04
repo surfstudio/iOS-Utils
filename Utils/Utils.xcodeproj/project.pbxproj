@@ -42,8 +42,8 @@
 		573117D623BF889000491781 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573117D523BF889000491781 /* LayoutHelper.swift */; };
 		573117D923BFD28300491781 /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573117D823BFD28300491781 /* UIStyle.swift */; };
 		573117DB23BFD33000491781 /* AnyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573117DA23BFD33000491781 /* AnyStyle.swift */; };
+		5BCCB17B9C2527D777F4BCCA /* Pods_UtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DEF0498B4D83AE335F9FF6 /* Pods_UtilsTests.framework */; };
 		80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80437D25214045EF0095A8D0 /* BrightSide.swift */; };
-		8223ED95F8D4355B6D1B4403 /* Pods_Utils_UtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102A9A8EF253FEE66EBF94C1 /* Pods_Utils_UtilsTests.framework */; };
 		87239D7F24D41E8700D38EC7 /* MoneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87239D7E24D41E8700D38EC7 /* MoneyModel.swift */; };
 		87239D8124D4220600D38EC7 /* MoneyModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87239D8024D4220600D38EC7 /* MoneyModelTests.swift */; };
 		890C428423795BF100FF63A7 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C428323795BF100FF63A7 /* LocalStorageTests.swift */; };
@@ -117,7 +117,6 @@
 /* Begin PBXFileReference section */
 		02F9B416D59467D2B80A9C5F /* Pods-Utils-UtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsTests.release.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsTests/Pods-Utils-UtilsTests.release.xcconfig"; sourceTree = "<group>"; };
 		03334A1D4618E8D80FE93B35 /* Pods-Utils-UtilsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsTests.debug.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsTests/Pods-Utils-UtilsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		102A9A8EF253FEE66EBF94C1 /* Pods_Utils_UtilsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utils_UtilsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+QueryStringBuilder.swift"; sourceTree = "<group>"; };
 		243F44D696F7B70FA2E9207A /* Pods-UtilsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilsTests.debug.xcconfig"; path = "Target Support Files/Pods-UtilsTests/Pods-UtilsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2E2813021B431F0EDF05963D /* Pods-UtilsTestsHost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilsTestsHost.debug.xcconfig"; path = "Target Support Files/Pods-UtilsTestsHost/Pods-UtilsTestsHost.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +200,7 @@
 		CB0A89DF1B751C2D2CAC7179 /* Pods_Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06F434CB242A683A6DFCEC4 /* Pods-Utils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils.release.xcconfig"; path = "Target Support Files/Pods-Utils/Pods-Utils.release.xcconfig"; sourceTree = "<group>"; };
 		D6040DFB22C5F3E20088BB50 /* StringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringBuilder.swift; sourceTree = "<group>"; };
+		D9DEF0498B4D83AE335F9FF6 /* Pods_UtilsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UtilsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B063092146924A0080C391 /* VibrationFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationFeedbackManager.swift; sourceTree = "<group>"; };
 		E9B0630B214692C30080C391 /* UIDevice+hasTapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasTapticEngine.swift"; sourceTree = "<group>"; };
 		E9B0630D214693160080C391 /* UIDevice+hasHapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasHapticFeedback.swift"; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3ED9E9211C27CF0030DD45 /* Utils.framework in Frameworks */,
-				8223ED95F8D4355B6D1B4403 /* Pods_Utils_UtilsTests.framework in Frameworks */,
+				5BCCB17B9C2527D777F4BCCA /* Pods_UtilsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,8 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				CB0A89DF1B751C2D2CAC7179 /* Pods_Utils.framework */,
-				102A9A8EF253FEE66EBF94C1 /* Pods_Utils_UtilsTests.framework */,
 				F812C340C23D90F251E55689 /* Pods_UtilsTestsHost.framework */,
+				D9DEF0498B4D83AE335F9FF6 /* Pods_UtilsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -826,15 +826,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Utils-UtilsTests/Pods-Utils-UtilsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UtilsTests/Pods-UtilsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Utils-UtilsTests/Pods-Utils-UtilsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UtilsTests/Pods-UtilsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Utils-UtilsTests/Pods-Utils-UtilsTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UtilsTests/Pods-UtilsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8B66F35C21FDB938000BDCB8 /* Swift Lint */ = {
@@ -909,7 +909,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Utils-UtilsTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-UtilsTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1063,7 +1063,11 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTestsHost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1093,7 +1097,11 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTestsHost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1288,10 +1296,9 @@
 		};
 		4F3ED9F7211C27CF0030DD45 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03334A1D4618E8D80FE93B35 /* Pods-Utils-UtilsTests.debug.xcconfig */;
+			baseConfigurationReference = 243F44D696F7B70FA2E9207A /* Pods-UtilsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJ45BEVK69;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -1311,10 +1318,9 @@
 		};
 		4F3ED9F8211C27CF0030DD45 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02F9B416D59467D2B80A9C5F /* Pods-Utils-UtilsTests.release.xcconfig */;
+			baseConfigurationReference = A48BDCA594019F58493D65E7 /* Pods-UtilsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJ45BEVK69;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;

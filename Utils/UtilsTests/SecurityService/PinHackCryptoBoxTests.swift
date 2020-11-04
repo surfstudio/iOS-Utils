@@ -8,6 +8,7 @@
 
 import XCTest
 import CryptoSwift
+import Foundation
 
 @testable import Utils
 
