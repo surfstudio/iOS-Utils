@@ -16,6 +16,7 @@
 		39262D522551715C00591787 /* KeyChainSecureStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39262D512551715C00591787 /* KeyChainSecureStoreTests.swift */; };
 		39262D6F2551986300591787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39262D2C25516CA700591787 /* Main.storyboard */; };
 		39262D702551986300591787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39262D3125516CA800591787 /* LaunchScreen.storyboard */; };
+		395D2C522552A4F4003EDD2E /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3ED9DF211C27CF0030DD45 /* Utils.framework */; };
 		3971F71524F1842300597F9D /* SymmetricCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3971F71324F1842300597F9D /* SymmetricCryptoService.swift */; };
 		3971F71624F1842300597F9D /* BlowfishCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3971F71424F1842300597F9D /* BlowfishCryptoService.swift */; };
 		3971F71924F1842A00597F9D /* SHA3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3971F71724F1842A00597F9D /* SHA3.swift */; };
@@ -95,6 +96,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 39262D2325516CA700591787;
 			remoteInfo = UtilsTestsHost;
+		};
+		395D2C542552A4F4003EDD2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F3ED9D6211C27CF0030DD45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F3ED9DE211C27CF0030DD45;
+			remoteInfo = Utils;
 		};
 		4F3ED9EA211C27CF0030DD45 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -203,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395D2C522552A4F4003EDD2E /* Utils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,6 +668,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				395D2C552552A4F4003EDD2E /* PBXTargetDependency */,
 			);
 			name = UtilsTestsHost;
 			productName = UtilsTestsHost;
@@ -960,6 +970,11 @@
 			target = 39262D2325516CA700591787 /* UtilsTestsHost */;
 			targetProxy = 39262D3B25516CB200591787 /* PBXContainerItemProxy */;
 		};
+		395D2C552552A4F4003EDD2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F3ED9DE211C27CF0030DD45 /* Utils */;
+			targetProxy = 395D2C542552A4F4003EDD2E /* PBXContainerItemProxy */;
+		};
 		4F3ED9EB211C27CF0030DD45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4F3ED9DE211C27CF0030DD45 /* Utils */;
@@ -994,6 +1009,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EFAAG9GXN4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTestsHost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1004,6 +1020,15 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CryptoSwift\"",
+					"-framework",
+					"\"Device\"",
+					"-framework",
+					"\"KeychainAccess\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Surf.Utils.UtilsTestsHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1018,6 +1043,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EFAAG9GXN4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTestsHost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1026,6 +1052,15 @@
 					"@executable_path/Frameworks",
 				);
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CryptoSwift\"",
+					"-framework",
+					"\"Device\"",
+					"-framework",
+					"\"KeychainAccess\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Surf.Utils.UtilsTestsHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
