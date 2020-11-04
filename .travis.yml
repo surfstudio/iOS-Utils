@@ -2,7 +2,6 @@ language: Swift
 osx_image: xcode12.1
 xcode_project: Utils/Utils.xcworkspace
 xcode_scheme: Utils
-install: travis_wait 20 mvn install
 
 jobs:
   include:
@@ -15,6 +14,7 @@ jobs:
         - xcodebuild test -scheme Utils -workspace Utils.xcworkspace/ -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=12.2' | xcpretty -c
     - stage: Pod Lib Lint
       name: Pod Lib Lint
+      install: travis_wait 20 mvn install
       script:
         - pod lib lint
   
