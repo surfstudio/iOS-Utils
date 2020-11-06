@@ -93,8 +93,12 @@ extension MoneyModel {
     /// Конвертирует модель в строку вида `рубли.копейки`
     /// Если digit == 0 то вернет просто `рубли`
     func asString() -> String {
-
-        let digitPart = self.digit == 0 ? "" : ".\(self.digit)"
+        let digitPart: String = {
+            guard digit > 0 else {
+                return ""
+            }
+            return digit < 10 ? ".0\(self.digit)" : ".\(self.digit)"
+        }()
 
         return "\(self.decimal)\(digitPart)"
     }
