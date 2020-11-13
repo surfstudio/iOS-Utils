@@ -230,4 +230,15 @@ final class MoneyModelTests: XCTestCase {
 
         XCTAssertNil(res)
     }
+
+    /// Тест форматирования - никаких округлений
+    func testAsStringFormatting() {
+
+        XCTAssertEqual(MoneyModel(decimal: 10, digit: 0).asString(), "10")
+
+        XCTAssertEqual(MoneyModel(decimal: 10, digit: 9).asString(), "10.09")
+
+        XCTAssertEqual(MoneyModel(decimal: 10, digit: 99).asString(), "10.99")
+
+    }
 }
