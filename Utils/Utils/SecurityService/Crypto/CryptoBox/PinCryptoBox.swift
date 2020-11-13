@@ -8,6 +8,11 @@
 
 import Foundation
 
+/// Common used implementation of "Cryptography by PIN"
+///
+/// This box incapsulate all crypto-things and provide simple interface that looks like you really encrypt your data i=only by PIN
+/// But ander-the-hood it uses symmetric scrypto algorythm
+/// You just need to provide data for this alg. and box will do encryption, decription and storing by itself.
 public struct PinCryptoBox: CryptoBox {
 
     private let secureStore: () -> SecureStore
@@ -19,6 +24,15 @@ public struct PinCryptoBox: CryptoBox {
     private let saltKey: String
     private let hashKey: String
 
+    /// Initializer
+    /// - Parameters:
+    ///   - secureStore: Entity which stores cryptotext and other data that needs for decrypt operation
+    ///   - hashProvider: Entity which provides hash alg.
+    ///   - cryptoService: Entity which provider crypto alg.
+    ///   - ivKey: This is the name of the field which will be usining in storage (as name) for initialization vector
+    ///   - dataKey: This is the name of the field which will be usining in storage (as name) for cryptotext
+    ///   - saltKey: This is the name of the field which will be usining in storage (as name) for salt
+    ///   - hashKey: This is the name of the field which will be usining in storage (as name) for hash
     public init(secureStore: @escaping () -> SecureStore,
          hashProvider: HashProvider,
          cryptoService: SymmetricCryptoService,
