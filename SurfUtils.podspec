@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "12.2.0"
+  s.version = "12.1.1"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -125,6 +125,11 @@ Pod::Spec.new do |s|
     sp.framework = 'UIKit'
   end
 
+  s.subspec 'LoadingView' do |sp|
+    sp.source_files = 'Utils/Utils/LoadingView/**/*.swift', 'Utils/Utils/SkeletonView/*.swift', 'Utils/Utils/UIView/UIView+Masking.swift', 'Utils/Utils/UIView/UIView+XibSetup.swift'
+    sp.framework = 'UIKit'
+  end
+  
   s.subspec 'SecurityService' do |sp|
     sp.source_files = 'Utils/Utils/SecurityService/**/*.swift'
     sp.framework = 'Foundation'

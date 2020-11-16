@@ -58,6 +58,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [UIDevice](#uidevice) – набор вспомогательных методов для определения типа девайса 
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
+- [LoadingView](#loadingview) - набор классов и протоколов для удобного отображения загрузочных состояний с шиммерами
 - [SecurityService](#securityservice)  -  сервис для шифрования и сохранения в keychain/inMemory секретных данных
 - [BeanPageControl](#beanPageControl) – page control с перетекающими индикаторами-бобами
 - [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
@@ -600,6 +601,44 @@ someView.apply(style: .styleForSomeView)
 let anyStyle = AnyStyle(style: UIStyle.styleForSomeView)
 anyStyle.apply(for: someView)
 ```
+### LoadingView
+
+Используется для упрощения работы с загрузочными состояними экрана на основе шиммеров. Позволяет формировать загрузочный экран из нескольких и даже разных блоков, блоком является кастомное View, выступающее в роли загрузочного элемента экрана, блоки можно дублировать сколько угодно раз, что может быть удобным для коллекций. 
+
+`BaseLoadingView` - основная View, которая отвечает за отображение loading стейта, состоит из блоков и SkeletonView
+
+`LoadingSubview` и `LoadingSubviewConfigurable` - протоколы, с помощью которых верстается LoadingSubview(блок)
+
+`BaseLoadingViewBlock` - используется для инициализации и конфигурации LoadingSubview
+
+`LoadingDataProvider` - протокол, формирующий блоки для loading стейта, применяется на UIViewController
+
+**Использование**: 
+
+Верстаем LoadingSubview, подписываем UIViewController под `LoadingDataProvider`, формируем блоки и инициализируем модель конфигурации `LoadingViewConfig`
+```swift
+extension viewController: LoadingDataProvider {
+    func getBlocks() -> [LoadingViewBlock] {
+        return [BaseLoadingViewBlock<CustomLoadingSubview>(model: .init()]
+    }
+
+    var config: LoadingViewConfig {
+        return .init(placeholderColor: .gray)
+    }
+}
+```
+Инициализируем BaseLoadingView, передаем в метод configure наши блоки и конфиг, отображаем
+```
+let loadingView = BaseLoadingView(frame: view.bounds)
+loadingView.configure(blocks: self.getBlocks(), config: self.config)
+loadingView.setNeedAnimating(true)
+loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+view.addSubview(loadingView)
+view.stretch(loadingView)
+view.bringSubviewToFront(loadingView)
+```
+
 
 ### SecurityService 
 
