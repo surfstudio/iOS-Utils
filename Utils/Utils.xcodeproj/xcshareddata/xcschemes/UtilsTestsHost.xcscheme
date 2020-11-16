@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "1210"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F3ED9DE211C27CF0030DD45"
-               BuildableName = "Utils.framework"
-               BlueprintName = "Utils"
-               ReferencedContainer = "container:Utils.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F3ED9E7211C27CF0030DD45"
-               BuildableName = "UtilsTests.xctest"
-               BlueprintName = "UtilsTests"
+               BlueprintIdentifier = "39262D2325516CA700591787"
+               BuildableName = "UtilsTestsHost.app"
+               BlueprintName = "UtilsTestsHost"
                ReferencedContainer = "container:Utils.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -41,26 +27,7 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F3ED9DE211C27CF0030DD45"
-            BuildableName = "Utils.framework"
-            BlueprintName = "Utils"
-            ReferencedContainer = "container:Utils.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F3ED9E7211C27CF0030DD45"
-               BuildableName = "UtilsTests.xctest"
-               BlueprintName = "UtilsTests"
-               ReferencedContainer = "container:Utils.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -76,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F3ED9DE211C27CF0030DD45"
-            BuildableName = "Utils.framework"
-            BlueprintName = "Utils"
+            BlueprintIdentifier = "39262D2325516CA700591787"
+            BuildableName = "UtilsTestsHost.app"
+            BlueprintName = "UtilsTestsHost"
             ReferencedContainer = "container:Utils.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -89,15 +56,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F3ED9DE211C27CF0030DD45"
-            BuildableName = "Utils.framework"
-            BlueprintName = "Utils"
+            BlueprintIdentifier = "39262D2325516CA700591787"
+            BuildableName = "UtilsTestsHost.app"
+            BlueprintName = "UtilsTestsHost"
             ReferencedContainer = "container:Utils.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
