@@ -58,6 +58,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [UIDevice](#uidevice) – набор вспомогательных методов для определения типа девайса 
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
+- [MailSender](#mailsender) - утилита для посылки email сообщений (либо через `MFMailComposeController`, либо через стандартное приложение почты)
 - [LoadingView](#loadingview) - набор классов и протоколов для удобного отображения загрузочных состояний с шиммерами
 - [SecurityService](#securityservice)  -  сервис для шифрования и сохранения в keychain/inMemory секретных данных
 - [BeanPageControl](#beanPageControl) – page control с перетекающими индикаторами-бобами
@@ -840,6 +841,82 @@ customSwitch.setOn(true, animated: false)
 @IBAction func switchValueDidChange(_ sender: CustomSwitch) {
 	print(sender.isOn)
 }
+```
+
+### MailSender
+
+Утилита для посылки email сообщений. Автоматически определяет через какой источник можно послать email.
+
+**Алгоритм работы:**
+
+- если можно, то открывает `MFMailComposeViewController`
+- если можно, то перебрасывает пользователя в стандартное приложение почты
+- иначе - показывает ошибку
+
+Для того, чтобы интегрировать утилиту необходимо в инициализатор передать сущности, которые реализую следующие протоколы:
+
+- `MailSenderErrorDisplaying` - сущность, которая будет отображать ошибку
+- `MailSenderPayloadProvider` - сущность, которая вернет утилите payload со всей необходимой информацией для отсылания email-а
+- `MailSenderRouterHelper` - сущность, которая умеет показывать, скрывать экраны (router)
+
+#### Пример интеграции
+
+```swift
+final class ProjectMailSenderErrorDisplaying: MailSenderErrorDisplaying {
+
+    func display(error: MailSenderError) {
+        SnackService().showErrorMessage("There is an error while sending email")
+    }
+
+}
+
+final class ProjectMailSenderPayloadProvider: MailSenderPayloadProvider {
+
+    func getPayload() -> MapUtilPayload {
+        let body = "Some info about app"
+        return MapUtilPayload(
+            recipient: "developer@project.com",
+            subject: "Feedback",
+            body: body
+        )
+    }
+
+}
+
+final class ProjectMailSenderRouterHelper: MailSenderRouterHelper {
+
+    // MARK: - Private Properties
+
+    private let router: Router
+
+    // MARK: - Initializaion
+
+    init(router: Router) {
+        self.router = router
+    }
+
+    // MARK: - MailSenderRouterHelper
+
+    func present(_ viewController: UIViewController) {
+        router.present(viewController)
+    }
+
+    func dismiss() {
+        router.dismissModule()
+    }
+
+}
+```
+
+Пример вызова описанной конфигурации:
+
+```swift
+let mailSender = MailSender(
+    errorDisplaying: ProjectMailSenderErrorDisplaying(),
+    payloadProvider: ProjectMailSenderPayloadProvider(),
+    routerHelper: ProjectMailSenderRouterHelper(router: MainRouter())
+)
+mailSender.send()
 ```
 
 ## Версионирование
