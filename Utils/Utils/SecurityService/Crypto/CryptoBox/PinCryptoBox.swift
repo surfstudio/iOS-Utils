@@ -10,7 +10,8 @@ import Foundation
 
 /// Common used implementation of "Cryptography by PIN"
 ///
-/// This box incapsulate all crypto-things and provide simple interface that looks like you really encrypt your data i=only by PIN
+/// This box incapsulate all crypto-things and provide simple interface
+/// that looks like you really encrypt your data i=only by PIN
 /// But ander-the-hood it uses symmetric scrypto algorythm
 /// You just need to provide data for this alg. and box will do encryption, decription and storing by itself.
 public struct PinCryptoBox: CryptoBox {
