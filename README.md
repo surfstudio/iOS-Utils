@@ -64,6 +64,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [BeanPageControl](#beanPageControl) – page control с перетекающими индикаторами-бобами
 - [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
 - [CustomSwitch](#customswitch) – более гибкая реализация Switch ui элемента
+- [MoneyModel](#moneymodel) - структура для работы с деньгами
 
 ## Утилиты
 
@@ -917,6 +918,16 @@ let mailSender = MailSender(
     routerHelper: ProjectMailSenderRouterHelper(router: MainRouter())
 )
 mailSender.send()
+```
+
+### MoneyModel
+
+Это структура для работы с деньгами:
+
+```Swift
+        print(MoneyModel(decimal: 10, digit: 0).asString()) // выведет -- "10"
+        print(MoneyModel(decimal: 10, digit: 9).asString()) // выведет -- "10.09"
+        print(MoneyModel(decimal: 10, digit: 99).asString()) // выведет -- "10.99"
 ```
 
 ## Версионирование
