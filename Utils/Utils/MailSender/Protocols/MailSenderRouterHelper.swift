@@ -5,7 +5,7 @@
 import UIKit
 
 /// Protocol for supporting routing for UIViewController
-public protocol MailUtilRouterHelper {
+public protocol MailSenderRouterHelper {
 
     /// Method for presenting UIViewController
     /// - Parameter viewController: UIViewController object to present

@@ -5,7 +5,7 @@
 import Foundation
 
 /// Error that describes all kinds of mail util errors
-public enum MailUtilError: LocalizedError {
+public enum MailSenderError: LocalizedError {
     case thereIsNoAbilityToSendMail
     case system(Error)
 }

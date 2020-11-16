@@ -5,10 +5,10 @@
 import Foundation
 
 /// Protocol for displaying mail error
-public protocol MailUtilErrorDisplaying {
+public protocol MailSenderErrorDisplaying {
 
     /// Method for displaying mail error
     /// - Parameter error: mail util error
-    func display(error: MailUtilError)
+    func display(error: MailSenderError)
 
 }

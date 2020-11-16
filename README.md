@@ -58,7 +58,12 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [UIDevice](#uidevice) – набор вспомогательных методов для определения типа девайса 
 - [LayoutHelper](#layouthelper) – вспомогательный класс, для верстки под разные девайсы из IB
 - [UIStyle](#uistyle) – класс для удобной работы с разными стилями UIView наследников
-- [MailUtil](#mailutil) - утилита для посылки email сообщений (либо через `MFMailComposeController`, либо через стандартное приложение почты)
+- [MailSender](#mailsender) - утилита для посылки email сообщений (либо через `MFMailComposeController`, либо через стандартное приложение почты)
+- [LoadingView](#loadingview) - набор классов и протоколов для удобного отображения загрузочных состояний с шиммерами
+- [SecurityService](#securityservice)  -  сервис для шифрования и сохранения в keychain/inMemory секретных данных
+- [BeanPageControl](#beanPageControl) – page control с перетекающими индикаторами-бобами
+- [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
+- [CustomSwitch](#customswitch) – более гибкая реализация Switch ui элемента
 
 ## Утилиты
 
@@ -84,15 +89,18 @@ let globalSttributes: [StringAttribute] = [
     .foregroundColor(.black)
 ]
 let attributedString = StringBuilder(globalAttributes: globalSttributes)
-    .add(text: "Title")
-    .addSpace()
-    .add(text: "blue", with: [.foregroundColor(.blue)])
-    .addLineBreak()
-    .add(text: "Base style on new line")
-    .addSpace()
-    .add(text: "last word with it's own style", with: [.font(.boldSystemFont(ofSize: 16)), .foregroundColor(.red)])
+    .add(.string("Title"))
+    .add(.delimeterWithString(delimeter: .init(type: .space), string: "blue"), 
+         with: [.foregroundColor(.blue)])
+    .add(.delimeterWithString(delimeter: .init(type: .lineBreak), string: "Base style on new line"))
+    .add(.delimeterWithString(delimeter: .init(type: .space), string: "last word with it's own style"), 
+         with: [.font(.boldSystemFont(ofSize: 16)), .foregroundColor(.red)])
     .value
 ```
+
+Возможные проблемы:
+
+- при добавлении к `StringBuilder` только разделителя (`.add(.delimeter)`) (без указания шрифта как локально, так и в рамках текущего блока) может произойти потеря равнения параграфа по вертикали потому что для разделителя будет использоваться стандартный шрифт системы (лейбла). Для предотвращения данной проблемы желательно использование разделителей в паре с текстом (`.add(.delimeterWithString(...))`)
 
 ### BrightSide
 
@@ -290,6 +298,13 @@ skeletonView.movingAnimationDuration = 1.0
 // Длительность задержки между шагами анимации в секундах
 skeletonView.delayBetweenAnimationLoops = 1.0
 ```
+<details><summary>Примеры</summary>
+
+![LeftToRight](Examples/skeleton1.gif)
+
+![RightToLeftFaster](Examples/skeleton2.gif)
+
+</details>
 
 ### OTPField
 
@@ -343,6 +358,12 @@ skeletonView.delayBetweenAnimationLoops = 1.0
         }
 ```
 
+<details><summary>Примеры</summary>
+
+![OTPField](Examples/otpField.gif)
+
+</details>
+
 ### XibView
 
 Утилита для использования .xib + UIView. Работает в коде через конструктор и в сторибордах.
@@ -380,6 +401,30 @@ required init?(coder aDecoder: NSCoder) {
   func mask(with color: UIColor) -> UIImage 
   func mask(with alpha: CGFloat) -> UIImage
   ```
+  * Метод **drawInitials** – Рисует инициалы на картинке с заданным шрифтом и цветом текста
+  
+  
+  ![](Pictures/initials.png)
+  
+  ```swift
+  func drawInitials(firstname: String,
+                    lastname: String,
+                    font: UIFont,
+                    textColor: UIColor) -> UIImage?
+  ```
+   * Метод **badgedImage** – Рисует бейдж на картинке 
+   
+   ![](Pictures/badge.png)
+   
+   ```swift
+   func badgedImage(count: Int, dimension: CGFloat, strokeWidth: CGFloat, backgroundBadgeColor: UIColor) -> UIImage? 
+   ``` 
+   Рисует бейдж в правом верхнем углу с цифрой, используется, например, для непрочитанных уведомлений, можно конфигурировать размер бейджа, его фон и ширину прозрачной линии между картинкой и бейджом
+    ```swift
+   func badgedImage(_ badgeImage: UIImage, dimension: CGFloat) -> UIImage?
+    ``` 
+    Рисует бейдж с заданной картинкой в правом нижнем углу, можно конфигурировать размер бейджа
+  
 
 ### CommonButton
 
@@ -394,6 +439,12 @@ required init?(coder aDecoder: NSCoder) {
 * Увеличивать область нажатия у кнопки
 * Устанавливать значение тайтла для всех состояний сразу
 * Устанавливать значение картинки кнопки для всех состояний сразу
+
+<details><summary>Примеры</summary>
+
+![Common Button](Examples/commonButton.gif)
+
+</details>
 
 ### LocalStorage
 
@@ -551,8 +602,248 @@ someView.apply(style: .styleForSomeView)
 let anyStyle = AnyStyle(style: UIStyle.styleForSomeView)
 anyStyle.apply(for: someView)
 ```
+### LoadingView
 
-### MailUtil
+Используется для упрощения работы с загрузочными состояними экрана на основе шиммеров. Позволяет формировать загрузочный экран из нескольких и даже разных блоков, блоком является кастомное View, выступающее в роли загрузочного элемента экрана, блоки можно дублировать сколько угодно раз, что может быть удобным для коллекций. 
+
+`BaseLoadingView` - основная View, которая отвечает за отображение loading стейта, состоит из блоков и SkeletonView
+
+`LoadingSubview` и `LoadingSubviewConfigurable` - протоколы, с помощью которых верстается LoadingSubview(блок)
+
+`BaseLoadingViewBlock` - используется для инициализации и конфигурации LoadingSubview
+
+`LoadingDataProvider` - протокол, формирующий блоки для loading стейта, применяется на UIViewController
+
+**Использование**: 
+
+Верстаем LoadingSubview, подписываем UIViewController под `LoadingDataProvider`, формируем блоки и инициализируем модель конфигурации `LoadingViewConfig`
+```swift
+extension viewController: LoadingDataProvider {
+    func getBlocks() -> [LoadingViewBlock] {
+        return [BaseLoadingViewBlock<CustomLoadingSubview>(model: .init()]
+    }
+
+    var config: LoadingViewConfig {
+        return .init(placeholderColor: .gray)
+    }
+}
+```
+Инициализируем BaseLoadingView, передаем в метод configure наши блоки и конфиг, отображаем
+```
+let loadingView = BaseLoadingView(frame: view.bounds)
+loadingView.configure(blocks: self.getBlocks(), config: self.config)
+loadingView.setNeedAnimating(true)
+loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+view.addSubview(loadingView)
+view.stretch(loadingView)
+view.bringSubviewToFront(loadingView)
+```
+
+
+### SecurityService 
+
+Сервис, который умеет шифровать и сохранять в keychain/inMemory секретные данные по ключу, например по пину
+Шифрование происходит по следующему принципу:
+1. Берется SHA3.224 от пина
+2. Генерируется криптостойкой случайное число на 32 бита - соль
+3. Из битового представления соли получаем hex-string
+4. Вставляется пин в соль - получаем ключ
+5. Генерируется вектор инициаллизации - 4 бита
+6. Шифруем наши данные алгоритмом Blowfish токены используя ключ.
+7. Полученный шифротекст сохраняем в кейчейн
+8. Ключ так же сохраняем в кейчейне
+
+`PinCryptoBox` - отвечает за шифрование/дешифрование и сохранение/загрузку из стореджа, при инициализации принимает `SecureStore`, `HashProvider`, `SymmetricCryptoService` и ключи к соли, вектору инициализации, шифруемым данным и хешу.  Реализует протокол `CryptoBox`
+
+`PinHackCryptoBox` - подобен `PinCryptoBox` , используется для обновления зашифрованных данных, его отличие в том, что он уже сам знает  откуда прочесть ключи и все остальное, ему нужно только получить данные. 
+
+`HackWrapperCryptoBox` - обертка для хак-бокса, используется чтобы на лету подменять шифровальщик.
+
+`BlowfishCryptoService` - шифрует данные алгоритмом Blowfish, передается в крипто-бокс.
+
+`InMemorySecureStore` - класс для хранения данных в оперативной памяти телефона
+
+`KeyChainSecureStore` - Инкапсулирует логику сохранения, загрузки и удаленния данных из keyChain, можно использовать отдельно от криптобоксов
+
+`GenericPasswordQueryable` - создает query c kSecClassGenericPassword для keyChain, инжектится в  `KeyChainSecureStore` 
+
+**Использование**: 
+Для начала в проекте следует определить константы для криптобокса и для удобства использования можно написать подобный конфигуратор
+```swift
+import CryptoSwift 
+
+struct PinCryptoBoxConfigurator {
+    func produceClear() -> PinCryptoBox {
+        return PinCryptoBox(secureStore: { Settings.shared.secureStorage },
+                            hashProvider: SHA3(variant: .sha224),
+                            cryptoService: BlowfishCryptoService(),
+                            ivKey: Const.ivKey,
+                            dataKey: Const.dataKey,
+                            saltKey: Const.saltKey,
+                            hashKey: Const.hashKey)
+    }
+}
+```
+Инициализируем сервис, шифруем и дешифруем
+```swift
+let cryptoService = PinCryptoBoxConfigurator().produceClear()
+try? cryptoService.encrypt(data: token, auth: pin)
+let token = try? cryptoService.decrypt(auth: pin) 
+```
+Для обновления данных используем HackCryptoBox
+```swift
+let cryptoService = PinCryptoBoxConfigurator().produceClear().hack()
+```
+
+### BeanPageControl
+
+Page control с перетекающими индикаторами-бобами.
+
+![](Pictures/beans1.gif)
+
+![](Pictures/beans2.gif)
+
+Набор кастомизируемых полей: 
+- `count`
+- `beanHeight`
+- `inactiveBeanWidth`
+- `activeBeanWidth`
+- `padding`
+- `beanCornerRadius`
+- `beanActiveColor`
+- `beanInactiveColor`
+
+**Использование**
+
+```swift
+// Инициализация
+
+let pageControl = BeanPageControl()
+pageControlContainer.addSubview(pageControl)
+pageControl.anchorCenter(to: pageControlContainer)
+pageControl.activeBeanWidth = 100
+pageControl.beanActiveColor = .yellow
+self.pageControl = pageControl
+
+// Обновление
+
+adapter?.onChangePage = { [weak self] page, progress in
+    self?.pageControl?.set(index: page, progress: progress)
+}
+
+```
+
+### TouchableControl
+
+Данный класс унаследован от стандартного UIControl. Позволяет принимать на вход различные UI элементы и, при нажатии на этот контрол,
+анимировать их, иммтируя как бы нажатие на кнопку. То есть, по сути является аналагом кнопки с возможностью кастомизировать анимацию 
+нажатия(затемнение или изменение цвета только некоторых элементов) 
+
+**Доступные параметры:** 
+
+`animatingViewsByAlpha` – сюда можно передать одну или несколько `UIView`, которые будут уменьшать `alpha` параметр, при
+нажатии на контрол.
+
+`onTouchUpInside`,  `onTouchCancel`, `onTouchDown` - блоки, для управления событий нажатия.
+
+`touchAlphaValue` - параметр, типа `CGFloat`, определяющий на какое значени `alpha` будет изменяться элементы при нажатии
+
+`normalDuration` - параметр, типа `TimeInterval`, определяющий в течение какого времени будет происходить затемнение
+
+**Доступные методы:** 
+
+`addChangeColor(to: UIView, normalColor: UIColor, touchedColor: UIColor)` - добавляет вью, у которой будет изменяться цвет при нажатии
+на контрол
+
+`clearControl()` - Для случаев, когда данный класс добавлен во вью, которая будет сама передана в него. 
+Устонавливается в deinit ViewController'а с этой view
+
+**Использование:**
+
+```swift
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var someView: UIView!
+    @IBOutlet weak var someLabel: UILabel!
+    @IBOutlet weak var secondSomeLabel: UILabel!
+
+    private let control = TouchableControl()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        control.translatesAutoresizingMaskIntoConstraints = false
+        someView.addSubview(control)
+        NSLayoutConstraint.activate([
+            control.topAnchor.constraint(equalTo: someView.topAnchor),
+            control.leftAnchor.constraint(equalTo: someView.leftAnchor),
+            control.rightAnchor.constraint(equalTo: someView.rightAnchor),
+            control.bottomAnchor.constraint(equalTo: someView.bottomAnchor)
+        ])
+
+        control.animatingViewsByAlpha = [someLabel]
+        control.addChangeColor(to: someView, normalColor: someView.backgroundColor, touchedColor: .blue)
+        control.addChangeColor(to: secondSomeLabel, initColor: secondSomeLabel.textColor, goalColor: .orange)
+
+        control.onTouchUpInside = {
+        }
+        control.onTouchCancel = {
+        }
+        control.onTouchDown = {
+        }
+    }
+
+    deinit {
+        control.clearControl()
+    }
+}
+
+```
+
+### CustomSwitch
+
+Гибкая реализация ui элемента switch.
+1) Умеет адаптироваться под разный размер.
+2) Есть возможность задать закругления и отсутпы.
+3) Есть возможность задать градиент вместо цвета.
+4) Гибко настраивается анимация.
+5) Есть возможность добавить тень для бегунка.
+
+`CustomSwitch` – непосредственно сам элемент.
+
+`CustomSwitch.LayoutConfiguration` - содержит padding(отступ от бегунка до краев), spacing(отступ от бегунка до сторон в обоих состояниях) и cornerRatio самого свитча.
+
+`CustomSwitch.ThumbConfiguration` - содержит cornerRatio и shadowConfiguration(CSShadowConfiguration) для самого бегунка.
+
+`CustomSwitch.ColorsConfiguration` - содержит в себе параметры для конигурации цвета подложки(on и off) и бегунка. Все три параметра имеют тип CSColorConfiguration. Это протокол с одним методом - `applyColor(for view: UIView)` и имеющий уже две реализации: `CSSimpleColorConfiguration` и `CSGradientColorConfiguration`.
+
+`CustomSwitch.AnimationsConfiguration` - содержит параметры для конфигурации анимации свитча(duration, delay, usingSpringWithDamping, initialSpringVelocity, options).
+
+Для обработки изменения стейта можно использовать стандартный event valueChanged.
+
+**Использование**
+
+```swift
+let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+customSwitch.layoutConfiguration = .init(padding: 1, spacing: 3, cornerRatio: 0.5)
+customSwitch.colorsConfiguration = .init(offColorConfiguraion: CSSimpleColorConfiguration(color: .white),
+                                         onColorConfiguraion: CSSimpleColorConfiguration(color: .green),
+                                         thumbColorConfiguraion: CSGradientColorConfiguration(colors: [.lightGray, .yellow],
+                                                                                              locations: [0, 1]))
+customSwitch.thumbConfiguration = .init(cornerRatio: 0, shadowConfiguration: .init(color: .black, offset: CGSize(), radius: 5, oppacity: 0.1))
+customSwitch.animationsConfiguration = .init(duration: 0.1, usingSpringWithDamping: 0.7)
+
+customSwitch.setOn(true, animated: false)
+
+// обработка
+
+@IBAction func switchValueDidChange(_ sender: CustomSwitch) {
+	print(sender.isOn)
+}
+```
+
+### MailSender
 
 Утилита для посылки email сообщений. Автоматически определяет через какой источник можно послать email.
 
@@ -564,22 +855,22 @@ anyStyle.apply(for: someView)
 
 Для того, чтобы интегрировать утилиту необходимо в инициализатор передать сущности, которые реализую следующие протоколы:
 
-- `MailUtilErrorDisplaying` - сущность, которая будет отображать ошибку
-- `MailUtilPayloadProvider` - сущность, которая вернет утилите payload со всей необходимой информацией для отсылания email-а
-- `MailUtilRouterHelper` - сущность, которая умеет показывать, скрывать экраны (router)
+- `MailSenderErrorDisplaying` - сущность, которая будет отображать ошибку
+- `MailSenderPayloadProvider` - сущность, которая вернет утилите payload со всей необходимой информацией для отсылания email-а
+- `MailSenderRouterHelper` - сущность, которая умеет показывать, скрывать экраны (router)
 
 #### Пример интеграции
 
 ```swift
-final class ProjectMailUtilErrorDisplaying: MailUtilErrorDisplaying {
+final class ProjectMailSenderErrorDisplaying: MailSenderErrorDisplaying {
 
-    func display(error: MailUtilError) {
+    func display(error: MailSenderError) {
         SnackService().showErrorMessage("There is an error while sending email")
     }
 
 }
 
-final class ProjectMailUtilPayloadProvider: MailUtilPayloadProvider {
+final class ProjectMailSenderPayloadProvider: MailSenderPayloadProvider {
 
     func getPayload() -> MapUtilPayload {
         let body = "Some info about app"
@@ -592,7 +883,7 @@ final class ProjectMailUtilPayloadProvider: MailUtilPayloadProvider {
 
 }
 
-final class ProjectMailUtilRouterHelper: MailUtilRouterHelper {
+final class ProjectMailSenderRouterHelper: MailSenderRouterHelper {
 
     // MARK: - Private Properties
 
@@ -604,7 +895,7 @@ final class ProjectMailUtilRouterHelper: MailUtilRouterHelper {
         self.router = router
     }
 
-    // MARK: - MailUtilRouterHelper
+    // MARK: - MailSenderRouterHelper
 
     func present(_ viewController: UIViewController) {
         router.present(viewController)
@@ -620,12 +911,12 @@ final class ProjectMailUtilRouterHelper: MailUtilRouterHelper {
 Пример вызова описанной конфигурации:
 
 ```swift
-let mailUtil = MailUtil(
-    errorDisplaying: ProjectMailUtilErrorDisplaying(),
-    payloadProvider: ProjectMailUtilPayloadProvider(),
-    routerHelper: ProjectMailUtilRouterHelper(router: MainRouter())
+let mailSender = MailSender(
+    errorDisplaying: ProjectMailSenderErrorDisplaying(),
+    payloadProvider: ProjectMailSenderPayloadProvider(),
+    routerHelper: ProjectMailSenderRouterHelper(router: MainRouter())
 )
-mailUtil.send()
+mailSender.send()
 ```
 
 ## Версионирование

@@ -1,5 +1,5 @@
 language: Swift
-osx_image: xcode10.2
+osx_image: xcode12.1
 xcode_project: Utils/Utils.xcworkspace
 xcode_scheme: Utils
 
@@ -15,5 +15,5 @@ jobs:
     - stage: Pod Lib Lint
       name: Pod Lib Lint
       script:
-        - pod lib lint
+        - travis_wait 20 pod lib lint
   

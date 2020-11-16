@@ -18,15 +18,15 @@ public final class MailUtil {
 
     // MARK: - Private Properties
 
-    private let errorDisplaying: MailUtilErrorDisplaying
-    private let payloadProvider: MailUtilPayloadProvider
-    private let routerHelper: MailUtilRouterHelper
+    private let errorDisplaying: MailSenderErrorDisplaying
+    private let payloadProvider: MailSenderPayloadProvider
+    private let routerHelper: MailSenderRouterHelper
 
     // MARK: - Initializaion
 
-    public init(errorDisplaying: MailUtilErrorDisplaying,
-                payloadProvider: MailUtilPayloadProvider,
-                routerHelper: MailUtilRouterHelper) {
+    public init(errorDisplaying: MailSenderErrorDisplaying,
+                payloadProvider: MailSenderPayloadProvider,
+                routerHelper: MailSenderRouterHelper) {
         self.errorDisplaying = errorDisplaying
         self.payloadProvider = payloadProvider
         self.routerHelper = routerHelper
@@ -68,7 +68,7 @@ public final class MailUtil {
         return InsideAppMailViewController.canSendMail()
     }
 
-    private func openInsideApp(payload: MapUtilPayload) {
+    private func openInsideApp(payload: MailSenderPayload) {
         let viewController = InsideAppMailViewController()
         viewController.setupInitialState(recipient: payload.recipient,
                                          subject: payload.subject,
@@ -90,7 +90,7 @@ public final class MailUtil {
         return UIApplication.shared.canOpenURL(url)
     }
 
-    private func openDefaultAppMail(payload: MapUtilPayload) {
+    private func openDefaultAppMail(payload: MailSenderPayload) {
         let subjectEncoded = payload.subject?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         let bodyEncoded = payload.body.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
 

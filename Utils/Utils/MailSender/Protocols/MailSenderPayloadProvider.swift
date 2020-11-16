@@ -5,9 +5,9 @@
 import Foundation
 
 /// Protocol for getting mail payload
-public protocol MailUtilPayloadProvider {
+public protocol MailSenderPayloadProvider {
 
     /// Methods for getting mail payload
-    func getPayload() -> MapUtilPayload
+    func getPayload() -> MailSenderPayload
 
 }

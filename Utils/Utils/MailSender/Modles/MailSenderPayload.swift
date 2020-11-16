@@ -5,7 +5,7 @@
 import Foundation
 
 /// Struct that holds mail properties
-public struct MapUtilPayload {
+public struct MailSenderPayload {
 
     // MARK: - Public Properties
 
