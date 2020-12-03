@@ -6,6 +6,9 @@
 //  Copyright © 2019 Surf. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 /// Local storage based on filemanager uses cache directory
 final public class LocalStorage {
 

@@ -7,6 +7,7 @@
 //
 
 import Device
+import UIKit
 
 public extension UIDevice {
 

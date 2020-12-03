@@ -16,12 +16,17 @@ let package = Package(
             name: "CryptoSwift",
             url: "https://github.com/krzyzanowskim/CryptoSwift",
             .exact("1.3.1")
-            )
-        ],
+        ),
+        .package(
+            name: "Device",
+            url: "https://github.com/Alelenka/Device",
+            .branch("spm-support")
+        ),
+    ],
     targets: [
         .target(
             name: "Utils",
-            dependencies: ["CryptoSwift"],
+            dependencies: ["CryptoSwift", "Device"],
             path: "Utils",
             exclude: [
                 "Info.plist"

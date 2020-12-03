@@ -6,6 +6,8 @@
 //  Copyright © 2019 Surf. All rights reserved.
 //
 
+import UIKit
+
 public struct OTPFieldStyle {
     public let digitStyle: DigitFieldStyle
     public let errorTextColor: UIColor
