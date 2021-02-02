@@ -65,6 +65,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
 - [CustomSwitch](#customswitch) – более гибкая реализация Switch ui элемента
 - [MoneyModel](#moneymodel) - структура для работы с деньгами
+- [SnapshotTests](#snapshottests) - хелперы для работы со снапшот тестами, упрощает работу с https://github.com/pointfreeco/swift-snapshot-testing
 
 ## Утилиты
 
@@ -929,6 +930,24 @@ mailSender.send()
         print(MoneyModel(decimal: 10, digit: 9).asString()) // выведет -- "10.09"
         print(MoneyModel(decimal: 10, digit: 99).asString()) // выведет -- "10.99"
 ```
+
+### SnapshotTests
+
+Хелперы для работы со снапшот тестами, упрощает работу с https://github.com/pointfreeco/swift-snapshot-testing
+
+```Swift
+        var snapshotScrollSize: CGSize (CGSize extension) – Рассчитывает полный размер экрана с UIScrollView на основе размера экрана из фигмы
+        enum DiffSnapshotTesting –  Копипаст из либы с целью добавить возможность сохранения диффа в файловую систему
+        var snapshotName: String (String extension) – Формирует название снапшота для файловой системы в формате имя_теста-имя_девайса-версия_айос
+        var snapshotName: String (UIDevice extension) – Формирует название снапшота для файловой системы в формате имя_девайса-версия_айос
+        func assertSnapshot(...) (UIView extension) – Обертка для использования библиотеки с UIView
+        func assertSnapshot(...) (UIViewController extension) – Обертка для использования библиотеки с UIViewController
+        func snapshotResize() (UIView extension) – Растягивает self-sized view до нужного размера на основе констреинтов
+        func pushed(in navigationController:) (UIViewController extension) – Оборачивает контроллер в навбар
+        func embedded(in tabBarController:, ...) (UIViewController extension) – Оборачивает контроллер в таббар с навбаром
+```
+
+Более подробную информацию можно получить в коде и комментариях к нему
 
 ## Версионирование
 
