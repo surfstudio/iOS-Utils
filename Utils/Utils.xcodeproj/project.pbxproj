@@ -61,6 +61,14 @@
 		8953A46D23560A2F007AD110 /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8953A46C23560A2F007AD110 /* OTPField.swift */; };
 		8953A46F23560A4C007AD110 /* OTPField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8953A46E23560A4C007AD110 /* OTPField.xib */; };
 		898845202360482D004940DC /* UIView+XibSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8988451F2360482D004940DC /* UIView+XibSetup.swift */; };
+		89BCB2A825C848D50079F1DE /* UIViewController+SnapshotContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2A725C848D50079F1DE /* UIViewController+SnapshotContainers.swift */; };
+		89BCB2AE25C84A9B0079F1DE /* UIViewController+AssertSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2AD25C84A9B0079F1DE /* UIViewController+AssertSnapshot.swift */; };
+		89BCB2B325C84AB80079F1DE /* UIView+SnapshotResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2B225C84AB80079F1DE /* UIView+SnapshotResize.swift */; };
+		89BCB2B825C84ADA0079F1DE /* UIView+AssertSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2B725C84ADA0079F1DE /* UIView+AssertSnapshot.swift */; };
+		89BCB2BD25C84AEB0079F1DE /* UIDevice+SnapshotName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2BC25C84AEB0079F1DE /* UIDevice+SnapshotName.swift */; };
+		89BCB2C225C84AFC0079F1DE /* String+SnapshotName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2C125C84AFC0079F1DE /* String+SnapshotName.swift */; };
+		89BCB2C725C84B0F0079F1DE /* DiffSnapshotTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2C625C84B0F0079F1DE /* DiffSnapshotTesting.swift */; };
+		89BCB2CC25C84B210079F1DE /* CGSize+ScrollHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2CB25C84B210079F1DE /* CGSize+ScrollHeight.swift */; };
 		89F23A69235733BC005112E1 /* DigitField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F23A68235733BC005112E1 /* DigitField.swift */; };
 		89F23A6B23575D97005112E1 /* DigitFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F23A6A23575D97005112E1 /* DigitFieldStyle.swift */; };
 		89F23A6D23576452005112E1 /* OTPFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F23A6C23576452005112E1 /* OTPFieldStyle.swift */; };
@@ -194,6 +202,14 @@
 		8953A46C23560A2F007AD110 /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
 		8953A46E23560A4C007AD110 /* OTPField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTPField.xib; sourceTree = "<group>"; };
 		8988451F2360482D004940DC /* UIView+XibSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+XibSetup.swift"; sourceTree = "<group>"; };
+		89BCB2A725C848D50079F1DE /* UIViewController+SnapshotContainers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SnapshotContainers.swift"; sourceTree = "<group>"; };
+		89BCB2AD25C84A9B0079F1DE /* UIViewController+AssertSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AssertSnapshot.swift"; sourceTree = "<group>"; };
+		89BCB2B225C84AB80079F1DE /* UIView+SnapshotResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapshotResize.swift"; sourceTree = "<group>"; };
+		89BCB2B725C84ADA0079F1DE /* UIView+AssertSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AssertSnapshot.swift"; sourceTree = "<group>"; };
+		89BCB2BC25C84AEB0079F1DE /* UIDevice+SnapshotName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+SnapshotName.swift"; sourceTree = "<group>"; };
+		89BCB2C125C84AFC0079F1DE /* String+SnapshotName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SnapshotName.swift"; sourceTree = "<group>"; };
+		89BCB2C625C84B0F0079F1DE /* DiffSnapshotTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffSnapshotTesting.swift; sourceTree = "<group>"; };
+		89BCB2CB25C84B210079F1DE /* CGSize+ScrollHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+ScrollHeight.swift"; sourceTree = "<group>"; };
 		89F23A68235733BC005112E1 /* DigitField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitField.swift; sourceTree = "<group>"; };
 		89F23A6A23575D97005112E1 /* DigitFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitFieldStyle.swift; sourceTree = "<group>"; };
 		89F23A6C23576452005112E1 /* OTPFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldStyle.swift; sourceTree = "<group>"; };
@@ -479,6 +495,7 @@
 				90AC855D2385924600DF7F3B /* GeolocationService */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
 				4F3ED9E3211C27CF0030DD45 /* Info.plist */,
+				89BCB2AC25C848DF0079F1DE /* SnapshotTests */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -582,6 +599,21 @@
 				8953A46E23560A4C007AD110 /* OTPField.xib */,
 			);
 			path = OTPField;
+			sourceTree = "<group>";
+		};
+		89BCB2AC25C848DF0079F1DE /* SnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				89BCB2A725C848D50079F1DE /* UIViewController+SnapshotContainers.swift */,
+				89BCB2AD25C84A9B0079F1DE /* UIViewController+AssertSnapshot.swift */,
+				89BCB2B225C84AB80079F1DE /* UIView+SnapshotResize.swift */,
+				89BCB2B725C84ADA0079F1DE /* UIView+AssertSnapshot.swift */,
+				89BCB2BC25C84AEB0079F1DE /* UIDevice+SnapshotName.swift */,
+				89BCB2C125C84AFC0079F1DE /* String+SnapshotName.swift */,
+				89BCB2C625C84B0F0079F1DE /* DiffSnapshotTesting.swift */,
+				89BCB2CB25C84B210079F1DE /* CGSize+ScrollHeight.swift */,
+			);
+			path = SnapshotTests;
 			sourceTree = "<group>";
 		};
 		902C67EA21E4D1EF007B13CC /* ItemsScrollManager */ = {
@@ -849,7 +881,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1210;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Surf;
 				TargetAttributes = {
 					39262D2325516CA700591787 = {
@@ -1064,6 +1096,7 @@
 				39DCF1C724EEC8F8007CCFBC /* CryptoBoxCommonError.swift in Sources */,
 				39DCF1C924EEC8F8007CCFBC /* CryptoBox.swift in Sources */,
 				3971F71624F1842300597F9D /* BlowfishCryptoService.swift in Sources */,
+				89BCB2B325C84AB80079F1DE /* UIView+SnapshotResize.swift in Sources */,
 				89F23A6D23576452005112E1 /* OTPFieldStyle.swift in Sources */,
 				3971F71C24F1843000597F9D /* CryptoCommon.swift in Sources */,
 				573117D623BF889000491781 /* LayoutHelper.swift in Sources */,
@@ -1072,22 +1105,25 @@
 				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
 				C11CEB3B24D44DFA00C1CD0F /* MailUtil.swift in Sources */,
 				A4D5D5FD24E57A6A004ABFBC /* CustomSwitch.swift in Sources */,
-				90AC85632385928E00DF7F3B /* GeolocationServiceInterface.swift in Sources */,
-				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
 				3946575524EC1E600069BDB0 /* BaseLoadingView.swift in Sources */,
+				89BCB2C225C84AFC0079F1DE /* String+SnapshotName.swift in Sources */,
 				907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */,
 				3946575924EC21350069BDB0 /* LoadingSubview.swift in Sources */,
 				9E7724CA2562C3CC00E86D81 /* MailSenderPayload.swift in Sources */,
 				89F23A69235733BC005112E1 /* DigitField.swift in Sources */,
+				89BCB2BD25C84AEB0079F1DE /* UIDevice+SnapshotName.swift in Sources */,
 				E9B0630C214692C30080C391 /* UIDevice+hasTapticEngine.swift in Sources */,
 				3971F72524F1843900597F9D /* SecureStore.swift in Sources */,
 				3971F72324F1843900597F9D /* InMemorySecureStore.swift in Sources */,
+				89BCB2C725C84B0F0079F1DE /* DiffSnapshotTesting.swift in Sources */,
 				A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */,
 				3971F72424F1843900597F9D /* GenericPasswordQueryable.swift in Sources */,
 				3971F71924F1842A00597F9D /* SHA3.swift in Sources */,
 				80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */,
 				A4F4B13724ED24A4009FA920 /* BeanPageControl.swift in Sources */,
 				898845202360482D004940DC /* UIView+XibSetup.swift in Sources */,
+				89BCB2B825C84ADA0079F1DE /* UIView+AssertSnapshot.swift in Sources */,
+				89BCB2CC25C84B210079F1DE /* CGSize+ScrollHeight.swift in Sources */,
 				90AC8567238592A700DF7F3B /* GeolocationAccuracy.swift in Sources */,
 				5709EC5D236F4C6500EEBD93 /* CommonButton.swift in Sources */,
 				9087BC5221EF3BE700FCE1E1 /* CommonKeyboardPresentable.swift in Sources */,
@@ -1108,12 +1144,14 @@
 				3952869924ED22FD00410DC9 /* BaseLoadingViewBlock.swift in Sources */,
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
 				3971F71A24F1842A00597F9D /* HashProvider.swift in Sources */,
+				89BCB2AE25C84A9B0079F1DE /* UIViewController+AssertSnapshot.swift in Sources */,
 				902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */,
 				90AC85612385928100DF7F3B /* GeolocationService.swift in Sources */,
 				90AC856B238592B800DF7F3B /* GeolocationResult.swift in Sources */,
 				573117D123BF84C400491781 /* UIDevice.swift in Sources */,
 				9087BC5621EF3BFB00FCE1E1 /* Notification.swift in Sources */,
 				3946575024EC1AAC0069BDB0 /* LoadingViewConfig.swift in Sources */,
+				89BCB2A825C848D50079F1DE /* UIViewController+SnapshotContainers.swift in Sources */,
 				A4D5D5FF24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift in Sources */,
 				89F23A6B23575D97005112E1 /* DigitFieldStyle.swift in Sources */,
 				573117DB23BFD33000491781 /* AnyStyle.swift in Sources */,
@@ -1196,7 +1234,7 @@
 				DEVELOPMENT_TEAM = EFAAG9GXN4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTestsHost/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1230,7 +1268,7 @@
 				DEVELOPMENT_TEAM = EFAAG9GXN4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTestsHost/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1277,6 +1315,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1303,7 +1342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1340,6 +1379,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1360,7 +1400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1376,10 +1416,10 @@
 			baseConfigurationReference = 632D58609B21028A5FFDF22F /* Pods-Utils.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 42CJ7GW5YG;
+				DEVELOPMENT_TEAM = EFAAG9GXN4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1407,10 +1447,10 @@
 			baseConfigurationReference = D06F434CB242A683A6DFCEC4 /* Pods-Utils.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 42CJ7GW5YG;
+				DEVELOPMENT_TEAM = EFAAG9GXN4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1438,7 +1478,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZJ45BEVK69;
+				DEVELOPMENT_TEAM = EFAAG9GXN4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1460,7 +1500,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZJ45BEVK69;
+				DEVELOPMENT_TEAM = EFAAG9GXN4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
