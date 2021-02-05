@@ -272,7 +272,9 @@ public enum DiffSnapshotTesting {
                 let difference = diff(refImage, artifactImage)
                 let finalImage = glue(ref: refImage, art: artifactImage, diff: difference)
                 try finalImage.pngData()?.write(to: failedSnapshotFileUrl)
-                attachments.append(.init(image: finalImage))
+                let attachment = XCTAttachment(image: finalImage)
+                attachment.name = "reference+failure+difference"
+                attachments.append(attachment)
             } else {
                 try snapshotting.diffing.toData(diffable).write(to: failedSnapshotFileUrl)
             }
