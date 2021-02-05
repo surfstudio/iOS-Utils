@@ -255,9 +255,11 @@ public enum DiffSnapshotTesting {
           }
           #endif
 
-          guard let (failure, attachments) = snapshotting.diffing.diff(reference, diffable) else {
+          guard let (failure, attachs) = snapshotting.diffing.diff(reference, diffable) else {
             return nil
           }
+
+          var attachments = attachs
 
           let artifactsUrl = URL(
             fileURLWithPath: ProcessInfo.processInfo.environment["SNAPSHOT_ARTIFACTS"] ?? NSTemporaryDirectory(), isDirectory: true
@@ -270,6 +272,7 @@ public enum DiffSnapshotTesting {
                 let difference = diff(refImage, artifactImage)
                 let finalImage = glue(ref: refImage, art: artifactImage, diff: difference)
                 try finalImage.pngData()?.write(to: failedSnapshotFileUrl)
+                attachments.append(.init(image: finalImage))
             } else {
                 try snapshotting.diffing.toData(diffable).write(to: failedSnapshotFileUrl)
             }
