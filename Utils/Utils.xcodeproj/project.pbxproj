@@ -61,6 +61,7 @@
 		8953A46D23560A2F007AD110 /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8953A46C23560A2F007AD110 /* OTPField.swift */; };
 		8953A46F23560A4C007AD110 /* OTPField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8953A46E23560A4C007AD110 /* OTPField.xib */; };
 		898845202360482D004940DC /* UIView+XibSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8988451F2360482D004940DC /* UIView+XibSetup.swift */; };
+		89AFB46B25D2BCC000E961EE /* Snapshotting+Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AFB46A25D2BCC000E961EE /* Snapshotting+Modal.swift */; };
 		89BCB2A825C848D50079F1DE /* UIViewController+SnapshotContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2A725C848D50079F1DE /* UIViewController+SnapshotContainers.swift */; };
 		89BCB2AE25C84A9B0079F1DE /* UIViewController+AssertSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2AD25C84A9B0079F1DE /* UIViewController+AssertSnapshot.swift */; };
 		89BCB2B325C84AB80079F1DE /* UIView+SnapshotResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BCB2B225C84AB80079F1DE /* UIView+SnapshotResize.swift */; };
@@ -202,6 +203,7 @@
 		8953A46C23560A2F007AD110 /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
 		8953A46E23560A4C007AD110 /* OTPField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTPField.xib; sourceTree = "<group>"; };
 		8988451F2360482D004940DC /* UIView+XibSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+XibSetup.swift"; sourceTree = "<group>"; };
+		89AFB46A25D2BCC000E961EE /* Snapshotting+Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snapshotting+Modal.swift"; sourceTree = "<group>"; };
 		89BCB2A725C848D50079F1DE /* UIViewController+SnapshotContainers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SnapshotContainers.swift"; sourceTree = "<group>"; };
 		89BCB2AD25C84A9B0079F1DE /* UIViewController+AssertSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AssertSnapshot.swift"; sourceTree = "<group>"; };
 		89BCB2B225C84AB80079F1DE /* UIView+SnapshotResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapshotResize.swift"; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 				89BCB2C125C84AFC0079F1DE /* String+SnapshotName.swift */,
 				89BCB2C625C84B0F0079F1DE /* DiffSnapshotTesting.swift */,
 				89BCB2CB25C84B210079F1DE /* CGSize+ScrollHeight.swift */,
+				89AFB46A25D2BCC000E961EE /* Snapshotting+Modal.swift */,
 			);
 			path = SnapshotTests;
 			sourceTree = "<group>";
@@ -1105,6 +1108,7 @@
 				E9B0630A2146924A0080C391 /* VibrationFeedbackManager.swift in Sources */,
 				C11CEB3B24D44DFA00C1CD0F /* MailUtil.swift in Sources */,
 				A4D5D5FD24E57A6A004ABFBC /* CustomSwitch.swift in Sources */,
+				89AFB46B25D2BCC000E961EE /* Snapshotting+Modal.swift in Sources */,
 				3946575524EC1E600069BDB0 /* BaseLoadingView.swift in Sources */,
 				89BCB2C225C84AFC0079F1DE /* String+SnapshotName.swift in Sources */,
 				907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */,
