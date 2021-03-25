@@ -142,11 +142,13 @@ public class StringBuilder {
         return self
     }
 
-    /// Method for adding global attribute to whole string
-    /// - Parameter globalAttribute: attribute to apply
+    /// Method for adding global attributes with NSAttributedString
+    /// - Parameter globalAttributes: attributes to apply
     @discardableResult
-    public func add(globalAttribute: StringAttribute) -> StringBuilder {
-        self.globalAttributes.append(globalAttribute)
+    public func add(with nsAttribute: NSAttributedString) -> StringBuilder {
+        let attributes = nsAttribute.attributes(at: 0, effectiveRange: nil)
+        let stringAttributes = StringAttribute.from(dictionary: attributes)
+        self.add(.string(nsAttribute.string), with: stringAttributes)
         return self
     }
 

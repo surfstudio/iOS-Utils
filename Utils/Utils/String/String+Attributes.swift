@@ -51,6 +51,17 @@ extension StringAttribute {
                 return NSUnderlineStyle.single
             }
         }
+
+        init?(with style: NSUnderlineStyle) {
+            switch style {
+            case .double:
+                self = .double
+            case .single:
+                self = .single
+            default:
+                return nil
+            }
+        }
     }
 }
 
@@ -95,6 +106,51 @@ extension StringAttribute {
         case .baselineOffset(let value):
             return value
         }
+    }
+}
+
+// MARK: - Public static methods
+
+public extension StringAttribute {
+
+    // init from attributs array
+    static func from(dictionary: [NSAttributedString.Key: Any]) -> [StringAttribute] {
+        var stringAttributedArray = [StringAttribute]()
+
+        if let baselineOffset = dictionary[.baselineOffset] as? CGFloat {
+            stringAttributedArray.append(.baselineOffset(baselineOffset))
+        }
+
+        if let strikethroughStyle = dictionary[.strikethroughStyle] as? NSUnderlineStyle,
+           let crossOutStyle = CrossOutStyle(with: strikethroughStyle) {
+            stringAttributedArray.append(.crossOut(style: crossOutStyle))
+        }
+
+        if let foregroundColor = dictionary[.foregroundColor] as? UIColor {
+            stringAttributedArray.append(.foregroundColor(foregroundColor))
+        }
+
+        if let font = dictionary[.font] as? UIFont {
+            stringAttributedArray.append(.font(font))
+        }
+
+        if let kernValue = dictionary[.kern] as? CGFloat {
+            stringAttributedArray.append(.kern(kernValue))
+        }
+
+        if let value = dictionary[.paragraphStyle],
+           let mutableParagraphStyle = value as? NSMutableParagraphStyle {
+            stringAttributedArray.append(.aligment(mutableParagraphStyle.alignment))
+            stringAttributedArray.append(.lineBreakMode(mutableParagraphStyle.lineBreakMode))
+
+            if let font = dictionary[.font] as? UIFont {
+                stringAttributedArray.append(.lineHeight(mutableParagraphStyle.lineSpacing, font: font))
+            } else {
+                stringAttributedArray.append(.lineSpacing(mutableParagraphStyle.lineSpacing))
+            }
+        }
+
+        return stringAttributedArray
     }
 }
 
