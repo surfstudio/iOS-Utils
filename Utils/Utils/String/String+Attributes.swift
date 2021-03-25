@@ -25,6 +25,8 @@ public enum StringAttribute {
     case crossOut(style: CrossOutStyle)
     /// Text line break mode
     case lineBreakMode(NSLineBreakMode)
+    /// Text base line offset (vertical)
+    case baselineOffset(CGFloat)
 
     /// Figma friendly case means that lineSpacing = lineHeight - font.lineHeight
     /// This case provide possibility to set both `font` and `lineSpacing`
@@ -67,6 +69,8 @@ extension StringAttribute {
             return NSAttributedString.Key.foregroundColor
         case .crossOut:
             return NSAttributedString.Key.strikethroughStyle
+        case .baselineOffset:
+            return NSAttributedString.Key.baselineOffset
         }
     }
 
@@ -87,6 +91,8 @@ extension StringAttribute {
         case .crossOut(let style):
             return style.coreValue.rawValue
         case .lineBreakMode(let value):
+            return value
+        case .baselineOffset(let value):
             return value
         }
     }

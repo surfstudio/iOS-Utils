@@ -142,6 +142,14 @@ public class StringBuilder {
         return self
     }
 
+    /// Method for adding global attribute to whole string
+    /// - Parameter globalAttribute: attribute to apply
+    @discardableResult
+    public func add(globalAttribute: StringAttribute) -> StringBuilder {
+        self.globalAttributes.append(globalAttribute)
+        return self
+    }
+
     /// Method for adding text block to attributed
     /// - Parameters:
     ///   - block: block to add
