@@ -71,6 +71,7 @@ Utils/fastlane/Provisioning
 Utils/fastlane/Build
 Utils/fastlane/report.xml
 Utils/buildData
+.swiftpm
 .DS_Store
 
 # Bundler

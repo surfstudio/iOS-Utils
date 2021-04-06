@@ -6,6 +6,8 @@
 //  Copyright © 2019 Surf. All rights reserved.
 //
 
+import UIKit
+
 public struct DigitFieldStyle {
     public let font: UIFont
     public let activeTextColor: UIColor

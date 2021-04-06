@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Utils for opening various settings screens from the application
 public final class SettingsRouter {
