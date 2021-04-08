@@ -133,7 +133,7 @@ Pod::Spec.new do |s|
     sp.source_files = 'Utils/Utils/LoadingView/**/*.swift', 'Utils/Utils/SkeletonView/*.swift', 'Utils/Utils/UIView/UIView+Masking.swift', 'Utils/Utils/UIView/UIView+XibSetup.swift'
     sp.framework = 'UIKit'
   end
-  
+
   s.subspec 'SecurityService' do |sp|
     sp.source_files = 'Utils/Utils/SecurityService/**/*.swift'
     sp.framework = 'Foundation'
@@ -155,7 +155,7 @@ Pod::Spec.new do |s|
     sp.framework = 'UIKit'
   end
 
-  s.subspec 'SnapshotTests' do |sp|
+  s.test_spec 'SnapshotTests' do |sp|
     sp.source_files = 'Utils/Utils/SnapshotTests/*.swift'
     sp.framework = 'UIKit'
     sp.dependency 'SnapshotTesting', '1.8.2'
