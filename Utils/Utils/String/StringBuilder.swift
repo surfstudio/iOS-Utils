@@ -142,6 +142,16 @@ public class StringBuilder {
         return self
     }
 
+    /// Method for adding global attributes with NSAttributedString
+    /// - Parameter globalAttributes: attributes to apply
+    @discardableResult
+    public func add(with nsAttribute: NSAttributedString) -> StringBuilder {
+        let attributes = nsAttribute.attributes(at: 0, effectiveRange: nil)
+        let stringAttributes = StringAttribute.from(dictionary: attributes)
+        self.add(.string(nsAttribute.string), with: stringAttributes)
+        return self
+    }
+
     /// Method for adding text block to attributed
     /// - Parameters:
     ///   - block: block to add
