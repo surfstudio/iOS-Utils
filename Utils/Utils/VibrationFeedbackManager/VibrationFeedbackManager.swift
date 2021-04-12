@@ -7,6 +7,8 @@
 //
 
 import AudioToolbox
+import Foundation
+import UIKit
 
 /**
  *

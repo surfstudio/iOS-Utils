@@ -6,6 +6,9 @@
 //  Copyright © 2018 Surf. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 extension UIDevice {
     enum FeedbackType: Int {
         case base = 0

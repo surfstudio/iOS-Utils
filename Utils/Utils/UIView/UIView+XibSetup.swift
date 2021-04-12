@@ -9,15 +9,14 @@
 import UIKit
 
 public extension UIView {
-    func xibSetup() {
-        let view = loadFromNib()
+    func xibSetup(bundle: Bundle) {
+        let view = loadFromNib(bundle: bundle)
         addSubview(view)
         stretch(view: view)
     }
 
-    func loadFromNib<T: UIView>() -> T {
+    func loadFromNib<T: UIView>(bundle: Bundle) -> T {
         let selfType = type(of: self)
-        let bundle = Bundle(for: selfType)
         let nibName = String(describing: selfType)
         let nib = UINib(nibName: nibName, bundle: bundle)
 
@@ -28,8 +27,7 @@ public extension UIView {
         return view
     }
 
-    static func loadFromNib<T: UIView>() -> T {
-        let bundle = Bundle(for: self)
+    static func loadFromNib<T: UIView>(bundle: Bundle) -> T {
         let nibName = String(describing: self)
         let nib = UINib(nibName: nibName, bundle: bundle)
 
@@ -38,6 +36,22 @@ public extension UIView {
         }
 
         return view
+    }
+
+    func xibSetup() {
+        let view = loadFromNib()
+        addSubview(view)
+        stretch(view: view)
+    }
+
+    func loadFromNib<T: UIView>() -> T {
+        let bundle = Bundle(for: type(of: self))
+        return loadFromNib(bundle: bundle)
+    }
+
+    static func loadFromNib<T: UIView>() -> T {
+        let bundle = Bundle(for: self)
+        return loadFromNib(bundle: bundle)
     }
 
     func stretch(view: UIView) {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol LoadingView: UIView {
     func setNeedAnimating(_ needAnimating: Bool)
