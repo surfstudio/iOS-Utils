@@ -45,12 +45,20 @@ public extension UIView {
     }
 
     func loadFromNib<T: UIView>() -> T {
+        #if SWIFT_PACKAGE
+        let bundle = Bundle.module
+        #else
         let bundle = Bundle(for: type(of: self))
+        #endif
         return loadFromNib(bundle: bundle)
     }
 
     static func loadFromNib<T: UIView>() -> T {
+        #if SWIFT_PACKAGE
+        let bundle = Bundle.module
+        #else
         let bundle = Bundle(for: self)
+        #endif
         return loadFromNib(bundle: bundle)
     }
 
