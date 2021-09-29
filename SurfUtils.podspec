@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "11.1.0"
+  s.version = "11.1.2"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -137,7 +137,7 @@ Pod::Spec.new do |s|
   s.subspec 'SecurityService' do |sp|
     sp.source_files = 'Utils/Utils/SecurityService/**/*.swift'
     sp.framework = 'Foundation'
-    sp.dependency 'CryptoSwift', '1.3.1'
+    sp.dependency 'CryptoSwift', '1.4.0'
   end
 
   s.subspec 'BeanPageControl' do |sp|
