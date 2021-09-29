@@ -32,8 +32,6 @@ lint:
 pod:
 	-bundle exec pod install
 
-## Default configuration for beta command
-config ?= debug
 
 # COLORS
 GREEN  := $(shell tput -Txterm setaf 2)
