@@ -1,0 +1,36 @@
+name: CI
+
+# Controls when the action will run. 
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - '**'
+    types: [ opened, edited, synchronize ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: CocoaPods
+      run: |
+        cd Utils
+        gem install xcpretty -N
+        make init
+    - name: Force xcode 12
+      run: |
+        sudo xcode-select -switch /Applications/Xcode_12.app
+    - name: Build
+      run: |
+        make build
+    - name: SPM Build
+      run: |
+        make spm_build
+    - name: Tests
+      run: |
+        make test
