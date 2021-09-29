@@ -27,10 +27,13 @@ jobs:
         sudo xcode-select -switch /Applications/Xcode_12.app
     - name: Build
       run: |
+        cd Utils
         make build
     - name: SPM Build
       run: |
+        cd Utils
         make spm_build
     - name: Tests
       run: |
+        cd Utils
         make test
