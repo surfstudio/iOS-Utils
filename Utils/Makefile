@@ -12,9 +12,13 @@ init:
 build:
 	xcodebuild -scheme Utils -workspace Utils.xcworkspace/ build
 
+## Used to build target with SPM dependencies. Usually, it is not called manually, it is necessary for the CI to work.
+spm_build:
+	swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios12.1-simulator" -Xswiftc "-lswiftUIKit"
+
 ## Run tests
 test:
-	xcodebuild test -scheme Utils -workspace Utils.xcworkspace/ -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=13.3' | xcpretty -c
+	xcodebuild test -scheme Utils -workspace Utils.xcworkspace/ -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=14.5' | xcpretty -c
 
 ## Allows you to perfrom swiftlint autocorrect command.
 format:
