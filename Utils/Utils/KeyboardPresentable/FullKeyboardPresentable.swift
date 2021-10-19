@@ -10,7 +10,7 @@ import UIKit
 
 /// This protocol allows you to get full keyboard parameters on keyboard appear/disappear.
 /// But you have to use this protocol along with KeyboardObservable protocol.
-public protocol FullKeyboardPresentable: class {
+public protocol FullKeyboardPresentable: AnyObject {
 
     /// This method is called when the keyboard appears on the device screen
     func keyboardWillBeShown(keyboardInfo: Notification.KeyboardInfo)

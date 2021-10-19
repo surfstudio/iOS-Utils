@@ -14,7 +14,7 @@ fileprivate enum Constants {
 
 /// This protocol allows you to get plain keyboard parameters on keyboard appear/disappear.
 /// But you have to use this protocol along with KeyboardObservable protocol.
-public protocol CommonKeyboardPresentable: class {
+public protocol CommonKeyboardPresentable: AnyObject {
 
     /// This method is called when the keyboard appears on the device screen
     func keyboardWillBeShown(keyboardHeight: CGFloat, duration: TimeInterval)
