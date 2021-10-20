@@ -11,7 +11,7 @@ import UIKit
 /// This protocol carries out all the necessary actions for subscribing / unsubscribing from keyboard notifications.
 /// You can use only this protocol, or you can use Common/FullKeyboardPresentable or you own implementation for getting
 /// necessary parameters.
-public protocol KeyboardObservable: class {
+public protocol KeyboardObservable: AnyObject {
 
     /// Method for subscribing on keyboard notifications
     func subscribeOnKeyboardNotifications()
