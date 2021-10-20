@@ -37,3 +37,6 @@ jobs:
       run: |
         cd Utils
         make test
+    - name: Pod Lib Lint
+      run: |
+        pod lib lint
