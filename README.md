@@ -65,6 +65,7 @@ pod 'SurfUtils/$UTIL_NAME$', :git => "https://github.com/surfstudio/iOS-Utils.gi
 - [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
 - [CustomSwitch](#customswitch) – более гибкая реализация Switch ui элемента
 - [MoneyModel](#moneymodel) - структура для работы с деньгами
+- [MapRoutingService](#maproutingservice) - сервис для построения маршрутов и отображения точек в сторонних навигационных приложениях
 
 ## Утилиты
 
@@ -929,6 +930,34 @@ mailSender.send()
         print(MoneyModel(decimal: 10, digit: 9).asString()) // выведет -- "10.09"
         print(MoneyModel(decimal: 10, digit: 99).asString()) // выведет -- "10.99"
 ```
+
+### MapRoutingService
+
+Сервис позволяет получить список приложений для работы с картами, установленных на устройстве пользователя, а также отобразить точку/построить маршрут до заданной точки в одном из них.
+
+```swift
+/// получение списка возможных приложений, которые можно отобразить для выбора пользователю
+let apps = service.availableApplications
+
+/// построение маршрута
+service.buildRoute(to: point, in: app, onComplete: nil)
+```
+
+Для работы с сервисом требуется заинжектить в его конструктор небольшой объект, позволяющий понять информацию о текущей геопозиции пользователя. Его интерфейс выглядит следующим образом
+
+```swift
+public protocol MapRoutingLocationServiceInterface: AnyObject {
+    /// Равно true, когда пользователь разрешил доступ к геопозиции
+    var isLocationAccessAllowed: Bool { get }
+    /// Равно true, когда пользователь разрешил использование точной геопозиции
+    var isAllowedFullAccuracyLocation: Bool { get }
+    /// Вовращает текущую геопозицию пользователя, если она известна,
+    /// и nil во всех остальных случаях
+    func getCurrentLocation(_ completion: @escaping ((CLLocationCoordinate2D?) -> Void))
+}
+```
+
+Вы можете написать небольшую обертку поверх [GeolocationService](#geolocationservice), либо использовать вместо него сервис для работы с геопозицией из своего проетка.
 
 ## Версионирование
 
