@@ -20,7 +20,7 @@ let package = Package(
             url: "https://github.com/krzyzanowskim/CryptoSwift",
             .exact("1.4.0")
         ),
-	.package(path: "..Utils/DevicePack")
+	.package(path: "Utils/DevicePack")
     ],
     targets: [
         .target(
