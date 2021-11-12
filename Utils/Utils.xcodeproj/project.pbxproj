@@ -92,6 +92,10 @@
 		A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439074D21F5C5880034C455 /* SkeletonView.swift */; };
 		A4D5D5FD24E57A6A004ABFBC /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5D5FC24E57A6A004ABFBC /* CustomSwitch.swift */; };
 		A4D5D5FF24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5D5FE24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift */; };
+		A4D7DB44273E6EA600F8DBBD /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7DB40273E6EA600F8DBBD /* Type.swift */; };
+		A4D7DB45273E6EA600F8DBBD /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7DB41273E6EA600F8DBBD /* Version.swift */; };
+		A4D7DB46273E6EA600F8DBBD /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7DB42273E6EA600F8DBBD /* Size.swift */; };
+		A4D7DB47273E6EA600F8DBBD /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7DB43273E6EA600F8DBBD /* Device.swift */; };
 		A4F4B13724ED24A4009FA920 /* BeanPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F4B13624ED24A4009FA920 /* BeanPageControl.swift */; };
 		C11CEB3B24D44DFA00C1CD0F /* MailUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11CEB3A24D44DF900C1CD0F /* MailUtil.swift */; };
 		C11CEB4324D44E2C00C1CD0F /* MailSenderErrorDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11CEB3D24D44E2B00C1CD0F /* MailSenderErrorDisplaying.swift */; };
@@ -226,6 +230,10 @@
 		A48BDCA594019F58493D65E7 /* Pods-UtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilsTests.release.xcconfig"; path = "Target Support Files/Pods-UtilsTests/Pods-UtilsTests.release.xcconfig"; sourceTree = "<group>"; };
 		A4D5D5FC24E57A6A004ABFBC /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		A4D5D5FE24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchExternalConfigurations.swift; sourceTree = "<group>"; };
+		A4D7DB40273E6EA600F8DBBD /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		A4D7DB41273E6EA600F8DBBD /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		A4D7DB42273E6EA600F8DBBD /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		A4D7DB43273E6EA600F8DBBD /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		A4F4B13624ED24A4009FA920 /* BeanPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanPageControl.swift; sourceTree = "<group>"; };
 		C11CEB3A24D44DF900C1CD0F /* MailUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailUtil.swift; sourceTree = "<group>"; };
 		C11CEB3D24D44E2B00C1CD0F /* MailSenderErrorDisplaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailSenderErrorDisplaying.swift; sourceTree = "<group>"; };
@@ -450,6 +458,7 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A4D7DB3F273E6EA600F8DBBD /* Device */,
 				C11CEB3924D44DD300C1CD0F /* MailSender */,
 				3946575124EC1B4C0069BDB0 /* LoadingView */,
 				A4F4B13524ED2490009FA920 /* BeanPageControl */,
@@ -683,6 +692,17 @@
 				A4D5D5FE24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift */,
 			);
 			path = CustomSwitch;
+			sourceTree = "<group>";
+		};
+		A4D7DB3F273E6EA600F8DBBD /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				A4D7DB40273E6EA600F8DBBD /* Type.swift */,
+				A4D7DB41273E6EA600F8DBBD /* Version.swift */,
+				A4D7DB42273E6EA600F8DBBD /* Size.swift */,
+				A4D7DB43273E6EA600F8DBBD /* Device.swift */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 		A4F4B13524ED2490009FA920 /* BeanPageControl */ = {
@@ -1051,6 +1071,7 @@
 				C11CEB4424D44E2C00C1CD0F /* InsideAppMailViewController.swift in Sources */,
 				39DCF1C824EEC8F8007CCFBC /* HackWrapperCryptoBox.swift in Sources */,
 				3971F72624F1843900597F9D /* SecureStoreError.swift in Sources */,
+				A4D7DB47273E6EA600F8DBBD /* Device.swift in Sources */,
 				87239D7F24D41E8700D38EC7 /* MoneyModel.swift in Sources */,
 				90AC85652385929E00DF7F3B /* LocationManagerInterface.swift in Sources */,
 				C11CEB4824D44E2C00C1CD0F /* MailSenderRouterHelper.swift in Sources */,
@@ -1064,6 +1085,7 @@
 				39DCF1C724EEC8F8007CCFBC /* CryptoBoxCommonError.swift in Sources */,
 				39DCF1C924EEC8F8007CCFBC /* CryptoBox.swift in Sources */,
 				3971F71624F1842300597F9D /* BlowfishCryptoService.swift in Sources */,
+				A4D7DB46273E6EA600F8DBBD /* Size.swift in Sources */,
 				89F23A6D23576452005112E1 /* OTPFieldStyle.swift in Sources */,
 				3971F71C24F1843000597F9D /* CryptoCommon.swift in Sources */,
 				573117D623BF889000491781 /* LayoutHelper.swift in Sources */,
@@ -1107,6 +1129,7 @@
 				4F3ED9FC211C27FD0030DD45 /* String+Attributes.swift in Sources */,
 				3971F71A24F1842A00597F9D /* HashProvider.swift in Sources */,
 				902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */,
+				A4D7DB44273E6EA600F8DBBD /* Type.swift in Sources */,
 				90AC85612385928100DF7F3B /* GeolocationService.swift in Sources */,
 				90AC856B238592B800DF7F3B /* GeolocationResult.swift in Sources */,
 				573117D123BF84C400491781 /* UIDevice.swift in Sources */,
@@ -1118,6 +1141,7 @@
 				EE0C5D92241026CB006B8C28 /* TouchableControl.swift in Sources */,
 				907F0FEF21DCDB43001CCB07 /* WordDeclinationSelector.swift in Sources */,
 				3971F72224F1843900597F9D /* KeyChainSecureStore.swift in Sources */,
+				A4D7DB45273E6EA600F8DBBD /* Version.swift in Sources */,
 				A439074B21F5C52A0034C455 /* UIView+Masking.swift in Sources */,
 				C11CEB4724D44E2C00C1CD0F /* MailSenderPayloadProvider.swift in Sources */,
 				9087BC5A21EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift in Sources */,

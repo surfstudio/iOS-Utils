@@ -16,12 +16,7 @@ let package = Package(
             name: "CryptoSwift",
             url: "https://github.com/krzyzanowskim/CryptoSwift",
             .exact("1.4.0")
-        ),
-        .package(
-            name: "Device",
-            url: "https://github.com/Alelenka/Device",
-            .branch("spm-support")
-        ),
+        )
     ],
     targets: [
         .target(
