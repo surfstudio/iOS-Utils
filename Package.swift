@@ -18,9 +18,9 @@ let package = Package(
             .exact("1.4.0")
         ),
         .package(
-	    name: "DevicePack",
-	    path: "Utils/DevicePack"
-	)
+            name: "DevicePack",
+            path: "Utils/DevicePack"
+        )
     ],
     targets: [
         .target(
