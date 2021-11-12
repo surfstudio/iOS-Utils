@@ -10,18 +10,22 @@ let package = Package(
         .library(
             name: "Utils",
             targets: ["Utils"]),
+	.library(
+            name: "Utils",
+            targets: ["Utils"]),
     ],
     dependencies: [
         .package(
             name: "CryptoSwift",
             url: "https://github.com/krzyzanowskim/CryptoSwift",
             .exact("1.4.0")
-        )
+        ),
+	.package(path: "..Utils/DevicePack")
     ],
     targets: [
         .target(
             name: "Utils",
-            dependencies: ["CryptoSwift", "Device"],
+            dependencies: ["CryptoSwift", "DevicePack"],
             path: "Utils/Utils",
             exclude: [
                 "Info.plist"
