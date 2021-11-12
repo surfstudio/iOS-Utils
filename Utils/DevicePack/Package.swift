@@ -15,8 +15,6 @@ let package = Package(
             targets: ["DevicePack"])
     ],
     targets: [
-        .target(
-            name: "DevicePack",
-            dependencies: [])
+        .target(name: "DevicePack")
     ]
 )

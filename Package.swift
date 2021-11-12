@@ -9,10 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "Utils",
-            targets: ["Utils"]),
-	.library(
-            name: "Utils",
-            targets: ["Utils"]),
+            targets: ["Utils"])
     ],
     dependencies: [
         .package(
@@ -20,7 +17,10 @@ let package = Package(
             url: "https://github.com/krzyzanowskim/CryptoSwift",
             .exact("1.4.0")
         ),
-	.package(path: "Utils/DevicePack")
+        .package(
+	    name: "DevicePack",
+	    path: "Utils/DevicePack"
+	)
     ],
     targets: [
         .target(
