@@ -111,13 +111,13 @@ Pod::Spec.new do |s|
   s.subspec 'UIDevice' do |sp|
     sp.source_files = 'Utils/Utils/UIDevice/UIDevice.swift'
     sp.framework = 'UIKit'
-    sp.dependency 'DevicePack'
+    sp.dependency 'DevicePack', '3.2.1'
   end
 
   s.subspec 'LayoutHelper' do |sp|
     sp.source_files = 'Utils/Utils/LayoutHelper/LayoutHelper.swift', 'Utils/Utils/UIDevice/UIDevice.swift'
     sp.framework = 'UIKit'
-    sp.dependency 'DevicePack'
+    sp.dependency 'DevicePack', '3.2.1'
   end
 
   s.subspec 'UIStyle' do |sp|
