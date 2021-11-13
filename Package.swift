@@ -18,14 +18,14 @@ let package = Package(
             .exact("1.4.0")
         ),
         .package(
-            name: "DevicePack",
-            path: "Utils/DevicePack"
+            name: "Device",
+            path: "Utils/Device"
         )
     ],
     targets: [
         .target(
             name: "Utils",
-            dependencies: ["CryptoSwift", "DevicePack"],
+            dependencies: ["CryptoSwift", "Device"],
             path: "Utils/Utils",
             exclude: [
                 "Info.plist"
