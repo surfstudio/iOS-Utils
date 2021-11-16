@@ -5,12 +5,6 @@
       location = "group:Utils.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:DevicePack">
-   </FileRef>
-   <FileRef
-      location = "group:Device">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "12.0.1"
+  s.version = "12.0.0"
   s.summary = "Contains a set of utils in subspecs"
   s.description  = <<-DESC
   Contains:
@@ -109,15 +109,13 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'UIDevice' do |sp|
-    sp.source_files = 'Utils/Utils/UIDevice/UIDevice.swift'
+    sp.source_files = 'Utils/Utils/UIDevice/UIDevice.swift, Utils/Utils/UIDevice/Support/iOS/Device.swift, Utils/Utils/UIDevice/Support/Size.swift'
     sp.framework = 'UIKit'
-    sp.dependency 'DevicePack'
   end
 
   s.subspec 'LayoutHelper' do |sp|
-    sp.source_files = 'Utils/Utils/LayoutHelper/LayoutHelper.swift', 'Utils/Utils/UIDevice/UIDevice.swift'
+    sp.source_files = 'Utils/Utils/LayoutHelper/LayoutHelper.swift', 'Utils/Utils/UIDevice/UIDevice.swift, Utils/Utils/UIDevice/Support/iOS/Device.swift, Utils/Utils/UIDevice/Support/Size.swift'
     sp.framework = 'UIKit'
-    sp.dependency 'DevicePack'
   end
 
   s.subspec 'UIStyle' do |sp|

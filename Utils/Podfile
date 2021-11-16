@@ -12,7 +12,6 @@ def common_pods
 	utils
 
   pod 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :tag => '1.4.0'
-  pod 'DevicePack', :path => '../Utils/DevicePack'
 end 
 
 target 'Utils' do

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -90,8 +90,11 @@
 		A16A8CBC4A8CC4DBDF4E6427 /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0A89DF1B751C2D2CAC7179 /* Pods_Utils.framework */; };
 		A439074B21F5C52A0034C455 /* UIView+Masking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439074A21F5C52A0034C455 /* UIView+Masking.swift */; };
 		A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439074D21F5C5880034C455 /* SkeletonView.swift */; };
-		A4BBCB002744250B0010E266 /* DevicePack in Frameworks */ = {isa = PBXBuildFile; productRef = A4BBCAFF2744250B0010E266 /* DevicePack */; };
-		A4BBCB02274425110010E266 /* DevicePack in Frameworks */ = {isa = PBXBuildFile; productRef = A4BBCB01274425110010E266 /* DevicePack */; };
+		A4BBCB0B27442CFE0010E266 /* DeviceMacOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBCB0527442CFE0010E266 /* DeviceMacOS.swift */; };
+		A4BBCB0C27442CFE0010E266 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBCB0627442CFE0010E266 /* Type.swift */; };
+		A4BBCB0D27442CFE0010E266 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBCB0727442CFE0010E266 /* Version.swift */; };
+		A4BBCB0E27442CFE0010E266 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBCB0927442CFE0010E266 /* Device.swift */; };
+		A4BBCB0F27442CFE0010E266 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBCB0A27442CFE0010E266 /* Size.swift */; };
 		A4D5D5FD24E57A6A004ABFBC /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5D5FC24E57A6A004ABFBC /* CustomSwitch.swift */; };
 		A4D5D5FF24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5D5FE24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift */; };
 		A4F4B13724ED24A4009FA920 /* BeanPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F4B13624ED24A4009FA920 /* BeanPageControl.swift */; };
@@ -226,6 +229,11 @@
 		A439074A21F5C52A0034C455 /* UIView+Masking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Masking.swift"; sourceTree = "<group>"; };
 		A439074D21F5C5880034C455 /* SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
 		A48BDCA594019F58493D65E7 /* Pods-UtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilsTests.release.xcconfig"; path = "Target Support Files/Pods-UtilsTests/Pods-UtilsTests.release.xcconfig"; sourceTree = "<group>"; };
+		A4BBCB0527442CFE0010E266 /* DeviceMacOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMacOS.swift; sourceTree = "<group>"; };
+		A4BBCB0627442CFE0010E266 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		A4BBCB0727442CFE0010E266 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		A4BBCB0927442CFE0010E266 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		A4BBCB0A27442CFE0010E266 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		A4D5D5FC24E57A6A004ABFBC /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		A4D5D5FE24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchExternalConfigurations.swift; sourceTree = "<group>"; };
 		A4F4B13624ED24A4009FA920 /* BeanPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanPageControl.swift; sourceTree = "<group>"; };
@@ -253,7 +261,6 @@
 			files = (
 				395D2C522552A4F4003EDD2E /* Utils.framework in Frameworks */,
 				8482FBCBA27F82821D280001 /* Pods_Utils_UtilsTestsHost.framework in Frameworks */,
-				A4BBCB002744250B0010E266 /* DevicePack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +269,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A16A8CBC4A8CC4DBDF4E6427 /* Pods_Utils.framework in Frameworks */,
-				A4BBCB02274425110010E266 /* DevicePack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				573117D023BF84C400491781 /* UIDevice.swift */,
+				A4BBCB0327442CFE0010E266 /* Support */,
 			);
 			path = UIDevice;
 			sourceTree = "<group>";
@@ -680,6 +687,34 @@
 			path = SkeletonView;
 			sourceTree = "<group>";
 		};
+		A4BBCB0327442CFE0010E266 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A4BBCB0827442CFE0010E266 /* iOS */,
+				A4BBCB0427442CFE0010E266 /* macOS */,
+				A4BBCB0627442CFE0010E266 /* Type.swift */,
+				A4BBCB0727442CFE0010E266 /* Version.swift */,
+				A4BBCB0A27442CFE0010E266 /* Size.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		A4BBCB0427442CFE0010E266 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				A4BBCB0527442CFE0010E266 /* DeviceMacOS.swift */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		A4BBCB0827442CFE0010E266 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A4BBCB0927442CFE0010E266 /* Device.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		A4D5D5FB24E57A50004ABFBC /* CustomSwitch */ = {
 			isa = PBXGroup;
 			children = (
@@ -802,7 +837,6 @@
 			);
 			name = UtilsTestsHost;
 			packageProductDependencies = (
-				A4BBCAFF2744250B0010E266 /* DevicePack */,
 			);
 			productName = UtilsTestsHost;
 			productReference = 39262D2425516CA700591787 /* UtilsTestsHost.app */;
@@ -825,7 +859,6 @@
 			);
 			name = Utils;
 			packageProductDependencies = (
-				A4BBCB01274425110010E266 /* DevicePack */,
 			);
 			productName = Utils;
 			productReference = 4F3ED9DF211C27CF0030DD45 /* Utils.framework */;
@@ -1058,9 +1091,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BBCB0F27442CFE0010E266 /* Size.swift in Sources */,
 				C11CEB4424D44E2C00C1CD0F /* InsideAppMailViewController.swift in Sources */,
 				39DCF1C824EEC8F8007CCFBC /* HackWrapperCryptoBox.swift in Sources */,
 				3971F72624F1843900597F9D /* SecureStoreError.swift in Sources */,
+				A4BBCB0E27442CFE0010E266 /* Device.swift in Sources */,
 				87239D7F24D41E8700D38EC7 /* MoneyModel.swift in Sources */,
 				90AC85652385929E00DF7F3B /* LocationManagerInterface.swift in Sources */,
 				C11CEB4824D44E2C00C1CD0F /* MailSenderRouterHelper.swift in Sources */,
@@ -1091,6 +1126,7 @@
 				A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */,
 				579EAFCC27022F1E004E092B /* VibrationFeedbackManager.swift in Sources */,
 				3971F72424F1843900597F9D /* GenericPasswordQueryable.swift in Sources */,
+				A4BBCB0C27442CFE0010E266 /* Type.swift in Sources */,
 				3971F71924F1842A00597F9D /* SHA3.swift in Sources */,
 				80437D26214045EF0095A8D0 /* BrightSide.swift in Sources */,
 				A4F4B13724ED24A4009FA920 /* BeanPageControl.swift in Sources */,
@@ -1101,7 +1137,9 @@
 				9087BC5221EF3BE700FCE1E1 /* CommonKeyboardPresentable.swift in Sources */,
 				3971F71524F1842300597F9D /* SymmetricCryptoService.swift in Sources */,
 				9087BC5021EF3BD400FCE1E1 /* KeyboardObservable.swift in Sources */,
+				A4BBCB0B27442CFE0010E266 /* DeviceMacOS.swift in Sources */,
 				3946574E24EC1A580069BDB0 /* LoadingViewBlock.swift in Sources */,
+				A4BBCB0D27442CFE0010E266 /* Version.swift in Sources */,
 				3952871124ED6ECA00410DC9 /* LoadingView.swift in Sources */,
 				397CDAD324EF9F7F00FB0EAA /* PinHackCryptoBox.swift in Sources */,
 				E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */,
@@ -1526,17 +1564,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A4BBCAFF2744250B0010E266 /* DevicePack */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DevicePack;
-		};
-		A4BBCB01274425110010E266 /* DevicePack */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DevicePack;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4F3ED9D6211C27CF0030DD45 /* Project object */;
 }
