@@ -5,10 +5,8 @@ Pod::Spec.new do |s|
 
   s.description  = "Swift library for detecting the running device's model and screen size. With the newer  devices, developers have more work to do. This library simplifies their job by allowing them to get information about the running device and easily target the ones they want."
 
-  s.homepage     = "https://github.com/Ekhoo/Device"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.author       = { "Lucas Ortis" => "me@lucas-ortis.com" }
-  s.source       = { :git => "/Device", :tag => s.version.to_s }
+  s.source       = { :path => "/Device", :tag => s.version.to_s }
 
   s.ios.deployment_target   = '8.0'
   s.osx.deployment_target   = '10.10'
