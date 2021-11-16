@@ -35,6 +35,18 @@ class ViewController: UIViewController {
             case .iPhoneXS:      print("It's an iPhone Xs")
             case .iPhoneXS_Max:  print("It's an iPhone Xs Max")
             case .iPhoneXR:      print("It's an iPhone Xr")
+            case .iPhone11:      print("It's an iPhone 11")
+            case .iPhone11Pro:   print("It's an iPhone 11 Pro")
+            case .iPhone11Pro_Max: print("It's an iPhone 11 Pro Max")
+            case .iPhoneSE2:     print("It's an iPhone SE 2")
+            case .iPhone12Mini:  print("It's an iPhone 12 Mini")
+            case .iPhone12:      print("It's an iPhone 12")
+            case .iPhone12Pro:   print("It's an iPhone 12 Pro")
+            case .iPhone12Pro_Max: print("It's an iPhone 12 Pro Max")
+            case .iPhone13Mini:  print("It's an iPhone 13 Mini")
+            case .iPhone13:      print("It's an iPhone 13")
+            case .iPhone13Pro:   print("It's an iPhone 13 Pro")
+            case .iPhone13Pro_Max: print("It's an iPhone 13 Pro Max")
 
             /*** iPad ***/
             case .iPad1:           print("It's an iPad 1")
@@ -49,9 +61,18 @@ class ViewController: UIViewController {
             case .iPadMini2:       print("It's an iPad Mini 2")
             case .iPadMini3:       print("It's an iPad Mini 3")
             case .iPadMini4:       print("It's an iPad Mini 4")
+            case .iPadMini5:       print("It's an iPad Mini 5")
+            case .iPadMini6:       print("It's an iPad Mini 6")
             case .iPadPro9_7Inch:  print("It's an iPad Pro 9.7 Inch")
             case .iPadPro10_5Inch: print("It's an iPad Pro 10.5 Inch")
             case .iPadPro12_9Inch: print("It's an iPad Pro 12.9 Inch")
+            case .iPadPro12_9Inch2: print("It's an iPad Pro 12.9 Inch2")
+            case .iPadPro11_0Inch:  print("It's an iPad Pro 11 Inch")
+            case .iPadPro12_9Inch3: print("It's an iPad Pro 12.9 Inch3")
+            case .iPadPro11_0Inch2: print("It's an iPad Pro 11 Inch2")
+            case .iPadPro11_0Inch3: print("It's an iPad Pro 12.9 Inch3")
+            case .iPadPro12_9Inch4: print("It's an iPad Pro 12.9 Inch4")
+            case .iPadPro12_9Inch5: print("It's an iPad Pro 12.9 Inch5")
 
             /*** iPod ***/
             case .iPodTouch1Gen: print("It's a iPod touch generation 1")
@@ -60,6 +81,7 @@ class ViewController: UIViewController {
             case .iPodTouch4Gen: print("It's a iPod touch generation 4")
             case .iPodTouch5Gen: print("It's a iPod touch generation 5")
             case .iPodTouch6Gen: print("It's a iPod touch generation 6")
+            case .iPodTouch7Gen: print("It's a iPod touch generation 7")
 
             /*** simulator ***/
             case .simulator:    print("It's a Simulator")
