@@ -16,16 +16,12 @@ let package = Package(
             name: "CryptoSwift",
             url: "https://github.com/krzyzanowskim/CryptoSwift",
             .exact("1.4.0")
-        ),
-        .package(
-            name: "Device",
-            path: "Utils/Device"
         )
     ],
     targets: [
         .target(
             name: "Utils",
-            dependencies: ["CryptoSwift", "Device"],
+            dependencies: ["CryptoSwift"],
             path: "Utils/Utils",
             exclude: [
                 "Info.plist"
