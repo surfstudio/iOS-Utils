@@ -12,7 +12,7 @@ public extension UIDevice {
 
     /// Returns 'true' if device have 4inch diagonal screen or smaller (5, 5s, 5c, SE)
     static var isSmallPhone: Bool {
-        let smallSizes: [Device.Size] = [
+        let smallSizes: [Size] = [
             .screen3_5Inch,
             .screen4Inch
         ]
@@ -21,7 +21,7 @@ public extension UIDevice {
 
     /// Returns `true` if device have screen size of X version
     static var isXPhone: Bool {
-        let xSizes: [Device.Size] = [
+        let xSizes: [Size] = [
             .screen5_8Inch,
             .screen6_1Inch,
             .screen6_5Inch
@@ -31,7 +31,7 @@ public extension UIDevice {
 
     /// Returns 'true' if device have 4.7inch and 5.5inch diagonal screen (6/7/8 normal  or '+')
     static var isNormalPhone: Bool {
-        let normalSizes: [Device.Size] = [
+        let normalSizes: [Size] = [
             .screen4_7Inch,
             .screen5_5Inch
         ]
@@ -40,7 +40,7 @@ public extension UIDevice {
 
     /// Returns 'true' if current device is iPad
     static var isPad: Bool {
-        let padSizes: [Device.Size] = [
+        let padSizes: [Size] = [
             .screen7_9Inch,
             .screen9_7Inch,
             .screen10_5Inch,

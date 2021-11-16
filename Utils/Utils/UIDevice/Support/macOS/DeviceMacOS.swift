@@ -9,7 +9,7 @@
 #if os(OSX)
 import Cocoa
 
-extension Device {
+public class Device {
 
     static private func getVersionCode() -> String {
         var size: Int = 0
