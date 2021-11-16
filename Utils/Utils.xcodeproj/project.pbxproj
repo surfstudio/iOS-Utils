@@ -90,8 +90,8 @@
 		A16A8CBC4A8CC4DBDF4E6427 /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0A89DF1B751C2D2CAC7179 /* Pods_Utils.framework */; };
 		A439074B21F5C52A0034C455 /* UIView+Masking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439074A21F5C52A0034C455 /* UIView+Masking.swift */; };
 		A439074E21F5C5880034C455 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439074D21F5C5880034C455 /* SkeletonView.swift */; };
-		A4869AC7273FB2F800CD5986 /* Device in Frameworks */ = {isa = PBXBuildFile; productRef = A4869AC6273FB2F800CD5986 /* Device */; };
-		A4869AC9273FB30600CD5986 /* Device in Frameworks */ = {isa = PBXBuildFile; productRef = A4869AC8273FB30600CD5986 /* Device */; };
+		A4BBCB002744250B0010E266 /* DevicePack in Frameworks */ = {isa = PBXBuildFile; productRef = A4BBCAFF2744250B0010E266 /* DevicePack */; };
+		A4BBCB02274425110010E266 /* DevicePack in Frameworks */ = {isa = PBXBuildFile; productRef = A4BBCB01274425110010E266 /* DevicePack */; };
 		A4D5D5FD24E57A6A004ABFBC /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5D5FC24E57A6A004ABFBC /* CustomSwitch.swift */; };
 		A4D5D5FF24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5D5FE24E57A81004ABFBC /* CustomSwitchExternalConfigurations.swift */; };
 		A4F4B13724ED24A4009FA920 /* BeanPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F4B13624ED24A4009FA920 /* BeanPageControl.swift */; };
@@ -253,7 +253,7 @@
 			files = (
 				395D2C522552A4F4003EDD2E /* Utils.framework in Frameworks */,
 				8482FBCBA27F82821D280001 /* Pods_Utils_UtilsTestsHost.framework in Frameworks */,
-				A4869AC9273FB30600CD5986 /* Device in Frameworks */,
+				A4BBCB002744250B0010E266 /* DevicePack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +261,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4869AC7273FB2F800CD5986 /* Device in Frameworks */,
 				A16A8CBC4A8CC4DBDF4E6427 /* Pods_Utils.framework in Frameworks */,
+				A4BBCB02274425110010E266 /* DevicePack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,7 +802,7 @@
 			);
 			name = UtilsTestsHost;
 			packageProductDependencies = (
-				A4869AC8273FB30600CD5986 /* Device */,
+				A4BBCAFF2744250B0010E266 /* DevicePack */,
 			);
 			productName = UtilsTestsHost;
 			productReference = 39262D2425516CA700591787 /* UtilsTestsHost.app */;
@@ -825,7 +825,7 @@
 			);
 			name = Utils;
 			packageProductDependencies = (
-				A4869AC6273FB2F800CD5986 /* Device */,
+				A4BBCB01274425110010E266 /* DevicePack */,
 			);
 			productName = Utils;
 			productReference = 4F3ED9DF211C27CF0030DD45 /* Utils.framework */;
@@ -1528,13 +1528,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A4869AC6273FB2F800CD5986 /* Device */ = {
+		A4BBCAFF2744250B0010E266 /* DevicePack */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Device;
+			productName = DevicePack;
 		};
-		A4869AC8273FB30600CD5986 /* Device */ = {
+		A4BBCB01274425110010E266 /* DevicePack */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Device;
+			productName = DevicePack;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
