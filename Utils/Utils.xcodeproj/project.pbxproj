@@ -690,11 +690,8 @@
 		A4BBCB0327442CFE0010E266 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				A4BBCB0827442CFE0010E266 /* iOS */,
-				A4BBCB0427442CFE0010E266 /* macOS */,
-				A4BBCB0627442CFE0010E266 /* Type.swift */,
-				A4BBCB0727442CFE0010E266 /* Version.swift */,
-				A4BBCB0A27442CFE0010E266 /* Size.swift */,
+				A4BBCB1027443B020010E266 /* Extensions */,
+				A4BBCB0927442CFE0010E266 /* Device.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -707,12 +704,15 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
-		A4BBCB0827442CFE0010E266 /* iOS */ = {
+		A4BBCB1027443B020010E266 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A4BBCB0927442CFE0010E266 /* Device.swift */,
+				A4BBCB0427442CFE0010E266 /* macOS */,
+				A4BBCB0627442CFE0010E266 /* Type.swift */,
+				A4BBCB0727442CFE0010E266 /* Version.swift */,
+				A4BBCB0A27442CFE0010E266 /* Size.swift */,
 			);
-			path = iOS;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A4D5D5FB24E57A50004ABFBC /* CustomSwitch */ = {

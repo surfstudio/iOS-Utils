@@ -9,7 +9,8 @@
 #if os(OSX)
 import Cocoa
 
-public class Device {
+extension Device {
+
     static private func getVersionCode() -> String {
         var size: Int = 0
         sysctlbyname("hw.model", nil, &size, nil, 0)

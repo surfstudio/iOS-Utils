@@ -115,7 +115,7 @@ open class Device {
     }
     // swiftlint:enable cyclomatic_complexity
 
-    static fileprivate func getType(code: String) -> Type {
+    static fileprivate func getType(code: String) -> DeviceType {
         let versionCode = getVersionCode()
 
         if versionCode.contains("iPhone") {
@@ -193,7 +193,7 @@ open class Device {
     }
     // swiftlint:enable cyclomatic_complexity
 
-    static public func type() -> Type {
+    static public func type() -> DeviceType {
         return getType(code: getVersionCode())
     }
 
