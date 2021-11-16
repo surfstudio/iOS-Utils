@@ -45,6 +45,7 @@ public enum Size: Int, Comparable {
     case screen11Inch
     case screen12Inch
     case screen13Inch
+    case screen14Inch
     case screen15Inch
     case screen16Inch
     case screen17Inch

@@ -1,42 +1,8 @@
-![Device](https://github.com/Ekhoo/Device/blob/master/Source/Asset/device.png)
-
-[![Version](https://img.shields.io/cocoapods/v/Device.svg?style=flat)](http://cocoapods.org/pods/Device)
-[![License](https://img.shields.io/cocoapods/l/Device.svg?style=flat)](http://cocoapods.org/pods/Device)
-[![Platform](https://img.shields.io/cocoapods/p/Device.svg?style=flat)](http://cocoapods.org/pods/Device)
-![](https://img.shields.io/badge/Supported-iOS8%20%7C%20OSX%2010.10-4BC51D.svg?style=flat-square)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)
-[![Twitter](https://img.shields.io/badge/Twitter-@LucasEkhoo-blue.svg?style=flat)](http://twitter.com/LucasEkhoo)
-
 Device detect the current  device model and screen size.
 
-# Installation
-## CocoaPods
-Device is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "Device", '~> 3.2.1'
-```
-
-## Carthage
-
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate Device into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-```ogdl
-github "Ekhoo/Device" ~> 3.2.1
-```
-
-Run `carthage update` to build the framework and drag the built `Device.framework` into your Xcode project.
+# Description
+The utility has long been forgotten and is not updated, so we pulled it into the project as a local utility.
+Old network version - https://github.com/Ekhoo/Device
 
 # Usage
 ## iOS
@@ -222,13 +188,3 @@ func myFunc() {
         
 }
 ```
-
-# Author
-Lucas Ortis:
-- me@lucas-ortis.com
-- [@LucasEkhoo](https://twitter.com/LucasEkhoo)
-- [Linkedin](https://fr.linkedin.com/in/lucasortis)
-
-# License
-
-Device is available under the MIT license. See the LICENSE file for more info.

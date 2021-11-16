@@ -58,6 +58,8 @@ public class Device {
             return Size.screen12Inch
         case 13:
             return Size.screen13Inch
+        case 14:
+            return Size.screen14Inch
         case 15:
             return Size.screen15Inch
         case 16:
