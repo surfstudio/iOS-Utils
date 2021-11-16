@@ -5,6 +5,9 @@
       location = "group:Utils.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:DevicePack">
+   </FileRef>
+   <FileRef
       location = "group:Device">
    </FileRef>
    <FileRef

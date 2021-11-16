@@ -6,7 +6,7 @@
 //  Copyright © 2020 Surf. All rights reserved.
 //
 
-import Device
+import DevicePack
 import UIKit
 
 public extension UIDevice {
