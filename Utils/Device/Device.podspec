@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/Ekhoo/Device"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Lucas Ortis" => "me@lucas-ortis.com" }
-  s.source       = { :git => "https://github.com/Ekhoo/Device.git", :tag => s.version.to_s }
+  s.source       = { :git => "/Device", :tag => s.version.to_s }
 
   s.ios.deployment_target   = '8.0'
   s.osx.deployment_target   = '10.10'
