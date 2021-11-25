@@ -28,19 +28,21 @@ public enum Size: Int, Comparable {
     case screen6_5Inch
     /// iPhone 12 Pro Max, 13 Pro Max
     case screen6_7Inch
-    /// iPad Mini
+    /// iPad Mini, iPad Mini 2, iPad Mini 3, iPad Mini 4
     case screen7_9Inch
-    /// iPad, iPad Pro (9.7-inch)
+    /// iPad mini 6
+    case screen8_3Inch
+    /// iPad, iPad 2, iPad 3, iPad 4, iPad 5, iPad 6, iPad Air, iPad Air 2, iPad Pro 9.7″
     case screen9_7Inch
-    /// iPad (10.2-inch)
+    /// iPad 7, iPad (10.2-inch)
     case screen10_2Inch
-    /// iPad Pro (10.5-inch)
+    /// iPad Air 3, iPad Pro (10.5-inch)
     case screen10_5Inch
-    /// iPad Air 4th gen.
+    /// iPad Air 4, iPad Pro 12.9″
     case screen10_9Inch
-    /// iPad Pro (11-inch)
+    /// iPad Pro 11″
     case screen11Inch
-    /// iPad Pro (12.9-inch)
+    /// iPad Pro 12.9″
     case screen12_9Inch
 #elseif os(OSX)
     case screen11Inch
