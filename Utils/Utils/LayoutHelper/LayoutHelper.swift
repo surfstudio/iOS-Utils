@@ -37,4 +37,13 @@ public class LayoutHelper: NSLayoutConstraint {
         }
     }
 
+    @IBInspectable public var isIPad: CGFloat = 0.0 {
+        didSet {
+            guard UIDevice.isPad else {
+                return
+            }
+            constant = isIPad
+        }
+    }
+
 }
