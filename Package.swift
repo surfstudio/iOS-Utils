@@ -9,24 +9,19 @@ let package = Package(
     products: [
         .library(
             name: "Utils",
-            targets: ["Utils"]),
+            targets: ["Utils"])
     ],
     dependencies: [
         .package(
             name: "CryptoSwift",
             url: "https://github.com/krzyzanowskim/CryptoSwift",
             .exact("1.4.0")
-        ),
-        .package(
-            name: "Device",
-            url: "https://github.com/Alelenka/Device",
-            .branch("spm-support")
-        ),
+        )
     ],
     targets: [
         .target(
             name: "Utils",
-            dependencies: ["CryptoSwift", "Device"],
+            dependencies: ["CryptoSwift"],
             path: "Utils/Utils",
             exclude: [
                 "Info.plist"

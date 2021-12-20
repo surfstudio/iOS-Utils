@@ -6,7 +6,6 @@
 //  Copyright © 2020 Surf. All rights reserved.
 //
 
-import Device
 import UIKit
 
 public extension UIDevice {
@@ -43,8 +42,12 @@ public extension UIDevice {
     static var isPad: Bool {
         let padSizes: [Size] = [
             .screen7_9Inch,
+            .screen8_3Inch,
             .screen9_7Inch,
+            .screen10_2Inch,
             .screen10_5Inch,
+            .screen10_9Inch,
+            .screen11Inch,
             .screen12_9Inch
         ]
         return padSizes.contains(Device.size())
