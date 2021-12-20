@@ -19,24 +19,23 @@ public class Device {
         return String(validatingUTF8: model) ?? ""
     }
 
-    static private func getType(code: String) -> Type {
-        let versionCode = Device.getVersionCode()
-        if versionCode.hasPrefix("MacPro") {
-            return Type.macPro
-        } else if versionCode.hasPrefix("iMac") {
-            return Type.iMac
-        } else if versionCode.hasPrefix("MacBookPro") {
-            return Type.macBookPro
-        } else if versionCode.hasPrefix("MacBookAir") {
-            return Type.macBookAir
-        } else if versionCode.hasPrefix("MacBook") {
-            return Type.macBook
-        } else if versionCode.hasPrefix("MacMini") {
-            return Type.macMini
-        } else if versionCode.hasPrefix("Xserve") {
-            return Type.xserve
+    static private func getType(code: String) -> DeviceType {
+        if code.hasPrefix("MacPro") {
+            return .macPro
+        } else if code.hasPrefix("iMac") {
+            return .iMac
+        } else if code.hasPrefix("MacBookPro") {
+            return .macBookPro
+        } else if code.hasPrefix("MacBookAir") {
+            return .macBookAir
+        } else if code.hasPrefix("MacBook") {
+            return .macBook
+        } else if code.hasPrefix("MacMini") {
+            return .macMini
+        } else if code.hasPrefix("Xserve") {
+            return .xserve
         }
-        return Type.unknown
+        return .unknown
     }
 
     private static func sizeInInches() -> CGFloat {
@@ -85,7 +84,7 @@ public class Device {
         return String(describing: Device.type()) + " " + String(describing: Device.sizeInInches()) + "-inch"
     }
 
-    static public func type() -> Type {
+    static public func type() -> DeviceType {
         let versionName = Device.getVersionCode()
         return Device.getType(code: versionName)
     }
