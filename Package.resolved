@@ -9,15 +9,6 @@
           "revision": "4e31051c63cc0ddf10a25cf5318856c510cf77f4",
           "version": "1.4.0"
         }
-      },
-      {
-        "package": "Device",
-        "repositoryURL": "https://github.com/Alelenka/Device",
-        "state": {
-          "branch": "spm-support",
-          "revision": "df290adc142a10ef73a9b62e9f03e54d1f2f62ee",
-          "version": null
-        }
       }
     ]
   },

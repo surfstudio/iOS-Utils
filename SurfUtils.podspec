@@ -109,15 +109,13 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'UIDevice' do |sp|
-    sp.source_files = 'Utils/Utils/UIDevice/UIDevice.swift'
+    sp.source_files = 'Utils/Utils/UIDevice/UIDevice.swift', 'Utils/Utils/UIDevice/Support/iOS/Device.swift', 'Utils/Utils/UIDevice/Support/macOS/DeviceMacOS.swift', 'Utils/Utils/UIDevice/Support/Type.swift', 'Utils/Utils/UIDevice/Support/Version.swift', 'Utils/Utils/UIDevice/Support/Size.swift'
     sp.framework = 'UIKit'
-    sp.dependency 'Device', '3.1.2'
   end
 
   s.subspec 'LayoutHelper' do |sp|
-    sp.source_files = 'Utils/Utils/LayoutHelper/LayoutHelper.swift', 'Utils/Utils/UIDevice/UIDevice.swift'
+    sp.source_files = 'Utils/Utils/LayoutHelper/LayoutHelper.swift', 'Utils/Utils/UIDevice/UIDevice.swift', 'Utils/Utils/UIDevice/Support/iOS/Device.swift', 'Utils/Utils/UIDevice/Support/macOS/DeviceMacOS.swift', 'Utils/Utils/UIDevice/Support/Type.swift', 'Utils/Utils/UIDevice/Support/Version.swift', 'Utils/Utils/UIDevice/Support/Size.swift'
     sp.framework = 'UIKit'
-    sp.dependency 'Device', '3.1.2'
   end
 
   s.subspec 'UIStyle' do |sp|
