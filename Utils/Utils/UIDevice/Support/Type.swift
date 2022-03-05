@@ -6,7 +6,6 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
-
 public enum DeviceType: String {
 #if os(iOS)
     case iPhone
