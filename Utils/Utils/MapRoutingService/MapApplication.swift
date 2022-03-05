@@ -70,6 +70,9 @@ private extension MapApplication {
         return (saddr: saddr, daddr: daddr)
     }
 
+    /// Построение URL-схемы для открытия приложения apple-карт
+    ///
+    /// https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html
     static func appleMapsRoute(startCoordinate: CLLocationCoordinate2D?,
                                endCoordinate: CLLocationCoordinate2D) -> URL? {
 
@@ -88,6 +91,9 @@ private extension MapApplication {
         return urlComponents.url
     }
 
+    /// Построение URL-схемы для открытия приложения google-карт
+    ///
+    /// https://developers.google.com/maps/documentation/urls/ios-urlscheme
     static func googleAppRoute(startCoordinate: CLLocationCoordinate2D?,
                                endCoordinate: CLLocationCoordinate2D) -> URL? {
         var urlComponents = URLComponents()
@@ -104,6 +110,9 @@ private extension MapApplication {
         return urlComponents.url
     }
 
+    /// Построение URL-схемы для открытия приложения google-карт
+    ///
+    /// https://yandex.ru/dev/yandex-apps-launch/maps/doc/concepts/yandexmaps-ios-app.html
     static func yandexRoute(startCoordinate: CLLocationCoordinate2D?,
                             endCoordinate: CLLocationCoordinate2D) -> URL? {
         var urlComponents = URLComponents()
@@ -121,6 +130,9 @@ private extension MapApplication {
         return urlComponents.url
     }
 
+    /// Построение URL-схемы для открытия google-карт в Safari
+    ///
+    /// https://help.2gis.ru/question/razrabotchikam-zapusk-mobilnogo-prilozheniya-2gis
     static func twoGISRoute(startCoordinate: CLLocationCoordinate2D?,
                             endCoordinate: CLLocationCoordinate2D) -> URL? {
         var scheme = "dgis://2gis.ru/routeSearch/rsType/car"
@@ -137,6 +149,9 @@ private extension MapApplication {
         return URL(string: scheme)
     }
 
+    /// Построение URL-схемы для открытия google-карт в Safari
+    ///
+    /// https://developers.google.com/maps/documentation/urls/ios-urlscheme
     static func googleUrlRoute(startCoordinate: CLLocationCoordinate2D?,
                                endCoordinate: CLLocationCoordinate2D) -> URL? {
         var urlComponents = URLComponents()

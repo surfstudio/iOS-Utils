@@ -957,7 +957,7 @@ public protocol MapRoutingLocationServiceInterface: AnyObject {
 }
 ```
 
-Вы можете написать небольшую обертку поверх [GeolocationService](#geolocationservice), либо использовать вместо него сервис для работы с геопозицией из своего проетка.
+Вы можете написать небольшую обертку поверх [GeolocationService](#geolocationservice), либо использовать вместо него сервис для работы с геопозицией из своего проекта.
 
 ## Версионирование
 
