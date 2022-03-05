@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import class UIKit.UIApplication
 
 /// Сервис для построения маршрута в различных приложениях
 public final class MapRoutingService: MapRoutingServiceInterface {
