@@ -68,6 +68,10 @@
 		89F23A6D23576452005112E1 /* OTPFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F23A6C23576452005112E1 /* OTPFieldStyle.swift */; };
 		902C67EC21E4D20B007B13CC /* ItemsScrollManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */; };
 		902CA34121E7331E00396923 /* UIView+BlurBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */; };
+		904DE287272DCAD1004FDC64 /* MapApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904DE286272DCAD1004FDC64 /* MapApplication.swift */; };
+		904DE289272DCF14004FDC64 /* MapRoutingServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904DE288272DCF14004FDC64 /* MapRoutingServiceInterface.swift */; };
+		904DE28B272DCF70004FDC64 /* MapRoutingLocationServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904DE28A272DCF70004FDC64 /* MapRoutingLocationServiceInterface.swift */; };
+		904DE28D272DD094004FDC64 /* MapRoutingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904DE28C272DD094004FDC64 /* MapRoutingService.swift */; };
 		90718AF121EA370000C81002 /* KeyboardNotificationsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90718AF021EA370000C81002 /* KeyboardNotificationsObserver.swift */; };
 		907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE221DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift */; };
 		907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */; };
@@ -206,6 +210,10 @@
 		89F23A6C23576452005112E1 /* OTPFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldStyle.swift; sourceTree = "<group>"; };
 		902C67EB21E4D20B007B13CC /* ItemsScrollManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManager.swift; sourceTree = "<group>"; };
 		902CA34021E7331E00396923 /* UIView+BlurBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BlurBuilder.swift"; sourceTree = "<group>"; };
+		904DE286272DCAD1004FDC64 /* MapApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApplication.swift; sourceTree = "<group>"; };
+		904DE288272DCF14004FDC64 /* MapRoutingServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRoutingServiceInterface.swift; sourceTree = "<group>"; };
+		904DE28A272DCF70004FDC64 /* MapRoutingLocationServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRoutingLocationServiceInterface.swift; sourceTree = "<group>"; };
+		904DE28C272DD094004FDC64 /* MapRoutingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRoutingService.swift; sourceTree = "<group>"; };
 		90718AF021EA370000C81002 /* KeyboardNotificationsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsObserver.swift; sourceTree = "<group>"; };
 		907F0FE221DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+AdvancedNavigationStackManagement.swift"; sourceTree = "<group>"; };
 		907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
@@ -460,22 +468,27 @@
 		4F3ED9E1211C27CF0030DD45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C11CEB3924D44DD300C1CD0F /* MailSender */,
-				3946575124EC1B4C0069BDB0 /* LoadingView */,
 				A4F4B13524ED2490009FA920 /* BeanPageControl */,
-				39DCF1A324EEC5D0007CCFBC /* SecurityService */,
-				EE0C5D9024102671006B8C28 /* UIControl */,
-				87239D7D24D41E6500D38EC7 /* MoneyModel */,
+				80437D24214045B30095A8D0 /* BrightSide */,
 				5709EC5B236F4C2200EEBD93 /* CommonButton */,
 				A4D5D5FB24E57A50004ABFBC /* CustomSwitch */,
 				18F2361221D214CC00169AC9 /* Dictionary */,
+				90AC855D2385924600DF7F3B /* GeolocationService */,
 				902C67EA21E4D1EF007B13CC /* ItemsScrollManager */,
-				80437D24214045B30095A8D0 /* BrightSide */,
 				90718AED21EA36CA00C81002 /* KeyboardPresentable */,
+				573117D423BF888500491781 /* LayoutHelper */,
+				3946575124EC1B4C0069BDB0 /* LoadingView */,
+				89293B2421F59F6A0016C6BE /* LocalStorage */,
+				C11CEB3924D44DD300C1CD0F /* MailSender */,
+				904DE285272DCABA004FDC64 /* MapRoutingService */,
+				87239D7D24D41E6500D38EC7 /* MoneyModel */,
+				8953A46B23560726007AD110 /* OTPField */,
 				907F0FEA21DCD7C6001CCB07 /* RouteMeasurer */,
+				39DCF1A324EEC5D0007CCFBC /* SecurityService */,
 				907F0FE421DCD375001CCB07 /* SettingsRouter */,
 				A439074C21F5C5510034C455 /* SkeletonView */,
 				4F3ED9FA211C27E80030DD45 /* String */,
+				EE0C5D9024102671006B8C28 /* UIControl */,
 				573117CF23BF84B300491781 /* UIDevice */,
 				5709EC68236F55AA00EEBD93 /* UIImage */,
 				907F0FE121DCD1DB001CCB07 /* UINavigationController */,
@@ -483,10 +496,6 @@
 				902CA33F21E732F700396923 /* UIView */,
 				E9B06306214691F30080C391 /* VibrationFeedbackManager */,
 				907F0FED21DCDB1F001CCB07 /* WordDeclinationSelector */,
-				573117D423BF888500491781 /* LayoutHelper */,
-				89293B2421F59F6A0016C6BE /* LocalStorage */,
-				8953A46B23560726007AD110 /* OTPField */,
-				90AC855D2385924600DF7F3B /* GeolocationService */,
 				4F3ED9E2211C27CF0030DD45 /* Utils.h */,
 				4F3ED9E3211C27CF0030DD45 /* Info.plist */,
 			);
@@ -611,6 +620,17 @@
 				8988451F2360482D004940DC /* UIView+XibSetup.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		904DE285272DCABA004FDC64 /* MapRoutingService */ = {
+			isa = PBXGroup;
+			children = (
+				904DE28C272DD094004FDC64 /* MapRoutingService.swift */,
+				904DE286272DCAD1004FDC64 /* MapApplication.swift */,
+				904DE288272DCF14004FDC64 /* MapRoutingServiceInterface.swift */,
+				904DE28A272DCF70004FDC64 /* MapRoutingLocationServiceInterface.swift */,
+			);
+			path = MapRoutingService;
 			sourceTree = "<group>";
 		};
 		90718AED21EA36CA00C81002 /* KeyboardPresentable */ = {
@@ -1096,6 +1116,7 @@
 				39DCF1C824EEC8F8007CCFBC /* HackWrapperCryptoBox.swift in Sources */,
 				3971F72624F1843900597F9D /* SecureStoreError.swift in Sources */,
 				A4BBCB0E27442CFE0010E266 /* Device.swift in Sources */,
+				904DE28D272DD094004FDC64 /* MapRoutingService.swift in Sources */,
 				87239D7F24D41E8700D38EC7 /* MoneyModel.swift in Sources */,
 				90AC85652385929E00DF7F3B /* LocationManagerInterface.swift in Sources */,
 				C11CEB4824D44E2C00C1CD0F /* MailSenderRouterHelper.swift in Sources */,
@@ -1144,9 +1165,11 @@
 				397CDAD324EF9F7F00FB0EAA /* PinHackCryptoBox.swift in Sources */,
 				E9B0630E214693160080C391 /* UIDevice+hasHapticFeedback.swift in Sources */,
 				3946575324EC1B580069BDB0 /* LoadingDataProvider.swift in Sources */,
+				904DE289272DCF14004FDC64 /* MapRoutingServiceInterface.swift in Sources */,
 				90718AF121EA370000C81002 /* KeyboardNotificationsObserver.swift in Sources */,
 				397CDAD124EF9F6C00FB0EAA /* PinCryptoBox.swift in Sources */,
 				39DCF1A224EE7C66007CCFBC /* UIImage+badgedImage.swift in Sources */,
+				904DE28B272DCF70004FDC64 /* MapRoutingLocationServiceInterface.swift in Sources */,
 				90AC8569238592AF00DF7F3B /* GeolocationAuthResult.swift in Sources */,
 				5709EC6A236F562400EEBD93 /* UIImageExtensions.swift in Sources */,
 				C11CEB4324D44E2C00C1CD0F /* MailSenderErrorDisplaying.swift in Sources */,
@@ -1171,6 +1194,7 @@
 				9087BC5A21EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift in Sources */,
 				907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */,
 				3946575D24EC21890069BDB0 /* DefaultLoadingModel.swift in Sources */,
+				904DE287272DCAD1004FDC64 /* MapApplication.swift in Sources */,
 				3946575B24EC21480069BDB0 /* LoadingSubviewConfigurable.swift in Sources */,
 				573117D923BFD28300491781 /* UIStyle.swift in Sources */,
 			);
