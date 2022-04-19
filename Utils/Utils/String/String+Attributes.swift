@@ -27,12 +27,8 @@ public enum StringAttribute {
     case lineBreakMode(NSLineBreakMode)
     /// Text base line offset (vertical)
     case baselineOffset(CGFloat)
-
-    /// Figma friendly case means that lineSpacing = lineHeight - font.lineHeight
-    /// This case provide possibility to set both `font` and `lineSpacing`
-    /// First parameter is Font and second parameter is lineHeight property from Figma
-    /// For more details see [#14](https://github.com/surfstudio/iOS-Utils/issues/14)
-    case lineHeight(CGFloat, font: UIFont)
+    /// Text line minimum and maximum height
+    case lineHeight(CGFloat)
 }
 
 // MARK: - Nested types
@@ -97,8 +93,8 @@ extension StringAttribute {
             return value
         case .aligment(let value):
             return value
-        case .lineHeight(let lineHeight, let font):
-            return lineHeight - font.lineHeight
+        case .lineHeight(let value):
+            return value
         case .crossOut(let style):
             return style.coreValue.rawValue
         case .lineBreakMode(let value):
@@ -142,12 +138,8 @@ public extension StringAttribute {
            let mutableParagraphStyle = value as? NSMutableParagraphStyle {
             stringAttributedArray.append(.aligment(mutableParagraphStyle.alignment))
             stringAttributedArray.append(.lineBreakMode(mutableParagraphStyle.lineBreakMode))
-
-            if let font = dictionary[.font] as? UIFont {
-                stringAttributedArray.append(.lineHeight(mutableParagraphStyle.lineSpacing, font: font))
-            } else {
-                stringAttributedArray.append(.lineSpacing(mutableParagraphStyle.lineSpacing))
-            }
+            stringAttributedArray.append(.lineHeight(mutableParagraphStyle.minimumLineHeight))
+            stringAttributedArray.append(.lineSpacing(mutableParagraphStyle.lineSpacing))
         }
 
         return stringAttributedArray
@@ -163,35 +155,17 @@ public extension String {
     }
 }
 
-// MARK: - Private array extension
-
-private extension Array where Element == StringAttribute {
-    func normalizedAttributes() -> [StringAttribute] {
-        var result = [StringAttribute](self)
-
-        self.forEach { item in
-            switch item {
-            case .lineHeight(_, let font):
-                result.append(.font(font))
-            default:
-                break
-            }
-        }
-
-        return result
-    }
-}
-
 // MARK: - Public array extension
 
 public extension Array where Element == StringAttribute {
     func toDictionary() -> [NSAttributedString.Key: Any] {
         var resultAttributes = [NSAttributedString.Key: Any]()
         let paragraph = NSMutableParagraphStyle()
-        for attribute in self.normalizedAttributes() {
+        for attribute in self {
             switch attribute {
-            case .lineHeight(let lineHeight, let font):
-                paragraph.lineSpacing = lineHeight - font.lineHeight
+            case .lineHeight(let lineHeight):
+                paragraph.minimumLineHeight = lineHeight
+                paragraph.maximumLineHeight = lineHeight
                 resultAttributes[attribute.attributeKey] = paragraph
             case .lineSpacing(let value):
                 paragraph.lineSpacing = value
