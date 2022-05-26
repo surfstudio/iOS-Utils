@@ -27,7 +27,7 @@ public enum StringAttribute {
     case lineBreakMode(NSLineBreakMode)
     /// Text base line offset (vertical)
     case baselineOffset(CGFloat)
-    /// Text line minimum and maximum height
+    /// Text line height
     case lineHeight(CGFloat)
 }
 
@@ -161,11 +161,16 @@ public extension Array where Element == StringAttribute {
     func toDictionary() -> [NSAttributedString.Key: Any] {
         var resultAttributes = [NSAttributedString.Key: Any]()
         let paragraph = NSMutableParagraphStyle()
+        let font = self.findFont()
         for attribute in self {
             switch attribute {
             case .lineHeight(let lineHeight):
-                paragraph.minimumLineHeight = lineHeight
-                paragraph.maximumLineHeight = lineHeight
+                if let font = font {
+                    paragraph.lineHeightMultiple = lineHeight / font.lineHeight
+                } else {
+                    paragraph.minimumLineHeight = lineHeight
+                    paragraph.maximumLineHeight = lineHeight
+                }
                 resultAttributes[attribute.attributeKey] = paragraph
             case .lineSpacing(let value):
                 paragraph.lineSpacing = value
@@ -181,5 +186,14 @@ public extension Array where Element == StringAttribute {
             }
         }
         return resultAttributes
+    }
+
+    private func findFont() -> UIFont? {
+        for value in self {
+            if case .font(let font) = value {
+                return font
+            }
+        }
+        return nil
     }
 }
