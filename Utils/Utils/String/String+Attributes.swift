@@ -11,7 +11,7 @@ import UIKit
 
 /// Attributes for string.
 public enum StringAttribute {
-    /// Text line spacing
+    /// Text line spacing (paragraphStyle.lineSpacing)
     case lineSpacing(CGFloat)
     /// Letter spacing
     case kern(CGFloat)
@@ -27,7 +27,10 @@ public enum StringAttribute {
     case lineBreakMode(NSLineBreakMode)
     /// Text base line offset (vertical)
     case baselineOffset(CGFloat)
-    /// Text line height
+    /// Text line height, in points.
+    ///
+    /// If you also specify `.font` value, then will be used `paragraph.lineHeightMultiple`,
+    /// otherwise - `paragraph.minimumLineHeight` and `paragraph.maximumLineHeight`
     case lineHeight(CGFloat)
 }
 
@@ -155,17 +158,16 @@ public extension String {
     }
 }
 
-// MARK: - Public array extension
+// MARK: - Array extension
 
 public extension Array where Element == StringAttribute {
     func toDictionary() -> [NSAttributedString.Key: Any] {
         var resultAttributes = [NSAttributedString.Key: Any]()
         let paragraph = NSMutableParagraphStyle()
-        let font = self.findFont()
         for attribute in self {
             switch attribute {
             case .lineHeight(let lineHeight):
-                if let font = font {
+                if let font = self.findFont() {
                     paragraph.lineHeightMultiple = lineHeight / font.lineHeight
                 } else {
                     paragraph.minimumLineHeight = lineHeight
@@ -188,6 +190,9 @@ public extension Array where Element == StringAttribute {
         return resultAttributes
     }
 
+    // MARK: - Private Methods
+
+    /// Returns font from array of StringAttributes, if it exists, and nil otherwise
     private func findFont() -> UIFont? {
         for value in self {
             if case .font(let font) = value {
