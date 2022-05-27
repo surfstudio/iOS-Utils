@@ -112,7 +112,6 @@ extension StringAttribute {
 // MARK: - Public static methods
 
 public extension StringAttribute {
-
     // init from attributs array
     static func from(dictionary: [NSAttributedString.Key: Any]) -> [StringAttribute] {
         var stringAttributedArray = [StringAttribute]()
