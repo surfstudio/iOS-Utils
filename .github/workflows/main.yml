@@ -20,7 +20,6 @@ jobs:
     - name: CocoaPods
       run: |
         cd Utils
-        gem install xcpretty -N
         make init
     - name: Force xcode 13
       run: |
