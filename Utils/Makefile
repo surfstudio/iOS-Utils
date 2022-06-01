@@ -1,8 +1,8 @@
 init:
 	# Install bundler if not installed
 	if ! gem spec bundler > /dev/null 2>&1; then\
-  		echo "bundler gem is not installed! Run gem install bundler to install it";\
-  		-sudo gem install bundler;\
+  		echo "bundler gem is not installed!";\
+  		-sudo gem install bundler -v "1.17.3";\
 	fi
 	-bundle install --path .bundle
 	-bundle exec pod repo update
@@ -10,15 +10,17 @@ init:
 
 ## Used to build target. Usually, it is not called manually, it is necessary for the CI to work.
 build:
-	xcodebuild -scheme Utils -workspace Utils.xcworkspace/ build
+	xcodebuild build -scheme Utils -workspace Utils.xcworkspace -sdk iphonesimulator | bundle exec xcpretty -c
 
 ## Used to build target with SPM dependencies. Usually, it is not called manually, it is necessary for the CI to work.
 spm_build:
-	swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios12.1-simulator" -Xswiftc "-lswiftUIKit"
+	swift package clean
+	swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios15.5-simulator" -Xswiftc "-lswiftUIKit"
 
 ## Run tests
 test:
-	xcodebuild test -scheme Utils -workspace Utils.xcworkspace/ -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=14.5' | xcpretty -c
+	xcodebuild test -scheme Utils -workspace Utils.xcworkspace/ -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.5' | bundle exec xcpretty -c
+
 
 ## Allows you to perfrom swiftlint autocorrect command.
 format:

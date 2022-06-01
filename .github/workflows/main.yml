@@ -22,9 +22,9 @@ jobs:
         cd Utils
         gem install xcpretty -N
         make init
-    - name: Force xcode 12
+    - name: Force xcode 13
       run: |
-        sudo xcode-select -switch /Applications/Xcode_12.4.app
+        sudo xcode-select -switch /Applications/Xcode_13.4.app
     - name: Build
       run: |
         cd Utils

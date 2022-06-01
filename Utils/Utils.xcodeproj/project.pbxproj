@@ -867,9 +867,9 @@
 			buildConfigurationList = 4F3ED9F3211C27CF0030DD45 /* Build configuration list for PBXNativeTarget "Utils" */;
 			buildPhases = (
 				A9A2EC798088A2C3686B19BB /* [CP] Check Pods Manifest.lock */,
+				4F3ED9DC211C27CF0030DD45 /* Headers */,
 				4F3ED9DA211C27CF0030DD45 /* Sources */,
 				4F3ED9DB211C27CF0030DD45 /* Frameworks */,
-				4F3ED9DC211C27CF0030DD45 /* Headers */,
 				4F3ED9DD211C27CF0030DD45 /* Resources */,
 				8B66F35C21FDB938000BDCB8 /* Swift Lint */,
 			);
@@ -1279,8 +1279,6 @@
 					"$(inherited)",
 					"-framework",
 					"\"CryptoSwift\"",
-					"-framework",
-					"\"Device\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Surf.Utils.UtilsTestsHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1311,8 +1309,6 @@
 					"$(inherited)",
 					"-framework",
 					"\"CryptoSwift\"",
-					"-framework",
-					"\"Device\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Surf.Utils.UtilsTestsHost;
 				PRODUCT_NAME = "$(TARGET_NAME)";

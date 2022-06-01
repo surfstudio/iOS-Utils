@@ -10,7 +10,6 @@ end
 
 def common_pods 
 	utils
-
   pod 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :tag => '1.4.0'
 end 
 
@@ -19,11 +18,9 @@ target 'Utils' do
   common_pods
 
   target 'UtilsTests' do
-    common_pods
   end
 
   target 'UtilsTestsHost' do
-    common_pods
   end
 
 end
