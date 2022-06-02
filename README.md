@@ -1,5 +1,7 @@
-[![codebeat badge](https://codebeat.co/badges/c2deb19a-3be3-4dd8-aa3d-886e0f361bea)](https://codebeat.co/projects/github-com-surfstudio-ios-utils-master)
-[![Build Status](https://travis-ci.org/surfstudio/iOS-Utils.svg?branch=master)](https://travis-ci.org/surfstudio/iOS-Utils)
+[![GitHubActions Build Status](https://github.com/surfstudio/iOS-Utils/workflows/CI/badge.svg)](https://github.com/surfstudio/iOS-Utils/actions)
+[![codecov](https://codecov.io/gh/surfstudio/iOS-Utils/branch/master/graph/badge.svg)](https://codecov.io/gh/surfstudio/iOS-Utils)
+[![CocoaPods Version](https://img.shields.io/cocoapods/v/SurfUtils.svg?style=flat)](https://cocoapods.org/pods/SurfUtils)
+[![SPM Compatible](https://img.shields.io/badge/SPM-compatible-blue.svg)](https://github.com/apple/swift-package-manager)
 # iOS-Utils
 
 Этот репозиторий содержит коллекцию утилит, каждая из которых находится в отдельной `pod subspec`.
