@@ -153,4 +153,9 @@ Pod::Spec.new do |s|
     sp.framework = 'UIKit'
   end
 
+  s.subspec 'MapRoutingService' do |sp|
+    sp.source_files = 'Utils/Utils/MapRoutingService/*.swift'
+    sp.framework = 'UIKit'
+  end
+
 end
