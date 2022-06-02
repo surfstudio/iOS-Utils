@@ -17,11 +17,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: CocoaPods
+    - name: Init
       run: |
         cd Utils
         make init
-    - name: Force xcode 13
+    - name: Force select xcode 13
       run: |
         sudo xcode-select -switch /Applications/Xcode_13.4.app
     - name: Build
@@ -36,6 +36,8 @@ jobs:
       run: |
         cd Utils
         make test
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1.2.1
     - name: Pod Lib Lint
       run: |
         pod lib lint
