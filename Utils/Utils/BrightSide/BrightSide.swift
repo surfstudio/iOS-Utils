@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import UIKit
+import class UIKit.UIApplication
 
 public final class BrightSide {
 
@@ -44,21 +44,17 @@ public final class BrightSide {
 
 private extension BrightSide {
 
-    /// Method will return true, if any of the files typical for the jailbreak exists
-    private static func isJailbreakDirectoriesExist() -> Bool {
-        let jailbreakDirectories = [
-            "/Applications/Cydia.app",
-            "/Library/MobileSubstrate/MobileSubstrate.dylib",
-            "/bin/bash",
-            "/usr/sbin/sshd",
-            "/etc/apt",
-            "/private/var/lib/apt/"
-        ]
-        return jailbreakDirectories.map { FileManager.default.fileExists(atPath: $0) }.reduce(false, { $0 || $1 })
+    /// Method will return true, if any of the files or dir, typical for the jailbreak, exists
+    static func isJailbreakDirectoriesExist() -> Bool {
+        let jailbreakRelativelyFilesAndPaths = suspiciousSystemFiles
+            + suspiciousAppsDir
+            + suspiciousSystemDir
+        return jailbreakRelativelyFilesAndPaths
+            .allSatisfy(FileManager.default.fileExists(atPath:))
     }
 
     /// Method will return true if we can open cydia package
-    private static func canOpenCydia() -> Bool {
+    static func canOpenCydia() -> Bool {
         guard let cydiaURL = URL(string: "cydia://package/com.example.package") else {
             return false
         }
@@ -66,8 +62,56 @@ private extension BrightSide {
     }
 
     /// Method will return true if current device is simulator
-    private static func isSimulator() -> Bool {
+    static func isSimulator() -> Bool {
         return ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil
+    }
+
+}
+
+// MARK: - Suspicious dir
+
+extension BrightSide {
+
+    static var suspiciousAppsDir: [String] {
+        return [
+            "/Applications/Cydia.app",
+            "/Applications/blackra1n.app",
+            "/Applications/checkra1n.app",
+            "/Applications/Zeon.app",
+            "/Applications/FakeCarrier.app",
+            "/Applications/Icy.app",
+            "/Applications/IntelliScreen.app",
+            "/Applications/MxTube.app",
+            "/Applications/RockApp.app",
+            "/Applications/SBSettings.app",
+            "/Applications/WinterBoard.app"
+        ]
+    }
+
+    static var suspiciousSystemDir: [String] {
+        return [
+            "/private/var/lib/apt",
+            "/private/var/lib/apt/",
+            "/private/var/lib/cydia",
+            "/private/var/mobile/Library/SBSettings/Themes",
+            "/private/var/stash",
+            "/usr/bin/sshd",
+            "/usr/libexec/sftp-server",
+            "/usr/sbin/sshd",
+            "/etc/apt",
+            "/bin/bash"
+        ]
+    }
+
+    static var suspiciousSystemFiles: [String] {
+        return [
+            "/Library/MobileSubstrate/DynamicLibraries/LiveClock.plist",
+            "/Library/MobileSubstrate/DynamicLibraries/Veency.plist",
+            "/private/var/tmp/cydia.log",
+            "/System/Library/LaunchDaemons/com.ikey.bbot.plist",
+            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
+            "/Library/MobileSubstrate/MobileSubstrate.dylib"
+        ]
     }
 
 }
