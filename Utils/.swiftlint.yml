@@ -16,7 +16,6 @@ whitelist_rules:
     - force_cast
     - force_try
     - force_unwrapping
-    - indentifier_name
     - implicitly_unwrapped_optional
     - implicit_getter
     - leading_whitespace
@@ -41,8 +40,9 @@ whitelist_rules:
     - trailing_semicolon
     - trailing_whitespace
     - type_name
+    - type_body_length
     - unused_import
-    - unused_private_declaration
+    - unused_declaration
     - vertical_whitespace
     - void_return
     - weak_delegate
@@ -90,8 +90,8 @@ force_try:
 line_length: 120
 # they can set both implicitly with an array
 type_body_length:
-  # - 300 # warning
-  # - 400 # error
+  - 300 # warning
+  - 400 # error
 # # or they can set both explicitly
 # file_length:
 #   warning: 500
@@ -104,13 +104,5 @@ type_name:
   excluded: # excluded via string array
     - Id
     - iPhone
-identifier_name:
-  min_length: # only min_length
-    error: 4 # only error
-  excluded: # excluded via string array
-    - x
-    - y
-    - id
-    - URL
 
 reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit)
