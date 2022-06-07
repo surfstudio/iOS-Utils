@@ -865,7 +865,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/BuildTools/swiftlint\" --config ${SRCROOT}/.swiftlint.yml\n";
+			shellScript = "if [ -z \"$GITHUB_ACTIONS\" ]; then\n    \"${PROJECT_DIR}/BuildTools/swiftlint_0_47_1\" --config ${SRCROOT}/.swiftlint.yml\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1127,6 +1127,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 13.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Surf.Utils;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1157,6 +1158,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 13.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Surf.Utils;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1171,8 +1173,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZJ45BEVK69;
+				DEVELOPMENT_TEAM = EFAAG9GXN4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1191,8 +1194,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZJ45BEVK69;
+				DEVELOPMENT_TEAM = EFAAG9GXN4;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = UtilsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

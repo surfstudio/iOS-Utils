@@ -15,7 +15,7 @@ let package = Package(
         .package(
             name: "CryptoSwift",
             url: "https://github.com/krzyzanowskim/CryptoSwift",
-            .exact("1.4.0")
+            .exact("1.5.1")
         )
     ],
     targets: [
