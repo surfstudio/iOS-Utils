@@ -865,7 +865,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -z \"$GITHUB_ACTIONS\" ]; then\n    \"${PROJECT_DIR}/BuildTools/swiftlint_0_47_1\" --config ${SRCROOT}/.swiftlint.yml\nfi\n";
+			shellScript = "\"${PROJECT_DIR}/BuildTools/swiftlint_0_47_1\" --config ${SRCROOT}/.swiftlint.yml\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
