@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		90719DA52851F8FC00B42F99 /* iOS-Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "iOS-Utils"; path = ..; sourceTree = "<group>"; };
 		90AAE3082851F6100088A5A4 /* UtilsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UtilsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AAE30B2851F6100088A5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90AAE30D2851F6100088A5A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,9 +77,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90719DA42851F8FC00B42F99 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				90719DA52851F8FC00B42F99 /* iOS-Utils */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		90AAE2FF2851F6100088A5A4 = {
 			isa = PBXGroup;
 			children = (
+				90719DA42851F8FC00B42F99 /* Packages */,
 				90AAE30A2851F6100088A5A4 /* UtilsExample */,
 				90AAE3212851F6120088A5A4 /* UtilsExampleTests */,
 				90AAE32B2851F6120088A5A4 /* UtilsExampleUITests */,

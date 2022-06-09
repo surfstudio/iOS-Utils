@@ -6,14 +6,16 @@
 //
 
 import UIKit
+//import Utils
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
+
+    @IBOutlet private weak var testLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+//        testLabel.attributedText = "Test text".with(attributes: [.aligment(.center),
+//                                                                 .font(.systemFont(ofSize: 20))])
     }
 
-
 }
-
