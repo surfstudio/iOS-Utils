@@ -135,7 +135,7 @@ Pod::Spec.new do |s|
   s.subspec 'SecurityService' do |sp|
     sp.source_files = 'Utils/Utils/SecurityService/**/*.swift'
     sp.framework = 'Foundation'
-    sp.dependency 'CryptoSwift', '1.4.0'
+    sp.dependency 'CryptoSwift', '1.5.1'
   end
 
   s.subspec 'BeanPageControl' do |sp|

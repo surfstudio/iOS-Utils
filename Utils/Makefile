@@ -5,12 +5,10 @@ init:
   		-sudo gem install bundler -v "1.17.3";\
 	fi
 	-bundle install --path .bundle
-	-bundle exec pod repo update
-	-bundle exec pod install
 
 ## Used to build target. Usually, it is not called manually, it is necessary for the CI to work.
 build:
-	xcodebuild build -scheme Utils -workspace Utils.xcworkspace -sdk iphonesimulator | bundle exec xcpretty -c
+	xcodebuild build -scheme Utils -sdk iphonesimulator | bundle exec xcpretty -c
 
 ## Used to build target with SPM dependencies. Usually, it is not called manually, it is necessary for the CI to work.
 spm_build:
@@ -19,20 +17,7 @@ spm_build:
 
 ## Run tests
 test:
-	xcodebuild test -scheme Utils -workspace Utils.xcworkspace/ -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.5' | bundle exec xcpretty -c
-
-
-## Allows you to perfrom swiftlint autocorrect command.
-format:
-	./Pods/SwiftLint/swiftlint autocorrect --config .swiftlint.yml
-
-## Run SwiftLint check
-lint:
-	./Pods/SwiftLint/swiftlint lint --config .swiftlint.yml
-
-## Execute pod install command
-pod:
-	-bundle exec pod install
+	xcodebuild test -scheme Utils -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.5' | bundle exec xcpretty -c
 
 
 # COLORS
