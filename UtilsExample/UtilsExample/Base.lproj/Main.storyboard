@@ -16,26 +16,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-VA-4RP">
-                                <rect key="frame" x="16" y="437.5" width="382" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0SV-VA-4RP" secondAttribute="trailing" constant="16" id="2zL-sk-fqh"/>
-                            <constraint firstItem="0SV-VA-4RP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GYn-Df-Nki"/>
-                            <constraint firstItem="0SV-VA-4RP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LlB-6d-Dxf"/>
-                            <constraint firstItem="0SV-VA-4RP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sGU-if-X76"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="testLabel" destination="0SV-VA-4RP" id="LmS-Eb-eQQ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

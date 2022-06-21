@@ -9,6 +9,15 @@
           "revision": "039f56c5d7960f277087a0be51f5eb04ed0ec073",
           "version": "1.5.1"
         }
+      },
+      {
+        "package": "SurfPlaybook",
+        "repositoryURL": "https://github.com/surfstudio/SurfPlaybook.git",
+        "state": {
+          "branch": null,
+          "revision": "f477093718acacd1264dc69625088e2376618104",
+          "version": "1.3.0"
+        }
       }
     ]
   },

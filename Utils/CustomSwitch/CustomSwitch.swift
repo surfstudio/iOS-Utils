@@ -20,7 +20,7 @@ public class CustomSwitch: UIControl {
         let spacing: CGFloat
         let cornerRatio: CGFloat
 
-        init(padding: CGFloat = 2,
+        public init(padding: CGFloat = 2,
              spacing: CGFloat = 2,
              cornerRatio: CGFloat = 0.5) {
             self.padding = padding
@@ -34,7 +34,7 @@ public class CustomSwitch: UIControl {
         let cornerRatio: CGFloat
         let shadowConfiguration: CSShadowConfiguration?
 
-        init(cornerRatio: CGFloat = 0.5,
+        public init(cornerRatio: CGFloat = 0.5,
              shadowConfiguration: CSShadowConfiguration? = nil) {
             self.cornerRatio = cornerRatio
             self.shadowConfiguration = shadowConfiguration
@@ -47,7 +47,7 @@ public class CustomSwitch: UIControl {
         let onColor: CSColorConfiguration
         let thumbColor: CSColorConfiguration
 
-        init(offColor: UIColor = .lightGray,
+        public init(offColor: UIColor = .lightGray,
              onColor: UIColor = .green,
              thumbColor: UIColor = .white) {
             self.offColor = CSSimpleColorConfiguration(color: offColor)
@@ -55,7 +55,7 @@ public class CustomSwitch: UIControl {
             self.thumbColor = CSSimpleColorConfiguration(color: thumbColor)
         }
 
-        init(offColorConfiguraion: CSColorConfiguration,
+        public init(offColorConfiguraion: CSColorConfiguration,
              onColorConfiguraion: CSColorConfiguration,
              thumbColorConfiguraion: CSColorConfiguration) {
             self.offColor = offColorConfiguraion
@@ -72,7 +72,7 @@ public class CustomSwitch: UIControl {
         let initialSpringVelocity: CGFloat
         let options: UIView.AnimationOptions
 
-        init(duration: Double = 0.5,
+        public init(duration: Double = 0.5,
              delay: Double = 0,
              usingSpringWithDamping: CGFloat = 0.7,
              initialSpringVelocity: CGFloat = 0.5,

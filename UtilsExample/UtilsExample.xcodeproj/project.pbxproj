@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		90AAE30C2851F6100088A5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAE30B2851F6100088A5A4 /* AppDelegate.swift */; };
-		90AAE30E2851F6100088A5A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAE30D2851F6100088A5A4 /* SceneDelegate.swift */; };
 		90AAE3102851F6100088A5A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAE30F2851F6100088A5A4 /* ViewController.swift */; };
 		90AAE3132851F6100088A5A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90AAE3112851F6100088A5A4 /* Main.storyboard */; };
 		90AAE3152851F6110088A5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90AAE3142851F6110088A5A4 /* Assets.xcassets */; };
@@ -16,6 +15,14 @@
 		90AAE3232851F6120088A5A4 /* UtilsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAE3222851F6120088A5A4 /* UtilsExampleTests.swift */; };
 		90AAE32D2851F6120088A5A4 /* UtilsExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAE32C2851F6120088A5A4 /* UtilsExampleUITests.swift */; };
 		90AAE32F2851F6120088A5A4 /* UtilsExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAE32E2851F6120088A5A4 /* UtilsExampleUITestsLaunchTests.swift */; };
+		A40929362861133D00BBC569 /* SurfPlaybook in Frameworks */ = {isa = PBXBuildFile; productRef = A40929352861133D00BBC569 /* SurfPlaybook */; };
+		A409293B286113C000BBC569 /* StringAttributesChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409293A286113C000BBC569 /* StringAttributesChapter.swift */; };
+		A409293D286113E300BBC569 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409293C286113E300BBC569 /* MainPage.swift */; };
+		A40929402861C0F200BBC569 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = A409293F2861C0F200BBC569 /* Utils */; };
+		A40929422861C2B600BBC569 /* QueryStringBuilderChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40929412861C2B600BBC569 /* QueryStringBuilderChapter.swift */; };
+		A40929442861C3D700BBC569 /* CustomSwitchChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40929432861C3D700BBC569 /* CustomSwitchChapter.swift */; };
+		A40929462861C65700BBC569 /* GeolocationServiceChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40929452861C65700BBC569 /* GeolocationServiceChapter.swift */; };
+		A40929482861C8C300BBC569 /* UIDeviceChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40929472861C8C300BBC569 /* UIDeviceChapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +46,6 @@
 		90719DA52851F8FC00B42F99 /* iOS-Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "iOS-Utils"; path = ..; sourceTree = "<group>"; };
 		90AAE3082851F6100088A5A4 /* UtilsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UtilsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AAE30B2851F6100088A5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90AAE30D2851F6100088A5A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		90AAE30F2851F6100088A5A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		90AAE3122851F6100088A5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90AAE3142851F6110088A5A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +56,12 @@
 		90AAE3282851F6120088A5A4 /* UtilsExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AAE32C2851F6120088A5A4 /* UtilsExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleUITests.swift; sourceTree = "<group>"; };
 		90AAE32E2851F6120088A5A4 /* UtilsExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A409293A286113C000BBC569 /* StringAttributesChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAttributesChapter.swift; sourceTree = "<group>"; };
+		A409293C286113E300BBC569 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		A40929412861C2B600BBC569 /* QueryStringBuilderChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryStringBuilderChapter.swift; sourceTree = "<group>"; };
+		A40929432861C3D700BBC569 /* CustomSwitchChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchChapter.swift; sourceTree = "<group>"; };
+		A40929452861C65700BBC569 /* GeolocationServiceChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationServiceChapter.swift; sourceTree = "<group>"; };
+		A40929472861C8C300BBC569 /* UIDeviceChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceChapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40929402861C0F200BBC569 /* Utils in Frameworks */,
+				A40929362861133D00BBC569 /* SurfPlaybook in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +107,7 @@
 				90AAE3212851F6120088A5A4 /* UtilsExampleTests */,
 				90AAE32B2851F6120088A5A4 /* UtilsExampleUITests */,
 				90AAE3092851F6100088A5A4 /* Products */,
+				A409293E2861C0F200BBC569 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,8 +124,8 @@
 		90AAE30A2851F6100088A5A4 /* UtilsExample */ = {
 			isa = PBXGroup;
 			children = (
+				A40929372861137100BBC569 /* Playbook */,
 				90AAE30B2851F6100088A5A4 /* AppDelegate.swift */,
-				90AAE30D2851F6100088A5A4 /* SceneDelegate.swift */,
 				90AAE30F2851F6100088A5A4 /* ViewController.swift */,
 				90AAE3112851F6100088A5A4 /* Main.storyboard */,
 				90AAE3142851F6110088A5A4 /* Assets.xcassets */,
@@ -137,6 +152,42 @@
 			path = UtilsExampleUITests;
 			sourceTree = "<group>";
 		};
+		A40929372861137100BBC569 /* Playbook */ = {
+			isa = PBXGroup;
+			children = (
+				A40929382861137B00BBC569 /* Chapters */,
+				A40929392861138100BBC569 /* UIKitPages */,
+			);
+			path = Playbook;
+			sourceTree = "<group>";
+		};
+		A40929382861137B00BBC569 /* Chapters */ = {
+			isa = PBXGroup;
+			children = (
+				A409293A286113C000BBC569 /* StringAttributesChapter.swift */,
+				A40929412861C2B600BBC569 /* QueryStringBuilderChapter.swift */,
+				A40929432861C3D700BBC569 /* CustomSwitchChapter.swift */,
+				A40929452861C65700BBC569 /* GeolocationServiceChapter.swift */,
+				A40929472861C8C300BBC569 /* UIDeviceChapter.swift */,
+			);
+			path = Chapters;
+			sourceTree = "<group>";
+		};
+		A40929392861138100BBC569 /* UIKitPages */ = {
+			isa = PBXGroup;
+			children = (
+				A409293C286113E300BBC569 /* MainPage.swift */,
+			);
+			path = UIKitPages;
+			sourceTree = "<group>";
+		};
+		A409293E2861C0F200BBC569 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +204,10 @@
 			dependencies = (
 			);
 			name = UtilsExample;
+			packageProductDependencies = (
+				A40929352861133D00BBC569 /* SurfPlaybook */,
+				A409293F2861C0F200BBC569 /* Utils */,
+			);
 			productName = UtilsExample;
 			productReference = 90AAE3082851F6100088A5A4 /* UtilsExample.app */;
 			productType = "com.apple.product-type.application";
@@ -225,6 +280,9 @@
 				Base,
 			);
 			mainGroup = 90AAE2FF2851F6100088A5A4;
+			packageReferences = (
+				A40929342861133D00BBC569 /* XCRemoteSwiftPackageReference "SurfPlaybook" */,
+			);
 			productRefGroup = 90AAE3092851F6100088A5A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -268,9 +326,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A409293D286113E300BBC569 /* MainPage.swift in Sources */,
+				A40929442861C3D700BBC569 /* CustomSwitchChapter.swift in Sources */,
 				90AAE3102851F6100088A5A4 /* ViewController.swift in Sources */,
 				90AAE30C2851F6100088A5A4 /* AppDelegate.swift in Sources */,
-				90AAE30E2851F6100088A5A4 /* SceneDelegate.swift in Sources */,
+				A40929462861C65700BBC569 /* GeolocationServiceChapter.swift in Sources */,
+				A40929482861C8C300BBC569 /* UIDeviceChapter.swift in Sources */,
+				A409293B286113C000BBC569 /* StringAttributesChapter.swift in Sources */,
+				A40929422861C2B600BBC569 /* QueryStringBuilderChapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +693,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A40929342861133D00BBC569 /* XCRemoteSwiftPackageReference "SurfPlaybook" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/surfstudio/SurfPlaybook.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A40929352861133D00BBC569 /* SurfPlaybook */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A40929342861133D00BBC569 /* XCRemoteSwiftPackageReference "SurfPlaybook" */;
+			productName = SurfPlaybook;
+		};
+		A409293F2861C0F200BBC569 /* Utils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 90AAE3002851F6100088A5A4 /* Project object */;
 }
