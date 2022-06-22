@@ -304,9 +304,9 @@ skeletonView.delayBetweenAnimationLoops = 1.0
 ```
 <details><summary>Примеры</summary>
 
-![LeftToRight](Examples/skeleton1.gif)
+![LeftToRight](Pictures/skeleton1.gif)
 
-![RightToLeftFaster](Examples/skeleton2.gif)
+![RightToLeftFaster](Pictures/skeleton2.gif)
 
 </details>
 
@@ -364,7 +364,7 @@ skeletonView.delayBetweenAnimationLoops = 1.0
 
 <details><summary>Примеры</summary>
 
-![OTPField](Examples/otpField.gif)
+![OTPField](Pictures/otpField.gif)
 
 </details>
 
@@ -446,7 +446,7 @@ required init?(coder aDecoder: NSCoder) {
 
 <details><summary>Примеры</summary>
 
-![Common Button](Examples/commonButton.gif)
+![Common Button](Pictures/commonButton.gif)
 
 </details>
 

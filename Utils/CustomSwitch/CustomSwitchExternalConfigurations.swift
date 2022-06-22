@@ -14,6 +14,13 @@ public struct CSShadowConfiguration {
     let offset: CGSize
     let radius: CGFloat
     let oppacity: Float
+    
+    public init(color: UIColor, offset: CGSize, radius: CGFloat, oppacity: Float) {
+        self.color = color
+        self.offset = offset
+        self.radius = radius
+        self.oppacity = oppacity
+    }
 }
 
 /// Defines methods needed to apply color changes on CustomSwitch elements
@@ -29,6 +36,9 @@ public struct CSSimpleColorConfiguration: CSColorConfiguration {
     public func applyColor(for view: UIView) {
         view.backgroundColor = color
     }
+    public init(color: UIColor) {
+        self.color = color
+    }
 }
 
 /// Gradient configuration for CustomSwitch element
@@ -43,5 +53,9 @@ public struct CSGradientColorConfiguration: CSColorConfiguration {
         gradient.colors = colors.map { $0.cgColor }
         gradient.locations = locations
         view.layer.insertSublayer(gradient, at: 0)
+    }
+    public init(colors: [UIColor] = [], locations: [NSNumber] = []) {
+        self.colors = colors
+        self.locations = locations
     }
 }

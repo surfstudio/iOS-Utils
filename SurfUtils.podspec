@@ -19,142 +19,142 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   s.subspec 'StringAttributes' do |sp|
-    sp.source_files = 'Utils/Utils/String/*.swift'
+    sp.source_files = 'Utils/String/*.swift'
     sp.framework = 'Foundation', 'UIKit'
   end
 
   s.subspec 'BrightSide' do |sp|
-    sp.source_files = 'Utils/Utils/BrightSide/BrightSide.swift'
+    sp.source_files = 'Utils/BrightSide/BrightSide.swift'
     sp.framework = 'Foundation'
   end
 
   s.subspec 'VibrationFeedbackManager' do |sp|
-    sp.source_files = 'Utils/Utils/VibrationFeedbackManager/*.swift'
+    sp.source_files = 'Utils/VibrationFeedbackManager/*.swift'
     sp.framework = 'AudioToolbox'
   end
 
   s.subspec 'QueryStringBuilder' do |sp|
-    sp.source_files = 'Utils/Utils/Dictionary/Dictionary+QueryStringBuilder.swift'
+    sp.source_files = 'Utils/Dictionary/Dictionary+QueryStringBuilder.swift'
     sp.framework = 'Foundation'
   end
 
   s.subspec 'BlurBuilder' do |sp|
-    sp.source_files = 'Utils/Utils/UIView/UIView+BlurBuilder.swift'
+    sp.source_files = 'Utils/UIView/UIView+BlurBuilder.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'RouteMeasurer' do |sp|
-    sp.source_files = 'Utils/Utils/RouteMeasurer/RouteMeasurer.swift'
+    sp.source_files = 'Utils/RouteMeasurer/RouteMeasurer.swift'
     sp.framework = 'MapKit'
   end
 
   s.subspec 'SettingsRouter' do |sp|
-    sp.source_files = 'Utils/Utils/SettingsRouter/SettingsRouter.swift'
+    sp.source_files = 'Utils/SettingsRouter/SettingsRouter.swift'
     sp.framework = 'Foundation'
   end
 
   s.subspec 'AdvancedNavigationStackManagement' do |sp|
-    sp.source_files = 'Utils/Utils/UINavigationController/UINavigationController+AdvancedNavigationStackManagement.swift'
+    sp.source_files = 'Utils/UINavigationController/UINavigationController+AdvancedNavigationStackManagement.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'WordDeclinationSelector' do |sp|
-    sp.source_files = 'Utils/Utils/WordDeclinationSelector/WordDeclinationSelector.swift'
+    sp.source_files = 'Utils/WordDeclinationSelector/WordDeclinationSelector.swift'
     sp.framework = 'Foundation'
   end
 
   s.subspec 'ItemsScrollManager' do |sp|
-    sp.source_files = 'Utils/Utils/ItemsScrollManager/ItemsScrollManager.swift'
+    sp.source_files = 'Utils/ItemsScrollManager/ItemsScrollManager.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'KeyboardPresentable' do |sp|
-    sp.source_files = 'Utils/Utils/KeyboardPresentable/*.swift'
+    sp.source_files = 'Utils/KeyboardPresentable/*.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'SkeletonView' do |sp|
-    sp.source_files = 'Utils/Utils/SkeletonView/*.swift', 'Utils/Utils/UIView/UIView+Masking.swift'
+    sp.source_files = 'Utils/SkeletonView/*.swift', 'Utils/UIView/UIView+Masking.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'OTPField' do |sp|
-    sp.source_files = 'Utils/Utils/OTPField/*.swift', 'Utils/Utils/OTPField/*.xib', 'Utils/Utils/UIView/UIView+XibSetup.swift'
+    sp.source_files = 'Utils/OTPField/*.swift', 'Utils/OTPField/*.xib', 'Utils/UIView/UIView+XibSetup.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'XibView' do |sp|
-    sp.source_files = 'Utils/Utils/UIView/UIView+XibSetup.swift'
+    sp.source_files = 'Utils/UIView/UIView+XibSetup.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'UIImageExtensions' do |sp|
-    sp.source_files = 'Utils/Utils/UIImage/*.swift'
+    sp.source_files = 'Utils/UIImage/*.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'CommonButton' do |sp|
-    sp.source_files = 'Utils/Utils/CommonButton/CommonButton.swift', 'Utils/Utils/UIImage/UIImageExtensions.swift'
+    sp.source_files = 'Utils/CommonButton/CommonButton.swift', 'Utils/UIImage/UIImageExtensions.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'LocalStorage' do |sp|
-    sp.source_files = 'Utils/Utils/LocalStorage/LocalStorage.swift'
+    sp.source_files = 'Utils/LocalStorage/LocalStorage.swift'
     sp.framework = 'Foundation'
   end
 
   s.subspec 'GeolocationService' do |sp|
-    sp.source_files = 'Utils/Utils/GeolocationService/**/*.swift'
+    sp.source_files = 'Utils/GeolocationService/**/*.swift'
     sp.framework = 'Foundation', 'CoreLocation'
   end
 
   s.subspec 'UIDevice' do |sp|
-    sp.source_files = 'Utils/Utils/UIDevice/UIDevice.swift', 'Utils/Utils/UIDevice/Support/iOS/Device.swift', 'Utils/Utils/UIDevice/Support/macOS/DeviceMacOS.swift', 'Utils/Utils/UIDevice/Support/Type.swift', 'Utils/Utils/UIDevice/Support/Version.swift', 'Utils/Utils/UIDevice/Support/Size.swift'
+    sp.source_files = 'Utils/UIDevice/UIDevice.swift', 'Utils/UIDevice/Support/iOS/Device.swift', 'Utils/UIDevice/Support/macOS/DeviceMacOS.swift', 'Utils/UIDevice/Support/Type.swift', 'Utils/UIDevice/Support/Version.swift', 'Utils/UIDevice/Support/Size.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'LayoutHelper' do |sp|
-    sp.source_files = 'Utils/Utils/LayoutHelper/LayoutHelper.swift', 'Utils/Utils/UIDevice/UIDevice.swift', 'Utils/Utils/UIDevice/Support/iOS/Device.swift', 'Utils/Utils/UIDevice/Support/macOS/DeviceMacOS.swift', 'Utils/Utils/UIDevice/Support/Type.swift', 'Utils/Utils/UIDevice/Support/Version.swift', 'Utils/Utils/UIDevice/Support/Size.swift'
+    sp.source_files = 'Utils/LayoutHelper/LayoutHelper.swift', 'Utils/UIDevice/UIDevice.swift', 'Utils/UIDevice/Support/iOS/Device.swift', 'Utils/UIDevice/Support/macOS/DeviceMacOS.swift', 'Utils/UIDevice/Support/Type.swift', 'Utils/UIDevice/Support/Version.swift', 'Utils/UIDevice/Support/Size.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'UIStyle' do |sp|
-    sp.source_files = 'Utils/Utils/UIStyle/UIStyle.swift', 'Utils/Utils/UIStyle/AnyStyle.swift'
+    sp.source_files = 'Utils/UIStyle/UIStyle.swift', 'Utils/UIStyle/AnyStyle.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'MailSender' do |sp|
-    sp.source_files = 'Utils/Utils/MailSender/**/*.swift'
+    sp.source_files = 'Utils/MailSender/**/*.swift'
   end
 
   s.subspec 'LoadingView' do |sp|
-    sp.source_files = 'Utils/Utils/LoadingView/**/*.swift', 'Utils/Utils/SkeletonView/*.swift', 'Utils/Utils/UIView/UIView+Masking.swift', 'Utils/Utils/UIView/UIView+XibSetup.swift'
+    sp.source_files = 'Utils/LoadingView/**/*.swift', 'Utils/SkeletonView/*.swift', 'Utils/UIView/UIView+Masking.swift', 'Utils/UIView/UIView+XibSetup.swift'
     sp.framework = 'UIKit'
   end
   
   s.subspec 'SecurityService' do |sp|
-    sp.source_files = 'Utils/Utils/SecurityService/**/*.swift'
+    sp.source_files = 'Utils/SecurityService/**/*.swift'
     sp.framework = 'Foundation'
     sp.dependency 'CryptoSwift', '1.5.1'
   end
 
   s.subspec 'BeanPageControl' do |sp|
-    sp.source_files = 'Utils/Utils/BeanPageControl/*.swift'
+    sp.source_files = 'Utils/BeanPageControl/*.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'TouchableControl' do |sp|
-    sp.source_files = 'Utils/Utils/UIControl/TouchableControl.swift'
+    sp.source_files = 'Utils/UIControl/TouchableControl.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'CustomSwitch' do |sp|
-    sp.source_files = 'Utils/Utils/CustomSwitch/*.swift'
+    sp.source_files = 'Utils/CustomSwitch/*.swift'
     sp.framework = 'UIKit'
   end
 
   s.subspec 'MapRoutingService' do |sp|
-    sp.source_files = 'Utils/Utils/MapRoutingService/*.swift'
+    sp.source_files = 'Utils/MapRoutingService/*.swift'
     sp.framework = 'UIKit'
   end
 

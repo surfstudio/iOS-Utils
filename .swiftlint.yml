@@ -76,9 +76,8 @@ opt_in_rules: # some rules are only opt-in
   # - trailing_whitespace
   # - vertical_whitespace
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - fastlane
-  - Pods
-  - .bundle
+  - UtilsExample
+  - .build
 
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level

@@ -61,7 +61,6 @@
 		904DE289272DCF14004FDC64 /* MapRoutingServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904DE288272DCF14004FDC64 /* MapRoutingServiceInterface.swift */; };
 		904DE28B272DCF70004FDC64 /* MapRoutingLocationServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904DE28A272DCF70004FDC64 /* MapRoutingLocationServiceInterface.swift */; };
 		904DE28D272DD094004FDC64 /* MapRoutingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904DE28C272DD094004FDC64 /* MapRoutingService.swift */; };
-		90707525284E31AA00CBB818 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 90707524284E31AA00CBB818 /* CryptoSwift */; };
 		90718AF121EA370000C81002 /* KeyboardNotificationsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90718AF021EA370000C81002 /* KeyboardNotificationsObserver.swift */; };
 		907F0FE321DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE221DCD20C001CCB07 /* UINavigationController+AdvancedNavigationStackManagement.swift */; };
 		907F0FE621DCD3A0001CCB07 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F0FE521DCD3A0001CCB07 /* SettingsRouter.swift */; };
@@ -72,6 +71,7 @@
 		9087BC5421EF3BF200FCE1E1 /* FullKeyboardPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087BC5321EF3BF200FCE1E1 /* FullKeyboardPresentable.swift */; };
 		9087BC5621EF3BFB00FCE1E1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087BC5521EF3BFB00FCE1E1 /* Notification.swift */; };
 		9087BC5A21EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087BC5921EF6C9F00FCE1E1 /* KeyboardNotificationsObserverPool.swift */; };
+		90AAE2FE2851F2890088A5A4 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 90AAE2FD2851F2890088A5A4 /* CryptoSwift */; };
 		90AC85612385928100DF7F3B /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AC85602385928100DF7F3B /* GeolocationService.swift */; };
 		90AC85652385929E00DF7F3B /* LocationManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AC85642385929E00DF7F3B /* LocationManagerInterface.swift */; };
 		90AC8567238592A700DF7F3B /* GeolocationAccuracy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AC8566238592A700DF7F3B /* GeolocationAccuracy.swift */; };
@@ -222,7 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90707525284E31AA00CBB818 /* CryptoSwift in Frameworks */,
+				90AAE2FE2851F2890088A5A4 /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,7 +765,7 @@
 			);
 			name = Utils;
 			packageProductDependencies = (
-				90707524284E31AA00CBB818 /* CryptoSwift */,
+				90AAE2FD2851F2890088A5A4 /* CryptoSwift */,
 			);
 			productName = Utils;
 			productReference = 4F3ED9DF211C27CF0030DD45 /* Utils.framework */;
@@ -818,7 +818,7 @@
 			);
 			mainGroup = 4F3ED9D5211C27CF0030DD45;
 			packageReferences = (
-				90707523284E31AA00CBB818 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				90AAE2FC2851F2890088A5A4 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
 			);
 			productRefGroup = 4F3ED9E0211C27CF0030DD45 /* Products */;
 			projectDirPath = "";
@@ -1244,7 +1244,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		90707523284E31AA00CBB818 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+		90AAE2FC2851F2890088A5A4 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift";
 			requirement = {
@@ -1255,9 +1255,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		90707524284E31AA00CBB818 /* CryptoSwift */ = {
+		90AAE2FD2851F2890088A5A4 /* CryptoSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90707523284E31AA00CBB818 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			package = 90AAE2FC2851F2890088A5A4 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
 			productName = CryptoSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
