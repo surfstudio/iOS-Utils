@@ -8,7 +8,7 @@ init:
 
 ## Used to build target. Usually, it is not called manually, it is necessary for the CI to work.
 build:
-	xcodebuild build -scheme Utils -sdk iphonesimulator | bundle exec xcpretty -c
+	xcodebuild clean build -scheme Utils -sdk iphonesimulator | bundle exec xcpretty -c
 
 ## Used to build target with SPM dependencies. Usually, it is not called manually, it is necessary for the CI to work.
 spm_build:
@@ -19,6 +19,9 @@ spm_build:
 test:
 	xcodebuild test -scheme Utils -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.5' | bundle exec xcpretty -c
 
+## Run build for example project
+example_build:
+	cd UtilsExample && xcodebuild clean build -scheme UtilsExample -sdk iphonesimulator | bundle exec xcpretty -c
 
 # COLORS
 GREEN  := $(shell tput -Txterm setaf 2)

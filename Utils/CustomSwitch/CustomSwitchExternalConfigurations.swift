@@ -14,7 +14,7 @@ public struct CSShadowConfiguration {
     let offset: CGSize
     let radius: CGFloat
     let oppacity: Float
-    
+
     public init(color: UIColor, offset: CGSize, radius: CGFloat, oppacity: Float) {
         self.color = color
         self.offset = offset
