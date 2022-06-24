@@ -16,13 +16,120 @@
 		90AAE32D2851F6120088A5A4 /* UtilsExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAE32C2851F6120088A5A4 /* UtilsExampleUITests.swift */; };
 		90AAE32F2851F6120088A5A4 /* UtilsExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAE32E2851F6120088A5A4 /* UtilsExampleUITestsLaunchTests.swift */; };
 		A40929362861133D00BBC569 /* SurfPlaybook in Frameworks */ = {isa = PBXBuildFile; productRef = A40929352861133D00BBC569 /* SurfPlaybook */; };
-		A409293B286113C000BBC569 /* StringAttributesChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409293A286113C000BBC569 /* StringAttributesChapter.swift */; };
 		A409293D286113E300BBC569 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409293C286113E300BBC569 /* MainPage.swift */; };
 		A40929402861C0F200BBC569 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = A409293F2861C0F200BBC569 /* Utils */; };
-		A40929422861C2B600BBC569 /* QueryStringBuilderChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40929412861C2B600BBC569 /* QueryStringBuilderChapter.swift */; };
-		A40929442861C3D700BBC569 /* CustomSwitchChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40929432861C3D700BBC569 /* CustomSwitchChapter.swift */; };
-		A40929462861C65700BBC569 /* GeolocationServiceChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40929452861C65700BBC569 /* GeolocationServiceChapter.swift */; };
-		A40929482861C8C300BBC569 /* UIDeviceChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40929472861C8C300BBC569 /* UIDeviceChapter.swift */; };
+		A459CA792864EA6500AF463F /* CustomSwitchModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA6F2864EA6500AF463F /* CustomSwitchModuleInput.swift */; };
+		A459CA7A2864EA6500AF463F /* CustomSwitchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA702864EA6500AF463F /* CustomSwitchPresenter.swift */; };
+		A459CA7B2864EA6500AF463F /* CustomSwitchModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA712864EA6500AF463F /* CustomSwitchModuleOutput.swift */; };
+		A459CA7C2864EA6500AF463F /* CustomSwitchViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA732864EA6500AF463F /* CustomSwitchViewOutput.swift */; };
+		A459CA7D2864EA6500AF463F /* CustomSwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA742864EA6500AF463F /* CustomSwitchViewController.swift */; };
+		A459CA7E2864EA6500AF463F /* CustomSwitchViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA752864EA6500AF463F /* CustomSwitchViewInput.swift */; };
+		A459CA7F2864EA6500AF463F /* CustomSwitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CA762864EA6500AF463F /* CustomSwitchViewController.xib */; };
+		A459CA802864EA6500AF463F /* CustomSwitchModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA782864EA6500AF463F /* CustomSwitchModuleConfigurator.swift */; };
+		A459CA832864EB8000AF463F /* CustomSwitchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA822864EB8000AF463F /* CustomSwitchCoordinator.swift */; };
+		A459CA8A2864ED5300AF463F /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA892864ED5300AF463F /* MainRouter.swift */; };
+		A459CA8C2864ED7300AF463F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA8B2864ED7300AF463F /* Router.swift */; };
+		A459CA8E2864ED9F00AF463F /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA8D2864ED9F00AF463F /* Presentable.swift */; };
+		A459CA902864EE0300AF463F /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA8F2864EE0300AF463F /* UIApplication.swift */; };
+		A459CA9D2864F10400AF463F /* StringAttributesModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA932864F10400AF463F /* StringAttributesModuleOutput.swift */; };
+		A459CA9E2864F10400AF463F /* StringAttributesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA942864F10400AF463F /* StringAttributesPresenter.swift */; };
+		A459CA9F2864F10400AF463F /* StringAttributesModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA952864F10400AF463F /* StringAttributesModuleInput.swift */; };
+		A459CAA02864F10400AF463F /* StringAttributesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA972864F10400AF463F /* StringAttributesViewOutput.swift */; };
+		A459CAA12864F10400AF463F /* StringAttributesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA982864F10400AF463F /* StringAttributesViewController.swift */; };
+		A459CAA22864F10400AF463F /* StringAttributesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CA992864F10400AF463F /* StringAttributesViewController.xib */; };
+		A459CAA32864F10400AF463F /* StringAttributesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA9A2864F10400AF463F /* StringAttributesViewInput.swift */; };
+		A459CAA42864F10400AF463F /* StringAttributesModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CA9C2864F10400AF463F /* StringAttributesModuleConfigurator.swift */; };
+		A459CAA62864F41500AF463F /* StringAttributesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAA52864F41500AF463F /* StringAttributesCoordinator.swift */; };
+		A459CAB32864F55E00AF463F /* QueryStringBuilderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAA92864F55E00AF463F /* QueryStringBuilderPresenter.swift */; };
+		A459CAB42864F55E00AF463F /* QueryStringBuilderModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAAA2864F55E00AF463F /* QueryStringBuilderModuleInput.swift */; };
+		A459CAB52864F55E00AF463F /* QueryStringBuilderModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAAB2864F55E00AF463F /* QueryStringBuilderModuleOutput.swift */; };
+		A459CAB62864F55E00AF463F /* QueryStringBuilderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CAAD2864F55E00AF463F /* QueryStringBuilderViewController.xib */; };
+		A459CAB72864F55E00AF463F /* QueryStringBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAAE2864F55E00AF463F /* QueryStringBuilderViewController.swift */; };
+		A459CAB82864F55E00AF463F /* QueryStringBuilderViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAAF2864F55E00AF463F /* QueryStringBuilderViewOutput.swift */; };
+		A459CAB92864F55E00AF463F /* QueryStringBuilderViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAB02864F55E00AF463F /* QueryStringBuilderViewInput.swift */; };
+		A459CABA2864F55E00AF463F /* QueryStringBuilderModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAB22864F55E00AF463F /* QueryStringBuilderModuleConfigurator.swift */; };
+		A459CABF2864F84600AF463F /* QueryStringBuilderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CABE2864F84600AF463F /* QueryStringBuilderCoordinator.swift */; };
+		A459CACC2864FD1200AF463F /* UIDeviceModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAC22864FD1200AF463F /* UIDeviceModuleOutput.swift */; };
+		A459CACD2864FD1200AF463F /* UIDeviceModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAC32864FD1200AF463F /* UIDeviceModuleInput.swift */; };
+		A459CACE2864FD1200AF463F /* UIDevicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAC42864FD1200AF463F /* UIDevicePresenter.swift */; };
+		A459CACF2864FD1200AF463F /* UIDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAC62864FD1200AF463F /* UIDeviceViewController.swift */; };
+		A459CAD02864FD1200AF463F /* UIDeviceViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAC72864FD1200AF463F /* UIDeviceViewOutput.swift */; };
+		A459CAD12864FD1200AF463F /* UIDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CAC82864FD1200AF463F /* UIDeviceViewController.xib */; };
+		A459CAD22864FD1200AF463F /* UIDeviceViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAC92864FD1200AF463F /* UIDeviceViewInput.swift */; };
+		A459CAD32864FD1200AF463F /* UIDeviceModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CACB2864FD1200AF463F /* UIDeviceModuleConfigurator.swift */; };
+		A459CAD52864FE9E00AF463F /* UIDeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAD42864FE9E00AF463F /* UIDeviceCoordinator.swift */; };
+		A459CAE22865D44D00AF463F /* GeolocationServiceModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAD82865D44D00AF463F /* GeolocationServiceModuleOutput.swift */; };
+		A459CAE32865D44D00AF463F /* GeolocationServicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAD92865D44D00AF463F /* GeolocationServicePresenter.swift */; };
+		A459CAE42865D44D00AF463F /* GeolocationServiceModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CADA2865D44D00AF463F /* GeolocationServiceModuleInput.swift */; };
+		A459CAE52865D44D00AF463F /* GeolocationServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CADC2865D44D00AF463F /* GeolocationServiceViewController.swift */; };
+		A459CAE62865D44D00AF463F /* GeolocationServiceViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CADD2865D44D00AF463F /* GeolocationServiceViewInput.swift */; };
+		A459CAE72865D44D00AF463F /* GeolocationServiceViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CADE2865D44D00AF463F /* GeolocationServiceViewOutput.swift */; };
+		A459CAE82865D44D00AF463F /* GeolocationServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CADF2865D44D00AF463F /* GeolocationServiceViewController.xib */; };
+		A459CAE92865D44D00AF463F /* GeolocationServiceModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAE12865D44D00AF463F /* GeolocationServiceModuleConfigurator.swift */; };
+		A459CAEB2865DAC800AF463F /* GeolocationServiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAEA2865DAC800AF463F /* GeolocationServiceCoordinator.swift */; };
+		A459CAF82865E0C100AF463F /* BrightSideModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAEE2865E0C100AF463F /* BrightSideModuleOutput.swift */; };
+		A459CAF92865E0C100AF463F /* BrightSidePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAEF2865E0C100AF463F /* BrightSidePresenter.swift */; };
+		A459CAFA2865E0C100AF463F /* BrightSideModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAF02865E0C100AF463F /* BrightSideModuleInput.swift */; };
+		A459CAFB2865E0C100AF463F /* BrightSideViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAF22865E0C100AF463F /* BrightSideViewInput.swift */; };
+		A459CAFC2865E0C100AF463F /* BrightSideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CAF32865E0C100AF463F /* BrightSideViewController.xib */; };
+		A459CAFD2865E0C100AF463F /* BrightSideViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAF42865E0C100AF463F /* BrightSideViewOutput.swift */; };
+		A459CAFE2865E0C100AF463F /* BrightSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAF52865E0C100AF463F /* BrightSideViewController.swift */; };
+		A459CAFF2865E0C100AF463F /* BrightSideModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CAF72865E0C100AF463F /* BrightSideModuleConfigurator.swift */; };
+		A459CB012865E15400AF463F /* BrightSideCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB002865E15400AF463F /* BrightSideCoordinator.swift */; };
+		A459CB0E2865E1A300AF463F /* RouteMeasurerModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB042865E1A300AF463F /* RouteMeasurerModuleInput.swift */; };
+		A459CB0F2865E1A300AF463F /* RouteMeasurerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB052865E1A300AF463F /* RouteMeasurerModuleOutput.swift */; };
+		A459CB102865E1A300AF463F /* RouteMeasurerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB062865E1A300AF463F /* RouteMeasurerPresenter.swift */; };
+		A459CB112865E1A300AF463F /* RouteMeasurerViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB082865E1A300AF463F /* RouteMeasurerViewInput.swift */; };
+		A459CB122865E1A300AF463F /* RouteMeasurerViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB092865E1A300AF463F /* RouteMeasurerViewOutput.swift */; };
+		A459CB132865E1A300AF463F /* RouteMeasurerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB0A2865E1A300AF463F /* RouteMeasurerViewController.swift */; };
+		A459CB142865E1A300AF463F /* RouteMeasurerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CB0B2865E1A300AF463F /* RouteMeasurerViewController.xib */; };
+		A459CB152865E1A300AF463F /* RouteMeasurerModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB0D2865E1A300AF463F /* RouteMeasurerModuleConfigurator.swift */; };
+		A459CB172865E25200AF463F /* RouteMeasurerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB162865E25200AF463F /* RouteMeasurerCoordinator.swift */; };
+		A459CB242865E31900AF463F /* SettingsRouterModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB1A2865E31900AF463F /* SettingsRouterModuleInput.swift */; };
+		A459CB252865E31900AF463F /* SettingsRouterModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB1B2865E31900AF463F /* SettingsRouterModuleOutput.swift */; };
+		A459CB262865E31900AF463F /* SettingsRouterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB1C2865E31900AF463F /* SettingsRouterPresenter.swift */; };
+		A459CB272865E31900AF463F /* SettingsRouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB1E2865E31900AF463F /* SettingsRouterViewController.swift */; };
+		A459CB282865E31900AF463F /* SettingsRouterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CB1F2865E31900AF463F /* SettingsRouterViewController.xib */; };
+		A459CB292865E31900AF463F /* SettingsRouterViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB202865E31900AF463F /* SettingsRouterViewOutput.swift */; };
+		A459CB2A2865E31900AF463F /* SettingsRouterViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB212865E31900AF463F /* SettingsRouterViewInput.swift */; };
+		A459CB2B2865E31900AF463F /* SettingsRouterModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB232865E31900AF463F /* SettingsRouterModuleConfigurator.swift */; };
+		A459CB2D2865E3F300AF463F /* SettingsRouterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB2C2865E3F300AF463F /* SettingsRouterCoordinator.swift */; };
+		A459CB3A2865E44900AF463F /* WordDeclinationSelectorModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB302865E44800AF463F /* WordDeclinationSelectorModuleOutput.swift */; };
+		A459CB3B2865E44900AF463F /* WordDeclinationSelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB312865E44800AF463F /* WordDeclinationSelectorPresenter.swift */; };
+		A459CB3C2865E44900AF463F /* WordDeclinationSelectorModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB322865E44800AF463F /* WordDeclinationSelectorModuleInput.swift */; };
+		A459CB3D2865E44900AF463F /* WordDeclinationSelectorViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB342865E44800AF463F /* WordDeclinationSelectorViewOutput.swift */; };
+		A459CB3E2865E44900AF463F /* WordDeclinationSelectorViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB352865E44800AF463F /* WordDeclinationSelectorViewInput.swift */; };
+		A459CB3F2865E44900AF463F /* WordDeclinationSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB362865E44800AF463F /* WordDeclinationSelectorViewController.swift */; };
+		A459CB402865E44900AF463F /* WordDeclinationSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CB372865E44800AF463F /* WordDeclinationSelectorViewController.xib */; };
+		A459CB412865E44900AF463F /* WordDeclinationSelectorModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB392865E44800AF463F /* WordDeclinationSelectorModuleConfigurator.swift */; };
+		A459CB432865E4DE00AF463F /* WordDeclinationSelectorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB422865E4DE00AF463F /* WordDeclinationSelectorCoordinator.swift */; };
+		A459CB502865E6BF00AF463F /* KeyboardPresentablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB462865E6BF00AF463F /* KeyboardPresentablePresenter.swift */; };
+		A459CB512865E6BF00AF463F /* KeyboardPresentableModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB472865E6BF00AF463F /* KeyboardPresentableModuleInput.swift */; };
+		A459CB522865E6BF00AF463F /* KeyboardPresentableModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB482865E6BF00AF463F /* KeyboardPresentableModuleOutput.swift */; };
+		A459CB532865E6BF00AF463F /* KeyboardPresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB4A2865E6BF00AF463F /* KeyboardPresentableViewController.swift */; };
+		A459CB542865E6BF00AF463F /* KeyboardPresentableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CB4B2865E6BF00AF463F /* KeyboardPresentableViewController.xib */; };
+		A459CB552865E6BF00AF463F /* KeyboardPresentableViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB4C2865E6BF00AF463F /* KeyboardPresentableViewInput.swift */; };
+		A459CB562865E6BF00AF463F /* KeyboardPresentableViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB4D2865E6BF00AF463F /* KeyboardPresentableViewOutput.swift */; };
+		A459CB572865E6BF00AF463F /* KeyboardPresentableModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB4F2865E6BF00AF463F /* KeyboardPresentableModuleConfigurator.swift */; };
+		A459CB592865E84600AF463F /* KeyboardPresentableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB582865E84600AF463F /* KeyboardPresentableCoordinator.swift */; };
+		A459CB662865E9B500AF463F /* SkeletonViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB5C2865E9B500AF463F /* SkeletonViewPresenter.swift */; };
+		A459CB672865E9B500AF463F /* SkeletonViewModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB5D2865E9B500AF463F /* SkeletonViewModuleOutput.swift */; };
+		A459CB682865E9B500AF463F /* SkeletonViewModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB5E2865E9B500AF463F /* SkeletonViewModuleInput.swift */; };
+		A459CB692865E9B500AF463F /* SkeletonViewViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB602865E9B500AF463F /* SkeletonViewViewInput.swift */; };
+		A459CB6A2865E9B500AF463F /* SkeletonViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB612865E9B500AF463F /* SkeletonViewViewController.swift */; };
+		A459CB6B2865E9B500AF463F /* SkeletonViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CB622865E9B500AF463F /* SkeletonViewViewController.xib */; };
+		A459CB6C2865E9B500AF463F /* SkeletonViewViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB632865E9B500AF463F /* SkeletonViewViewOutput.swift */; };
+		A459CB6D2865E9B500AF463F /* SkeletonViewModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB652865E9B500AF463F /* SkeletonViewModuleConfigurator.swift */; };
+		A459CB6F2865EB2300AF463F /* SkeletonViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB6E2865EB2300AF463F /* SkeletonViewCoordinator.swift */; };
+		A459CB92286603FC00AF463F /* MoneyModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB88286603FC00AF463F /* MoneyModelPresenter.swift */; };
+		A459CB93286603FC00AF463F /* MoneyModelModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB89286603FC00AF463F /* MoneyModelModuleOutput.swift */; };
+		A459CB94286603FC00AF463F /* MoneyModelModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB8A286603FC00AF463F /* MoneyModelModuleInput.swift */; };
+		A459CB95286603FC00AF463F /* MoneyModelViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB8C286603FC00AF463F /* MoneyModelViewInput.swift */; };
+		A459CB96286603FC00AF463F /* MoneyModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB8D286603FC00AF463F /* MoneyModelViewController.swift */; };
+		A459CB97286603FC00AF463F /* MoneyModelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A459CB8E286603FC00AF463F /* MoneyModelViewController.xib */; };
+		A459CB98286603FC00AF463F /* MoneyModelViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB8F286603FC00AF463F /* MoneyModelViewOutput.swift */; };
+		A459CB99286603FC00AF463F /* MoneyModelModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB91286603FC00AF463F /* MoneyModelModuleConfigurator.swift */; };
+		A459CB9B2866051A00AF463F /* MoneyModelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459CB9A2866051A00AF463F /* MoneyModelCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +163,119 @@
 		90AAE3282851F6120088A5A4 /* UtilsExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AAE32C2851F6120088A5A4 /* UtilsExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleUITests.swift; sourceTree = "<group>"; };
 		90AAE32E2851F6120088A5A4 /* UtilsExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A409293A286113C000BBC569 /* StringAttributesChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAttributesChapter.swift; sourceTree = "<group>"; };
 		A409293C286113E300BBC569 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
-		A40929412861C2B600BBC569 /* QueryStringBuilderChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryStringBuilderChapter.swift; sourceTree = "<group>"; };
-		A40929432861C3D700BBC569 /* CustomSwitchChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchChapter.swift; sourceTree = "<group>"; };
-		A40929452861C65700BBC569 /* GeolocationServiceChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationServiceChapter.swift; sourceTree = "<group>"; };
-		A40929472861C8C300BBC569 /* UIDeviceChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceChapter.swift; sourceTree = "<group>"; };
+		A459CA6F2864EA6500AF463F /* CustomSwitchModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitchModuleInput.swift; sourceTree = "<group>"; };
+		A459CA702864EA6500AF463F /* CustomSwitchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitchPresenter.swift; sourceTree = "<group>"; };
+		A459CA712864EA6500AF463F /* CustomSwitchModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitchModuleOutput.swift; sourceTree = "<group>"; };
+		A459CA732864EA6500AF463F /* CustomSwitchViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitchViewOutput.swift; sourceTree = "<group>"; };
+		A459CA742864EA6500AF463F /* CustomSwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitchViewController.swift; sourceTree = "<group>"; };
+		A459CA752864EA6500AF463F /* CustomSwitchViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitchViewInput.swift; sourceTree = "<group>"; };
+		A459CA762864EA6500AF463F /* CustomSwitchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSwitchViewController.xib; sourceTree = "<group>"; };
+		A459CA782864EA6500AF463F /* CustomSwitchModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitchModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CA822864EB8000AF463F /* CustomSwitchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchCoordinator.swift; sourceTree = "<group>"; };
+		A459CA892864ED5300AF463F /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		A459CA8B2864ED7300AF463F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A459CA8D2864ED9F00AF463F /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		A459CA8F2864EE0300AF463F /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		A459CA932864F10400AF463F /* StringAttributesModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributesModuleOutput.swift; sourceTree = "<group>"; };
+		A459CA942864F10400AF463F /* StringAttributesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributesPresenter.swift; sourceTree = "<group>"; };
+		A459CA952864F10400AF463F /* StringAttributesModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributesModuleInput.swift; sourceTree = "<group>"; };
+		A459CA972864F10400AF463F /* StringAttributesViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributesViewOutput.swift; sourceTree = "<group>"; };
+		A459CA982864F10400AF463F /* StringAttributesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributesViewController.swift; sourceTree = "<group>"; };
+		A459CA992864F10400AF463F /* StringAttributesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StringAttributesViewController.xib; sourceTree = "<group>"; };
+		A459CA9A2864F10400AF463F /* StringAttributesViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributesViewInput.swift; sourceTree = "<group>"; };
+		A459CA9C2864F10400AF463F /* StringAttributesModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributesModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CAA52864F41500AF463F /* StringAttributesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributesCoordinator.swift; sourceTree = "<group>"; };
+		A459CAA92864F55E00AF463F /* QueryStringBuilderPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStringBuilderPresenter.swift; sourceTree = "<group>"; };
+		A459CAAA2864F55E00AF463F /* QueryStringBuilderModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStringBuilderModuleInput.swift; sourceTree = "<group>"; };
+		A459CAAB2864F55E00AF463F /* QueryStringBuilderModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStringBuilderModuleOutput.swift; sourceTree = "<group>"; };
+		A459CAAD2864F55E00AF463F /* QueryStringBuilderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QueryStringBuilderViewController.xib; sourceTree = "<group>"; };
+		A459CAAE2864F55E00AF463F /* QueryStringBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStringBuilderViewController.swift; sourceTree = "<group>"; };
+		A459CAAF2864F55E00AF463F /* QueryStringBuilderViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStringBuilderViewOutput.swift; sourceTree = "<group>"; };
+		A459CAB02864F55E00AF463F /* QueryStringBuilderViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStringBuilderViewInput.swift; sourceTree = "<group>"; };
+		A459CAB22864F55E00AF463F /* QueryStringBuilderModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStringBuilderModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CABE2864F84600AF463F /* QueryStringBuilderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryStringBuilderCoordinator.swift; sourceTree = "<group>"; };
+		A459CAC22864FD1200AF463F /* UIDeviceModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceModuleOutput.swift; sourceTree = "<group>"; };
+		A459CAC32864FD1200AF463F /* UIDeviceModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceModuleInput.swift; sourceTree = "<group>"; };
+		A459CAC42864FD1200AF463F /* UIDevicePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevicePresenter.swift; sourceTree = "<group>"; };
+		A459CAC62864FD1200AF463F /* UIDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceViewController.swift; sourceTree = "<group>"; };
+		A459CAC72864FD1200AF463F /* UIDeviceViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceViewOutput.swift; sourceTree = "<group>"; };
+		A459CAC82864FD1200AF463F /* UIDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIDeviceViewController.xib; sourceTree = "<group>"; };
+		A459CAC92864FD1200AF463F /* UIDeviceViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceViewInput.swift; sourceTree = "<group>"; };
+		A459CACB2864FD1200AF463F /* UIDeviceModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CAD42864FE9E00AF463F /* UIDeviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceCoordinator.swift; sourceTree = "<group>"; };
+		A459CAD82865D44D00AF463F /* GeolocationServiceModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeolocationServiceModuleOutput.swift; sourceTree = "<group>"; };
+		A459CAD92865D44D00AF463F /* GeolocationServicePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeolocationServicePresenter.swift; sourceTree = "<group>"; };
+		A459CADA2865D44D00AF463F /* GeolocationServiceModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeolocationServiceModuleInput.swift; sourceTree = "<group>"; };
+		A459CADC2865D44D00AF463F /* GeolocationServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeolocationServiceViewController.swift; sourceTree = "<group>"; };
+		A459CADD2865D44D00AF463F /* GeolocationServiceViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeolocationServiceViewInput.swift; sourceTree = "<group>"; };
+		A459CADE2865D44D00AF463F /* GeolocationServiceViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeolocationServiceViewOutput.swift; sourceTree = "<group>"; };
+		A459CADF2865D44D00AF463F /* GeolocationServiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeolocationServiceViewController.xib; sourceTree = "<group>"; };
+		A459CAE12865D44D00AF463F /* GeolocationServiceModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeolocationServiceModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CAEA2865DAC800AF463F /* GeolocationServiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationServiceCoordinator.swift; sourceTree = "<group>"; };
+		A459CAEE2865E0C100AF463F /* BrightSideModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightSideModuleOutput.swift; sourceTree = "<group>"; };
+		A459CAEF2865E0C100AF463F /* BrightSidePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightSidePresenter.swift; sourceTree = "<group>"; };
+		A459CAF02865E0C100AF463F /* BrightSideModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightSideModuleInput.swift; sourceTree = "<group>"; };
+		A459CAF22865E0C100AF463F /* BrightSideViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightSideViewInput.swift; sourceTree = "<group>"; };
+		A459CAF32865E0C100AF463F /* BrightSideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrightSideViewController.xib; sourceTree = "<group>"; };
+		A459CAF42865E0C100AF463F /* BrightSideViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightSideViewOutput.swift; sourceTree = "<group>"; };
+		A459CAF52865E0C100AF463F /* BrightSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightSideViewController.swift; sourceTree = "<group>"; };
+		A459CAF72865E0C100AF463F /* BrightSideModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightSideModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CB002865E15400AF463F /* BrightSideCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightSideCoordinator.swift; sourceTree = "<group>"; };
+		A459CB042865E1A300AF463F /* RouteMeasurerModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteMeasurerModuleInput.swift; sourceTree = "<group>"; };
+		A459CB052865E1A300AF463F /* RouteMeasurerModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteMeasurerModuleOutput.swift; sourceTree = "<group>"; };
+		A459CB062865E1A300AF463F /* RouteMeasurerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteMeasurerPresenter.swift; sourceTree = "<group>"; };
+		A459CB082865E1A300AF463F /* RouteMeasurerViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteMeasurerViewInput.swift; sourceTree = "<group>"; };
+		A459CB092865E1A300AF463F /* RouteMeasurerViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteMeasurerViewOutput.swift; sourceTree = "<group>"; };
+		A459CB0A2865E1A300AF463F /* RouteMeasurerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteMeasurerViewController.swift; sourceTree = "<group>"; };
+		A459CB0B2865E1A300AF463F /* RouteMeasurerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteMeasurerViewController.xib; sourceTree = "<group>"; };
+		A459CB0D2865E1A300AF463F /* RouteMeasurerModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteMeasurerModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CB162865E25200AF463F /* RouteMeasurerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMeasurerCoordinator.swift; sourceTree = "<group>"; };
+		A459CB1A2865E31900AF463F /* SettingsRouterModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouterModuleInput.swift; sourceTree = "<group>"; };
+		A459CB1B2865E31900AF463F /* SettingsRouterModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouterModuleOutput.swift; sourceTree = "<group>"; };
+		A459CB1C2865E31900AF463F /* SettingsRouterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouterPresenter.swift; sourceTree = "<group>"; };
+		A459CB1E2865E31900AF463F /* SettingsRouterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouterViewController.swift; sourceTree = "<group>"; };
+		A459CB1F2865E31900AF463F /* SettingsRouterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsRouterViewController.xib; sourceTree = "<group>"; };
+		A459CB202865E31900AF463F /* SettingsRouterViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouterViewOutput.swift; sourceTree = "<group>"; };
+		A459CB212865E31900AF463F /* SettingsRouterViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouterViewInput.swift; sourceTree = "<group>"; };
+		A459CB232865E31900AF463F /* SettingsRouterModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouterModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CB2C2865E3F300AF463F /* SettingsRouterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouterCoordinator.swift; sourceTree = "<group>"; };
+		A459CB302865E44800AF463F /* WordDeclinationSelectorModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorModuleOutput.swift; sourceTree = "<group>"; };
+		A459CB312865E44800AF463F /* WordDeclinationSelectorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorPresenter.swift; sourceTree = "<group>"; };
+		A459CB322865E44800AF463F /* WordDeclinationSelectorModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorModuleInput.swift; sourceTree = "<group>"; };
+		A459CB342865E44800AF463F /* WordDeclinationSelectorViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorViewOutput.swift; sourceTree = "<group>"; };
+		A459CB352865E44800AF463F /* WordDeclinationSelectorViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorViewInput.swift; sourceTree = "<group>"; };
+		A459CB362865E44800AF463F /* WordDeclinationSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorViewController.swift; sourceTree = "<group>"; };
+		A459CB372865E44800AF463F /* WordDeclinationSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordDeclinationSelectorViewController.xib; sourceTree = "<group>"; };
+		A459CB392865E44800AF463F /* WordDeclinationSelectorModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CB422865E4DE00AF463F /* WordDeclinationSelectorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDeclinationSelectorCoordinator.swift; sourceTree = "<group>"; };
+		A459CB462865E6BF00AF463F /* KeyboardPresentablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPresentablePresenter.swift; sourceTree = "<group>"; };
+		A459CB472865E6BF00AF463F /* KeyboardPresentableModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPresentableModuleInput.swift; sourceTree = "<group>"; };
+		A459CB482865E6BF00AF463F /* KeyboardPresentableModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPresentableModuleOutput.swift; sourceTree = "<group>"; };
+		A459CB4A2865E6BF00AF463F /* KeyboardPresentableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPresentableViewController.swift; sourceTree = "<group>"; };
+		A459CB4B2865E6BF00AF463F /* KeyboardPresentableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardPresentableViewController.xib; sourceTree = "<group>"; };
+		A459CB4C2865E6BF00AF463F /* KeyboardPresentableViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPresentableViewInput.swift; sourceTree = "<group>"; };
+		A459CB4D2865E6BF00AF463F /* KeyboardPresentableViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPresentableViewOutput.swift; sourceTree = "<group>"; };
+		A459CB4F2865E6BF00AF463F /* KeyboardPresentableModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPresentableModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CB582865E84600AF463F /* KeyboardPresentableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPresentableCoordinator.swift; sourceTree = "<group>"; };
+		A459CB5C2865E9B500AF463F /* SkeletonViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonViewPresenter.swift; sourceTree = "<group>"; };
+		A459CB5D2865E9B500AF463F /* SkeletonViewModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonViewModuleOutput.swift; sourceTree = "<group>"; };
+		A459CB5E2865E9B500AF463F /* SkeletonViewModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonViewModuleInput.swift; sourceTree = "<group>"; };
+		A459CB602865E9B500AF463F /* SkeletonViewViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonViewViewInput.swift; sourceTree = "<group>"; };
+		A459CB612865E9B500AF463F /* SkeletonViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonViewViewController.swift; sourceTree = "<group>"; };
+		A459CB622865E9B500AF463F /* SkeletonViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkeletonViewViewController.xib; sourceTree = "<group>"; };
+		A459CB632865E9B500AF463F /* SkeletonViewViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonViewViewOutput.swift; sourceTree = "<group>"; };
+		A459CB652865E9B500AF463F /* SkeletonViewModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonViewModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CB6E2865EB2300AF463F /* SkeletonViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonViewCoordinator.swift; sourceTree = "<group>"; };
+		A459CB88286603FC00AF463F /* MoneyModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyModelPresenter.swift; sourceTree = "<group>"; };
+		A459CB89286603FC00AF463F /* MoneyModelModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyModelModuleOutput.swift; sourceTree = "<group>"; };
+		A459CB8A286603FC00AF463F /* MoneyModelModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyModelModuleInput.swift; sourceTree = "<group>"; };
+		A459CB8C286603FC00AF463F /* MoneyModelViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyModelViewInput.swift; sourceTree = "<group>"; };
+		A459CB8D286603FC00AF463F /* MoneyModelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyModelViewController.swift; sourceTree = "<group>"; };
+		A459CB8E286603FC00AF463F /* MoneyModelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyModelViewController.xib; sourceTree = "<group>"; };
+		A459CB8F286603FC00AF463F /* MoneyModelViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyModelViewOutput.swift; sourceTree = "<group>"; };
+		A459CB91286603FC00AF463F /* MoneyModelModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyModelModuleConfigurator.swift; sourceTree = "<group>"; };
+		A459CB9A2866051A00AF463F /* MoneyModelCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyModelCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,22 +369,12 @@
 		A40929372861137100BBC569 /* Playbook */ = {
 			isa = PBXGroup;
 			children = (
-				A40929382861137B00BBC569 /* Chapters */,
+				A459CA882864ECFF00AF463F /* Library */,
+				A459CA812864EB5A00AF463F /* Coordinators */,
+				A4435F372864E5D500A4207E /* Flows */,
 				A40929392861138100BBC569 /* UIKitPages */,
 			);
 			path = Playbook;
-			sourceTree = "<group>";
-		};
-		A40929382861137B00BBC569 /* Chapters */ = {
-			isa = PBXGroup;
-			children = (
-				A409293A286113C000BBC569 /* StringAttributesChapter.swift */,
-				A40929412861C2B600BBC569 /* QueryStringBuilderChapter.swift */,
-				A40929432861C3D700BBC569 /* CustomSwitchChapter.swift */,
-				A40929452861C65700BBC569 /* GeolocationServiceChapter.swift */,
-				A40929472861C8C300BBC569 /* UIDeviceChapter.swift */,
-			);
-			path = Chapters;
 			sourceTree = "<group>";
 		};
 		A40929392861138100BBC569 /* UIKitPages */ = {
@@ -188,6 +392,539 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A4435F372864E5D500A4207E /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA912864F10400AF463F /* StringAttributes */,
+				A459CA6D2864EA6500AF463F /* CustomSwitch */,
+				A459CAA72864F55E00AF463F /* QueryStringBuilder */,
+				A459CAC02864FD1200AF463F /* UIDevice */,
+				A459CAD62865D44D00AF463F /* GeolocationService */,
+				A459CAEC2865E0C100AF463F /* BrightSide */,
+				A459CB022865E1A300AF463F /* RouteMeasurer */,
+				A459CB182865E31900AF463F /* SettingsRouter */,
+				A459CB2E2865E44800AF463F /* WordDeclinationSelector */,
+				A459CB442865E6BF00AF463F /* KeyboardPresentable */,
+				A459CB5A2865E9B500AF463F /* SkeletonView */,
+				A459CB86286603FC00AF463F /* MoneyModel */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		A459CA6D2864EA6500AF463F /* CustomSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA772864EA6500AF463F /* Configurator */,
+				A459CA6E2864EA6500AF463F /* Presenter */,
+				A459CA722864EA6500AF463F /* View */,
+			);
+			path = CustomSwitch;
+			sourceTree = "<group>";
+		};
+		A459CA6E2864EA6500AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA6F2864EA6500AF463F /* CustomSwitchModuleInput.swift */,
+				A459CA702864EA6500AF463F /* CustomSwitchPresenter.swift */,
+				A459CA712864EA6500AF463F /* CustomSwitchModuleOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CA722864EA6500AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA742864EA6500AF463F /* CustomSwitchViewController.swift */,
+				A459CA732864EA6500AF463F /* CustomSwitchViewOutput.swift */,
+				A459CA752864EA6500AF463F /* CustomSwitchViewInput.swift */,
+				A459CA762864EA6500AF463F /* CustomSwitchViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CA772864EA6500AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA782864EA6500AF463F /* CustomSwitchModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CA812864EB5A00AF463F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAA52864F41500AF463F /* StringAttributesCoordinator.swift */,
+				A459CA822864EB8000AF463F /* CustomSwitchCoordinator.swift */,
+				A459CABE2864F84600AF463F /* QueryStringBuilderCoordinator.swift */,
+				A459CAD42864FE9E00AF463F /* UIDeviceCoordinator.swift */,
+				A459CAEA2865DAC800AF463F /* GeolocationServiceCoordinator.swift */,
+				A459CB002865E15400AF463F /* BrightSideCoordinator.swift */,
+				A459CB162865E25200AF463F /* RouteMeasurerCoordinator.swift */,
+				A459CB2C2865E3F300AF463F /* SettingsRouterCoordinator.swift */,
+				A459CB422865E4DE00AF463F /* WordDeclinationSelectorCoordinator.swift */,
+				A459CB582865E84600AF463F /* KeyboardPresentableCoordinator.swift */,
+				A459CB6E2865EB2300AF463F /* SkeletonViewCoordinator.swift */,
+				A459CB9A2866051A00AF463F /* MoneyModelCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		A459CA882864ECFF00AF463F /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				A459CABC2864F60700AF463F /* Router */,
+				A459CABB2864F5B200AF463F /* Extensions */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		A459CA912864F10400AF463F /* StringAttributes */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA9B2864F10400AF463F /* Configurator */,
+				A459CA922864F10400AF463F /* Presenter */,
+				A459CA962864F10400AF463F /* View */,
+			);
+			path = StringAttributes;
+			sourceTree = "<group>";
+		};
+		A459CA922864F10400AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA932864F10400AF463F /* StringAttributesModuleOutput.swift */,
+				A459CA942864F10400AF463F /* StringAttributesPresenter.swift */,
+				A459CA952864F10400AF463F /* StringAttributesModuleInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CA962864F10400AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA982864F10400AF463F /* StringAttributesViewController.swift */,
+				A459CA972864F10400AF463F /* StringAttributesViewOutput.swift */,
+				A459CA992864F10400AF463F /* StringAttributesViewController.xib */,
+				A459CA9A2864F10400AF463F /* StringAttributesViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CA9B2864F10400AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA9C2864F10400AF463F /* StringAttributesModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CAA72864F55E00AF463F /* QueryStringBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAB12864F55E00AF463F /* Configurator */,
+				A459CAA82864F55E00AF463F /* Presenter */,
+				A459CAAC2864F55E00AF463F /* View */,
+			);
+			path = QueryStringBuilder;
+			sourceTree = "<group>";
+		};
+		A459CAA82864F55E00AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAA92864F55E00AF463F /* QueryStringBuilderPresenter.swift */,
+				A459CAAA2864F55E00AF463F /* QueryStringBuilderModuleInput.swift */,
+				A459CAAB2864F55E00AF463F /* QueryStringBuilderModuleOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CAAC2864F55E00AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAAE2864F55E00AF463F /* QueryStringBuilderViewController.swift */,
+				A459CAAF2864F55E00AF463F /* QueryStringBuilderViewOutput.swift */,
+				A459CAB02864F55E00AF463F /* QueryStringBuilderViewInput.swift */,
+				A459CAAD2864F55E00AF463F /* QueryStringBuilderViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CAB12864F55E00AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAB22864F55E00AF463F /* QueryStringBuilderModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CABB2864F5B200AF463F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA8D2864ED9F00AF463F /* Presentable.swift */,
+				A459CA8F2864EE0300AF463F /* UIApplication.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A459CABC2864F60700AF463F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A459CA892864ED5300AF463F /* MainRouter.swift */,
+				A459CA8B2864ED7300AF463F /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A459CAC02864FD1200AF463F /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				A459CACA2864FD1200AF463F /* Configurator */,
+				A459CAC12864FD1200AF463F /* Presenter */,
+				A459CAC52864FD1200AF463F /* View */,
+			);
+			path = UIDevice;
+			sourceTree = "<group>";
+		};
+		A459CAC12864FD1200AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAC22864FD1200AF463F /* UIDeviceModuleOutput.swift */,
+				A459CAC32864FD1200AF463F /* UIDeviceModuleInput.swift */,
+				A459CAC42864FD1200AF463F /* UIDevicePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CAC52864FD1200AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAC62864FD1200AF463F /* UIDeviceViewController.swift */,
+				A459CAC72864FD1200AF463F /* UIDeviceViewOutput.swift */,
+				A459CAC92864FD1200AF463F /* UIDeviceViewInput.swift */,
+				A459CAC82864FD1200AF463F /* UIDeviceViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CACA2864FD1200AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CACB2864FD1200AF463F /* UIDeviceModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CAD62865D44D00AF463F /* GeolocationService */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAE02865D44D00AF463F /* Configurator */,
+				A459CAD72865D44D00AF463F /* Presenter */,
+				A459CADB2865D44D00AF463F /* View */,
+			);
+			path = GeolocationService;
+			sourceTree = "<group>";
+		};
+		A459CAD72865D44D00AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAD82865D44D00AF463F /* GeolocationServiceModuleOutput.swift */,
+				A459CAD92865D44D00AF463F /* GeolocationServicePresenter.swift */,
+				A459CADA2865D44D00AF463F /* GeolocationServiceModuleInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CADB2865D44D00AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CADC2865D44D00AF463F /* GeolocationServiceViewController.swift */,
+				A459CADD2865D44D00AF463F /* GeolocationServiceViewInput.swift */,
+				A459CADE2865D44D00AF463F /* GeolocationServiceViewOutput.swift */,
+				A459CADF2865D44D00AF463F /* GeolocationServiceViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CAE02865D44D00AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAE12865D44D00AF463F /* GeolocationServiceModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CAEC2865E0C100AF463F /* BrightSide */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAF62865E0C100AF463F /* Configurator */,
+				A459CAED2865E0C100AF463F /* Presenter */,
+				A459CAF12865E0C100AF463F /* View */,
+			);
+			path = BrightSide;
+			sourceTree = "<group>";
+		};
+		A459CAED2865E0C100AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAEE2865E0C100AF463F /* BrightSideModuleOutput.swift */,
+				A459CAEF2865E0C100AF463F /* BrightSidePresenter.swift */,
+				A459CAF02865E0C100AF463F /* BrightSideModuleInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CAF12865E0C100AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAF52865E0C100AF463F /* BrightSideViewController.swift */,
+				A459CAF22865E0C100AF463F /* BrightSideViewInput.swift */,
+				A459CAF42865E0C100AF463F /* BrightSideViewOutput.swift */,
+				A459CAF32865E0C100AF463F /* BrightSideViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CAF62865E0C100AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CAF72865E0C100AF463F /* BrightSideModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CB022865E1A300AF463F /* RouteMeasurer */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB0C2865E1A300AF463F /* Configurator */,
+				A459CB032865E1A300AF463F /* Presenter */,
+				A459CB072865E1A300AF463F /* View */,
+			);
+			path = RouteMeasurer;
+			sourceTree = "<group>";
+		};
+		A459CB032865E1A300AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB042865E1A300AF463F /* RouteMeasurerModuleInput.swift */,
+				A459CB052865E1A300AF463F /* RouteMeasurerModuleOutput.swift */,
+				A459CB062865E1A300AF463F /* RouteMeasurerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CB072865E1A300AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB0A2865E1A300AF463F /* RouteMeasurerViewController.swift */,
+				A459CB082865E1A300AF463F /* RouteMeasurerViewInput.swift */,
+				A459CB092865E1A300AF463F /* RouteMeasurerViewOutput.swift */,
+				A459CB0B2865E1A300AF463F /* RouteMeasurerViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CB0C2865E1A300AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB0D2865E1A300AF463F /* RouteMeasurerModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CB182865E31900AF463F /* SettingsRouter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB222865E31900AF463F /* Configurator */,
+				A459CB192865E31900AF463F /* Presenter */,
+				A459CB1D2865E31900AF463F /* View */,
+			);
+			path = SettingsRouter;
+			sourceTree = "<group>";
+		};
+		A459CB192865E31900AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB1A2865E31900AF463F /* SettingsRouterModuleInput.swift */,
+				A459CB1B2865E31900AF463F /* SettingsRouterModuleOutput.swift */,
+				A459CB1C2865E31900AF463F /* SettingsRouterPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CB1D2865E31900AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB1E2865E31900AF463F /* SettingsRouterViewController.swift */,
+				A459CB202865E31900AF463F /* SettingsRouterViewOutput.swift */,
+				A459CB212865E31900AF463F /* SettingsRouterViewInput.swift */,
+				A459CB1F2865E31900AF463F /* SettingsRouterViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CB222865E31900AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB232865E31900AF463F /* SettingsRouterModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CB2E2865E44800AF463F /* WordDeclinationSelector */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB382865E44800AF463F /* Configurator */,
+				A459CB2F2865E44800AF463F /* Presenter */,
+				A459CB332865E44800AF463F /* View */,
+			);
+			path = WordDeclinationSelector;
+			sourceTree = "<group>";
+		};
+		A459CB2F2865E44800AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB302865E44800AF463F /* WordDeclinationSelectorModuleOutput.swift */,
+				A459CB312865E44800AF463F /* WordDeclinationSelectorPresenter.swift */,
+				A459CB322865E44800AF463F /* WordDeclinationSelectorModuleInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CB332865E44800AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB362865E44800AF463F /* WordDeclinationSelectorViewController.swift */,
+				A459CB342865E44800AF463F /* WordDeclinationSelectorViewOutput.swift */,
+				A459CB352865E44800AF463F /* WordDeclinationSelectorViewInput.swift */,
+				A459CB372865E44800AF463F /* WordDeclinationSelectorViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CB382865E44800AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB392865E44800AF463F /* WordDeclinationSelectorModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CB442865E6BF00AF463F /* KeyboardPresentable */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB4E2865E6BF00AF463F /* Configurator */,
+				A459CB452865E6BF00AF463F /* Presenter */,
+				A459CB492865E6BF00AF463F /* View */,
+			);
+			path = KeyboardPresentable;
+			sourceTree = "<group>";
+		};
+		A459CB452865E6BF00AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB462865E6BF00AF463F /* KeyboardPresentablePresenter.swift */,
+				A459CB472865E6BF00AF463F /* KeyboardPresentableModuleInput.swift */,
+				A459CB482865E6BF00AF463F /* KeyboardPresentableModuleOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CB492865E6BF00AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB4A2865E6BF00AF463F /* KeyboardPresentableViewController.swift */,
+				A459CB4C2865E6BF00AF463F /* KeyboardPresentableViewInput.swift */,
+				A459CB4D2865E6BF00AF463F /* KeyboardPresentableViewOutput.swift */,
+				A459CB4B2865E6BF00AF463F /* KeyboardPresentableViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CB4E2865E6BF00AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB4F2865E6BF00AF463F /* KeyboardPresentableModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CB5A2865E9B500AF463F /* SkeletonView */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB642865E9B500AF463F /* Configurator */,
+				A459CB5B2865E9B500AF463F /* Presenter */,
+				A459CB5F2865E9B500AF463F /* View */,
+			);
+			path = SkeletonView;
+			sourceTree = "<group>";
+		};
+		A459CB5B2865E9B500AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB5C2865E9B500AF463F /* SkeletonViewPresenter.swift */,
+				A459CB5D2865E9B500AF463F /* SkeletonViewModuleOutput.swift */,
+				A459CB5E2865E9B500AF463F /* SkeletonViewModuleInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CB5F2865E9B500AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB612865E9B500AF463F /* SkeletonViewViewController.swift */,
+				A459CB602865E9B500AF463F /* SkeletonViewViewInput.swift */,
+				A459CB632865E9B500AF463F /* SkeletonViewViewOutput.swift */,
+				A459CB622865E9B500AF463F /* SkeletonViewViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CB642865E9B500AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB652865E9B500AF463F /* SkeletonViewModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		A459CB86286603FC00AF463F /* MoneyModel */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB90286603FC00AF463F /* Configurator */,
+				A459CB87286603FC00AF463F /* Presenter */,
+				A459CB8B286603FC00AF463F /* View */,
+			);
+			path = MoneyModel;
+			sourceTree = "<group>";
+		};
+		A459CB87286603FC00AF463F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB88286603FC00AF463F /* MoneyModelPresenter.swift */,
+				A459CB89286603FC00AF463F /* MoneyModelModuleOutput.swift */,
+				A459CB8A286603FC00AF463F /* MoneyModelModuleInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A459CB8B286603FC00AF463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB8D286603FC00AF463F /* MoneyModelViewController.swift */,
+				A459CB8C286603FC00AF463F /* MoneyModelViewInput.swift */,
+				A459CB8F286603FC00AF463F /* MoneyModelViewOutput.swift */,
+				A459CB8E286603FC00AF463F /* MoneyModelViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A459CB90286603FC00AF463F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A459CB91286603FC00AF463F /* MoneyModelModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,6 +935,7 @@
 				90AAE3042851F6100088A5A4 /* Sources */,
 				90AAE3052851F6100088A5A4 /* Frameworks */,
 				90AAE3062851F6100088A5A4 /* Resources */,
+				A459CABD2864F6F700AF463F /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -299,9 +1037,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A459CB282865E31900AF463F /* SettingsRouterViewController.xib in Resources */,
+				A459CB402865E44900AF463F /* WordDeclinationSelectorViewController.xib in Resources */,
+				A459CAD12864FD1200AF463F /* UIDeviceViewController.xib in Resources */,
+				A459CAE82865D44D00AF463F /* GeolocationServiceViewController.xib in Resources */,
+				A459CB6B2865E9B500AF463F /* SkeletonViewViewController.xib in Resources */,
+				A459CB97286603FC00AF463F /* MoneyModelViewController.xib in Resources */,
+				A459CAB62864F55E00AF463F /* QueryStringBuilderViewController.xib in Resources */,
 				90AAE3182851F6110088A5A4 /* LaunchScreen.storyboard in Resources */,
+				A459CAFC2865E0C100AF463F /* BrightSideViewController.xib in Resources */,
 				90AAE3152851F6110088A5A4 /* Assets.xcassets in Resources */,
+				A459CB142865E1A300AF463F /* RouteMeasurerViewController.xib in Resources */,
 				90AAE3132851F6100088A5A4 /* Main.storyboard in Resources */,
+				A459CA7F2864EA6500AF463F /* CustomSwitchViewController.xib in Resources */,
+				A459CAA22864F10400AF463F /* StringAttributesViewController.xib in Resources */,
+				A459CB542865E6BF00AF463F /* KeyboardPresentableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,19 +1071,135 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A459CABD2864F6F700AF463F /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/../BuildTools/swiftlint_0_47_1\" --config ${SRCROOT}/.swiftlint.yml\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		90AAE3042851F6100088A5A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A459CB6A2865E9B500AF463F /* SkeletonViewViewController.swift in Sources */,
+				A459CA9E2864F10400AF463F /* StringAttributesPresenter.swift in Sources */,
+				A459CAFE2865E0C100AF463F /* BrightSideViewController.swift in Sources */,
+				A459CACE2864FD1200AF463F /* UIDevicePresenter.swift in Sources */,
+				A459CAB92864F55E00AF463F /* QueryStringBuilderViewInput.swift in Sources */,
+				A459CAB52864F55E00AF463F /* QueryStringBuilderModuleOutput.swift in Sources */,
+				A459CACF2864FD1200AF463F /* UIDeviceViewController.swift in Sources */,
+				A459CAE52865D44D00AF463F /* GeolocationServiceViewController.swift in Sources */,
+				A459CA902864EE0300AF463F /* UIApplication.swift in Sources */,
+				A459CA8C2864ED7300AF463F /* Router.swift in Sources */,
+				A459CB3D2865E44900AF463F /* WordDeclinationSelectorViewOutput.swift in Sources */,
+				A459CB2A2865E31900AF463F /* SettingsRouterViewInput.swift in Sources */,
+				A459CB562865E6BF00AF463F /* KeyboardPresentableViewOutput.swift in Sources */,
+				A459CA7C2864EA6500AF463F /* CustomSwitchViewOutput.swift in Sources */,
+				A459CB672865E9B500AF463F /* SkeletonViewModuleOutput.swift in Sources */,
+				A459CA9F2864F10400AF463F /* StringAttributesModuleInput.swift in Sources */,
+				A459CB94286603FC00AF463F /* MoneyModelModuleInput.swift in Sources */,
+				A459CA7D2864EA6500AF463F /* CustomSwitchViewController.swift in Sources */,
+				A459CAA32864F10400AF463F /* StringAttributesViewInput.swift in Sources */,
+				A459CAB42864F55E00AF463F /* QueryStringBuilderModuleInput.swift in Sources */,
+				A459CAFB2865E0C100AF463F /* BrightSideViewInput.swift in Sources */,
+				A459CA7B2864EA6500AF463F /* CustomSwitchModuleOutput.swift in Sources */,
+				A459CB572865E6BF00AF463F /* KeyboardPresentableModuleConfigurator.swift in Sources */,
+				A459CB692865E9B500AF463F /* SkeletonViewViewInput.swift in Sources */,
+				A459CA7A2864EA6500AF463F /* CustomSwitchPresenter.swift in Sources */,
 				A409293D286113E300BBC569 /* MainPage.swift in Sources */,
-				A40929442861C3D700BBC569 /* CustomSwitchChapter.swift in Sources */,
+				A459CA8E2864ED9F00AF463F /* Presentable.swift in Sources */,
+				A459CB102865E1A300AF463F /* RouteMeasurerPresenter.swift in Sources */,
+				A459CAB32864F55E00AF463F /* QueryStringBuilderPresenter.swift in Sources */,
+				A459CAD02864FD1200AF463F /* UIDeviceViewOutput.swift in Sources */,
+				A459CB262865E31900AF463F /* SettingsRouterPresenter.swift in Sources */,
+				A459CA802864EA6500AF463F /* CustomSwitchModuleConfigurator.swift in Sources */,
+				A459CAD52864FE9E00AF463F /* UIDeviceCoordinator.swift in Sources */,
+				A459CB242865E31900AF463F /* SettingsRouterModuleInput.swift in Sources */,
+				A459CB122865E1A300AF463F /* RouteMeasurerViewOutput.swift in Sources */,
+				A459CB6D2865E9B500AF463F /* SkeletonViewModuleConfigurator.swift in Sources */,
+				A459CAE72865D44D00AF463F /* GeolocationServiceViewOutput.swift in Sources */,
+				A459CABF2864F84600AF463F /* QueryStringBuilderCoordinator.swift in Sources */,
+				A459CAA12864F10400AF463F /* StringAttributesViewController.swift in Sources */,
+				A459CA8A2864ED5300AF463F /* MainRouter.swift in Sources */,
 				90AAE3102851F6100088A5A4 /* ViewController.swift in Sources */,
 				90AAE30C2851F6100088A5A4 /* AppDelegate.swift in Sources */,
-				A40929462861C65700BBC569 /* GeolocationServiceChapter.swift in Sources */,
-				A40929482861C8C300BBC569 /* UIDeviceChapter.swift in Sources */,
-				A409293B286113C000BBC569 /* StringAttributesChapter.swift in Sources */,
-				A40929422861C2B600BBC569 /* QueryStringBuilderChapter.swift in Sources */,
+				A459CB3A2865E44900AF463F /* WordDeclinationSelectorModuleOutput.swift in Sources */,
+				A459CB99286603FC00AF463F /* MoneyModelModuleConfigurator.swift in Sources */,
+				A459CAE42865D44D00AF463F /* GeolocationServiceModuleInput.swift in Sources */,
+				A459CAFD2865E0C100AF463F /* BrightSideViewOutput.swift in Sources */,
+				A459CAFA2865E0C100AF463F /* BrightSideModuleInput.swift in Sources */,
+				A459CB172865E25200AF463F /* RouteMeasurerCoordinator.swift in Sources */,
+				A459CB272865E31900AF463F /* SettingsRouterViewController.swift in Sources */,
+				A459CAEB2865DAC800AF463F /* GeolocationServiceCoordinator.swift in Sources */,
+				A459CB0E2865E1A300AF463F /* RouteMeasurerModuleInput.swift in Sources */,
+				A459CB412865E44900AF463F /* WordDeclinationSelectorModuleConfigurator.swift in Sources */,
+				A459CB532865E6BF00AF463F /* KeyboardPresentableViewController.swift in Sources */,
+				A459CAF82865E0C100AF463F /* BrightSideModuleOutput.swift in Sources */,
+				A459CB2D2865E3F300AF463F /* SettingsRouterCoordinator.swift in Sources */,
+				A459CAA02864F10400AF463F /* StringAttributesViewOutput.swift in Sources */,
+				A459CB6F2865EB2300AF463F /* SkeletonViewCoordinator.swift in Sources */,
+				A459CB3B2865E44900AF463F /* WordDeclinationSelectorPresenter.swift in Sources */,
+				A459CAA42864F10400AF463F /* StringAttributesModuleConfigurator.swift in Sources */,
+				A459CAD22864FD1200AF463F /* UIDeviceViewInput.swift in Sources */,
+				A459CB96286603FC00AF463F /* MoneyModelViewController.swift in Sources */,
+				A459CABA2864F55E00AF463F /* QueryStringBuilderModuleConfigurator.swift in Sources */,
+				A459CB662865E9B500AF463F /* SkeletonViewPresenter.swift in Sources */,
+				A459CB132865E1A300AF463F /* RouteMeasurerViewController.swift in Sources */,
+				A459CAE92865D44D00AF463F /* GeolocationServiceModuleConfigurator.swift in Sources */,
+				A459CB92286603FC00AF463F /* MoneyModelPresenter.swift in Sources */,
+				A459CAFF2865E0C100AF463F /* BrightSideModuleConfigurator.swift in Sources */,
+				A459CB512865E6BF00AF463F /* KeyboardPresentableModuleInput.swift in Sources */,
+				A459CACD2864FD1200AF463F /* UIDeviceModuleInput.swift in Sources */,
+				A459CB93286603FC00AF463F /* MoneyModelModuleOutput.swift in Sources */,
+				A459CB95286603FC00AF463F /* MoneyModelViewInput.swift in Sources */,
+				A459CB502865E6BF00AF463F /* KeyboardPresentablePresenter.swift in Sources */,
+				A459CB552865E6BF00AF463F /* KeyboardPresentableViewInput.swift in Sources */,
+				A459CB012865E15400AF463F /* BrightSideCoordinator.swift in Sources */,
+				A459CAA62864F41500AF463F /* StringAttributesCoordinator.swift in Sources */,
+				A459CB522865E6BF00AF463F /* KeyboardPresentableModuleOutput.swift in Sources */,
+				A459CACC2864FD1200AF463F /* UIDeviceModuleOutput.swift in Sources */,
+				A459CAE22865D44D00AF463F /* GeolocationServiceModuleOutput.swift in Sources */,
+				A459CB592865E84600AF463F /* KeyboardPresentableCoordinator.swift in Sources */,
+				A459CAB72864F55E00AF463F /* QueryStringBuilderViewController.swift in Sources */,
+				A459CA792864EA6500AF463F /* CustomSwitchModuleInput.swift in Sources */,
+				A459CB432865E4DE00AF463F /* WordDeclinationSelectorCoordinator.swift in Sources */,
+				A459CB252865E31900AF463F /* SettingsRouterModuleOutput.swift in Sources */,
+				A459CB6C2865E9B500AF463F /* SkeletonViewViewOutput.swift in Sources */,
+				A459CA9D2864F10400AF463F /* StringAttributesModuleOutput.swift in Sources */,
+				A459CAE32865D44D00AF463F /* GeolocationServicePresenter.swift in Sources */,
+				A459CB2B2865E31900AF463F /* SettingsRouterModuleConfigurator.swift in Sources */,
+				A459CB152865E1A300AF463F /* RouteMeasurerModuleConfigurator.swift in Sources */,
+				A459CA832864EB8000AF463F /* CustomSwitchCoordinator.swift in Sources */,
+				A459CA7E2864EA6500AF463F /* CustomSwitchViewInput.swift in Sources */,
+				A459CAB82864F55E00AF463F /* QueryStringBuilderViewOutput.swift in Sources */,
+				A459CB9B2866051A00AF463F /* MoneyModelCoordinator.swift in Sources */,
+				A459CB0F2865E1A300AF463F /* RouteMeasurerModuleOutput.swift in Sources */,
+				A459CB3F2865E44900AF463F /* WordDeclinationSelectorViewController.swift in Sources */,
+				A459CB292865E31900AF463F /* SettingsRouterViewOutput.swift in Sources */,
+				A459CB3C2865E44900AF463F /* WordDeclinationSelectorModuleInput.swift in Sources */,
+				A459CAD32864FD1200AF463F /* UIDeviceModuleConfigurator.swift in Sources */,
+				A459CB112865E1A300AF463F /* RouteMeasurerViewInput.swift in Sources */,
+				A459CB98286603FC00AF463F /* MoneyModelViewOutput.swift in Sources */,
+				A459CAE62865D44D00AF463F /* GeolocationServiceViewInput.swift in Sources */,
+				A459CAF92865E0C100AF463F /* BrightSidePresenter.swift in Sources */,
+				A459CB682865E9B500AF463F /* SkeletonViewModuleInput.swift in Sources */,
+				A459CB3E2865E44900AF463F /* WordDeclinationSelectorViewInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

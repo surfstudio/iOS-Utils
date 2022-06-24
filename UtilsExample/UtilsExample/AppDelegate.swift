@@ -24,11 +24,18 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         Playbook.shared
-            .add(chapter: StringAttributesChapter().build())
-            .add(chapter: QueryStringBuilderChapter().build())
-            .add(chapter: CustomSwitchChapter().build())
-            .add(chapter: GeolocationServiceChapter().build())
-            .add(chapter: UIDeviceChapter().build())
+            .add(flowCoordinator: StringAttributesCoordinator())
+            .add(flowCoordinator: CustomSwitchCoordinator())
+            .add(flowCoordinator: QueryStringBuilderCoordinator())
+            .add(flowCoordinator: UIDeviceCoordinator())
+            .add(flowCoordinator: GeolocationServiceCoordinator())
+            .add(flowCoordinator: BrightSideCoordinator())
+            .add(flowCoordinator: RouteMeasurerCoordinator())
+            .add(flowCoordinator: SettingsRouterCoordinator())
+            .add(flowCoordinator: WordDeclinationSelectorCoordinator())
+            .add(flowCoordinator: KeyboardPresentableCoordinator())
+            .add(flowCoordinator: SkeletonViewCoordinator())
+            .add(flowCoordinator: MoneyModelCoordinator())
             .add(uiKitPage: MainPage())
             .start(from: window)
 
