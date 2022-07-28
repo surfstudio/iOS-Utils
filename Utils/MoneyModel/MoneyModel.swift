@@ -6,7 +6,7 @@
 import Foundation
 
 /// Представляет деньги как два целых числа - копейки (дробная часть) и рубли (целая часть)
-struct MoneyModel {
+public struct MoneyModel {
     /// Целая часть
     let decimal: Int
     /// Дробная часть
@@ -21,7 +21,7 @@ struct MoneyModel {
     /// - Parameters:
     ///   - decimal: Рубли
     ///   - digit: Копейки
-    init(decimal: Int, digit: Int) {
+    public init(decimal: Int, digit: Int) {
         self.decimal = decimal
         self.digit = digit
     }
@@ -40,7 +40,7 @@ struct MoneyModel {
     /// Если в строке будет записано не число, то вернется `nil`
     ///
     /// - Parameter value: Строка в которой лежит дробное число
-    init?(value: String) {
+    public init?(value: String) {
         let numbers = value.split(separator: ".")
         guard
             numbers.count >= 1,
@@ -76,7 +76,7 @@ struct MoneyModel {
         self.digit = digit
     }
 
-    func add(_ money: MoneyModel) -> MoneyModel {
+    public func add(_ money: MoneyModel) -> MoneyModel {
         var resultDigit = money.digit + self.digit
         var resultDecial = money.decimal + self.decimal
 
@@ -89,7 +89,7 @@ struct MoneyModel {
     }
 }
 
-extension MoneyModel {
+public extension MoneyModel {
     /// Конвертирует модель в строку вида `рубли.копейки`
     /// Если digit == 0 то вернет просто `рубли`
     func asString() -> String {
