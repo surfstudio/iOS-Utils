@@ -32,6 +32,8 @@ public enum StringAttribute {
     /// If you also specify `.font` value, then will be used `paragraph.lineHeightMultiple`,
     /// otherwise - `paragraph.minimumLineHeight` and `paragraph.maximumLineHeight`
     case lineHeight(CGFloat)
+    /// Paragrapth spacing
+    case paragraphSpacing(CGFloat)
 }
 
 // MARK: - Nested types
@@ -69,7 +71,7 @@ extension StringAttribute {
 extension StringAttribute {
     var attributeKey: NSAttributedString.Key {
         switch self {
-        case .lineSpacing, .aligment, .lineHeight, .lineBreakMode:
+        case .lineSpacing, .aligment, .lineHeight, .lineBreakMode, .paragraphSpacing:
             return NSAttributedString.Key.paragraphStyle
         case .kern:
             return NSAttributedString.Key.kern
@@ -103,6 +105,8 @@ extension StringAttribute {
         case .lineBreakMode(let value):
             return value
         case .baselineOffset(let value):
+            return value
+        case .paragraphSpacing(let value):
             return value
         }
     }
@@ -143,6 +147,7 @@ public extension StringAttribute {
             stringAttributedArray.append(.lineBreakMode(mutableParagraphStyle.lineBreakMode))
             stringAttributedArray.append(.lineHeight(mutableParagraphStyle.minimumLineHeight))
             stringAttributedArray.append(.lineSpacing(mutableParagraphStyle.lineSpacing))
+            stringAttributedArray.append(.paragraphSpacing(mutableParagraphStyle.paragraphSpacing))
         }
 
         return stringAttributedArray
@@ -182,6 +187,9 @@ public extension Array where Element == StringAttribute {
                 resultAttributes[attribute.attributeKey] = paragraph
             case .aligment(let value):
                 paragraph.alignment = value
+                resultAttributes[attribute.attributeKey] = paragraph
+            case .paragraphSpacing(let value):
+                paragraph.paragraphSpacing = value
                 resultAttributes[attribute.attributeKey] = paragraph
             default:
                 resultAttributes[attribute.attributeKey] = attribute.value
