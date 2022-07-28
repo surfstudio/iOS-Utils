@@ -45,9 +45,11 @@ private extension UIDeviceViewController {
     func configureLabe() {
         let text = [
             "SmallPhone: \(UIDevice.isSmallPhone)",
-            "\n NormalPhone: \(UIDevice.isNormalPhone)",
-            "\n XPhone: \(UIDevice.isXPhone)",
-            "\n Pad: \(UIDevice.isPad)"
+            "\nNormalPhone: \(UIDevice.isNormalPhone)",
+            "\nXPhone: \(UIDevice.isXPhone)",
+            "\nPad: \(UIDevice.isPad)",
+            "\nDevice version: \(Device.version())",
+            "\nIs simulator: \(Device.isSimulator())"
         ]
         subTitle.text = text.reduce("", +)
         subTitle.numberOfLines = 0

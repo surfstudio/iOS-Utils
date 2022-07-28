@@ -44,16 +44,21 @@ extension RouteMeasurerViewController: RouteMeasurerViewInput {
 private extension RouteMeasurerViewController {
 
     func configureLabel() {
+        subTitle.text = "Расстояние вычисляется..."
+        subTitle.numberOfLines = 0
+        subTitle.textAlignment = .center
+
         let firstCoordinate = CLLocationCoordinate2D(latitude: 55.751244, longitude: 37.618423)
         let secondCoordinate = CLLocationCoordinate2D(latitude: 51.509865, longitude: -0.118092)
-        RouteMeasurer.calculateDistance(between: firstCoordinate, and: secondCoordinate) { [weak self] (distance) in
+        RouteMeasurer.calculateDistance(between: firstCoordinate,
+                                        and: secondCoordinate) { [weak self] (distance) in
             guard let distance = distance else {
                 return
             }
-            self?.subTitle.text = RouteMeasurer.formatDistance(distance, meterPattern: "м", kilometrPatter: "км")
+            self?.subTitle.text = RouteMeasurer.formatDistance(distance,
+                                                               meterPattern: "м",
+                                                               kilometrPatter: "км")
         }
-        subTitle.numberOfLines = 0
-        subTitle.textAlignment = .center
     }
 
 }

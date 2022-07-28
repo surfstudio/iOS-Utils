@@ -11,6 +11,8 @@ import Utils
 
 final class CustomSwitchViewController: UIViewController {
 
+    // MARK: - IBOutlets
+
     @IBOutlet private weak var switchContainer: UIView!
 
     // MARK: - Properties
@@ -44,7 +46,7 @@ private extension CustomSwitchViewController {
         let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         customSwitch.layoutConfiguration = .init(padding: 1, spacing: 3, cornerRatio: 0.5)
         customSwitch.colorsConfiguration = .init(
-            offColorConfiguraion: CSSimpleColorConfiguration(color: .white),
+            offColorConfiguraion: CSSimpleColorConfiguration(color: .gray),
             onColorConfiguraion: CSSimpleColorConfiguration(color: .green),
             thumbColorConfiguraion: CSGradientColorConfiguration(
                 colors: [.lightGray, .yellow],
@@ -58,7 +60,7 @@ private extension CustomSwitchViewController {
                 radius: 5, oppacity: 0.1
             )
         )
-        customSwitch.animationsConfiguration = .init(duration: 0.1, usingSpringWithDamping: 0.7)
+        customSwitch.animationsConfiguration = .init(duration: 0.3, usingSpringWithDamping: 0.7)
 
         customSwitch.setOn(true, animated: false)
         switchContainer.addSubview(customSwitch)

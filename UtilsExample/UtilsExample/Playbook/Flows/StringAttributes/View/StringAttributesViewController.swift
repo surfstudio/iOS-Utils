@@ -49,10 +49,13 @@ private extension StringAttributesViewController {
         ]
         let attributedString = StringBuilder(globalAttributes: globalSttributes)
             .add(.string("Title"))
-            .add(.delimeterWithString(repeatedDelimeter: .init(type: .space), string: "blue"),
+            .add(.delimeterWithString(repeatedDelimeter: .init(type: .space),
+                                      string: "blue"),
                  with: [.foregroundColor(.blue)])
-            .add(.delimeterWithString(repeatedDelimeter: .init(type: .lineBreak), string: "Base style on new line"))
-            .add(.delimeterWithString(repeatedDelimeter: .init(type: .space), string: "last word with it's own style"),
+            .add(.delimeterWithString(repeatedDelimeter: .init(type: .lineBreak),
+                                      string: "Base style on new line"))
+            .add(.delimeterWithString(repeatedDelimeter: .init(type: .space),
+                                      string: "last word with it's own style"),
                  with: [.font(.boldSystemFont(ofSize: 16)), .foregroundColor(.red)])
             .value
         subTitle.attributedText = attributedString

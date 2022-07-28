@@ -44,7 +44,9 @@ private extension SettingsRouterViewController {
 
     func configureButton() {
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(self.didPressButton), for: .allEvents)
+        button.addTarget(self,
+                         action: #selector(self.didPressButton),
+                         for: .touchUpInside)
     }
 
     @objc

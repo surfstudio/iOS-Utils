@@ -43,19 +43,13 @@ extension WordDeclinationSelectorViewController: WordDeclinationSelectorViewInpu
 private extension WordDeclinationSelectorViewController {
 
     func configureLabel() {
-        let correctForm1 = WordDeclinationSelector.declineWord(
-            for: 6,
-            from: WordDeclinations("день", "дня", "дней")
-        )
-        let correctForm2 = WordDeclinationSelector.declineWord(
-            for: 1,
-            from: WordDeclinations("день", "дня", "дней")
-        )
-        let correctForm3 = WordDeclinationSelector.declineWord(
-            for: 2,
-            from: WordDeclinations("день", "дня", "дней")
-        )
-        subTitle.text = "6 \(correctForm1), \n1 \(correctForm2), \n2 \(correctForm3)"
+        let declinations = WordDeclinations("день", "дня", "дней")
+        let example = [1, 2, 6]
+            .map { number -> String in
+                let form = WordDeclinationSelector.declineWord(for: number, from: declinations)
+                return "\(number) \(form)"
+            }.joined(separator: "\n")
+        subTitle.text = example
         subTitle.numberOfLines = 0
         subTitle.textAlignment = .center
     }

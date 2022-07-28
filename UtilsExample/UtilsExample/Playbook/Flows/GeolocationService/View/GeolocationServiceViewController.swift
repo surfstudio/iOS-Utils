@@ -15,6 +15,10 @@ final class GeolocationServiceViewController: UIViewController {
 
     @IBOutlet private weak var subTitle: UILabel!
 
+    // MARK: - Private Properties
+
+    private let service = GeolocationService()
+
     // MARK: - Properties
 
     var output: GeolocationServiceViewOutput?
@@ -34,6 +38,7 @@ extension GeolocationServiceViewController: GeolocationServiceViewInput {
 
     func setupInitialState() {
         configureLabel()
+        requestAuthorization()
     }
 
 }
@@ -43,46 +48,43 @@ extension GeolocationServiceViewController: GeolocationServiceViewInput {
 private extension GeolocationServiceViewController {
 
     func configureLabel() {
-        var text = ""
-        // Создание сервиса:
-        let service = GeolocationService()
+        subTitle.textAlignment = .center
+        subTitle.numberOfLines = 0
+        subTitle.text = "Waiting..."
+    }
 
-        // Получение статуса доступа к сервисам геолокации:
-        service.requestAuthorization { result in
+    func requestAuthorization() {
+        service.requestAuthorization { [weak self] result in
             switch result {
             case .success:
                 // access is allowed
-                text = "Success"
+                self?.requestLocation()
             case .denied:
                 // user denied access to geolocation
-                text = "Denied"
+                self?.subTitle.text = "Denied..."
             case .failure:
                 // user doesn't gave permission on his geolocation in the system dialog
-                text = "Failure"
+                self?.subTitle.text = "Failure..."
             case .requesting:
                 // system dialog is currently displayed
-                text = "Requesting"
+                self?.subTitle.text = "Requesting..."
             }
         }
 
-        // Получение геопозиции пользователя:
+    }
 
-        service.getCurrentLocation { result in
+    func requestLocation() {
+        service.getCurrentLocation { [weak self] result in
             switch result {
             case .success(let location):
                 // do something usefull with user location
-                text += "\(location)"
+                self?.subTitle.text = "Current location is \(location)"
             case .denied:
-                // user denied access to geolocation
-                break
+                self?.subTitle.text = "User denied access to geolocation"
             case .error:
-                // some error ocured
-                break
+                self?.subTitle.text = "Some error ocured"
             }
         }
-        subTitle.textAlignment = .center
-        subTitle.numberOfLines = 0
-        subTitle.text = text
     }
 
 }

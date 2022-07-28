@@ -67,7 +67,8 @@ extension KeyboardPresentableViewController: CommonKeyboardPresentable {
 private extension KeyboardPresentableViewController {
 
     func configureGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
 

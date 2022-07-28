@@ -48,6 +48,6 @@ private extension QueryStringBuilderViewController {
         subTitle.text = queryString
         subTitle.numberOfLines = 0
         subTitle.textAlignment = .center
-        subTitle.widthAnchor.constraint(equalToConstant: 300).isActive = true
     }
+
 }
