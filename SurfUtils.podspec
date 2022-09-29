@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.license  = { :type => "MIT", :file => "LICENSE" }
   s.author  = { "Alexander Kravchenkov" => "akravchenkov@surfstudio.co" }
   s.source = { :git => "https://github.com/surfstudio/ios-utils.git", :tag => "#{s.version}" }
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   s.swift_version = '5.0'
 
   s.subspec 'StringAttributes' do |sp|
