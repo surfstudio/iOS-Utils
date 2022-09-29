@@ -36,11 +36,11 @@ pod 'SurfUtils/$UTIL_NAME$'
 ## Features
 
 - Различные UI-компоненты и утилиты, завязанные на UIKit - [документация](TechDocs/uikit_utils.md)
-- Хелперы, небольшие утилиты и сервисы - [документация](TechDocs/services_utils.md)
+- Хелперы, небольшие утилиты и сервисы - [документация](TechDocs/service_utils.md)
 
 Самое полезное и наиболее часто используемое:
 
-- [StringAttributes](TechDocs/services_utils.md#stringattributes) - упрощение работы с `NSAttributedString`
+- [StringAttributes](TechDocs/service_utils.md#stringattributes) - упрощение работы с `NSAttributedString`
 - [KeyboardPresentable](TechDocs/uikit_utils.md#keyboardpresentable) - семейство протоколов для упрощения работы с клавиатурой и сокращения количества одинакового кода
 - [SkeletonView](TechDocs/uikit_utils.md#skeletonview) - cпециальная кастомная View для создания skeleton loader'ов
 - [XibView](TechDocs/uikit_utils.md#xibview) - для работы UIView + xib
@@ -56,6 +56,11 @@ pod 'SurfUtils/$UTIL_NAME$'
 ## Changelog
 
 Список всех изменений можно посмотреть в этом [файле](./CHANGELOG.md).
+
+## Contributing
+
+- Туториал по добавлению собственной утилиты можно найти [здесь](./ADD_NEW_UTIL_TUTORIAL.md)
+- Правила работы с репозиторием - [здесь](./CONTRIBUTING.md)
 
 ## License
 
