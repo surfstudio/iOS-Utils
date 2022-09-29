@@ -2,18 +2,20 @@ Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
   s.version = "13.1.0"
-  s.summary = "Contains a set of utils in subspecs"
+  s.summary = "Utils collection for iOS-development."
   s.description  = <<-DESC
+  Each utility is a small and frequently used piece of logic or UI component.
   Contains:
     - Extension for easy use NSAttributedString
     - Method for detection JailBreak
-    - Manager for easily use vibration features
-    - Extension for building query string from dictionary
+    - Helper for working with keyboard
+    - Device detection manager
+    - and lots more!
                    DESC
 
   s.homepage  = "https://github.com/surfstudio/ios-utils"
   s.license  = { :type => "MIT", :file => "LICENSE" }
-  s.author  = { "Alexander Kravchenkov" => "akravchenkov@surfstudio.co" }
+  s.author  = { "Surf" => "chausov@surf.dev" }
   s.source = { :git => "https://github.com/surfstudio/ios-utils.git", :tag => "#{s.version}" }
   s.ios.deployment_target = '11.0'
   s.swift_version = '5.0'
@@ -75,11 +77,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'SkeletonView' do |sp|
     sp.source_files = 'Utils/SkeletonView/*.swift', 'Utils/UIView/UIView+Masking.swift'
-    sp.framework = 'UIKit'
-  end
-
-  s.subspec 'OTPField' do |sp|
-    sp.source_files = 'Utils/OTPField/*.swift', 'Utils/OTPField/*.xib', 'Utils/UIView/UIView+XibSetup.swift'
     sp.framework = 'UIKit'
   end
 
