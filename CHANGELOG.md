@@ -1,6 +1,6 @@
 # Changelog
 
-## 13.1.0 - Правки проекта, [AttributedString updates](https://github.com/surfstudio/iOS-Utils/releases/tag/13.1.0)
+## 13.1.0 - [Правки проекта, AttributedString updates](https://github.com/surfstudio/iOS-Utils/releases/tag/13.1.0)
 
 - Добавлен параметр `paragraphSpacing` в `AttributedString`
 - Правки проекта, добавлен Example проект
