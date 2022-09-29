@@ -4,6 +4,7 @@
 
 - Добавлен параметр `paragraphSpacing` в `AttributedString`
 - Правки проекта, добавлен Example проект
+- Удалена утилита `OTPField`
 
 > Закрыт [issue](https://github.com/surfstudio/iOS-Utils/issues/91)
 
