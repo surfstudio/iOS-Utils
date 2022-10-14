@@ -34,6 +34,16 @@ public enum StringAttribute {
     case lineHeight(CGFloat)
     /// Paragrapth spacing
     case paragraphSpacing(CGFloat)
+
+    /// Previous version of .lineHeight attribute
+    ///
+    /// It needs for backward compatibility.
+    /// It setups paragraphStyle.lineSpacing value, but gets as parameter not spacing value,
+    /// but total lineHeight value. And setup paragraphStyle.lineSpacing as
+    /// `lineHeight - font.lineHeight`.
+    /// So you need to specify in attributes array both `oldLineHeight` and `.font`, otherwise -
+    /// nothing will happen.
+    case oldLineHeight(CGFloat)
 }
 
 // MARK: - Nested types
@@ -71,7 +81,9 @@ extension StringAttribute {
 extension StringAttribute {
     var attributeKey: NSAttributedString.Key {
         switch self {
-        case .lineSpacing, .aligment, .lineHeight, .lineBreakMode, .paragraphSpacing:
+        case .lineSpacing, .aligment, .lineBreakMode, .paragraphSpacing:
+            return NSAttributedString.Key.paragraphStyle
+        case .lineHeight, .oldLineHeight:
             return NSAttributedString.Key.paragraphStyle
         case .kern:
             return NSAttributedString.Key.kern
@@ -107,6 +119,8 @@ extension StringAttribute {
         case .baselineOffset(let value):
             return value
         case .paragraphSpacing(let value):
+            return value
+        case .oldLineHeight(let value):
             return value
         }
     }
@@ -190,6 +204,12 @@ public extension Array where Element == StringAttribute {
                 resultAttributes[attribute.attributeKey] = paragraph
             case .paragraphSpacing(let value):
                 paragraph.paragraphSpacing = value
+                resultAttributes[attribute.attributeKey] = paragraph
+            case .oldLineHeight(let value):
+                guard let font = self.findFont() else {
+                    break
+                }
+                paragraph.lineSpacing = value - font.lineHeight
                 resultAttributes[attribute.attributeKey] = paragraph
             default:
                 resultAttributes[attribute.attributeKey] = attribute.value
