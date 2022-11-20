@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Security
 
 public struct KeyChainSecureStore: SecureStore {
 
