@@ -1,5 +1,10 @@
 # Changelog
 
+## 13.2.0 - [Backward compatibility для lineHeight атрибута StringAttributes](https://github.com/surfstudio/iOS-Utils/releases/tag/13.2.0)
+
+- В StringAttributes добавлен параметр `oldLineHeight`
+- Работает как предыдущий параметр `lineHeight` (устанавливает `paragraphStyle.lineSpacing` как разницу между переданным значением и `font.lineHeight`, только `font` находит среди других переданных к применению атрибутов)
+
 ## 13.1.0 - [Правки проекта, AttributedString updates](https://github.com/surfstudio/iOS-Utils/releases/tag/13.1.0)
 
 - Добавлен параметр `paragraphSpacing` в `AttributedString`

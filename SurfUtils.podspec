@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "SurfUtils"
-  s.version = "13.1.0"
+  s.version = "13.2.0"
   s.summary = "Utils collection for iOS-development."
   s.description  = <<-DESC
   Each utility is a small and frequently used piece of logic or UI component.
