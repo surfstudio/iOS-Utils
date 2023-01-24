@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08E6094329801EC900C224CC /* ActionableLabelModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6094229801EC900C224CC /* ActionableLabelModuleConfigurator.swift */; };
+		08E6094829801F0900C224CC /* ActionableLabelModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6094529801F0900C224CC /* ActionableLabelModuleOutput.swift */; };
+		08E6094929801F0900C224CC /* ActionableLabelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6094629801F0900C224CC /* ActionableLabelPresenter.swift */; };
+		08E6094A29801F0900C224CC /* ActionableLabelModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6094729801F0900C224CC /* ActionableLabelModuleInput.swift */; };
+		08E6094F29801F1600C224CC /* ActionableLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6094B29801F1600C224CC /* ActionableLabelViewController.swift */; };
+		08E6095029801F1600C224CC /* ActionableLabelViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6094C29801F1600C224CC /* ActionableLabelViewInput.swift */; };
+		08E6095129801F1600C224CC /* ActionableLabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E6094D29801F1600C224CC /* ActionableLabelViewController.xib */; };
+		08E6095229801F1600C224CC /* ActionableLabelViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6094E29801F1600C224CC /* ActionableLabelViewOutput.swift */; };
+		08E609542980217400C224CC /* ActionableLabelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E609532980217400C224CC /* ActionableLabelCoordinator.swift */; };
 		90AAE30C2851F6100088A5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAE30B2851F6100088A5A4 /* AppDelegate.swift */; };
 		90AAE3152851F6110088A5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90AAE3142851F6110088A5A4 /* Assets.xcassets */; };
 		90AAE3182851F6110088A5A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90AAE3162851F6110088A5A4 /* LaunchScreen.storyboard */; };
@@ -148,6 +157,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08E6094229801EC900C224CC /* ActionableLabelModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableLabelModuleConfigurator.swift; sourceTree = "<group>"; };
+		08E6094529801F0900C224CC /* ActionableLabelModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableLabelModuleOutput.swift; sourceTree = "<group>"; };
+		08E6094629801F0900C224CC /* ActionableLabelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableLabelPresenter.swift; sourceTree = "<group>"; };
+		08E6094729801F0900C224CC /* ActionableLabelModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableLabelModuleInput.swift; sourceTree = "<group>"; };
+		08E6094B29801F1600C224CC /* ActionableLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableLabelViewController.swift; sourceTree = "<group>"; };
+		08E6094C29801F1600C224CC /* ActionableLabelViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableLabelViewInput.swift; sourceTree = "<group>"; };
+		08E6094D29801F1600C224CC /* ActionableLabelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionableLabelViewController.xib; sourceTree = "<group>"; };
+		08E6094E29801F1600C224CC /* ActionableLabelViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableLabelViewOutput.swift; sourceTree = "<group>"; };
+		08E609532980217400C224CC /* ActionableLabelCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableLabelCoordinator.swift; sourceTree = "<group>"; };
 		90719DA52851F8FC00B42F99 /* iOS-Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "iOS-Utils"; path = ..; sourceTree = "<group>"; };
 		90AAE3082851F6100088A5A4 /* UtilsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UtilsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AAE30B2851F6100088A5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -301,6 +319,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08E6093E29801D5800C224CC /* ActionableLabel */ = {
+			isa = PBXGroup;
+			children = (
+				08E6093F29801D6400C224CC /* Configurator */,
+				08E6094429801F0900C224CC /* Presenter */,
+				08E6094129801E4D00C224CC /* View */,
+			);
+			path = ActionableLabel;
+			sourceTree = "<group>";
+		};
+		08E6093F29801D6400C224CC /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				08E6094229801EC900C224CC /* ActionableLabelModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		08E6094129801E4D00C224CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08E6094B29801F1600C224CC /* ActionableLabelViewController.swift */,
+				08E6094D29801F1600C224CC /* ActionableLabelViewController.xib */,
+				08E6094C29801F1600C224CC /* ActionableLabelViewInput.swift */,
+				08E6094E29801F1600C224CC /* ActionableLabelViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08E6094429801F0900C224CC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				08E6094529801F0900C224CC /* ActionableLabelModuleOutput.swift */,
+				08E6094629801F0900C224CC /* ActionableLabelPresenter.swift */,
+				08E6094729801F0900C224CC /* ActionableLabelModuleInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		90719DA42851F8FC00B42F99 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +446,7 @@
 		A4435F372864E5D500A4207E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				08E6093E29801D5800C224CC /* ActionableLabel */,
 				A459CAEC2865E0C100AF463F /* BrightSide */,
 				A459CA6D2864EA6500AF463F /* CustomSwitch */,
 				A459CAD62865D44D00AF463F /* GeolocationService */,
@@ -447,6 +505,7 @@
 		A459CA812864EB5A00AF463F /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				08E609532980217400C224CC /* ActionableLabelCoordinator.swift */,
 				A459CB002865E15400AF463F /* BrightSideCoordinator.swift */,
 				A459CA822864EB8000AF463F /* CustomSwitchCoordinator.swift */,
 				A459CAEA2865DAC800AF463F /* GeolocationServiceCoordinator.swift */,
@@ -1041,6 +1100,7 @@
 				90AAE3182851F6110088A5A4 /* LaunchScreen.storyboard in Resources */,
 				A459CAFC2865E0C100AF463F /* BrightSideViewController.xib in Resources */,
 				90AAE3152851F6110088A5A4 /* Assets.xcassets in Resources */,
+				08E6095129801F1600C224CC /* ActionableLabelViewController.xib in Resources */,
 				A459CB142865E1A300AF463F /* RouteMeasurerViewController.xib in Resources */,
 				A459CA7F2864EA6500AF463F /* CustomSwitchViewController.xib in Resources */,
 				A459CAA22864F10400AF463F /* StringAttributesViewController.xib in Resources */,
@@ -1108,12 +1168,15 @@
 				A459CA9F2864F10400AF463F /* StringAttributesModuleInput.swift in Sources */,
 				A459CB94286603FC00AF463F /* MoneyModelModuleInput.swift in Sources */,
 				A459CA7D2864EA6500AF463F /* CustomSwitchViewController.swift in Sources */,
+				08E6094329801EC900C224CC /* ActionableLabelModuleConfigurator.swift in Sources */,
 				A459CAA32864F10400AF463F /* StringAttributesViewInput.swift in Sources */,
+				08E6095029801F1600C224CC /* ActionableLabelViewInput.swift in Sources */,
 				A459CAB42864F55E00AF463F /* QueryStringBuilderModuleInput.swift in Sources */,
 				A459CAFB2865E0C100AF463F /* BrightSideViewInput.swift in Sources */,
 				A459CA7B2864EA6500AF463F /* CustomSwitchModuleOutput.swift in Sources */,
 				A459CB572865E6BF00AF463F /* KeyboardPresentableModuleConfigurator.swift in Sources */,
 				A459CB692865E9B500AF463F /* SkeletonViewViewInput.swift in Sources */,
+				08E6095229801F1600C224CC /* ActionableLabelViewOutput.swift in Sources */,
 				A459CA7A2864EA6500AF463F /* CustomSwitchPresenter.swift in Sources */,
 				A409293D286113E300BBC569 /* MainPage.swift in Sources */,
 				A459CA8E2864ED9F00AF463F /* Presentable.swift in Sources */,
@@ -1142,6 +1205,7 @@
 				A459CB0E2865E1A300AF463F /* RouteMeasurerModuleInput.swift in Sources */,
 				A459CB412865E44900AF463F /* WordDeclinationSelectorModuleConfigurator.swift in Sources */,
 				A459CB532865E6BF00AF463F /* KeyboardPresentableViewController.swift in Sources */,
+				08E6094A29801F0900C224CC /* ActionableLabelModuleInput.swift in Sources */,
 				A459CAF82865E0C100AF463F /* BrightSideModuleOutput.swift in Sources */,
 				A459CB2D2865E3F300AF463F /* SettingsRouterCoordinator.swift in Sources */,
 				A459CAA02864F10400AF463F /* StringAttributesViewOutput.swift in Sources */,
@@ -1172,6 +1236,8 @@
 				A459CA792864EA6500AF463F /* CustomSwitchModuleInput.swift in Sources */,
 				A459CB432865E4DE00AF463F /* WordDeclinationSelectorCoordinator.swift in Sources */,
 				A459CB252865E31900AF463F /* SettingsRouterModuleOutput.swift in Sources */,
+				08E6094829801F0900C224CC /* ActionableLabelModuleOutput.swift in Sources */,
+				08E6094F29801F1600C224CC /* ActionableLabelViewController.swift in Sources */,
 				A459CB6C2865E9B500AF463F /* SkeletonViewViewOutput.swift in Sources */,
 				A459CA9D2864F10400AF463F /* StringAttributesModuleOutput.swift in Sources */,
 				A459CAE32865D44D00AF463F /* GeolocationServicePresenter.swift in Sources */,
@@ -1186,8 +1252,10 @@
 				A459CB292865E31900AF463F /* SettingsRouterViewOutput.swift in Sources */,
 				A459CB3C2865E44900AF463F /* WordDeclinationSelectorModuleInput.swift in Sources */,
 				A459CAD32864FD1200AF463F /* UIDeviceModuleConfigurator.swift in Sources */,
+				08E609542980217400C224CC /* ActionableLabelCoordinator.swift in Sources */,
 				A459CB112865E1A300AF463F /* RouteMeasurerViewInput.swift in Sources */,
 				A459CB98286603FC00AF463F /* MoneyModelViewOutput.swift in Sources */,
+				08E6094929801F0900C224CC /* ActionableLabelPresenter.swift in Sources */,
 				A459CAE62865D44D00AF463F /* GeolocationServiceViewInput.swift in Sources */,
 				A459CAF92865E0C100AF463F /* BrightSidePresenter.swift in Sources */,
 				A459CB682865E9B500AF463F /* SkeletonViewModuleInput.swift in Sources */,
