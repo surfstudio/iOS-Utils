@@ -2,6 +2,7 @@
 
 ## Содержание
 
+- [ActionableLabel](#actionableLabel) - Лэйбл сбирающийся из строк с разными аттрибутами
 - [BlurBuilder](#blurbuilder) - упрощение работы с blur-эффектом
 - [ItemsScrollManager](#itemsscrollmanager) - менеджер для поэлементного скролла карусели
 - [KeyboardPresentable](#keyboardpresentable) - семейство протоколов для упрощения работы с клавиатурой и сокращения количества одинакового кода
@@ -16,6 +17,41 @@
 - [BeanPageControl](#beanPageControl) – page control с перетекающими индикаторами-бобами
 - [TouchableControl](#touchablecontrol) – аналог кнопки с кастомизированным анимированием
 - [CustomSwitch](#customswitch) – более гибкая реализация Switch ui элемента
+
+### ActionableLabel
+
+Лэйбл который можно собирать из текстов с разными аттрибутами, так же обрабатывает нажатия, например ссылки.
+LocalizableStringItem - принимает в себя простую строку.
+
+Пример:
+
+Во вью
+```Swift
+typealias Model = [(text: LocalizableStringItem, didSelect: (()-> Void)?)]
+
+func configure(with model: Model) {
+    label.clear()
+    model.forEach { part in
+        label.append(
+            text: part.text,
+            attributes: part.didSelect == nil ? [] : [.foregroundColor(selectColor)],
+            action: {
+                part.didSelect?()
+            }
+        )
+    }
+}
+```
+
+В презенторе
+```Swift
+
+view?.configure(with: [
+    (text: LocalizableStringItem("Start sentences "), didSelect: nil),
+    (text: LocalizableStringItem("link text"), didSelect: { print("link selected") }),
+    (text: LocalizableStringItem(" end sentences."), didSelect: nil)
+])
+```
 
 ### BlurBuilder
 
