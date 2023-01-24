@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Autolocalizable",
+        "repositoryURL": "https://github.com/surfstudio/Autolocalizable.git",
+        "state": {
+          "branch": null,
+          "revision": "a78a12a7b2d8dab688365f0ec7504d0bbaf838f1",
+          "version": "1.1.0"
+        }
+      },
+      {
         "package": "CryptoSwift",
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift",
         "state": {
