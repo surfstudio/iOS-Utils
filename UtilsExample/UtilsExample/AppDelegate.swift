@@ -27,6 +27,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             .add(flowCoordinator: BrightSideCoordinator())
             .add(flowCoordinator: CustomSwitchCoordinator())
             .add(flowCoordinator: GeolocationServiceCoordinator())
+            .add(flowCoordinator: ItemsScrollManagerCoordinator())
             .add(flowCoordinator: KeyboardPresentableCoordinator())
             .add(flowCoordinator: MoneyModelCoordinator())
             .add(flowCoordinator: QueryStringBuilderCoordinator())
