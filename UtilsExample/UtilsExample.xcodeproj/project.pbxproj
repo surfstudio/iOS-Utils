@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A64D35A2A8A632E00255566 /* ItemsScrollManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64D3582A8A632E00255566 /* ItemsScrollManagerViewController.swift */; };
+		0A64D35B2A8A632E00255566 /* ItemsScrollManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A64D3592A8A632E00255566 /* ItemsScrollManagerViewController.xib */; };
+		0A64D3672A8A63B800255566 /* ItemsScrollManagerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64D3662A8A63B800255566 /* ItemsScrollManagerConfigurator.swift */; };
+		0A64D3692A8A64FC00255566 /* ItemsScrollManagerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64D3682A8A64FC00255566 /* ItemsScrollManagerCoordinator.swift */; };
+		0A64D36D2A8A69A700255566 /* ItemsScrollManagerParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64D36C2A8A69A600255566 /* ItemsScrollManagerParameterView.swift */; };
+		0A64D3702A8A7C6000255566 /* ItemsScrollManagerExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64D36F2A8A7C6000255566 /* ItemsScrollManagerExampleCell.swift */; };
 		90AAE30C2851F6100088A5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAE30B2851F6100088A5A4 /* AppDelegate.swift */; };
 		90AAE3152851F6110088A5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90AAE3142851F6110088A5A4 /* Assets.xcassets */; };
 		90AAE3182851F6110088A5A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90AAE3162851F6110088A5A4 /* LaunchScreen.storyboard */; };
@@ -148,6 +154,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A64D3582A8A632E00255566 /* ItemsScrollManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManagerViewController.swift; sourceTree = "<group>"; };
+		0A64D3592A8A632E00255566 /* ItemsScrollManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsScrollManagerViewController.xib; sourceTree = "<group>"; };
+		0A64D3662A8A63B800255566 /* ItemsScrollManagerConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManagerConfigurator.swift; sourceTree = "<group>"; };
+		0A64D3682A8A64FC00255566 /* ItemsScrollManagerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManagerCoordinator.swift; sourceTree = "<group>"; };
+		0A64D36C2A8A69A600255566 /* ItemsScrollManagerParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManagerParameterView.swift; sourceTree = "<group>"; };
+		0A64D36F2A8A7C6000255566 /* ItemsScrollManagerExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManagerExampleCell.swift; sourceTree = "<group>"; };
 		90719DA52851F8FC00B42F99 /* iOS-Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "iOS-Utils"; path = ..; sourceTree = "<group>"; };
 		90AAE3082851F6100088A5A4 /* UtilsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UtilsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AAE30B2851F6100088A5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -301,6 +313,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A64D3542A8A621B00255566 /* ItemsScrollManager */ = {
+			isa = PBXGroup;
+			children = (
+				0A64D3572A8A630200255566 /* Configurator */,
+				0A64D3552A8A62F300255566 /* View */,
+			);
+			path = ItemsScrollManager;
+			sourceTree = "<group>";
+		};
+		0A64D3552A8A62F300255566 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A64D36B2A8A699C00255566 /* Subviews */,
+				0A64D3582A8A632E00255566 /* ItemsScrollManagerViewController.swift */,
+				0A64D3592A8A632E00255566 /* ItemsScrollManagerViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A64D3572A8A630200255566 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				0A64D3662A8A63B800255566 /* ItemsScrollManagerConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		0A64D36B2A8A699C00255566 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0A64D36F2A8A7C6000255566 /* ItemsScrollManagerExampleCell.swift */,
+				0A64D36C2A8A69A600255566 /* ItemsScrollManagerParameterView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		90719DA42851F8FC00B42F99 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +440,7 @@
 				A459CAEC2865E0C100AF463F /* BrightSide */,
 				A459CA6D2864EA6500AF463F /* CustomSwitch */,
 				A459CAD62865D44D00AF463F /* GeolocationService */,
+				0A64D3542A8A621B00255566 /* ItemsScrollManager */,
 				A459CB442865E6BF00AF463F /* KeyboardPresentable */,
 				A459CB86286603FC00AF463F /* MoneyModel */,
 				A459CAA72864F55E00AF463F /* QueryStringBuilder */,
@@ -450,6 +499,7 @@
 				A459CB002865E15400AF463F /* BrightSideCoordinator.swift */,
 				A459CA822864EB8000AF463F /* CustomSwitchCoordinator.swift */,
 				A459CAEA2865DAC800AF463F /* GeolocationServiceCoordinator.swift */,
+				0A64D3682A8A64FC00255566 /* ItemsScrollManagerCoordinator.swift */,
 				A459CB582865E84600AF463F /* KeyboardPresentableCoordinator.swift */,
 				A459CB9A2866051A00AF463F /* MoneyModelCoordinator.swift */,
 				A459CABE2864F84600AF463F /* QueryStringBuilderCoordinator.swift */,
@@ -1038,6 +1088,7 @@
 				A459CB6B2865E9B500AF463F /* SkeletonViewViewController.xib in Resources */,
 				A459CB97286603FC00AF463F /* MoneyModelViewController.xib in Resources */,
 				A459CAB62864F55E00AF463F /* QueryStringBuilderViewController.xib in Resources */,
+				0A64D35B2A8A632E00255566 /* ItemsScrollManagerViewController.xib in Resources */,
 				90AAE3182851F6110088A5A4 /* LaunchScreen.storyboard in Resources */,
 				A459CAFC2865E0C100AF463F /* BrightSideViewController.xib in Resources */,
 				90AAE3152851F6110088A5A4 /* Assets.xcassets in Resources */,
@@ -1104,12 +1155,14 @@
 				A459CB2A2865E31900AF463F /* SettingsRouterViewInput.swift in Sources */,
 				A459CB562865E6BF00AF463F /* KeyboardPresentableViewOutput.swift in Sources */,
 				A459CA7C2864EA6500AF463F /* CustomSwitchViewOutput.swift in Sources */,
+				0A64D35A2A8A632E00255566 /* ItemsScrollManagerViewController.swift in Sources */,
 				A459CB672865E9B500AF463F /* SkeletonViewModuleOutput.swift in Sources */,
 				A459CA9F2864F10400AF463F /* StringAttributesModuleInput.swift in Sources */,
 				A459CB94286603FC00AF463F /* MoneyModelModuleInput.swift in Sources */,
 				A459CA7D2864EA6500AF463F /* CustomSwitchViewController.swift in Sources */,
 				A459CAA32864F10400AF463F /* StringAttributesViewInput.swift in Sources */,
 				A459CAB42864F55E00AF463F /* QueryStringBuilderModuleInput.swift in Sources */,
+				0A64D3692A8A64FC00255566 /* ItemsScrollManagerCoordinator.swift in Sources */,
 				A459CAFB2865E0C100AF463F /* BrightSideViewInput.swift in Sources */,
 				A459CA7B2864EA6500AF463F /* CustomSwitchModuleOutput.swift in Sources */,
 				A459CB572865E6BF00AF463F /* KeyboardPresentableModuleConfigurator.swift in Sources */,
@@ -1124,9 +1177,11 @@
 				A459CA802864EA6500AF463F /* CustomSwitchModuleConfigurator.swift in Sources */,
 				A459CAD52864FE9E00AF463F /* UIDeviceCoordinator.swift in Sources */,
 				A459CB242865E31900AF463F /* SettingsRouterModuleInput.swift in Sources */,
+				0A64D3672A8A63B800255566 /* ItemsScrollManagerConfigurator.swift in Sources */,
 				A459CB122865E1A300AF463F /* RouteMeasurerViewOutput.swift in Sources */,
 				A459CB6D2865E9B500AF463F /* SkeletonViewModuleConfigurator.swift in Sources */,
 				A459CAE72865D44D00AF463F /* GeolocationServiceViewOutput.swift in Sources */,
+				0A64D3702A8A7C6000255566 /* ItemsScrollManagerExampleCell.swift in Sources */,
 				A459CABF2864F84600AF463F /* QueryStringBuilderCoordinator.swift in Sources */,
 				A459CAA12864F10400AF463F /* StringAttributesViewController.swift in Sources */,
 				A459CA8A2864ED5300AF463F /* MainRouter.swift in Sources */,
@@ -1177,6 +1232,7 @@
 				A459CAE32865D44D00AF463F /* GeolocationServicePresenter.swift in Sources */,
 				A459CB2B2865E31900AF463F /* SettingsRouterModuleConfigurator.swift in Sources */,
 				A459CB152865E1A300AF463F /* RouteMeasurerModuleConfigurator.swift in Sources */,
+				0A64D36D2A8A69A700255566 /* ItemsScrollManagerParameterView.swift in Sources */,
 				A459CA832864EB8000AF463F /* CustomSwitchCoordinator.swift in Sources */,
 				A459CA7E2864EA6500AF463F /* CustomSwitchViewInput.swift in Sources */,
 				A459CAB82864F55E00AF463F /* QueryStringBuilderViewOutput.swift in Sources */,

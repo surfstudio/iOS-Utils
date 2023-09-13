@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A64D3722A8BD9E000255566 /* ItemsScrollManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64D3712A8BD9E000255566 /* ItemsScrollManagerTests.swift */; };
 		18F2361421D2150200169AC9 /* Dictionary+QueryStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */; };
 		3946574E24EC1A580069BDB0 /* LoadingViewBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946574D24EC1A580069BDB0 /* LoadingViewBlock.swift */; };
 		3946575024EC1AAC0069BDB0 /* LoadingViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946574F24EC1AAC0069BDB0 /* LoadingViewConfig.swift */; };
@@ -110,6 +111,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A64D3712A8BD9E000255566 /* ItemsScrollManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScrollManagerTests.swift; sourceTree = "<group>"; };
 		18F2361321D2150200169AC9 /* Dictionary+QueryStringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+QueryStringBuilder.swift"; sourceTree = "<group>"; };
 		39262D442551713B00591787 /* PinCryptoBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCryptoBoxTests.swift; sourceTree = "<group>"; };
 		39262D4C2551714F00591787 /* PinHackCryptoBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinHackCryptoBoxTests.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				39262D432551712300591787 /* SecurityService */,
+				0A64D3712A8BD9E000255566 /* ItemsScrollManagerTests.swift */,
 				90C101C921E0B62D002E8E65 /* RouteMeasurerTests.swift */,
 				90C101C721E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift */,
 				890C428323795BF100FF63A7 /* LocalStorageTests.swift */,
@@ -943,6 +946,7 @@
 				90AC856D2385941D00DF7F3B /* GeolocationServiceTests.swift in Sources */,
 				90C101CA21E0B62D002E8E65 /* RouteMeasurerTests.swift in Sources */,
 				90C101C821E0B1E0002E8E65 /* WordDeclinationSelectorTests.swift in Sources */,
+				0A64D3722A8BD9E000255566 /* ItemsScrollManagerTests.swift in Sources */,
 				87239D8124D4220600D38EC7 /* MoneyModelTests.swift in Sources */,
 				890C428423795BF100FF63A7 /* LocalStorageTests.swift in Sources */,
 			);
