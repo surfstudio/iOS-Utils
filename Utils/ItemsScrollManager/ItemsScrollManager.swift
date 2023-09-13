@@ -149,7 +149,7 @@ public final class ItemsScrollManager {
 
         // Detect on which page the scroll will end
         let pageProgress = getPageProgress(for: scrollView, targetOffset: targetOffset)
-        let currentPage = pageProgress.rounded(targetOffset < lastOffset ? .down : .up)
+        let currentPage = pageProgress.rounded(scrollView.contentOffset.x < lastOffset ? .down : .up)
 
         // Detect which offset corresponds to the selected page
         let cellOffset = insets.left + currentPage * pageWidth - cellAlignmentOffset
@@ -171,7 +171,7 @@ public final class ItemsScrollManager {
         // Left offset for the first cell is `insets.left`, for normal ones - `cellAlignmentOffset`
         let firstPageWidth = pageWidth - (cellAlignmentOffset - insets.left)
         // Get progress for the first page
-        if offset < firstPageWidth {
+        if offset < firstPageWidth, firstPageWidth > 0 {
             return max(0, offset) / firstPageWidth
         }
 
@@ -180,7 +180,7 @@ public final class ItemsScrollManager {
         // Right offset for the last cell is `insets.right`, for normal ones - `reversedAdditionalOffset`
         let lastPageWidth = pageWidth - (reversedAdditionalOffset - insets.right)
         // Get progress for the last page
-        if offset > maxContentOffset(for: scrollView) - lastPageWidth {
+        if offset > maxContentOffset(for: scrollView) - lastPageWidth, lastPageWidth > 0 {
             // Progress for the last page is calculated in reverse direction, then subtracted from the last page index
             let reversedProgress = (maxContentOffset(for: scrollView) - offset) / lastPageWidth
             let pagesCount = (scrollView.contentSize.width + cellSpacing - (insets.left + insets.right)) / pageWidth
