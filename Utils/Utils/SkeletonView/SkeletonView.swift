@@ -130,6 +130,7 @@ private extension SkeletonView {
         animationGroup.duration = movingAnimationDuration + delayBetweenAnimationLoops
         animationGroup.animations = [animation]
         animationGroup.repeatCount = .infinity
+        animationGroup.isRemovedOnCompletion = false
         gradientLayer?.add(animationGroup, forKey: animation.keyPath)
     }
 
