@@ -21,6 +21,7 @@ xcuserdata/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+Gemfile.lock
 
 ## Obj-C/Swift specific
 *.hmap
@@ -46,8 +47,6 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-Podfile.lock
-Pods/
 
 # Carthage
 #
@@ -76,4 +75,3 @@ Utils/buildData
 
 # Bundler
 .bundle/
-Gemfile.lock

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QueryStringBuilderViewController" customModule="UtilsExample" customModuleProvider="target">
+            <connections>
+                <outlet property="subTitle" destination="jCl-u1-5yO" id="VrM-Yx-cqR"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Q3p-Ee-1CD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCl-u1-5yO">
+                    <rect key="frame" x="16" y="437.5" width="382" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QueryStringBuilder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmd-hw-eAC">
+                    <rect key="frame" x="104.5" y="307.5" width="205.5" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jCl-u1-5yO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="GPf-Rq-QmI"/>
+                <constraint firstItem="bmd-hw-eAC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="O36-Js-BTf"/>
+                <constraint firstItem="jCl-u1-5yO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ubd-ZX-iPq"/>
+                <constraint firstAttribute="trailing" secondItem="jCl-u1-5yO" secondAttribute="trailing" constant="16" id="nuf-YW-aqm"/>
+                <constraint firstItem="jCl-u1-5yO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rcH-rk-U3F"/>
+                <constraint firstItem="jCl-u1-5yO" firstAttribute="top" secondItem="bmd-hw-eAC" secondAttribute="bottom" constant="100" id="utl-EK-Zho"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="108"/>
+        </view>
+    </objects>
+</document>
