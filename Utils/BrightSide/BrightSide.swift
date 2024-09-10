@@ -20,21 +20,38 @@ public final class BrightSide {
             return true
         }
 
-        // Check 2 : existence of files that are common for jailbroken devices
-        if isJailbreakDirectoriesExist() || suspiciousURLs.contains(where: { canOpenUrl(urlString: $0) }) {
+        // Check 2 Suspicious URL Schemes:
+        ///Warning: Schemes should be added in Info.plist LSApplicationQueriesSchemes in other case check will always return false
+        if suspiciousURLs.contains(where: { canOpenUrl(urlString: $0) }) {
             return false
         }
 
-        // Check 3 : Reading and writing in system directories (sandbox violation)
-        let stringToWrite = "Jailbreak Test"
-        do {
-            try stringToWrite.write(toFile: "/private/JailbreakTest.txt",
-                                    atomically: true,
-                                    encoding: String.Encoding.utf8)
-            //Device is jailbroken
+        // Check 3 : existence of files that are common for jailbroken devices
+        if isJailbreakDirectoriesExist() || isSuspiciousFilesCanBeOpened() {
             return false
-        } catch {
-            return true
+        }
+
+        // Check 4 : Reading and writing in system directories (sandbox violation)
+
+        let paths = [
+            "/",
+            "/root/",
+            "/private/",
+            "/jb/"
+        ]
+
+        for path in paths {
+            let someRandomRestrictedPath = path + UUID().uuidString
+            let stringToWrite = "Jailbreak Test"
+            do {
+                try stringToWrite.write(toFile: someRandomRestrictedPath,
+                                        atomically: true,
+                                        encoding: String.Encoding.utf8)
+                //Device is jailbroken
+                return false
+            } catch {
+                return true
+            }
         }
     }
 
@@ -46,21 +63,45 @@ private extension BrightSide {
 
     /// Method will return true, if any of the files or dir, typical for the jailbreak, exists
     static func isJailbreakDirectoriesExist() -> Bool {
-        let jailbreakPaths = suspiciousSystemFiles + suspiciousAppsDir + suspiciousSystemDir
+        var jailbreakPaths = suspiciousSystemFiles + suspiciousAppsDir + suspiciousSystemDir
+
         // These files can give false positive in the simulator
-        let deviceOnlyPaths = [
-            "/bin/bash",
-            "/usr/sbin/sshd",
-            "/usr/libexec/ssh-keysign",
-            "/bin/sh",
-            "/etc/ssh/sshd_config",
-            "/usr/libexec/sftp-server",
-            "/usr/bin/ssh"
+        if !isSimulator() {
+            jailbreakPaths += [
+                "/bin/bash",
+                "/usr/sbin/sshd",
+                "/usr/libexec/ssh-keysign",
+                "/bin/sh",
+                "/etc/ssh/sshd_config",
+                "/usr/libexec/sftp-server",
+                "/usr/bin/ssh"
+            ]
+        }
+
+        return jailbreakPaths.contains { FileManager.default.fileExists(atPath: $0) }
+    }
+
+    /// Method will return true, if any of the files or dir, typical for the jailbreak, openable
+    static func isSuspiciousFilesCanBeOpened() -> Bool {
+        var jailbreakPaths = [
+            "/.installed_unc0ver",
+            "/.bootstrapped_electra",
+            "/Applications/Cydia.app",
+            "/Library/MobileSubstrate/MobileSubstrate.dylib",
+            "/etc/apt",
+            "/var/log/apt"
         ]
 
-        let pathsToCheck = isSimulator() ? jailbreakPaths : (jailbreakPaths + deviceOnlyPaths)
+        // These files can give false positive in the emulator
+        if !isSimulator() {
+            jailbreakPaths += [
+                "/bin/bash",
+                "/usr/sbin/sshd",
+                "/usr/bin/ssh"
+            ]
+        }
 
-        return pathsToCheck.contains { FileManager.default.fileExists(atPath: $0) }
+        return jailbreakPaths.contains { FileManager.default.isReadableFile(atPath: $0) }
     }
 
     /// Method will return true if we can open cydia package
