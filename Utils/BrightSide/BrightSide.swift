@@ -21,7 +21,7 @@ public final class BrightSide {
         }
 
         // Check 2 : existence of files that are common for jailbroken devices
-        if isJailbreakDirectoriesExist() || canOpenCydia() {
+        if isJailbreakDirectoriesExist() || suspiciousURLs.contains(where: { canOpenUrl(urlString: $0) }) {
             return false
         }
 
@@ -46,31 +46,41 @@ private extension BrightSide {
 
     /// Method will return true, if any of the files or dir, typical for the jailbreak, exists
     static func isJailbreakDirectoriesExist() -> Bool {
-        let jailbreakRelativelyFilesAndPaths = suspiciousSystemFiles
-            + suspiciousAppsDir
-            + suspiciousSystemDir
-        return jailbreakRelativelyFilesAndPaths
-            .allSatisfy(FileManager.default.fileExists(atPath:))
+        let jailbreakPaths = suspiciousSystemFiles + suspiciousAppsDir + suspiciousSystemDir
+        // These files can give false positive in the simulator
+        let deviceOnlyPaths = [
+            "/bin/bash",
+            "/usr/sbin/sshd",
+            "/usr/libexec/ssh-keysign",
+            "/bin/sh",
+            "/etc/ssh/sshd_config",
+            "/usr/libexec/sftp-server",
+            "/usr/bin/ssh"
+        ]
+
+        let pathsToCheck = isSimulator() ? jailbreakPaths : (jailbreakPaths + deviceOnlyPaths)
+
+        return pathsToCheck.contains { FileManager.default.fileExists(atPath: $0) }
     }
 
     /// Method will return true if we can open cydia package
-    static func canOpenCydia() -> Bool {
-        guard let cydiaURL = URL(string: "cydia://package/com.example.package") else {
+    static func canOpenUrl(urlString: String) -> Bool {
+        guard let URL = URL(string: urlString) else {
             return false
         }
-        return UIApplication.shared.canOpenURL(cydiaURL)
+        return UIApplication.shared.canOpenURL(URL)
     }
 
     /// Method will return true if current device is simulator
     static func isSimulator() -> Bool {
-        return ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil
+        return isSimulatorCompile() || isSimulatorRuntime()
     }
 
 }
 
-// MARK: - Suspicious dir
+// MARK: - Suspicious directories and files
 
-extension BrightSide {
+private extension BrightSide {
 
     static var suspiciousAppsDir: [String] {
         return [
@@ -84,22 +94,23 @@ extension BrightSide {
             "/Applications/MxTube.app",
             "/Applications/RockApp.app",
             "/Applications/SBSettings.app",
-            "/Applications/WinterBoard.app"
+            "/Applications/WinterBoard.app",
+            "/Applications/Activator.app",
+            "/Applications/BytaFont.app",
+            "/Applications/Filza.app"
         ]
     }
 
     static var suspiciousSystemDir: [String] {
         return [
             "/private/var/lib/apt",
-            "/private/var/lib/apt/",
             "/private/var/lib/cydia",
             "/private/var/mobile/Library/SBSettings/Themes",
             "/private/var/stash",
             "/usr/bin/sshd",
-            "/usr/libexec/sftp-server",
-            "/usr/sbin/sshd",
             "/etc/apt",
-            "/bin/bash"
+            "/usr/libexec/cydia",
+            "/private/var/jb"
         ]
     }
 
@@ -110,8 +121,40 @@ extension BrightSide {
             "/private/var/tmp/cydia.log",
             "/System/Library/LaunchDaemons/com.ikey.bbot.plist",
             "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
-            "/Library/MobileSubstrate/MobileSubstrate.dylib"
+            "/Library/MobileSubstrate/MobileSubstrate.dylib",
+            "/private/var/db/crashreporter/LiveClock.plist",
+            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
+            "/usr/lib/libsubstitute.dylib",
+            "/private/var/lib/apt/periodic"
         ]
+    }
+
+    static var suspiciousURLs: [String] {
+        return [
+            "cydia://package/com.example.package",
+            "filza://",
+            "undecimus://",
+            "zbra://",
+            "sileo://"
+        ]
+    }
+
+}
+
+// MARK: - Private Methods
+
+private extension BrightSide {
+
+    static func isSimulatorRuntime() -> Bool {
+        return ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil
+    }
+
+    static func isSimulatorCompile() -> Bool {
+#if targetEnvironment(simulator)
+        return true
+#else
+        return false
+#endif
     }
 
 }
