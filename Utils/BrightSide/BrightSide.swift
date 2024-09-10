@@ -97,7 +97,8 @@ private extension BrightSide {
             "/Applications/WinterBoard.app",
             "/Applications/Activator.app",
             "/Applications/BytaFont.app",
-            "/Applications/Filza.app"
+            "/Applications/Filza.app",
+            "/Applications/Sileo.app",
         ]
     }
 
@@ -110,12 +111,34 @@ private extension BrightSide {
             "/usr/bin/sshd",
             "/etc/apt",
             "/usr/libexec/cydia",
-            "/private/var/jb"
+            "/private/var/jb",
+            "/var/mobile/Library/Preferences/ABPattern", // A-Bypass
+            "/usr/lib/ABDYLD.dylib", // A-Bypass,
+            "/usr/lib/ABSubLoader.dylib", // A-Bypass
+            "/usr/sbin/frida-server", // frida
+            "/etc/apt/sources.list.d/electra.list", // electra
+            "/etc/apt/sources.list.d/sileo.sources", // electra
+            "/.bootstrapped_electra", // electra
+            "/usr/lib/libjailbreak.dylib", // electra
+            "/jb/lzma", // electra
+            "/.cydia_no_stash", // unc0ver
+            "/.installed_unc0ver", // unc0ver
+            "/jb/offsets.plist", // unc0ver
+            "/usr/share/jailbreak/injectme.plist", // unc0ver
+            "/etc/apt/undecimus/undecimus.list", // unc0ver
+            "/var/lib/dpkg/info/mobilesubstrate.md5sums", // unc0ver
+            "/Library/MobileSubstrate/MobileSubstrate.dylib",
+            "/jb/jailbreakd.plist", // unc0ver
+            "/jb/amfid_payload.dylib", // unc0ver
+            "/jb/libjailbreak.dylib", // unc0ver
         ]
     }
 
     static var suspiciousSystemFiles: [String] {
         return [
+            "/Library/MobileSubstrate/DynamicLibraries/SSLKillSwitch2.plist",
+            "/Library/MobileSubstrate/DynamicLibraries",
+            "/usr/sbin/frida-server", // frida
             "/Library/MobileSubstrate/DynamicLibraries/LiveClock.plist",
             "/Library/MobileSubstrate/DynamicLibraries/Veency.plist",
             "/private/var/tmp/cydia.log",
@@ -123,7 +146,6 @@ private extension BrightSide {
             "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
             "/Library/MobileSubstrate/MobileSubstrate.dylib",
             "/private/var/db/crashreporter/LiveClock.plist",
-            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
             "/usr/lib/libsubstitute.dylib",
             "/private/var/lib/apt/periodic"
         ]
