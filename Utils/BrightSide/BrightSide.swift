@@ -6,7 +6,6 @@
 //  Copyright © 2018 Surf. All rights reserved.
 //
 
-import Foundation
 import class UIKit.UIApplication
 
 public final class BrightSide {
@@ -20,7 +19,7 @@ public final class BrightSide {
             return true
         }
 
-        // Check 2 Suspicious URL Schemes:
+        // Check 2 : Suspicious URL Schemes:
         ///Warning: Schemes should be added in Info.plist LSApplicationQueriesSchemes in other case check will always return false
         if suspiciousURLs.contains(where: { canOpenUrl(urlString: $0) }) {
             return false
