@@ -32,27 +32,12 @@ public final class BrightSide {
         }
 
         // Check 4 : Reading and writing in system directories (sandbox violation)
-
-        let paths = [
-            "/",
-            "/root/",
-            "/private/",
-            "/jb/"
-        ]
-
-        for path in paths {
-            let someRandomRestrictedPath = path + UUID().uuidString
-            let stringToWrite = "Jailbreak Test"
-            do {
-                try stringToWrite.write(toFile: someRandomRestrictedPath,
-                                        atomically: true,
-                                        encoding: String.Encoding.utf8)
-                //Device is jailbroken
-                return false
-            } catch {
-                return true
-            }
+        if canWriteToRestrictedPaths() {
+            return false
         }
+
+        return true
+
     }
 
 }
@@ -115,6 +100,33 @@ private extension BrightSide {
     /// Method will return true if current device is simulator
     static func isSimulator() -> Bool {
         return isSimulatorCompile() || isSimulatorRuntime()
+    }
+
+    /// Check if writing to restricted paths is possible
+    static func canWriteToRestrictedPaths() -> Bool {
+        let restrictedPaths = [
+            "/",
+            "/root/",
+            "/private/",
+            "/jb/"
+        ]
+
+        let stringToWrite = "Jailbreak Test"
+        for path in restrictedPaths {
+            let someRandomRestrictedPath = path + UUID().uuidString
+            do {
+                try stringToWrite.write(toFile: someRandomRestrictedPath,
+                                        atomically: true,
+                                        encoding: .utf8)
+                // If writing succeeds, the device is jailbroken
+                return true
+            } catch {
+                // Continue trying other paths
+                continue
+            }
+        }
+        // If no restricted paths could be written to, return false (not jailbroken)
+        return false
     }
 
 }
