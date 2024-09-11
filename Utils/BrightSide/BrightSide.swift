@@ -15,12 +15,8 @@ public final class BrightSide {
 
     /// Method return false, if we can detect some common for jailbroken deivce files or can write to device
     public static func isBright() -> Bool {
-        // Check 1 : check if current device is simulator
-        if isSimulator() {
-            return true
-        }
 
-        // Check 2 : Suspicious URL Schemes:
+        // Check 1 : Suspicious URL Schemes:
         ///Warning: Schemes should be added in Info.plist LSApplicationQueriesSchemes in other case check will always return false
         if suspiciousURLs.contains(where: { canOpenUrl(urlString: $0) }) {
             return false
@@ -34,6 +30,11 @@ public final class BrightSide {
         // Check 4 : Reading and writing in system directories (sandbox violation)
         if canWriteToRestrictedPaths() {
             return false
+        }
+
+        // Check 4 : check if current device is simulator
+        if isSimulator() {
+            return true
         }
 
         return true
