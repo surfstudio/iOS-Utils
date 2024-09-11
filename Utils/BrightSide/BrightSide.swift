@@ -6,6 +6,7 @@
 //  Copyright © 2018 Surf. All rights reserved.
 //
 
+import Foundation
 import class UIKit.UIApplication
 
 public final class BrightSide {
