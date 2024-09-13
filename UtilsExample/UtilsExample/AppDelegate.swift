@@ -24,6 +24,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         Playbook.shared
+            .add(flowCoordinator: ActionableLabelCoordinator())
             .add(flowCoordinator: BrightSideCoordinator())
             .add(flowCoordinator: CustomSwitchCoordinator())
             .add(flowCoordinator: GeolocationServiceCoordinator())
