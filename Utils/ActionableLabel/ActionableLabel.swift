@@ -6,7 +6,6 @@
 //  Copyright © 2019 Surf. All rights reserved.
 //
 
-import Autolocalizable
 import UIKit
 
 public final class ActionableLabel: UILabel, ViewAccessibilityProtocol, ActionableLabelParameters {
@@ -16,7 +15,7 @@ public final class ActionableLabel: UILabel, ViewAccessibilityProtocol, Actionab
     public typealias TextAction = () -> Void
 
     public typealias Part = (
-        text: LocalizableStringItem,
+        text: String,
         attributes: [StringAttribute],
         isHighlighted: Bool,
         action: TextAction?
@@ -94,7 +93,7 @@ public final class ActionableLabel: UILabel, ViewAccessibilityProtocol, Actionab
         attributedText = nil
     }
 
-    public func append(text: LocalizableStringItem, attributes: [StringAttribute] = [], action: TextAction? = nil) {
+    public func append(text: String, attributes: [StringAttribute] = [], action: TextAction? = nil) {
         parts.append((text: text, attributes: attributes, isHighlighted: false, action: action))
         reload()
     }
@@ -113,12 +112,6 @@ public final class ActionableLabel: UILabel, ViewAccessibilityProtocol, Actionab
         textContainer.lineFragmentPadding = 0
         textContainer.lineBreakMode = lineBreakMode
         isUserInteractionEnabled = true
-
-        // Localization
-        registration(key: localizableKey, item: LocalizableStringItem()) { [weak self] _, _ in
-            self?.reload()
-            self?.layoutIfNeeded()
-        }
     }
 
     private func textOrigin(inRect rect: CGRect) -> CGPoint {
@@ -146,7 +139,7 @@ public final class ActionableLabel: UILabel, ViewAccessibilityProtocol, Actionab
                     : foregroundColor
                 currenAttributes.append(.foregroundColor(color))
             }
-            builder.add(.string(part.text.value), with: currenAttributes)
+            builder.add(.string(part.text), with: currenAttributes)
         }
         let attributedString = builder.value
 
@@ -177,7 +170,7 @@ public final class ActionableLabel: UILabel, ViewAccessibilityProtocol, Actionab
 
         let index = layoutManager.glyphIndex(for: correctLocation, in: textContainer)
 
-        let range = (text as NSString).range(of: part.text.value)
+        let range = (text as NSString).range(of: part.text)
         return index >= range.location && index <= range.location + range.length
     }
 

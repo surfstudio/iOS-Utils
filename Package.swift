@@ -16,17 +16,12 @@ let package = Package(
             name: "CryptoSwift",
             url: "https://github.com/krzyzanowskim/CryptoSwift",
             .exact("1.5.1")
-        ),
-        .package(
-            name: "Autolocalizable",
-            url: "https://github.com/surfstudio/Autolocalizable.git",
-            from: "1.1.0"
         )
     ],
     targets: [
         .target(
             name: "Utils",
-            dependencies: ["CryptoSwift", "Autolocalizable"],
+            dependencies: ["CryptoSwift"],
             path: "Utils",
             exclude: [
                 "Info.plist"

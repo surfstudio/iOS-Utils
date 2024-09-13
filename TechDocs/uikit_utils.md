@@ -21,13 +21,12 @@
 ### ActionableLabel
 
 Лэйбл который можно собирать из текстов с разными аттрибутами, так же обрабатывает нажатия, например ссылки.
-LocalizableStringItem - принимает в себя простую строку.
 
 Пример:
 
 Во вью
 ```Swift
-typealias Model = [(text: LocalizableStringItem, didSelect: (()-> Void)?)]
+typealias Model = [(text: String, didSelect: (()-> Void)?)]
 
 func configure(with model: Model) {
     label.clear()
@@ -47,9 +46,9 @@ func configure(with model: Model) {
 ```Swift
 
 view?.configure(with: [
-    (text: LocalizableStringItem("Start sentences "), didSelect: nil),
-    (text: LocalizableStringItem("link text"), didSelect: { print("link selected") }),
-    (text: LocalizableStringItem(" end sentences."), didSelect: nil)
+    (text: "Start sentences ", didSelect: nil),
+    (text: "link text", didSelect: { print("link selected") }),
+    (text: " end sentences.", didSelect: nil)
 ])
 ```
 

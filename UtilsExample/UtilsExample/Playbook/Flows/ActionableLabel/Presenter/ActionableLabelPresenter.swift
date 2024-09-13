@@ -6,11 +6,7 @@
 //  Copyright © 2022 Surf. All rights reserved.
 //
 
-import Autolocalizable
-
 final class ActionableLabelPresenter: ActionableLabelModuleOutput {
-
-    // MARK: - BrightSideModuleOutput
 
     // MARK: - Properties
 
@@ -18,23 +14,23 @@ final class ActionableLabelPresenter: ActionableLabelModuleOutput {
 
 }
 
-// MARK: - BrightSideModuleInput
+// MARK: - ActionableLabelModuleInput
 
 extension ActionableLabelPresenter: ActionableLabelModuleInput {
 }
 
-// MARK: - BrightSideViewOutput
+// MARK: - ActionableLabelViewOutput
 
 extension ActionableLabelPresenter: ActionableLabelViewOutput {
 
     func viewLoaded() {
         view?.setupInitialState()
         view?.configure(with: [
-            (text: LocalizableStringItem("Start sentences "), didSelect: nil),
-            (text: LocalizableStringItem("link text"), didSelect: {
+            (text: "Start sentences ", didSelect: nil),
+            (text: "link text", didSelect: {
                 print("link selected")
             }),
-            (text: LocalizableStringItem(" end sentences."), didSelect: nil)
+            (text: " end sentences.", didSelect: nil)
         ])
     }
 

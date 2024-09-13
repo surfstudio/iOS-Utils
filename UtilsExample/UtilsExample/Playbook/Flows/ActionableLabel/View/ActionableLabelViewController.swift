@@ -8,13 +8,12 @@
 
 import UIKit
 import Utils
-import Autolocalizable
 
 final class ActionableLabelViewController: UIViewController {
 
     // MARK: - Nested types
 
-    public typealias Model = [(text: LocalizableStringItem, didSelect: (() -> Void)?)]
+    public typealias Model = [(text: String, didSelect: (() -> Void)?)]
 
     // MARK: - IBOutlets
 
