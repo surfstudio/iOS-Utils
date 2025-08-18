@@ -29,7 +29,8 @@ let package = Package(
             dependencies: ["CryptoSwift", "Device"],
             path: "Utils/Utils",
             exclude: [
-                "Info.plist"
+                "Info.plist",
+                "Utils/SecurityService"
             ]
         ),
         .testTarget(
@@ -37,7 +38,8 @@ let package = Package(
             dependencies: ["Utils"],
             path: "Utils/UtilsTests",
             exclude: [
-                "Info.plist"
+                "Info.plist",
+                "UtilsTests/SecurityService"
             ]
         )
     ]
